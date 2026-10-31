@@ -1,0 +1,17 @@
+﻿=== ACCEPTED ===
+
+--- PASS: df_capacity
+--- PASS: df_recency_evict
+--- PASS: df_values_order
+--- PASS: df_delete
+--- PASS: df_replace
+--- PASS: df_set_then_clear_on_error
+
+=== MUTANT (no clear on error) ===
+
+--- PASS: df_capacity
+--- PASS: df_recency_evict
+--- PASS: df_values_order
+--- PASS: df_delete
+--- PASS: df_replace
+--- FAIL: df_set_then_clear_on_error :: cache must be cleared, got [1]

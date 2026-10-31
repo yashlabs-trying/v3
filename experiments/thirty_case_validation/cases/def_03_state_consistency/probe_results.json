@@ -1,0 +1,10 @@
+{
+  "failing": [
+    "test_df_delete_keeps_index_consistent"
+  ],
+  "results": {
+    "test_df_delete_keeps_index_consistent": "FAILED",
+    "test_df_delete_missing": "PASSED",
+    "test_df_set_and_keys": "PASSED"
+  }
+}

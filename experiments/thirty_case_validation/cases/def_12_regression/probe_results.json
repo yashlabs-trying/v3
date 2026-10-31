@@ -1,0 +1,10 @@
+{
+  "failing": [
+    "test_df_discount_applied"
+  ],
+  "results": {
+    "test_df_discount_applied": "FAILED",
+    "test_df_empty": "PASSED",
+    "test_df_no_discount_preserved": "PASSED"
+  }
+}

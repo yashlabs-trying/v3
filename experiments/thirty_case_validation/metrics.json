@@ -1,0 +1,62 @@
+{
+  "experiment": "thirty_case_validation",
+  "engine": "DataForge V3.3",
+  "cohort_size": 30,
+  "answer_key_frozen_before_diagnosis": true,
+  "results": {
+    "postfix": {
+      "correct_case_classifications": 30,
+      "incorrect_case_classifications": 0,
+      "evidence_valid_cases": 30,
+      "unresolved_or_invalid_evidence_refs": 0,
+      "false_accusations_on_correct_solutions": 0,
+      "infrastructure_attributed_to_model": 0,
+      "recommendations_emitted": 24
+    },
+    "original_pre_contradiction_fix": {
+      "correct_case_classifications": 29,
+      "incorrect_case_classifications": 1,
+      "evidence_valid_cases": 29,
+      "unresolved_or_invalid_evidence_refs": 1,
+      "note": "amb_02 contradictory-evidence case was asserted authoritatively (fixed); inf_04 synthetic fixture lacked an evidence artifact (fixture fixed)."
+    },
+    "original_naive_key_first_pass": {
+      "correct_case_classifications": 24,
+      "incorrect_case_classifications": 6,
+      "note": "before the answer key recorded the engine's documented INVARIANT->requirement_omitted fallback and before the two fixes above."
+    }
+  },
+  "attribution": {
+    "authentic_failures_correctly_attributed": "1/1",
+    "authentic_failure_slot_synthetic_control": "1/1",
+    "controlled_defects_correctly_attributed": "12/12",
+    "correct_solutions_not_falsely_accused": "6/6",
+    "infrastructure_correctly_separated": "4/4",
+    "ambiguous_cases_correctly_abstained_or_downgraded": "3/3",
+    "adversarial_cases_correctly_rejected_forged_log": "3/3",
+    "exact_violated_clause_identified": 30,
+    "exact_defect_category_correct_strict": 26,
+    "category_accepted_with_documented_fallback": 4
+  },
+  "by_category": {
+    "authentic_failure": {"total": 1, "correct": 1},
+    "authentic_failure_slot": {"total": 1, "correct": 1},
+    "controlled_defect": {"total": 12, "correct": 12},
+    "correct_solution": {"total": 6, "correct": 6},
+    "infrastructure_invalid": {"total": 4, "correct": 4},
+    "ambiguous": {"total": 3, "correct": 3},
+    "adversarial": {"total": 3, "correct": 3}
+  },
+  "coverage_gaps": {
+    "authentic_held_out_failures": 1,
+    "authentic_held_out_failures_available_in_archive": 1,
+    "note": "Only one authentic coding failure (vuls) exists in the archive. The second authentic-failure slot is a clearly-labelled synthetic control. No claim of generalization to unseen authentic agent failures is made."
+  },
+  "engine_changes": {
+    "attribution.py": ["contradictory-probe-evidence downgrade (general)", "trajectory evidence-ref path normalisation (general)"],
+    "evidence.py": ["approved-evidence-root containment (security fix)"],
+    "cli.py": ["diagnose-case subcommand"],
+    "new": ["intelligence/case_adapter.py", "tests/test_case_adapter.py"]
+  },
+  "llm_baseline": "INCOMPLETE - no model execution authorised; no superiority claim made"
+}

@@ -1,0 +1,128 @@
+{
+  "attempt": "synthetic-defect",
+  "capabilities": [
+    {
+      "dimension": "correct_implementation",
+      "n_tasks": 1,
+      "observations": 1,
+      "sample_note": "single-task observation; not a general ability claim",
+      "strength_tasks": [
+        "syn-lookup-mut_fallback_wins"
+      ],
+      "weakness_tasks": []
+    },
+    {
+      "dimension": "requirements_preservation",
+      "n_tasks": 1,
+      "observations": 1,
+      "sample_note": "single-task observation; not a general ability claim",
+      "strength_tasks": [],
+      "weakness_tasks": [
+        "syn-lookup-mut_fallback_wins"
+      ]
+    }
+  ],
+  "cost_usd": null,
+  "evidence_resolution": {
+    "all_resolved": true,
+    "artifacts": {
+      "experiments/thirty_case_validation/cases/def_09_incorrect_fallback/probe_results.json": {
+        "authoritative": true,
+        "error": null,
+        "exists": true,
+        "sha256": "9afcd957913aebeb11230623d21208f096592d6a5c62566a70a1039365b6314d"
+      },
+      "experiments/thirty_case_validation/cases/def_09_incorrect_fallback/source.py": {
+        "authoritative": true,
+        "error": null,
+        "exists": true,
+        "sha256": "702ae5865b80bd670fae671a872317427be82d8bcb83e0a67811b055b9774400"
+      }
+    },
+    "n_references": 4,
+    "n_unresolved": 0
+  },
+  "execution_validity": "VALID",
+  "findings": [
+    {
+      "category": "requirement_omitted",
+      "competing_explanations": [
+        "The independent probe is over-strict (checked by correct-alternative acceptance in V3.2)",
+        "The task specification is ambiguous for this clause"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "artifact": "experiments/thirty_case_validation/cases/def_09_incorrect_fallback/probe_results.json",
+          "locator": "probes[lookup:test_df_primary_preferred]",
+          "note": "pytest FAILED"
+        },
+        {
+          "artifact": "experiments/thirty_case_validation/cases/def_09_incorrect_fallback/source.py",
+          "locator": "sha256",
+          "note": "submitted patch"
+        }
+      ],
+      "id": "syn-lookup-mut_fallback_wins:clause:lookup.primary",
+      "kind": "reproduced",
+      "limitations": [
+        "The defect is verified; why the agent produced it is not observable."
+      ],
+      "severity": "major",
+      "source_changes": [],
+      "symptom": "Independent probe `lookup:test_df_primary_preferred` failed against contract clause `lookup.primary`: lookup.lookup.primary contract clause",
+      "trace_event_ids": [],
+      "violated_requirement": "lookup.primary"
+    }
+  ],
+  "original_score": null,
+  "recommendations": [
+    {
+      "confounders": [
+        "Small sample size (n=1 task per class here)",
+        "Model stochasticity across runs",
+        "Intervention may shift behavior on tasks outside this class"
+      ],
+      "control": "Same frozen task, same model and configuration, same evaluation budget, same independent verifier; only the intervention differs.",
+      "cost_estimate": "Additional inspection/token overhead to be measured per run; not claimed until executed.",
+      "evidence": [
+        {
+          "artifact": "experiments/thirty_case_validation/cases/def_09_incorrect_fallback/probe_results.json",
+          "locator": "probes[lookup:test_df_primary_preferred]",
+          "note": "pytest FAILED"
+        },
+        {
+          "artifact": "experiments/thirty_case_validation/cases/def_09_incorrect_fallback/source.py",
+          "locator": "sha256",
+          "note": "submitted patch"
+        }
+      ],
+      "executed": false,
+      "execution_note": "no new model execution was authorized",
+      "expected_outcome": "Measured change in the metric below with the intervention vs the control; null result reported if no improvement.",
+      "finding_id": "syn-lookup-mut_fallback_wins:clause:lookup.primary",
+      "hypothesis": "An explicit coverage checklist raises requirement coverage.",
+      "id": "syn-lookup-mut_fallback_wins:clause:lookup.primary:rec",
+      "intervention": "Require an explicit requirement-to-change checklist, mapped to the instruction bullets, before submission.",
+      "metric": "Fraction of instruction bullets with a demonstrably satisfying change.",
+      "task_id": "syn-lookup-mut_fallback_wins"
+    }
+  ],
+  "runtime_seconds": null,
+  "semantic_verdict": "GENUINE_AGENT_FAILURE",
+  "strengths": [
+    {
+      "confidence": "high",
+      "evidence": [],
+      "kind": "reproduced",
+      "text": "Satisfied 2 independently-probed contract clause(s): lookup.fallback, lookup.missing."
+    }
+  ],
+  "summary": "Verified 1 failure finding(s) (requirement_omitted) supported by independent probe evidence and the submitted patch. Demonstrated strengths are listed separately; they do not offset the failure.",
+  "task_id": "syn-lookup-mut_fallback_wins",
+  "uncertainty": [
+    "No trajectory artifact; observable process actions are unavailable.",
+    "The defect (if any) may be verified; the model's internal reason is not observable."
+  ],
+  "weaknesses": []
+}

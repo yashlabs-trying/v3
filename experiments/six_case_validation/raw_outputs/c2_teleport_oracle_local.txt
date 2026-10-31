@@ -1,0 +1,29 @@
+﻿=== RUN   TestDataForgeTeleportTruncation
+=== RUN   TestDataForgeTeleportTruncation/truncate.format
+    oracle_test.go:30: want truncated cell with label; got:
+        Name Motto                         Age  
+        ---- ----------------------------- ---  
+        Joe  Trains are much better th [*] 40   
+        
+        [*] note-here
+    oracle_test.go:37: want 'fo...' for limit 2 no label; got:
+        A    B    
+        -    --   
+        x    fo   
+=== RUN   TestDataForgeTeleportTruncation/truncate.boundary
+=== RUN   TestDataForgeTeleportTruncation/width.from_rendered
+    oracle_test.go:64: want 'abcd...' rendered; got:
+        N    M    
+        ---  ---- 
+        Joe  abcd 
+=== RUN   TestDataForgeTeleportTruncation/footnote.section
+=== RUN   TestDataForgeTeleportTruncation/headless.extra_values
+--- FAIL: TestDataForgeTeleportTruncation (0.00s)
+    --- FAIL: TestDataForgeTeleportTruncation/truncate.format (0.00s)
+    --- PASS: TestDataForgeTeleportTruncation/truncate.boundary (0.00s)
+    --- FAIL: TestDataForgeTeleportTruncation/width.from_rendered (0.00s)
+    --- PASS: TestDataForgeTeleportTruncation/footnote.section (0.00s)
+    --- PASS: TestDataForgeTeleportTruncation/headless.extra_values (0.00s)
+FAIL
+FAIL	dftele	0.784s
+FAIL

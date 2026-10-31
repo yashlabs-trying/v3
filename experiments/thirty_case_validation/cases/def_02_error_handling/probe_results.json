@@ -1,0 +1,10 @@
+{
+  "failing": [
+    "test_df_parse_malformed_returns_default"
+  ],
+  "results": {
+    "test_df_parse_malformed_returns_default": "FAILED",
+    "test_df_parse_non_string": "PASSED",
+    "test_df_parse_valid": "PASSED"
+  }
+}

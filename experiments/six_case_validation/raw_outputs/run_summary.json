@@ -1,0 +1,230 @@
+{
+  "c1_vuls": {
+    "authored_findings": [
+      {
+        "category": "existing_behavior_removed",
+        "id": "vuls:clause:sort.equal_score_order",
+        "kind": "reproduced",
+        "n_evidence": 2,
+        "severity": "major",
+        "violated_requirement": "sort.equal_score_order"
+      }
+    ],
+    "cold_peak_bytes": 2416974,
+    "cold_seconds": 0.06600029999390244,
+    "execution_validity": "VALID",
+    "hypothesis_findings": [],
+    "n_capabilities": 3,
+    "n_findings": 1,
+    "n_recommendations": 1,
+    "n_strengths": 1,
+    "original_score": 0.0,
+    "semantic_verdict": "GENUINE_AGENT_FAILURE",
+    "strengths": [
+      "Satisfied 1 independently-probed contract clause(s): sort.by_score."
+    ],
+    "task_id": "vuls",
+    "unresolved_evidence_findings": [],
+    "warm_median_seconds": 0.06642710004234686,
+    "warm_seconds_samples": [
+      0.054984999995213,
+      0.06092489999718964,
+      0.06642710004234686,
+      0.0667869999888353,
+      0.06712029996560887
+    ],
+    "weakness_dims": [
+      "regression_avoidance"
+    ]
+  },
+  "c2_teleport_synthetic": {
+    "authored_findings": [
+      {
+        "category": "requirement_omitted",
+        "id": "teleport:clause:truncate.format",
+        "kind": "reproduced",
+        "n_evidence": 2,
+        "severity": "major",
+        "violated_requirement": "truncate.format"
+      },
+      {
+        "category": "requirement_omitted",
+        "id": "teleport:clause:width.from_rendered",
+        "kind": "reproduced",
+        "n_evidence": 2,
+        "severity": "major",
+        "violated_requirement": "width.from_rendered"
+      }
+    ],
+    "cold_peak_bytes": 1072612,
+    "cold_seconds": 0.021993600006680936,
+    "execution_validity": "VALID",
+    "hypothesis_findings": [],
+    "n_capabilities": 2,
+    "n_findings": 2,
+    "n_recommendations": 2,
+    "n_strengths": 1,
+    "original_score": null,
+    "semantic_verdict": "GENUINE_AGENT_FAILURE",
+    "strengths": [
+      "Satisfied 1 independently-probed contract clause(s): truncate.boundary."
+    ],
+    "task_id": "teleport",
+    "unresolved_evidence_findings": [],
+    "warm_median_seconds": 0.018725200032349676,
+    "warm_seconds_samples": [
+      0.016939699999056756,
+      0.01760750001994893,
+      0.018725200032349676,
+      0.019787900033406913,
+      0.024766300048213452
+    ],
+    "weakness_dims": [
+      "requirements_preservation"
+    ]
+  },
+  "c3_elementweb_synthetic": {
+    "authored_findings": [
+      {
+        "category": "edge_case_failure",
+        "id": "element-web:clause:lru.set_error",
+        "kind": "reproduced",
+        "n_evidence": 2,
+        "severity": "minor",
+        "violated_requirement": "lru.set_error"
+      }
+    ],
+    "cold_peak_bytes": 1067908,
+    "cold_seconds": 0.012860700022429228,
+    "execution_validity": "VALID",
+    "hypothesis_findings": [],
+    "n_capabilities": 1,
+    "n_findings": 1,
+    "n_recommendations": 1,
+    "n_strengths": 1,
+    "original_score": null,
+    "semantic_verdict": "GENUINE_AGENT_FAILURE",
+    "strengths": [
+      "Satisfied 1 independently-probed contract clause(s): lru.values_insertion_order."
+    ],
+    "task_id": "element-web",
+    "unresolved_evidence_findings": [],
+    "warm_median_seconds": 0.010646300041116774,
+    "warm_seconds_samples": [
+      0.009915800008457154,
+      0.010293699975591153,
+      0.010646300041116774,
+      0.012819900002796203,
+      0.01289579999865964
+    ],
+    "weakness_dims": [
+      "correct_implementation"
+    ]
+  },
+  "c4_openlibrary": {
+    "authored_findings": [],
+    "cold_peak_bytes": 1828107,
+    "cold_seconds": 0.03546930005541071,
+    "execution_validity": "VALID",
+    "hypothesis_findings": [],
+    "n_capabilities": 2,
+    "n_findings": 0,
+    "n_recommendations": 0,
+    "n_strengths": 1,
+    "original_score": 1.0,
+    "semantic_verdict": "CONFIRMED_CORRECT",
+    "strengths": [
+      "Satisfied 6 independently-probed contract clause(s): find_keys.depth, find_keys.types, parse_log.difference, parse_log.none_old_doc, parse_log.old_docs_length, parse_log.one_key_per_doc."
+    ],
+    "task_id": "openlibrary",
+    "unresolved_evidence_findings": [],
+    "warm_median_seconds": 0.03868599998531863,
+    "warm_seconds_samples": [
+      0.035473400028422475,
+      0.03724289999809116,
+      0.03868599998531863,
+      0.03914839995559305,
+      0.045832699979655445
+    ],
+    "weakness_dims": []
+  },
+  "c5_infra": {
+    "authored_findings": [
+      {
+        "category": "agent_startup_failure",
+        "id": "flipt:infra",
+        "kind": "observed",
+        "n_evidence": 1,
+        "severity": "blocker",
+        "violated_requirement": null
+      }
+    ],
+    "cold_peak_bytes": 1064254,
+    "cold_seconds": 0.0057968999608419836,
+    "execution_validity": "INVALID",
+    "hypothesis_findings": [],
+    "n_capabilities": 0,
+    "n_findings": 1,
+    "n_recommendations": 0,
+    "n_strengths": 0,
+    "original_score": 0.0,
+    "semantic_verdict": "INCONCLUSIVE",
+    "strengths": [],
+    "task_id": "flipt",
+    "unresolved_evidence_findings": [],
+    "warm_median_seconds": 0.0047916000476107,
+    "warm_seconds_samples": [
+      0.004300000029616058,
+      0.004611700016539544,
+      0.0047916000476107,
+      0.006231999956071377,
+      0.006671000039204955
+    ],
+    "weakness_dims": []
+  },
+  "c6_adversarial": {
+    "authored_findings": [
+      {
+        "category": "edge_case_failure",
+        "id": "adv-demo:clause:clamp.boundary",
+        "kind": "reproduced",
+        "n_evidence": 2,
+        "severity": "minor",
+        "violated_requirement": "clamp.boundary"
+      },
+      {
+        "category": "relevant_test_not_executed",
+        "id": "adv-demo:no-test-run",
+        "kind": "observed",
+        "n_evidence": 1,
+        "severity": "minor",
+        "violated_requirement": null
+      }
+    ],
+    "cold_peak_bytes": 1073455,
+    "cold_seconds": 0.01819989999057725,
+    "execution_validity": "VALID",
+    "hypothesis_findings": [],
+    "n_capabilities": 2,
+    "n_findings": 2,
+    "n_recommendations": 2,
+    "n_strengths": 0,
+    "original_score": 0.0,
+    "semantic_verdict": "GENUINE_AGENT_FAILURE",
+    "strengths": [],
+    "task_id": "adv-demo",
+    "unresolved_evidence_findings": [],
+    "warm_median_seconds": 0.01866689999587834,
+    "warm_seconds_samples": [
+      0.015145200013648719,
+      0.017960700031835586,
+      0.01866689999587834,
+      0.0190697000361979,
+      0.021657400007825345
+    ],
+    "weakness_dims": [
+      "correct_implementation",
+      "testing_discipline"
+    ]
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "case_id": "cor_01_paginate",
+  "short_name": "syn-paginate-correct",
+  "attempt": "synthetic-correct",
+  "execution_validity": "VALID",
+  "semantic_verdict": "CONFIRMED_CORRECT",
+  "original_score": null,
+  "patch": "experiments/thirty_case_validation/cases/cor_01_paginate/source.py",
+  "trajectory": null,
+  "semantic": {
+    "verdict": "CONFIRMED_CORRECT",
+    "confidence": "high",
+    "evidence_artifact": "experiments/thirty_case_validation/cases/cor_01_paginate/probe_results.json",
+    "clauses": [
+      {
+        "id": "paginate.boundary",
+        "kind": "EDGE_CASE",
+        "statement": "paginate.paginate.boundary contract clause"
+      },
+      {
+        "id": "paginate.window",
+        "kind": "EDGE_CASE",
+        "statement": "paginate.paginate.window contract clause"
+      },
+      {
+        "id": "paginate.precondition",
+        "kind": "POSTCONDITION",
+        "statement": "paginate.paginate.precondition contract clause"
+      }
+    ],
+    "probes": [
+      {
+        "name": "paginate:test_df_page_boundaries",
+        "passed": true,
+        "clauses": [
+          "paginate.boundary"
+        ],
+        "detail": "",
+        "counterexample": null
+      },
+      {
+        "name": "paginate:test_df_first_page_offbyone",
+        "passed": true,
+        "clauses": [
+          "paginate.window"
+        ],
+        "detail": "",
+        "counterexample": null
+      },
+      {
+        "name": "paginate:test_df_invalid_page",
+        "passed": true,
+        "clauses": [
+          "paginate.precondition"
+        ],
+        "detail": "",
+        "counterexample": null
+      }
+    ]
+  },
+  "notes": [
+    "SYNTHETIC correct solution (real mechanism, real oracle)."
+  ],
+  "evidence_roots": [
+    "experiments/thirty_case_validation"
+  ]
+}

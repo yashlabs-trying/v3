@@ -1,0 +1,10 @@
+{
+  "failing": [
+    "test_df_rle_basic",
+    "test_df_rle_singletons"
+  ],
+  "results": {
+    "test_df_rle_basic": "FAILED",
+    "test_df_rle_singletons": "FAILED"
+  }
+}

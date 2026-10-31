@@ -1,0 +1,120 @@
+{
+  "attempt": "synthetic-defect",
+  "capabilities": [
+    {
+      "dimension": "correct_implementation",
+      "n_tasks": 1,
+      "observations": 2,
+      "sample_note": "single-task observation; not a general ability claim",
+      "strength_tasks": [
+        "syn-resource-mut_leak_on_error"
+      ],
+      "weakness_tasks": [
+        "syn-resource-mut_leak_on_error"
+      ]
+    }
+  ],
+  "cost_usd": null,
+  "evidence_resolution": {
+    "all_resolved": true,
+    "artifacts": {
+      "experiments/thirty_case_validation/cases/def_06_resource_cleanup/probe_results.json": {
+        "authoritative": true,
+        "error": null,
+        "exists": true,
+        "sha256": "9d9ce40630cdf3334603c88e42309d93a6accdfa8760bd238d0a808221c3ddc9"
+      },
+      "experiments/thirty_case_validation/cases/def_06_resource_cleanup/source.py": {
+        "authoritative": true,
+        "error": null,
+        "exists": true,
+        "sha256": "127ec1294d2b481c7265fd09f9225fb0a0064f7f7a87f049a22ef3d6167b7462"
+      }
+    },
+    "n_references": 4,
+    "n_unresolved": 0
+  },
+  "execution_validity": "VALID",
+  "findings": [
+    {
+      "category": "edge_case_failure",
+      "competing_explanations": [
+        "The independent probe is over-strict (checked by correct-alternative acceptance in V3.2)",
+        "The task specification is ambiguous for this clause"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "artifact": "experiments/thirty_case_validation/cases/def_06_resource_cleanup/probe_results.json",
+          "locator": "probes[resource:test_df_closes_on_error]",
+          "note": "pytest FAILED"
+        },
+        {
+          "artifact": "experiments/thirty_case_validation/cases/def_06_resource_cleanup/source.py",
+          "locator": "sha256",
+          "note": "submitted patch"
+        }
+      ],
+      "id": "syn-resource-mut_leak_on_error:clause:resource.cleanup_on_error",
+      "kind": "reproduced",
+      "limitations": [
+        "The defect is verified; why the agent produced it is not observable."
+      ],
+      "severity": "minor",
+      "source_changes": [],
+      "symptom": "Independent probe `resource:test_df_closes_on_error` failed against contract clause `resource.cleanup_on_error`: resource.resource.cleanup_on_error contract clause",
+      "trace_event_ids": [],
+      "violated_requirement": "resource.cleanup_on_error"
+    }
+  ],
+  "original_score": null,
+  "recommendations": [
+    {
+      "confounders": [
+        "Small sample size (n=1 task per class here)",
+        "Model stochasticity across runs",
+        "Intervention may shift behavior on tasks outside this class"
+      ],
+      "control": "Same frozen task, same model and configuration, same evaluation budget, same independent verifier; only the intervention differs.",
+      "cost_estimate": "Additional inspection/token overhead to be measured per run; not claimed until executed.",
+      "evidence": [
+        {
+          "artifact": "experiments/thirty_case_validation/cases/def_06_resource_cleanup/probe_results.json",
+          "locator": "probes[resource:test_df_closes_on_error]",
+          "note": "pytest FAILED"
+        },
+        {
+          "artifact": "experiments/thirty_case_validation/cases/def_06_resource_cleanup/source.py",
+          "locator": "sha256",
+          "note": "submitted patch"
+        }
+      ],
+      "executed": false,
+      "execution_note": "no new model execution was authorized",
+      "expected_outcome": "Measured change in the metric below with the intervention vs the control; null result reported if no improvement.",
+      "finding_id": "syn-resource-mut_leak_on_error:clause:resource.cleanup_on_error",
+      "hypothesis": "Forced boundary probing reduces edge-case failures.",
+      "id": "syn-resource-mut_leak_on_error:clause:resource.cleanup_on_error:rec",
+      "intervention": "Require authoring and running boundary probes (empty, single, maximal, off-by-one) for the changed function.",
+      "metric": "Edge-case probe pass rate on the same frozen task.",
+      "task_id": "syn-resource-mut_leak_on_error"
+    }
+  ],
+  "runtime_seconds": null,
+  "semantic_verdict": "GENUINE_AGENT_FAILURE",
+  "strengths": [
+    {
+      "confidence": "high",
+      "evidence": [],
+      "kind": "reproduced",
+      "text": "Satisfied 1 independently-probed contract clause(s): resource.cleanup_success."
+    }
+  ],
+  "summary": "Verified 1 failure finding(s) (edge_case_failure) supported by independent probe evidence and the submitted patch. Demonstrated strengths are listed separately; they do not offset the failure.",
+  "task_id": "syn-resource-mut_leak_on_error",
+  "uncertainty": [
+    "No trajectory artifact; observable process actions are unavailable.",
+    "The defect (if any) may be verified; the model's internal reason is not observable."
+  ],
+  "weaknesses": []
+}

@@ -1,0 +1,85 @@
+{
+  "accuracy": {
+    "NodeBB": {
+      "all_infra_only": true,
+      "execution_validity": "INVALID",
+      "forbidden_absent": true
+    },
+    "flipt": {
+      "execution_validity": "VALID",
+      "n_findings": 0,
+      "semantic_verdict": "CONFIRMED_CORRECT"
+    },
+    "others": {
+      "nodebb_recovery_separate": true,
+      "passing_tasks_with_findings": []
+    },
+    "vuls": {
+      "category": [
+        "existing_behavior_removed"
+      ],
+      "evidence_resolves": true,
+      "execution_validity": "VALID",
+      "has_clause_finding": true,
+      "original_score": 0.0
+    }
+  },
+  "cohort_repeatability": {
+    "max_s": 0.26885310001671314,
+    "median_s": 0.24288649996742606,
+    "min_s": 0.21869039995362982,
+    "n_runs": 5,
+    "verdicts_stable": true
+  },
+  "environment": {
+    "branch": "v3.3-phase3",
+    "cores": 8,
+    "cpu": "Intel64 Family 6 Model 140 Stepping 2, GenuineIntel",
+    "git_revision": "6529401f362725acbb0be276ad9ec3e4d5b9ff05",
+    "memory_method": "psutil process RSS",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.13.15",
+    "total_ram_gb": 15.7
+  },
+  "measurement_notes": [
+    "Cold-run figures from a fresh interpreter per case (true cold file cache).",
+    "Warm figures from 5 repetitions after 1 warm-up in a single interpreter.",
+    "observed_p95 with n=5 is the sample maximum, labelled observed, not a population estimate.",
+    "RSS delta is incremental process memory from before the pipeline runs.",
+    "os.times-style CPU granularity is coarse on Windows; fresh-process CPU from psutil cpu_times.",
+    "Offline diagnostic latency only; excludes agent execution and any Docker replay."
+  ],
+  "per_case_verdicts": {
+    "NodeBB": {
+      "artifacts": 1,
+      "category": "agent_startup_failure",
+      "coding_accusation_absent": true,
+      "diagnosis_correct": true,
+      "events": 0,
+      "execution_validity": "INVALID",
+      "findings": 1,
+      "semantic_verdict": "INCONCLUSIVE",
+      "unresolved_refs": 0,
+      "unsupported": 0
+    },
+    "flipt": {
+      "diagnosis_correct": true,
+      "execution_validity": "VALID",
+      "findings": 0,
+      "semantic_verdict": "CONFIRMED_CORRECT",
+      "unresolved_refs": 0,
+      "unsupported": 0
+    },
+    "vuls": {
+      "category": "existing_behavior_removed",
+      "clause": "sort.equal_score_order",
+      "diagnosis_correct": true,
+      "execution_validity": "VALID",
+      "findings": 1,
+      "original_v2_score": 0.0,
+      "semantic_verdict": "GENUINE_AGENT_FAILURE",
+      "unresolved_refs": 0,
+      "unsupported": 0
+    }
+  }
+}

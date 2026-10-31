@@ -1,0 +1,70 @@
+{
+  "case_id": "def_05_api_compat",
+  "short_name": "syn-fetch-mut_drop_legacy_kwarg",
+  "attempt": "synthetic-defect",
+  "execution_validity": "VALID",
+  "semantic_verdict": "GENUINE_AGENT_FAILURE",
+  "original_score": null,
+  "patch": "experiments/thirty_case_validation/cases/def_05_api_compat/source.py",
+  "trajectory": null,
+  "semantic": {
+    "verdict": "GENUINE_AGENT_FAILURE",
+    "confidence": "high",
+    "evidence_artifact": "experiments/thirty_case_validation/cases/def_05_api_compat/probe_results.json",
+    "clauses": [
+      {
+        "id": "fetch.defaults",
+        "kind": "POSTCONDITION",
+        "statement": "fetch.fetch.defaults contract clause"
+      },
+      {
+        "id": "fetch.legacy_compat",
+        "kind": "EDGE_CASE",
+        "statement": "fetch.fetch.legacy_compat contract clause"
+      },
+      {
+        "id": "fetch.verify",
+        "kind": "POSTCONDITION",
+        "statement": "fetch.fetch.verify contract clause"
+      }
+    ],
+    "probes": [
+      {
+        "name": "fetch:test_df_defaults",
+        "passed": true,
+        "clauses": [
+          "fetch.defaults"
+        ],
+        "detail": "",
+        "counterexample": null
+      },
+      {
+        "name": "fetch:test_df_legacy_confirm_accepted",
+        "passed": false,
+        "clauses": [
+          "fetch.legacy_compat"
+        ],
+        "detail": "pytest FAILED",
+        "counterexample": {
+          "test": "test_df_legacy_confirm_accepted",
+          "outcome": "FAILED"
+        }
+      },
+      {
+        "name": "fetch:test_df_explicit_verify",
+        "passed": true,
+        "clauses": [
+          "fetch.verify"
+        ],
+        "detail": "",
+        "counterexample": null
+      }
+    ]
+  },
+  "notes": [
+    "SYNTHETIC controlled defect (API compatibility); oracle run produced: ['test_df_legacy_confirm_accepted']"
+  ],
+  "evidence_roots": [
+    "experiments/thirty_case_validation"
+  ]
+}

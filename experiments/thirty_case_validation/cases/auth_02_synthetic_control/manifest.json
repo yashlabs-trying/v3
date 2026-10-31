@@ -1,0 +1,57 @@
+{
+  "case_id": "auth_02_synthetic_control",
+  "short_name": "teleport",
+  "attempt": "synthetic-mutant-no-ellipsis",
+  "execution_validity": "VALID",
+  "semantic_verdict": "GENUINE_AGENT_FAILURE",
+  "original_score": null,
+  "patch": "experiments/six_case_validation/cases/c2_teleport_synthetic/model.patch",
+  "trajectory": null,
+  "semantic": {
+    "verdict": "GENUINE_AGENT_FAILURE",
+    "confidence": "high",
+    "evidence_artifact": "experiments/six_case_validation/raw_outputs/c2_teleport_oracle_local.txt",
+    "clauses": [
+      {
+        "id": "truncate.format",
+        "kind": "POSTCONDITION",
+        "statement": "long cells render with an ellipsis then footnote label."
+      },
+      {
+        "id": "width.from_rendered",
+        "kind": "INVARIANT",
+        "statement": "column width equals rendered text width."
+      }
+    ],
+    "probes": [
+      {
+        "name": "teleport:truncate.format",
+        "passed": false,
+        "clauses": [
+          "truncate.format"
+        ],
+        "counterexample": {
+          "go_subtest": "truncate.format",
+          "status": "FAIL"
+        }
+      },
+      {
+        "name": "teleport:width.from_rendered",
+        "passed": false,
+        "clauses": [
+          "width.from_rendered"
+        ],
+        "counterexample": {
+          "go_subtest": "width.from_rendered",
+          "status": "FAIL"
+        }
+      }
+    ]
+  },
+  "notes": [
+    "SYNTHETIC control filling the second authentic-failure slot; the archive has no second real failure."
+  ],
+  "evidence_roots": [
+    "experiments"
+  ]
+}

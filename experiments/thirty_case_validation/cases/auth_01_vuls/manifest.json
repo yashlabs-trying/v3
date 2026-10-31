@@ -1,0 +1,50 @@
+{
+  "case_id": "auth_01_vuls",
+  "short_name": "vuls",
+  "attempt": "original",
+  "execution_validity": "VALID",
+  "semantic_verdict": "GENUINE_AGENT_FAILURE",
+  "original_score": 0.0,
+  "patch": "jobs/f3-vuls-a1/instance_future-architect__vuls__sNqH5s4/agent/model.patch",
+  "trajectory": "jobs/f3-vuls-a1/instance_future-architect__vuls__sNqH5s4/agent/mini-swe-agent.trajectory.json",
+  "semantic": {
+    "verdict": "GENUINE_AGENT_FAILURE",
+    "confidence": "high",
+    "evidence_artifact": "findings/vuls_semantic_evidence.json",
+    "clauses": [
+      {
+        "id": "sort.by_score",
+        "kind": "POSTCONDITION",
+        "statement": "SortByConfident orders results by confidence score."
+      },
+      {
+        "id": "sort.equal_score_order",
+        "kind": "INVARIANT",
+        "statement": "Equal scores preserve the pre-existing tie-break order."
+      }
+    ],
+    "probes": [
+      {
+        "name": "vuls:score.order",
+        "passed": true,
+        "clauses": [
+          "sort.by_score"
+        ]
+      },
+      {
+        "name": "vuls:tie.order",
+        "passed": false,
+        "clauses": [
+          "sort.equal_score_order"
+        ],
+        "counterexample": {
+          "go_subtest": "tie.order",
+          "status": "FAIL"
+        }
+      }
+    ]
+  },
+  "notes": [
+    "REUSED REAL authentic failure (the only one in the archive)."
+  ]
+}

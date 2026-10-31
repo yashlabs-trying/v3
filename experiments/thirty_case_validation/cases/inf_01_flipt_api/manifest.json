@@ -1,0 +1,14 @@
+{
+  "case_id": "inf_01_flipt_api",
+  "short_name": "flipt",
+  "attempt": "deepseek2-flipt-a1",
+  "execution_validity": "INVALID",
+  "semantic_verdict": "INCONCLUSIVE",
+  "original_score": 0.0,
+  "patch": "jobs/deepseek2-flipt-a1/instance_flipt-io__flipt-6fe76d0__KGCvVE5/agent/model.patch",
+  "trajectory": "jobs/deepseek2-flipt-a1/instance_flipt-io__flipt-6fe76d0__KGCvVE5/agent/mini-swe-agent.trajectory.json",
+  "semantic": null,
+  "notes": [
+    "INFRASTRUCTURE: 0 input/0 output tokens; model never called"
+  ]
+}

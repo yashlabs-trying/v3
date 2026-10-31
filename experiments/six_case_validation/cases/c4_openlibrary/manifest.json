@@ -1,0 +1,29 @@
+{
+  "case_id": "c4_openlibrary",
+  "short_name": "openlibrary",
+  "attempt": "original",
+  "execution_validity": "VALID",
+  "semantic_verdict": "CONFIRMED_CORRECT",
+  "original_score": 1.0,
+  "patch": "jobs/f3-openlibrary-a1/instance_internetarchive__openli__LpjZARH/agent/model.patch",
+  "trajectory": "jobs/f3-openlibrary-a1/instance_internetarchive__openli__LpjZARH/agent/mini-swe-agent.trajectory.json",
+  "semantic": {
+    "verdict": "CONFIRMED_CORRECT",
+    "confidence": "high",
+    "evidence_artifact": "findings/semantic_audit.json",
+    "clauses": [
+      {"id": "find_keys.depth", "kind": "POSTCONDITION", "statement": "find_keys traces nested JSON structures by depth."},
+      {"id": "find_keys.types", "kind": "INVARIANT", "statement": "find_keys preserves value types."},
+      {"id": "parse_log.one_key_per_doc", "kind": "POSTCONDITION", "statement": "parse_log emits one key per document."},
+      {"id": "parse_log.difference", "kind": "POSTCONDITION", "statement": "parse_log computes the difference between old and new docs."},
+      {"id": "parse_log.none_old_doc", "kind": "EDGE_CASE", "statement": "parse_log handles a missing old document."},
+      {"id": "parse_log.old_docs_length", "kind": "EDGE_CASE", "statement": "parse_log respects old_docs length."}
+    ],
+    "probes": [
+      {"name": "openlibrary:property[0]", "passed": true, "clauses": ["find_keys.depth", "find_keys.types", "parse_log.one_key_per_doc", "parse_log.difference", "parse_log.none_old_doc", "parse_log.old_docs_length"], "detail": "", "counterexample": null},
+      {"name": "openlibrary:boundary[0..5]", "passed": true, "clauses": ["find_keys.depth", "find_keys.types", "parse_log.one_key_per_doc", "parse_log.difference", "parse_log.none_old_doc", "parse_log.old_docs_length"], "detail": "", "counterexample": null},
+      {"name": "openlibrary:stateful[0]", "passed": true, "clauses": ["find_keys.depth", "find_keys.types", "parse_log.one_key_per_doc", "parse_log.difference", "parse_log.none_old_doc", "parse_log.old_docs_length"], "detail": "", "counterexample": null}
+    ]
+  },
+  "notes": ["REUSED REAL: openlibrary is a valid success in the frozen cohort with an independent oracle; it is a different task from the vuls design case."]
+}

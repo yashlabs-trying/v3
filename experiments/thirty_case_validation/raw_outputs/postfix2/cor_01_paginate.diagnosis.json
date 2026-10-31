@@ -1,0 +1,43 @@
+{
+  "attempt": "synthetic-correct",
+  "capabilities": [
+    {
+      "dimension": "correct_implementation",
+      "n_tasks": 1,
+      "observations": 1,
+      "sample_note": "single-task observation; not a general ability claim",
+      "strength_tasks": [
+        "syn-paginate-correct"
+      ],
+      "weakness_tasks": []
+    }
+  ],
+  "cost_usd": null,
+  "evidence_resolution": {
+    "all_resolved": true,
+    "artifacts": {},
+    "n_references": 0,
+    "n_unresolved": 0
+  },
+  "execution_validity": "VALID",
+  "findings": [],
+  "original_score": null,
+  "recommendations": [],
+  "runtime_seconds": null,
+  "semantic_verdict": "CONFIRMED_CORRECT",
+  "strengths": [
+    {
+      "confidence": "high",
+      "evidence": [],
+      "kind": "reproduced",
+      "text": "Satisfied 3 independently-probed contract clause(s): paginate.boundary, paginate.precondition, paginate.window."
+    }
+  ],
+  "summary": "No verified failure finding: every independent probe on the audited surface passed. This states what was demonstrated on the audited surface only; it is not proof of whole-application correctness.",
+  "task_id": "syn-paginate-correct",
+  "uncertainty": [
+    "No trajectory artifact; observable process actions are unavailable.",
+    "The defect (if any) may be verified; the model's internal reason is not observable."
+  ],
+  "weaknesses": []
+}

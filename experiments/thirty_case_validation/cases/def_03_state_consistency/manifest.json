@@ -1,0 +1,70 @@
+{
+  "case_id": "def_03_state_consistency",
+  "short_name": "syn-kvstore-mut_stale_index",
+  "attempt": "synthetic-defect",
+  "execution_validity": "VALID",
+  "semantic_verdict": "GENUINE_AGENT_FAILURE",
+  "original_score": null,
+  "patch": "experiments/thirty_case_validation/cases/def_03_state_consistency/source.py",
+  "trajectory": null,
+  "semantic": {
+    "verdict": "GENUINE_AGENT_FAILURE",
+    "confidence": "high",
+    "evidence_artifact": "experiments/thirty_case_validation/cases/def_03_state_consistency/probe_results.json",
+    "clauses": [
+      {
+        "id": "kv.index_consistency",
+        "kind": "INVARIANT",
+        "statement": "kvstore.kv.index_consistency contract clause"
+      },
+      {
+        "id": "kv.delete_consistency",
+        "kind": "INVARIANT",
+        "statement": "kvstore.kv.delete_consistency contract clause"
+      },
+      {
+        "id": "kv.delete_missing",
+        "kind": "POSTCONDITION",
+        "statement": "kvstore.kv.delete_missing contract clause"
+      }
+    ],
+    "probes": [
+      {
+        "name": "kvstore:test_df_set_and_keys",
+        "passed": true,
+        "clauses": [
+          "kv.index_consistency"
+        ],
+        "detail": "",
+        "counterexample": null
+      },
+      {
+        "name": "kvstore:test_df_delete_keeps_index_consistent",
+        "passed": false,
+        "clauses": [
+          "kv.delete_consistency"
+        ],
+        "detail": "pytest FAILED",
+        "counterexample": {
+          "test": "test_df_delete_keeps_index_consistent",
+          "outcome": "FAILED"
+        }
+      },
+      {
+        "name": "kvstore:test_df_delete_missing",
+        "passed": true,
+        "clauses": [
+          "kv.delete_missing"
+        ],
+        "detail": "",
+        "counterexample": null
+      }
+    ]
+  },
+  "notes": [
+    "SYNTHETIC controlled defect (state consistency); oracle run produced: ['test_df_delete_keeps_index_consistent']"
+  ],
+  "evidence_roots": [
+    "experiments/thirty_case_validation"
+  ]
+}

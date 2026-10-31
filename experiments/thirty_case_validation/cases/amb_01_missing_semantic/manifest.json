@@ -1,0 +1,17 @@
+{
+  "case_id": "amb_01_missing_semantic",
+  "short_name": "amb-missing-sem",
+  "attempt": "ambiguous",
+  "execution_validity": "VALID",
+  "semantic_verdict": null,
+  "original_score": null,
+  "patch": null,
+  "trajectory": null,
+  "semantic": null,
+  "notes": [
+    "AMBIGUOUS: valid run, no independent semantic oracle for this task"
+  ],
+  "evidence_roots": [
+    "experiments/thirty_case_validation"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "attempt": "ambiguous",
+  "capabilities": [],
+  "cost_usd": null,
+  "evidence_resolution": {
+    "all_resolved": true,
+    "artifacts": {},
+    "n_references": 0,
+    "n_unresolved": 0
+  },
+  "execution_validity": "VALID",
+  "findings": [],
+  "original_score": null,
+  "recommendations": [],
+  "runtime_seconds": null,
+  "semantic_verdict": null,
+  "strengths": [],
+  "summary": "No authoritative diagnostic finding was derivable from the available evidence.",
+  "task_id": "amb-missing-sem",
+  "uncertainty": [
+    "No trajectory artifact; observable process actions are unavailable.",
+    "No independent V3.2 semantic oracle for this task; correctness unverified.",
+    "The defect (if any) may be verified; the model's internal reason is not observable."
+  ],
+  "weaknesses": []
+}

@@ -1,0 +1,15 @@
+diff --git a/pkg/thing.go b/pkg/thing.go
+index 1111111..2222222 100644
+--- a/pkg/thing.go
++++ b/pkg/thing.go
+@@ -10,9 +10,7 @@ func Clamp(value int, limit int) int {
+ 	if limit <= 0 {
+ 		return value
+ 	}
+-	if value > limit {
+-		return limit
+-	}
+-	return value
++	// boundary guard removed by the agent
++	return value
+ }

@@ -1,0 +1,44 @@
+{
+  "case_id": "amb_02_contradictory_tests",
+  "short_name": "amb-contradictory",
+  "attempt": "ambiguous",
+  "execution_validity": "VALID",
+  "semantic_verdict": "INCONCLUSIVE",
+  "original_score": null,
+  "patch": null,
+  "trajectory": null,
+  "semantic": {
+    "verdict": "INCONCLUSIVE",
+    "confidence": "low",
+    "evidence_artifact": "experiments/thirty_case_validation/cases/amb_02_contradictory_tests/contradiction.txt",
+    "clauses": [
+      {
+        "id": "c.x",
+        "kind": "POSTCONDITION",
+        "statement": "behaviour X holds"
+      }
+    ],
+    "probes": [
+      {
+        "name": "x.a",
+        "passed": true,
+        "clauses": [
+          "c.x"
+        ]
+      },
+      {
+        "name": "x.b",
+        "passed": false,
+        "clauses": [
+          "c.x"
+        ]
+      }
+    ]
+  },
+  "notes": [
+    "AMBIGUOUS: two probe records disagree on the same clause"
+  ],
+  "evidence_roots": [
+    "experiments/thirty_case_validation"
+  ]
+}

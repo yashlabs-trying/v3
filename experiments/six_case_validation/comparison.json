@@ -1,0 +1,158 @@
+{
+  "answer_key_frozen": true,
+  "rows": [
+    {
+      "attribution_correct": true,
+      "case_id": "c1_vuls",
+      "cold_latency_ms": 66.0,
+      "cold_peak_bytes": 2416974,
+      "engine_authored_findings": [
+        {
+          "category": "existing_behavior_removed",
+          "clause": "sort.equal_score_order"
+        }
+      ],
+      "engine_recommendations": 1,
+      "engine_semantic_verdict": "GENUINE_AGENT_FAILURE",
+      "engine_strengths": [
+        "Satisfied 1 independently-probed contract clause(s): sort.by_score."
+      ],
+      "engine_validity": "VALID",
+      "evidence_valid": true,
+      "expected_attribution": "coding_failure",
+      "expected_clause": "sort.equal_score_order",
+      "median_latency_ms": 66.43,
+      "origin": "REUSED",
+      "unresolved_evidence": []
+    },
+    {
+      "attribution_correct": true,
+      "case_id": "c2_teleport_synthetic",
+      "cold_latency_ms": 21.99,
+      "cold_peak_bytes": 1072612,
+      "engine_authored_findings": [
+        {
+          "category": "requirement_omitted",
+          "clause": "truncate.format"
+        },
+        {
+          "category": "requirement_omitted",
+          "clause": "width.from_rendered"
+        }
+      ],
+      "engine_recommendations": 2,
+      "engine_semantic_verdict": "GENUINE_AGENT_FAILURE",
+      "engine_strengths": [
+        "Satisfied 1 independently-probed contract clause(s): truncate.boundary."
+      ],
+      "engine_validity": "VALID",
+      "evidence_valid": true,
+      "expected_attribution": "coding_failure",
+      "expected_clause": "truncate.format",
+      "median_latency_ms": 18.73,
+      "origin": "SYNTHETIC",
+      "unresolved_evidence": []
+    },
+    {
+      "attribution_correct": true,
+      "case_id": "c3_elementweb_synthetic",
+      "cold_latency_ms": 12.86,
+      "cold_peak_bytes": 1067908,
+      "engine_authored_findings": [
+        {
+          "category": "edge_case_failure",
+          "clause": "lru.set_error"
+        }
+      ],
+      "engine_recommendations": 1,
+      "engine_semantic_verdict": "GENUINE_AGENT_FAILURE",
+      "engine_strengths": [
+        "Satisfied 1 independently-probed contract clause(s): lru.values_insertion_order."
+      ],
+      "engine_validity": "VALID",
+      "evidence_valid": true,
+      "expected_attribution": "coding_failure",
+      "expected_clause": "lru.set_error",
+      "median_latency_ms": 10.65,
+      "origin": "SYNTHETIC",
+      "unresolved_evidence": []
+    },
+    {
+      "attribution_correct": true,
+      "case_id": "c4_openlibrary",
+      "cold_latency_ms": 35.47,
+      "cold_peak_bytes": 1828107,
+      "engine_authored_findings": [],
+      "engine_recommendations": 0,
+      "engine_semantic_verdict": "CONFIRMED_CORRECT",
+      "engine_strengths": [
+        "Satisfied 6 independently-probed contract clause(s): find_keys.depth, find_keys.types, parse_log.difference, parse_log.none_old_doc, parse_log.old_docs_length, parse_log.one_key_per_doc."
+      ],
+      "engine_validity": "VALID",
+      "evidence_valid": true,
+      "expected_attribution": "none",
+      "expected_clause": null,
+      "median_latency_ms": 38.69,
+      "origin": "REUSED",
+      "unresolved_evidence": []
+    },
+    {
+      "attribution_correct": true,
+      "case_id": "c5_infra",
+      "cold_latency_ms": 5.8,
+      "cold_peak_bytes": 1064254,
+      "engine_authored_findings": [
+        {
+          "category": "agent_startup_failure",
+          "clause": null
+        }
+      ],
+      "engine_recommendations": 0,
+      "engine_semantic_verdict": "INCONCLUSIVE",
+      "engine_strengths": [],
+      "engine_validity": "INVALID",
+      "evidence_valid": true,
+      "expected_attribution": "infrastructure_only",
+      "expected_clause": null,
+      "median_latency_ms": 4.79,
+      "origin": "REUSED",
+      "unresolved_evidence": []
+    },
+    {
+      "attribution_correct": true,
+      "case_id": "c6_adversarial",
+      "cold_latency_ms": 18.2,
+      "cold_peak_bytes": 1073455,
+      "engine_authored_findings": [
+        {
+          "category": "edge_case_failure",
+          "clause": "clamp.boundary"
+        },
+        {
+          "category": "relevant_test_not_executed",
+          "clause": null
+        }
+      ],
+      "engine_recommendations": 2,
+      "engine_semantic_verdict": "GENUINE_AGENT_FAILURE",
+      "engine_strengths": [],
+      "engine_validity": "VALID",
+      "evidence_valid": true,
+      "expected_attribution": "coding_failure",
+      "expected_clause": "clamp.boundary",
+      "median_latency_ms": 18.67,
+      "origin": "SYNTHETIC",
+      "unresolved_evidence": []
+    }
+  ],
+  "scoring": {
+    "attribution_correct": 6,
+    "attribution_total": 6,
+    "coding_failure_cases": 4,
+    "coding_failure_correct": 4,
+    "correct_solution_no_fabrication": 1,
+    "evidence_total": 6,
+    "evidence_valid": 6,
+    "infra_correct": 1
+  }
+}

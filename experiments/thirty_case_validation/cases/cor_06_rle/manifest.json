@@ -1,0 +1,53 @@
+{
+  "case_id": "cor_06_rle",
+  "short_name": "syn-rle-correct",
+  "attempt": "synthetic-correct",
+  "execution_validity": "VALID",
+  "semantic_verdict": "CONFIRMED_CORRECT",
+  "original_score": null,
+  "patch": "experiments/thirty_case_validation/cases/cor_06_rle/source.py",
+  "trajectory": null,
+  "semantic": {
+    "verdict": "CONFIRMED_CORRECT",
+    "confidence": "high",
+    "evidence_artifact": "experiments/thirty_case_validation/cases/cor_06_rle/probe_results.json",
+    "clauses": [
+      {
+        "id": "rle.count",
+        "kind": "EDGE_CASE",
+        "statement": "rle.rle.count contract clause"
+      },
+      {
+        "id": "rle.boundary",
+        "kind": "EDGE_CASE",
+        "statement": "rle.rle.boundary contract clause"
+      }
+    ],
+    "probes": [
+      {
+        "name": "rle:test_df_rle_basic",
+        "passed": true,
+        "clauses": [
+          "rle.count"
+        ],
+        "detail": "",
+        "counterexample": null
+      },
+      {
+        "name": "rle:test_df_rle_singletons",
+        "passed": true,
+        "clauses": [
+          "rle.boundary"
+        ],
+        "detail": "",
+        "counterexample": null
+      }
+    ]
+  },
+  "notes": [
+    "SYNTHETIC correct solution (real mechanism, real oracle)."
+  ],
+  "evidence_roots": [
+    "experiments/thirty_case_validation"
+  ]
+}

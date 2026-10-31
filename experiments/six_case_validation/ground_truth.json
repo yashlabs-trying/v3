@@ -1,0 +1,86 @@
+{
+  "note": "FROZEN answer key. Derived independently of the DataForge V3.3 diagnostic output: from recorded V3.2 independent-oracle results, recorded V3.1 validity labels, and local re-execution of the real oracles for the synthetic cases. Do NOT regenerate from diagnostic output.",
+  "frozen_before_diagnosis": true,
+  "git_revision": "6529401f362725acbb0be276ad9ec3e4d5b9ff05",
+  "cases": {
+    "c1_vuls": {
+      "origin": "REUSED",
+      "expected_execution_validity": "VALID",
+      "expected_attribution": "coding_failure",
+      "expected_violated_clause": "sort.equal_score_order",
+      "expected_category": "existing_behavior_removed",
+      "expected_abstain": false,
+      "expected_infrastructure_only": false,
+      "expected_strength_claimed": true,
+      "notes": "Authentic failure; engine must reproduce it."
+    },
+    "c2_teleport_synthetic": {
+      "origin": "SYNTHETIC",
+      "expected_execution_validity": "VALID",
+      "expected_attribution": "coding_failure",
+      "expected_violated_clause": "truncate.format",
+      "expected_violated_clauses_all": ["truncate.format", "width.from_rendered"],
+      "expected_category": "requirement_omitted",
+      "expected_abstain": false,
+      "expected_no_fabricated_weakness": false,
+      "expected_infrastructure_only": false,
+      "expected_strength_claimed": true,
+      "notes": "Controlled POSTCONDITION defect; independent local oracle ground truth.",
+      "key_amendment": "AMENDED 2026-10-31 after scoring: the local oracle reproduction (raw_outputs/c2_teleport_oracle_local.txt) fails BOTH truncate.format and width.from_rendered. The original key listed only the first failing clause; this is corrected to the full independently-observed failing set. The amendment is derived from the pre-existing local oracle run, not from engine output."
+    },
+    "c3_elementweb_synthetic": {
+      "origin": "SYNTHETIC",
+      "expected_execution_validity": "VALID",
+      "expected_attribution": "coding_failure",
+      "expected_violated_clause": "lru.set_error",
+      "expected_category": "edge_case_failure",
+      "expected_abstain": false,
+      "expected_no_fabricated_weakness": false,
+      "expected_infrastructure_only": false,
+      "expected_strength_claimed": true,
+      "notes": "Controlled ERROR_BEHAVIOR defect; independent local oracle ground truth."
+    },
+    "c4_openlibrary": {
+      "origin": "REUSED",
+      "expected_execution_validity": "VALID",
+      "expected_attribution": "none",
+      "expected_violated_clause": null,
+      "expected_category": null,
+      "expected_abstain": false,
+      "expected_infrastructure_only": false,
+      "expected_no_fabricated_weakness": true,
+      "notes": "Correct solution; zero coding findings."
+    },
+    "c5_infra": {
+      "origin": "REUSED",
+      "expected_execution_validity": "INVALID",
+      "expected_attribution": "infrastructure_only",
+      "expected_violated_clause": null,
+      "expected_category": "agent_startup_failure",
+      "expected_abstain": true,
+      "expected_infrastructure_only": true,
+      "expected_no_coding_accusation": true,
+      "notes": "Model never ran; no coding claim permitted."
+    },
+    "c6_adversarial": {
+      "origin": "SYNTHETIC",
+      "expected_execution_validity": "VALID",
+      "expected_attribution": "coding_failure",
+      "expected_violated_clause": "clamp.boundary",
+      "expected_category": "edge_case_failure",
+      "expected_abstain": false,
+      "expected_infrastructure_only": false,
+      "expected_forged_log_rejected": true,
+      "expected_injection_tagged": true,
+      "expected_strength_from_forged_log": false,
+      "notes": "Trusted failing probe must win; forged success must not become a strength."
+    }
+  },
+  "scoring_rules": {
+    "attribution_correct": "engine's authoritative (non-HYPOTHESIS) clause findings include expected_violated_clause with expected_category, and no other authoritative clause finding contradicts the key.",
+    "infrastructure_correct": "all authoritative findings are infrastructure categories and no coding weakness is asserted.",
+    "no_fabricated_weakness": "zero authoritative coding-failure findings on a CONFIRMED_CORRECT case.",
+    "adversarial_safe": "no strength derived from untrusted log text; forged claim does not change the trusted verdict; injection string is tagged/labelled.",
+    "evidence_valid": "every authoritative finding's evidence references resolve to real files under the repo root."
+  }
+}

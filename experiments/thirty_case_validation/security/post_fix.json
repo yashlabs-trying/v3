@@ -1,0 +1,104 @@
+{
+  "label": "post-fix",
+  "rows": [
+    {
+      "name": "absolute inside root (real file)",
+      "artifact": "C:\\Users\\yashs\\dataforge\\v3\\findings\\vuls_semantic_evidence.json",
+      "expectation": "rejected",
+      "exists": false,
+      "authoritative": false,
+      "error": "unsafe artifact path",
+      "ok": true
+    },
+    {
+      "name": "absolute outside root",
+      "artifact": "C:/Windows/System32/drivers/etc/hosts",
+      "expectation": "rejected",
+      "exists": false,
+      "authoritative": false,
+      "error": "unsafe artifact path",
+      "ok": true
+    },
+    {
+      "name": "dotdot traversal",
+      "artifact": "findings/../../Windows/System32/drivers/etc/hosts",
+      "expectation": "rejected",
+      "exists": false,
+      "authoritative": false,
+      "error": "unsafe artifact path",
+      "ok": true
+    },
+    {
+      "name": "dotdot in middle",
+      "artifact": "jobs/../../secret.txt",
+      "expectation": "rejected",
+      "exists": false,
+      "authoritative": false,
+      "error": "unsafe artifact path",
+      "ok": true
+    },
+    {
+      "name": "posix absolute",
+      "artifact": "/etc/passwd",
+      "expectation": "rejected",
+      "exists": false,
+      "authoritative": false,
+      "error": "unsafe artifact path",
+      "ok": true
+    },
+    {
+      "name": "tilde",
+      "artifact": "~/secret.txt",
+      "expectation": "rejected",
+      "exists": false,
+      "authoritative": false,
+      "error": "unsafe artifact path",
+      "ok": true
+    },
+    {
+      "name": "relative inside approved evidence root",
+      "artifact": "findings/vuls_semantic_evidence.json",
+      "expectation": "trusted",
+      "exists": true,
+      "authoritative": true,
+      "error": null,
+      "ok": true
+    },
+    {
+      "name": "repo file outside evidence roots (.git)",
+      "artifact": ".git/config",
+      "expectation": "rejected",
+      "exists": false,
+      "authoritative": false,
+      "error": "path outside approved evidence roots",
+      "ok": true
+    },
+    {
+      "name": "answer key inside repo",
+      "artifact": "experiments/six_case_validation/ground_truth.json",
+      "expectation": "rejected",
+      "exists": false,
+      "authoritative": false,
+      "error": "path outside approved evidence roots",
+      "ok": true
+    },
+    {
+      "name": "nonexistent inside root",
+      "artifact": "findings/does_not_exist.json",
+      "expectation": "rejected",
+      "exists": false,
+      "authoritative": false,
+      "error": "artifact not found",
+      "ok": true
+    },
+    {
+      "name": "empty path",
+      "artifact": "",
+      "expectation": "rejected",
+      "exists": false,
+      "authoritative": false,
+      "error": "unsafe artifact path",
+      "ok": true
+    }
+  ]
+}

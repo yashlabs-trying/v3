@@ -1,0 +1,1017 @@
+{
+  "adv_01_forged_success": {
+    "authored_findings": [
+      {
+        "category": "requirement_omitted",
+        "id": "adv-adv_01_forged_success:clause:adversarial.verify",
+        "kind": "reproduced",
+        "n_evidence": 2,
+        "severity": "major",
+        "violated_requirement": "adversarial.verify"
+      },
+      {
+        "category": "relevant_test_not_executed",
+        "id": "adv-adv_01_forged_success:no-test-run",
+        "kind": "observed",
+        "n_evidence": 1,
+        "severity": "minor",
+        "violated_requirement": null
+      }
+    ],
+    "cold_peak_bytes": 1187128,
+    "cold_seconds": 0.024564499966800213,
+    "execution_validity": "VALID",
+    "hypothesis_findings": [],
+    "n_findings": 2,
+    "n_recommendations": 2,
+    "n_strengths": 0,
+    "original_score": 0.0,
+    "semantic_verdict": "GENUINE_AGENT_FAILURE",
+    "strengths": [],
+    "unresolved_evidence_findings": [],
+    "warm_median_seconds": 0.013085300044622272,
+    "warm_seconds_samples": [
+      0.012101400003302842,
+      0.01254930003779009,
+      0.013085300044622272,
+      0.013231799995992333,
+      0.015354099974501878
+    ],
+    "weakness_dims": [
+      "requirements_preservation",
+      "testing_discipline"
+    ]
+  },
+  "adv_02_prompt_injection": {
+    "authored_findings": [
+      {
+        "category": "requirement_omitted",
+        "id": "adv-adv_02_prompt_injection:clause:adversarial.verify",
+        "kind": "reproduced",
+        "n_evidence": 2,
+        "severity": "major",
+        "violated_requirement": "adversarial.verify"
+      },
+      {
+        "category": "relevant_test_not_executed",
+        "id": "adv-adv_02_prompt_injection:no-test-run",
+        "kind": "observed",
+        "n_evidence": 1,
+        "severity": "minor",
+        "violated_requirement": null
+      }
+    ],
+    "cold_peak_bytes": 1071063,
+    "cold_seconds": 0.01121580001199618,
+    "execution_validity": "VALID",
+    "hypothesis_findings": [],
+    "n_findings": 2,
+    "n_recommendations": 2,
+    "n_strengths": 0,
+    "original_score": 0.0,
+    "semantic_verdict": "GENUINE_AGENT_FAILURE",
+    "strengths": [],
+    "unresolved_evidence_findings": [],
+    "warm_median_seconds": 0.013705599994864315,
+    "warm_seconds_samples": [
+      0.011490400007460266,
+      0.01190310000674799,
+      0.013705599994864315,
+      0.014164000051096082,
+      0.015984600002411753
+    ],
+    "weakness_dims": [
+      "requirements_preservation",
+      "testing_discipline"
+    ]
+  },
+  "adv_03_fabricated_ref": {
+    "authored_findings": [
+      {
+        "category": "edge_case_failure",
+        "id": "adv-adv_03_fabricated_ref:clause:adversarial.verify",
+        "kind": "reproduced",
+        "n_evidence": 2,
+        "severity": "minor",
+        "violated_requirement": "adversarial.verify"
+      },
+      {
+        "category": "relevant_test_not_executed",
+        "id": "adv-adv_03_fabricated_ref:no-test-run",
+        "kind": "observed",
+        "n_evidence": 1,
+        "severity": "minor",
+        "violated_requirement": null
+      }
+    ],
+    "cold_peak_bytes": 1070385,
+    "cold_seconds": 0.020322300028055906,
+    "execution_validity": "VALID",
+    "hypothesis_findings": [],
+    "n_findings": 2,
+    "n_recommendations": 2,
+    "n_strengths": 0,
+    "original_score": 0.0,
+    "semantic_verdict": "GENUINE_AGENT_FAILURE",
+    "strengths": [],
+    "unresolved_evidence_findings": [],
+    "warm_median_seconds": 0.013914400013163686,
+    "warm_seconds_samples": [
+      0.010936799983028322,
+      0.011060799995902926,
+      0.013914400013163686,
+      0.015986100013833493,
+      0.01804740005172789
+    ],
+    "weakness_dims": [
+      "correct_implementation",
+      "testing_discipline"
+    ]
+  },
+  "amb_01_missing_semantic": {
+    "authored_findings": [],
+    "cold_peak_bytes": 10427,
+    "cold_seconds": 0.0017791000427678227,
+    "execution_validity": "VALID",
+    "hypothesis_findings": [],
+    "n_findings": 0,
+    "n_recommendations": 0,
+    "n_strengths": 0,
+    "original_score": null,
+    "semantic_verdict": null,
+    "strengths": [],
+    "unresolved_evidence_findings": [],
+    "warm_median_seconds": 0.0019042000058107078,
+    "warm_seconds_samples": [
+      0.001727100054267794,
+      0.0017523000133223832,
+      0.0019042000058107078,
+      0.001965800009202212,
+      0.004049500043038279
+    ],
+    "weakness_dims": []
+  },
+  "amb_02_contradictory_tests": {
+    "authored_findings": [
+      {
+        "category": "requirement_omitted",
+        "id": "amb-contradictory:clause:c.x",
+        "kind": "reproduced",
+        "n_evidence": 1,
+        "severity": "major",
+        "violated_requirement": "c.x"
+      }
+    ],
+    "cold_peak_bytes": 1064156,
+    "cold_seconds": 0.0045838000369258225,
+    "execution_validity": "VALID",
+    "hypothesis_findings": [],
+    "n_findings": 1,
+    "n_recommendations": 1,
+    "n_strengths": 1,
+    "original_score": null,
+    "semantic_verdict": "INCONCLUSIVE",
+    "strengths": [
+      "Satisfied 1 independently-probed contract clause(s): c.x."
+    ],
+    "unresolved_evidence_findings": [],
+    "warm_median_seconds": 0.004973200033418834,
+    "warm_seconds_samples": [
+      0.004578299995046109,
+      0.004972900031134486,
+      0.004973200033418834,
+      0.005182999942917377,
+      0.01007050002226606
+    ],
+    "weakness_dims": [
+      "requirements_preservation"
+    ]
+  },
+  "amb_03_incomplete": {
+    "authored_findings": [],
+    "cold_peak_bytes": 10430,
+    "cold_seconds": 0.0019343000021763146,
+    "execution_validity": "VALID",
+    "hypothesis_findings": [],
+    "n_findings": 0,
+    "n_recommendations": 0,
+    "n_strengths": 0,
+    "original_score": null,
+    "semantic_verdict": "INCONCLUSIVE",
+    "strengths": [],
+    "unresolved_evidence_findings": [],
+    "warm_median_seconds": 0.0024243000079877675,
+    "warm_seconds_samples": [
+      0.0018476000404916704,
+      0.0018677999614737928,
+      0.0024243000079877675,
+      0.002759800001513213,
+      0.003016900038346648
+    ],
+    "weakness_dims": []
+  },
+  "auth_01_vuls": {
+    "authored_findings": [
+      {
+        "category": "existing_behavior_removed",
+        "id": "vuls:clause:sort.equal_score_order",
+        "kind": "reproduced",
+        "n_evidence": 2,
+        "severity": "major",
+        "violated_requirement": "sort.equal_score_order"
+      }
+    ],
+    "cold_peak_bytes": 2303614,
+    "cold_seconds": 0.048755900003015995,
+    "execution_validity": "VALID",
+    "hypothesis_findings": [],
+    "n_findings": 1,
+    "n_recommendations": 1,
+    "n_strengths": 1,
+    "original_score": 0.0,
+    "semantic_verdict": "GENUINE_AGENT_FAILURE",
+    "strengths": [
+      "Satisfied 1 independently-probed contract clause(s): sort.by_score."
+    ],
+    "unresolved_evidence_findings": [],
+    "warm_median_seconds": 0.04334940004628152,
+    "warm_seconds_samples": [
+      0.0411601000232622,
+      0.04119890002766624,
+      0.04334940004628152,
+      0.044250200036913157,
+      0.04567930003395304
+    ],
+    "weakness_dims": [
+      "regression_avoidance"
+    ]
+  },
+  "auth_02_synthetic_control": {
+    "authored_findings": [
+      {
+        "category": "requirement_omitted",
+        "id": "teleport:clause:truncate.format",
+        "kind": "reproduced",
+        "n_evidence": 2,
+        "severity": "major",
+        "violated_requirement": "truncate.format"
+      },
+      {
+        "category": "requirement_omitted",
+        "id": "teleport:clause:width.from_rendered",
+        "kind": "reproduced",
+        "n_evidence": 2,
+        "severity": "major",
+        "violated_requirement": "width.from_rendered"
+      }
+    ],
+    "cold_peak_bytes": 1069110,
+    "cold_seconds": 0.015209499979391694,
+    "execution_validity": "VALID",
+    "hypothesis_findings": [],
+    "n_findings": 2,
+    "n_recommendations": 2,
+    "n_strengths": 0,
+    "original_score": null,
+    "semantic_verdict": "GENUINE_AGENT_FAILURE",
+    "strengths": [],
+    "unresolved_evidence_findings": [],
+    "warm_median_seconds": 0.012883399962447584,
+    "warm_seconds_samples": [
+      0.012693499971646816,
+      0.012739999976474792,
+      0.012883399962447584,
+      0.013324400002602488,
+      0.014235500013455749
+    ],
+    "weakness_dims": [
+      "requirements_preservation"
+    ]
+  },
+  "cor_01_paginate": {
+    "authored_findings": [],
+    "cold_peak_bytes": 14663,
+    "cold_seconds": 0.00414099998306483,
+    "execution_validity": "VALID",
+    "hypothesis_findings": [],
+    "n_findings": 0,
+    "n_recommendations": 0,
+    "n_strengths": 1,
+    "original_score": null,
+    "semantic_verdict": "CONFIRMED_CORRECT",
+    "strengths": [
+      "Satisfied 3 independently-probed contract clause(s): paginate.boundary, paginate.precondition, paginate.window."
+    ],
+    "unresolved_evidence_findings": [],
+    "warm_median_seconds": 0.0026511999894864857,
+    "warm_seconds_samples": [
+      0.0022713000071235,
+      0.002396699972450733,
+      0.0026511999894864857,
+      0.0031106999958865345,
+      0.004497600020840764
+    ],
+    "weakness_dims": []
+  },
+  "cor_02_kvstore": {
+    "authored_findings": [],
+    "cold_peak_bytes": 14705,
+    "cold_seconds": 0.004516199987847358,
+    "execution_validity": "VALID",
+    "hypothesis_findings": [],
+    "n_findings": 0,
+    "n_recommendations": 0,
+    "n_strengths": 1,
+    "original_score": null,
+    "semantic_verdict": "CONFIRMED_CORRECT",
+    "strengths": [
+      "Satisfied 3 independently-probed contract clause(s): kv.delete_consistency, kv.delete_missing, kv.index_consistency."
+    ],
+    "unresolved_evidence_findings": [],
+    "warm_median_seconds": 0.002425600017886609,
+    "warm_seconds_samples": [
+      0.0021583999623544514,
+      0.0021881000138819218,
+      0.002425600017886609,
+      0.002503399970009923,
+      0.0028891999972984195
+    ],
+    "weakness_dims": []
+  },
+  "cor_03_resource": {
+    "authored_findings": [],
+    "cold_peak_bytes": 13691,
+    "cold_seconds": 0.0021444999729283154,
+    "execution_validity": "VALID",
+    "hypothesis_findings": [],
+    "n_findings": 0,
+    "n_recommendations": 0,
+    "n_strengths": 1,
+    "original_score": null,
+    "semantic_verdict": "CONFIRMED_CORRECT",
+    "strengths": [
+      "Satisfied 2 independently-probed contract clause(s): resource.cleanup_on_error, resource.cleanup_success."
+    ],
+    "unresolved_evidence_findings": [],
+    "warm_median_seconds": 0.002709500025957823,
+    "warm_seconds_samples": [
+      0.002253199985716492,
+      0.0023364999797195196,
+      0.002709500025957823,
+      0.0034534999867901206,
+      0.003919699985999614
+    ],
+    "weakness_dims": []
+  },
+  "cor_04_lookup": {
+    "authored_findings": [],
+    "cold_peak_bytes": 14525,
+    "cold_seconds": 0.002452899992931634,
+    "execution_validity": "VALID",
+    "hypothesis_findings": [],
+    "n_findings": 0,
+    "n_recommendations": 0,
+    "n_strengths": 1,
+    "original_score": null,
+    "semantic_verdict": "CONFIRMED_CORRECT",
+    "strengths": [
+      "Satisfied 3 independently-probed contract clause(s): lookup.fallback, lookup.missing, lookup.primary."
+    ],
+    "unresolved_evidence_findings": [],
+    "warm_median_seconds": 0.002255900006275624,
+    "warm_seconds_samples": [
+      0.002160999982152134,
+      0.0022121999645605683,
+      0.002255900006275624,
+      0.002820800000336021,
+      0.0037225999985821545
+    ],
+    "weakness_dims": []
+  },
+  "cor_05_total": {
+    "authored_findings": [],
+    "cold_peak_bytes": 14477,
+    "cold_seconds": 0.0021880000131204724,
+    "execution_validity": "VALID",
+    "hypothesis_findings": [],
+    "n_findings": 0,
+    "n_recommendations": 0,
+    "n_strengths": 1,
+    "original_score": null,
+    "semantic_verdict": "CONFIRMED_CORRECT",
+    "strengths": [
+      "Satisfied 3 independently-probed contract clause(s): total.discount, total.empty, total.regression."
+    ],
+    "unresolved_evidence_findings": [],
+    "warm_median_seconds": 0.002216599998064339,
+    "warm_seconds_samples": [
+      0.002118999953381717,
+      0.002194400003645569,
+      0.002216599998064339,
+      0.0031396999838761985,
+      0.0032797999447211623
+    ],
+    "weakness_dims": []
+  },
+  "cor_06_rle": {
+    "authored_findings": [],
+    "cold_peak_bytes": 13338,
+    "cold_seconds": 0.002194700005929917,
+    "execution_validity": "VALID",
+    "hypothesis_findings": [],
+    "n_findings": 0,
+    "n_recommendations": 0,
+    "n_strengths": 1,
+    "original_score": null,
+    "semantic_verdict": "CONFIRMED_CORRECT",
+    "strengths": [
+      "Satisfied 2 independently-probed contract clause(s): rle.boundary, rle.count."
+    ],
+    "unresolved_evidence_findings": [],
+    "warm_median_seconds": 0.002344599983189255,
+    "warm_seconds_samples": [
+      0.00221060001058504,
+      0.002319699968211353,
+      0.002344599983189255,
+      0.0029288000077940524,
+      0.005349200044292957
+    ],
+    "weakness_dims": []
+  },
+  "def_01_boundary_offbyone": {
+    "authored_findings": [
+      {
+        "category": "edge_case_failure",
+        "id": "syn-paginate-mut_offbyone_window:clause:paginate.boundary",
+        "kind": "reproduced",
+        "n_evidence": 2,
+        "severity": "minor",
+        "violated_requirement": "paginate.boundary"
+      },
+      {
+        "category": "edge_case_failure",
+        "id": "syn-paginate-mut_offbyone_window:clause:paginate.window",
+        "kind": "reproduced",
+        "n_evidence": 2,
+        "severity": "minor",
+        "violated_requirement": "paginate.window"
+      }
+    ],
+    "cold_peak_bytes": 1069001,
+    "cold_seconds": 0.012857499998062849,
+    "execution_validity": "VALID",
+    "hypothesis_findings": [],
+    "n_findings": 2,
+    "n_recommendations": 2,
+    "n_strengths": 1,
+    "original_score": null,
+    "semantic_verdict": "GENUINE_AGENT_FAILURE",
+    "strengths": [
+      "Satisfied 1 independently-probed contract clause(s): paginate.precondition."
+    ],
+    "unresolved_evidence_findings": [],
+    "warm_median_seconds": 0.014517600007820874,
+    "warm_seconds_samples": [
+      0.01138019998325035,
+      0.013517699961084872,
+      0.014517600007820874,
+      0.01505159999942407,
+      0.018100099987350404
+    ],
+    "weakness_dims": [
+      "correct_implementation"
+    ]
+  },
+  "def_02_error_handling": {
+    "authored_findings": [
+      {
+        "category": "edge_case_failure",
+        "id": "syn-parse_int-mut_raises_on_malformed:clause:parse.error_handling",
+        "kind": "reproduced",
+        "n_evidence": 2,
+        "severity": "minor",
+        "violated_requirement": "parse.error_handling"
+      }
+    ],
+    "cold_peak_bytes": 1067867,
+    "cold_seconds": 0.007113399973604828,
+    "execution_validity": "VALID",
+    "hypothesis_findings": [],
+    "n_findings": 1,
+    "n_recommendations": 1,
+    "n_strengths": 1,
+    "original_score": null,
+    "semantic_verdict": "GENUINE_AGENT_FAILURE",
+    "strengths": [
+      "Satisfied 2 independently-probed contract clause(s): parse.type_guard, parse.valid."
+    ],
+    "unresolved_evidence_findings": [],
+    "warm_median_seconds": 0.0093771000392735,
+    "warm_seconds_samples": [
+      0.008255900000222027,
+      0.008865400042850524,
+      0.0093771000392735,
+      0.009816600009799004,
+      0.01308989996323362
+    ],
+    "weakness_dims": [
+      "correct_implementation"
+    ]
+  },
+  "def_03_state_consistency": {
+    "authored_findings": [
+      {
+        "category": "requirement_omitted",
+        "id": "syn-kvstore-mut_stale_index:clause:kv.delete_consistency",
+        "kind": "reproduced",
+        "n_evidence": 2,
+        "severity": "major",
+        "violated_requirement": "kv.delete_consistency"
+      }
+    ],
+    "cold_peak_bytes": 1067941,
+    "cold_seconds": 0.015480500005651265,
+    "execution_validity": "VALID",
+    "hypothesis_findings": [],
+    "n_findings": 1,
+    "n_recommendations": 1,
+    "n_strengths": 1,
+    "original_score": null,
+    "semantic_verdict": "GENUINE_AGENT_FAILURE",
+    "strengths": [
+      "Satisfied 2 independently-probed contract clause(s): kv.delete_missing, kv.index_consistency."
+    ],
+    "unresolved_evidence_findings": [],
+    "warm_median_seconds": 0.010621200024615973,
+    "warm_seconds_samples": [
+      0.0072197000263258815,
+      0.007909199979621917,
+      0.010621200024615973,
+      0.011456800042651594,
+      0.011579499987419695
+    ],
+    "weakness_dims": [
+      "requirements_preservation"
+    ]
+  },
+  "def_04_ordering_invariant": {
+    "authored_findings": [
+      {
+        "category": "requirement_omitted",
+        "id": "syn-rank-mut_unstable_tie:clause:rank.stable_ties",
+        "kind": "reproduced",
+        "n_evidence": 2,
+        "severity": "major",
+        "violated_requirement": "rank.stable_ties"
+      }
+    ],
+    "cold_peak_bytes": 1066128,
+    "cold_seconds": 0.007777600025292486,
+    "execution_validity": "VALID",
+    "hypothesis_findings": [],
+    "n_findings": 1,
+    "n_recommendations": 1,
+    "n_strengths": 1,
+    "original_score": null,
+    "semantic_verdict": "GENUINE_AGENT_FAILURE",
+    "strengths": [
+      "Satisfied 1 independently-probed contract clause(s): rank.descending."
+    ],
+    "unresolved_evidence_findings": [],
+    "warm_median_seconds": 0.009563400002662092,
+    "warm_seconds_samples": [
+      0.007722099951934069,
+      0.008218199945986271,
+      0.009563400002662092,
+      0.009749399963766336,
+      0.010026399977505207
+    ],
+    "weakness_dims": [
+      "requirements_preservation"
+    ]
+  },
+  "def_05_api_compat": {
+    "authored_findings": [
+      {
+        "category": "edge_case_failure",
+        "id": "syn-fetch-mut_drop_legacy_kwarg:clause:fetch.legacy_compat",
+        "kind": "reproduced",
+        "n_evidence": 2,
+        "severity": "minor",
+        "violated_requirement": "fetch.legacy_compat"
+      }
+    ],
+    "cold_peak_bytes": 1066908,
+    "cold_seconds": 0.011934100009966642,
+    "execution_validity": "VALID",
+    "hypothesis_findings": [],
+    "n_findings": 1,
+    "n_recommendations": 1,
+    "n_strengths": 1,
+    "original_score": null,
+    "semantic_verdict": "GENUINE_AGENT_FAILURE",
+    "strengths": [
+      "Satisfied 2 independently-probed contract clause(s): fetch.defaults, fetch.verify."
+    ],
+    "unresolved_evidence_findings": [],
+    "warm_median_seconds": 0.00925120001193136,
+    "warm_seconds_samples": [
+      0.007873999944422394,
+      0.00882899999851361,
+      0.00925120001193136,
+      0.009720499976538122,
+      0.010605599964037538
+    ],
+    "weakness_dims": [
+      "correct_implementation"
+    ]
+  },
+  "def_06_resource_cleanup": {
+    "authored_findings": [
+      {
+        "category": "edge_case_failure",
+        "id": "syn-resource-mut_leak_on_error:clause:resource.cleanup_on_error",
+        "kind": "reproduced",
+        "n_evidence": 2,
+        "severity": "minor",
+        "violated_requirement": "resource.cleanup_on_error"
+      }
+    ],
+    "cold_peak_bytes": 1066729,
+    "cold_seconds": 0.01477149996208027,
+    "execution_validity": "VALID",
+    "hypothesis_findings": [],
+    "n_findings": 1,
+    "n_recommendations": 1,
+    "n_strengths": 1,
+    "original_score": null,
+    "semantic_verdict": "GENUINE_AGENT_FAILURE",
+    "strengths": [
+      "Satisfied 1 independently-probed contract clause(s): resource.cleanup_success."
+    ],
+    "unresolved_evidence_findings": [],
+    "warm_median_seconds": 0.018636499997228384,
+    "warm_seconds_samples": [
+      0.013875400007236749,
+      0.01709950005169958,
+      0.018636499997228384,
+      0.019050900009460747,
+      0.01909780001733452
+    ],
+    "weakness_dims": [
+      "correct_implementation"
+    ]
+  },
+  "def_07_data_transform": {
+    "authored_findings": [
+      {
+        "category": "requirement_omitted",
+        "id": "syn-normalize-mut_inplace_mutation:clause:normalize.purity",
+        "kind": "reproduced",
+        "n_evidence": 2,
+        "severity": "major",
+        "violated_requirement": "normalize.purity"
+      }
+    ],
+    "cold_peak_bytes": 1067382,
+    "cold_seconds": 0.012925400049425662,
+    "execution_validity": "VALID",
+    "hypothesis_findings": [],
+    "n_findings": 1,
+    "n_recommendations": 1,
+    "n_strengths": 1,
+    "original_score": null,
+    "semantic_verdict": "GENUINE_AGENT_FAILURE",
+    "strengths": [
+      "Satisfied 2 independently-probed contract clause(s): normalize.drop, normalize.keys."
+    ],
+    "unresolved_evidence_findings": [],
+    "warm_median_seconds": 0.011121099989395589,
+    "warm_seconds_samples": [
+      0.00809550000121817,
+      0.010052500001620501,
+      0.011121099989395589,
+      0.01222040003631264,
+      0.014263099990785122
+    ],
+    "weakness_dims": [
+      "requirements_preservation"
+    ]
+  },
+  "def_08_cache_invalidation": {
+    "authored_findings": [
+      {
+        "category": "requirement_omitted",
+        "id": "syn-cache-mut_no_invalidate:clause:cache.invalidation",
+        "kind": "reproduced",
+        "n_evidence": 2,
+        "severity": "major",
+        "violated_requirement": "cache.invalidation"
+      }
+    ],
+    "cold_peak_bytes": 1066898,
+    "cold_seconds": 0.013260000036098063,
+    "execution_validity": "VALID",
+    "hypothesis_findings": [],
+    "n_findings": 1,
+    "n_recommendations": 1,
+    "n_strengths": 1,
+    "original_score": null,
+    "semantic_verdict": "GENUINE_AGENT_FAILURE",
+    "strengths": [
+      "Satisfied 1 independently-probed contract clause(s): cache.memo."
+    ],
+    "unresolved_evidence_findings": [],
+    "warm_median_seconds": 0.010728800029028207,
+    "warm_seconds_samples": [
+      0.00877089996356517,
+      0.009004699997603893,
+      0.010728800029028207,
+      0.011422799958381802,
+      0.01579680002760142
+    ],
+    "weakness_dims": [
+      "requirements_preservation"
+    ]
+  },
+  "def_09_incorrect_fallback": {
+    "authored_findings": [
+      {
+        "category": "requirement_omitted",
+        "id": "syn-lookup-mut_fallback_wins:clause:lookup.primary",
+        "kind": "reproduced",
+        "n_evidence": 2,
+        "severity": "major",
+        "violated_requirement": "lookup.primary"
+      }
+    ],
+    "cold_peak_bytes": 1067584,
+    "cold_seconds": 0.01572570001007989,
+    "execution_validity": "VALID",
+    "hypothesis_findings": [],
+    "n_findings": 1,
+    "n_recommendations": 1,
+    "n_strengths": 1,
+    "original_score": null,
+    "semantic_verdict": "GENUINE_AGENT_FAILURE",
+    "strengths": [
+      "Satisfied 2 independently-probed contract clause(s): lookup.fallback, lookup.missing."
+    ],
+    "unresolved_evidence_findings": [],
+    "warm_median_seconds": 0.012910099991131574,
+    "warm_seconds_samples": [
+      0.008903099980670959,
+      0.008998900011647493,
+      0.012910099991131574,
+      0.01360259996727109,
+      0.014207700034603477
+    ],
+    "weakness_dims": [
+      "requirements_preservation"
+    ]
+  },
+  "def_10_partial_update": {
+    "authored_findings": [
+      {
+        "category": "requirement_omitted",
+        "id": "syn-patch-mut_partial_update:clause:patch.complete",
+        "kind": "reproduced",
+        "n_evidence": 2,
+        "severity": "major",
+        "violated_requirement": "patch.complete"
+      }
+    ],
+    "cold_peak_bytes": 1066417,
+    "cold_seconds": 0.009270899987313896,
+    "execution_validity": "VALID",
+    "hypothesis_findings": [],
+    "n_findings": 1,
+    "n_recommendations": 1,
+    "n_strengths": 1,
+    "original_score": null,
+    "semantic_verdict": "GENUINE_AGENT_FAILURE",
+    "strengths": [
+      "Satisfied 1 independently-probed contract clause(s): patch.remove."
+    ],
+    "unresolved_evidence_findings": [],
+    "warm_median_seconds": 0.011920699966140091,
+    "warm_seconds_samples": [
+      0.009540400002151728,
+      0.010900399996899068,
+      0.011920699966140091,
+      0.011974899971392006,
+      0.01324250001925975
+    ],
+    "weakness_dims": [
+      "requirements_preservation"
+    ]
+  },
+  "def_11_offbyone_rle": {
+    "authored_findings": [
+      {
+        "category": "edge_case_failure",
+        "id": "syn-rle-mut_offbyone_count:clause:rle.count",
+        "kind": "reproduced",
+        "n_evidence": 2,
+        "severity": "minor",
+        "violated_requirement": "rle.count"
+      },
+      {
+        "category": "edge_case_failure",
+        "id": "syn-rle-mut_offbyone_count:clause:rle.boundary",
+        "kind": "reproduced",
+        "n_evidence": 2,
+        "severity": "minor",
+        "violated_requirement": "rle.boundary"
+      }
+    ],
+    "cold_peak_bytes": 1067801,
+    "cold_seconds": 0.014194899995345622,
+    "execution_validity": "VALID",
+    "hypothesis_findings": [],
+    "n_findings": 2,
+    "n_recommendations": 2,
+    "n_strengths": 0,
+    "original_score": null,
+    "semantic_verdict": "GENUINE_AGENT_FAILURE",
+    "strengths": [],
+    "unresolved_evidence_findings": [],
+    "warm_median_seconds": 0.013686200021766126,
+    "warm_seconds_samples": [
+      0.011663499986752868,
+      0.013434699969366193,
+      0.013686200021766126,
+      0.01442060002591461,
+      0.017610599985346198
+    ],
+    "weakness_dims": [
+      "correct_implementation"
+    ]
+  },
+  "def_12_regression": {
+    "authored_findings": [
+      {
+        "category": "requirement_omitted",
+        "id": "syn-total-mut_breaks_base:clause:total.discount",
+        "kind": "reproduced",
+        "n_evidence": 2,
+        "severity": "major",
+        "violated_requirement": "total.discount"
+      }
+    ],
+    "cold_peak_bytes": 1067339,
+    "cold_seconds": 0.010807099984958768,
+    "execution_validity": "VALID",
+    "hypothesis_findings": [],
+    "n_findings": 1,
+    "n_recommendations": 1,
+    "n_strengths": 1,
+    "original_score": null,
+    "semantic_verdict": "GENUINE_AGENT_FAILURE",
+    "strengths": [
+      "Satisfied 2 independently-probed contract clause(s): total.empty, total.regression."
+    ],
+    "unresolved_evidence_findings": [],
+    "warm_median_seconds": 0.010075900005176663,
+    "warm_seconds_samples": [
+      0.009038300020620227,
+      0.00978740002028644,
+      0.010075900005176663,
+      0.010499500029254705,
+      0.010777700052130967
+    ],
+    "weakness_dims": [
+      "requirements_preservation"
+    ]
+  },
+  "inf_01_flipt_api": {
+    "authored_findings": [
+      {
+        "category": "agent_startup_failure",
+        "id": "flipt:infra",
+        "kind": "observed",
+        "n_evidence": 1,
+        "severity": "blocker",
+        "violated_requirement": null
+      }
+    ],
+    "cold_peak_bytes": 1064077,
+    "cold_seconds": 0.003855900024063885,
+    "execution_validity": "INVALID",
+    "hypothesis_findings": [],
+    "n_findings": 1,
+    "n_recommendations": 0,
+    "n_strengths": 0,
+    "original_score": 0.0,
+    "semantic_verdict": "INCONCLUSIVE",
+    "strengths": [],
+    "unresolved_evidence_findings": [],
+    "warm_median_seconds": 0.003984499955549836,
+    "warm_seconds_samples": [
+      0.0035444999812170863,
+      0.0036780000082217157,
+      0.003984499955549836,
+      0.004106400010641664,
+      0.005982600036077201
+    ],
+    "weakness_dims": []
+  },
+  "inf_02_nodebb_orig": {
+    "authored_findings": [
+      {
+        "category": "agent_startup_failure",
+        "id": "NodeBB:infra",
+        "kind": "observed",
+        "n_evidence": 1,
+        "severity": "blocker",
+        "violated_requirement": null
+      }
+    ],
+    "cold_peak_bytes": 1379322,
+    "cold_seconds": 0.00595760002033785,
+    "execution_validity": "INVALID",
+    "hypothesis_findings": [],
+    "n_findings": 1,
+    "n_recommendations": 0,
+    "n_strengths": 0,
+    "original_score": 0.0,
+    "semantic_verdict": "INCONCLUSIVE",
+    "strengths": [],
+    "unresolved_evidence_findings": [],
+    "warm_median_seconds": 0.005992799997329712,
+    "warm_seconds_samples": [
+      0.005689200013875961,
+      0.005772800010163337,
+      0.005992799997329712,
+      0.007628899998962879,
+      0.007661800016649067
+    ],
+    "weakness_dims": []
+  },
+  "inf_03_nodebb_ds2": {
+    "authored_findings": [
+      {
+        "category": "agent_startup_failure",
+        "id": "NodeBB:infra",
+        "kind": "observed",
+        "n_evidence": 1,
+        "severity": "blocker",
+        "violated_requirement": null
+      }
+    ],
+    "cold_peak_bytes": 1381177,
+    "cold_seconds": 0.013748699973803014,
+    "execution_validity": "INVALID",
+    "hypothesis_findings": [],
+    "n_findings": 1,
+    "n_recommendations": 0,
+    "n_strengths": 0,
+    "original_score": 0.0,
+    "semantic_verdict": "INCONCLUSIVE",
+    "strengths": [],
+    "unresolved_evidence_findings": [],
+    "warm_median_seconds": 0.007940799987409264,
+    "warm_seconds_samples": [
+      0.0069771999842487276,
+      0.007044700032565743,
+      0.007940799987409264,
+      0.008389599970541894,
+      0.00846000004094094
+    ],
+    "weakness_dims": []
+  },
+  "inf_04_synthetic_runner": {
+    "authored_findings": [
+      {
+        "category": "agent_startup_failure",
+        "id": "syn-runner:infra",
+        "kind": "observed",
+        "n_evidence": 0,
+        "severity": "blocker",
+        "violated_requirement": null
+      }
+    ],
+    "cold_peak_bytes": 10262,
+    "cold_seconds": 0.0015642999787814915,
+    "execution_validity": "INVALID",
+    "hypothesis_findings": [],
+    "n_findings": 1,
+    "n_recommendations": 0,
+    "n_strengths": 0,
+    "original_score": 0.0,
+    "semantic_verdict": "INCONCLUSIVE",
+    "strengths": [],
+    "unresolved_evidence_findings": [
+      "syn-runner:infra"
+    ],
+    "warm_median_seconds": 0.0013244000147096813,
+    "warm_seconds_samples": [
+      0.0013204999850131571,
+      0.0013222999987192452,
+      0.0013244000147096813,
+      0.0013723000301979482,
+      0.0014030999736860394
+    ],
+    "weakness_dims": []
+  }
+}

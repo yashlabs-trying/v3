@@ -1,0 +1,15 @@
+{
+  "case_id": "c5_infra",
+  "short_name": "flipt",
+  "attempt": "deepseek2-flipt-a1",
+  "execution_validity": "INVALID",
+  "semantic_verdict": "INCONCLUSIVE",
+  "original_score": 0.0,
+  "patch": "jobs/deepseek2-flipt-a1/instance_flipt-io__flipt-6fe76d0__KGCvVE5/agent/model.patch",
+  "trajectory": "jobs/deepseek2-flipt-a1/instance_flipt-io__flipt-6fe76d0__KGCvVE5/agent/mini-swe-agent.trajectory.json",
+  "semantic": null,
+  "notes": [
+    "REUSED REAL: a distinct infrastructure failure from the NodeBB case.",
+    "agent_result shows 0 input/0 output tokens and cost 0.0; model.patch is empty; the trajectory has only the system+user turns. The agent never called the model."
+  ]
+}

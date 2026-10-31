@@ -1,0 +1,44 @@
+{
+  "attribution_accuracy": {
+    "authentic_reused_coding_failures_correct": "1/1",
+    "coding_failure_cases_correct": "4/4",
+    "correct": 6,
+    "failures_by_origin": {
+      "REUSED": "1/1",
+      "SYNTHETIC": "3/3"
+    },
+    "synthetic_controlled_defects_correct": "3/3",
+    "total": 6
+  },
+  "evidence_integrity": {
+    "all_refs_resolved": true,
+    "unresolved_total": 0
+  },
+  "latency_ms": {
+    "max": 66.43,
+    "median": 18.73,
+    "method": "warm median of 5 runs after 1 cold run per case; offline, no model calls",
+    "min": 4.79,
+    "samples": [
+      4.79,
+      10.65,
+      18.67,
+      18.73,
+      38.69,
+      66.43
+    ]
+  },
+  "memory": {
+    "cold_peak_bytes_samples": [
+      1064254,
+      1067908,
+      1072612,
+      1073455,
+      1828107,
+      2416974
+    ],
+    "max_cold_peak_bytes": 2416974,
+    "method": "tracemalloc peak during a cold diagnosis per case (diagnosis-only, excludes interpreter baseline)"
+  },
+  "n_cases": 6
+}
