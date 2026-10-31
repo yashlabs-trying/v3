@@ -1,0 +1,25 @@
+Agent 'oracle' exposes no native web search or fetch tools for Harbor to disable; continuing. Sandbox network policy still applies.
+  1/1 Mean: 1.000 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:02:34 0:00:00
+tasks • oracle
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Trials ┃ Exceptions ┃  Mean ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│      1 │          0 │ 1.000 │
+└────────┴────────────┴───────┘
+
+┏━━━━━━━━┳━━━━━━━┓
+┃ Reward ┃ Count ┃
+┡━━━━━━━━╇━━━━━━━┩
+│ 1.0    │     1 │
+└────────┴───────┘
+
+Job Info
+Total runtime: 2m 34s
+Results written to 
+/home/yashs/dataforge/experiments/v3_1_baseline/jobs/repeat-oracle-flipt-2/resul
+t.json
+Inspect results by running `harbor view 
+/home/yashs/dataforge/experiments/v3_1_baseline/jobs`
+Share results by running `harbor upload 
+/home/yashs/dataforge/experiments/v3_1_baseline/jobs/repeat-oracle-flipt-2`
+

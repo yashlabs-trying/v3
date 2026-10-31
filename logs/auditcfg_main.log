@@ -1,0 +1,8 @@
+Total runtime: 8h 55m 16s
+Results written to 
+/home/yashs/dataforge/experiments/v3_1_baseline/jobs/auditcfg-vuls/result.json
+Inspect results by running `harbor view 
+/home/yashs/dataforge/experiments/v3_1_baseline/jobs`
+Share results by running `harbor upload 
+/home/yashs/dataforge/experiments/v3_1_baseline/jobs/auditcfg-vuls`
+

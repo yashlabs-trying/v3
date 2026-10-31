@@ -1,0 +1,16 @@
+{
+    "task": {
+        "path": "v2/tasks/instance_gravitational__teleport-46aa81b1ce96ebb4ebed2ae53fd78cd44a05da6c-vee9b09fb20c43af7e520f57e9239bbcf46b7113d",
+        "source": "tasks"
+    },
+    "trial_name": "instance_gravitational__teleport__ra9Tvgm",
+    "trials_dir": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs/regrade-teleport",
+    "agent": {
+        "name": "patch_replay:PatchReplayAgent",
+        "model_name": "replay",
+        "kwargs": {
+            "source_job": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs/f3-teleport-a1"
+        }
+    },
+    "job_id": "57081b18-cb8b-4273-a6ba-aa6fc66dd2a5"
+}

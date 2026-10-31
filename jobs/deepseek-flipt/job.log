@@ -1,0 +1,33 @@
+Inference credentials: 1 mappings across 1 trials
+mini-swe-agent-locked / openai (1 trials): OPENAI_API_KEY → OPENAI_API_KEY; base URL=unknown (configured/default); API format=Agent/SDK default (unknown)
+Running command: set -euo pipefail; if ! command -v uv >/dev/null 2>&1; then curl -LsSf https://astral.sh/uv/install.sh | sh; fi && if ! grep -q 'export PATH="$HOME/.local/bin:$PATH"' "$HOME/.bashrc" 2>/dev/null; then  echo 'export PATH="$HOME/.local/bin:$PATH"' >> "$HOME/.bashrc"; fi && if [ -f "$HOME/.local/bin/env" ]; then source "$HOME/.local/bin/env"; fi && export PATH="$HOME/.local/bin:$PATH" && uv tool install --python 3.12 mini-swe-agent --with litellm --with orjson --with fastapi && mini-swe-agent --help
+Command failed
+Trial instance_flipt-io__flipt-6fe76d0__XgqXuNE failed: Command failed (exit 1): set -euo pipefail; if ! command -v uv >/dev/null 2>&1; then curl -LsSf https://astral.sh/uv/install.sh | sh; fi && if ! grep -q 'export PATH="$HOME/.local/bin:$PATH"' "$HOME/.bashrc" 2>/dev/null; then  echo 'export PATH="$HOME/.local/bin:$PATH"' >> "$HOME/.bashrc"; fi && if [ -f "$HOME/.local/bin/env" ]; then source "$HOME/.local/bin/env"; fi && export PATH="$HOME/.local/bin:$PATH" && uv tool install --python 3.12 mini-swe-agent --with litellm --with orjson --with fastapi && mini-swe-agent --help
+stdout: downloading uv 0.13.6 x86_64-unknown-linux-gnu
+installing to /root/.local/bin
+  uv
+  uvx
+everything's installed!
+
+To add $HOME/.local/bin to your PATH, either restart your shell or run:
+
+    source $HOME/.local/bin/env (sh, bash, zsh)
+    source $HOM ... [683 chars truncated] ... 1.8MiB)
+Downloading pandas (11.5MiB)
+Downloading pydantic-core (2.1MiB)
+Downloading pyarrow (51.4MiB)
+Downloading botocore (15.4MiB)
+Downloading tiktoken (1.1MiB)
+Downloading pygments (1.2MiB)
+Downloading pygments (1.2MiB)
+Downloading botocore (15.4MiB)
+error: Failed to download `python-dateutil==2.9.0.post0`
+  cause: Failed to extract archive: python_dateutil-2.9.0.post0-py2.py3-none-any.whl
+  cause: I/O operation failed during extraction
+  cause: Failed to download distribution due to network timeout. Try increasing UV_HTTP_TIMEOUT (current value: 60s).
+
+hint: `python-dateutil` (v2.9.0.post0) was included because `mini-swe-agent` (v2.4.6) depends on `datasets` (v5.1.0) which depends on `pandas` (v3.1.0) which depends on `python-dateutil`
+
+stderr: None
+Collecting main service artifacts
+Not retrying trial because the maximum number of retries has been reached

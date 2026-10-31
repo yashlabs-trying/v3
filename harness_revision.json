@@ -1,0 +1,84 @@
+{
+  "audit": "DataForge V3.1 Phase 1A",
+  "captured_utc": "2026-10-30T17:05:00Z",
+  "frozen_identifiers": {
+    "upstream_benchmark": {
+      "repo": "https://github.com/scaleapi/SWE-bench_Pro-os",
+      "commit": "66f92766bba642462d4bbe5479e83f91f9211862",
+      "branch": "main",
+      "modified_by_audit": false,
+      "grading_code_modified": false
+    },
+    "harbor": {
+      "version": "0.25.0",
+      "install": "uv tool install harbor",
+      "backend": "docker (default)",
+      "default_agent_setup_timeout_sec": 360.0
+    },
+    "agent_harness": {
+      "class": "locked_mini_swe:LockedMiniSwe (v2/tooling/locked_mini_swe.py)",
+      "upstream_bytes_unchanged_in_mirror": true,
+      "audit_overlay": "/home/yashs/dataforge/experiments/v3_1_baseline/tooling_overlay/locked_mini_swe.py",
+      "overlay_change": "agent install adds --with mcp (litellm 1.106.6 runtime import)",
+      "config_file": "v2/tooling/configs/mini_toolcall.yaml",
+      "mode": "tool-calling"
+    },
+    "mini_swe_agent": {
+      "version": "2.4.6",
+      "note": "UNPINNED by upstream V2; resolved to latest at install time. This version is incompatible with the V2 locked protocol unless MSWEA_CONFIGURED and MSWEA_COST_TRACKING are set.",
+      "python_for_agent": "3.12"
+    },
+    "resolved_agent_dependencies": {
+      "mini-swe-agent": "2.4.6",
+      "litellm": "1.106.6",
+      "mcp": "2.3.0",
+      "mcp-types": "2.3.0",
+      "openai": "2.54.0",
+      "httpx": "0.28.1",
+      "pydantic": "2.14.2",
+      "datasets": "5.1.0",
+      "pandas": "3.1.0",
+      "numpy": "2.5.4",
+      "orjson": "3.13.0",
+      "fastapi": "0.162.0",
+      "freeze_sha256": "750580be26b196041e8e5a4fc99c8eae23037f7a03bc445927ecc8925c0993ac"
+    },
+    "required_env_for_deepseek": {
+      "OPENAI_API_KEY": "<from ~/.local/share/opencode/auth.json>",
+      "OPENAI_API_BASE": "https://api.deepinfra.com/v1/openai",
+      "OPENAI_BASE_URL": "https://api.deepinfra.com/v1/openai",
+      "MSWEA_CONFIGURED": "true",
+      "MSWEA_COST_TRACKING": "ignore_errors",
+      "UV_HTTP_TIMEOUT": "1800",
+      "PIP_DEFAULT_TIMEOUT": "1800"
+    },
+    "model": {
+      "id": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "harbor_string": "openai/deepseek-ai/DeepSeek-V4.1-Flash",
+      "provider": "DeepInfra",
+      "single_model_all_tasks": true
+    },
+    "audit_task_overlay": {
+      "dir": "/home/yashs/dataforge/experiments/v3_1_baseline/audit_tasks",
+      "change": "task.toml docker_image -> dataforge-agent:<instance_id>; environment/Dockerfile FROM dataforge-agent:<instance_id>",
+      "tests_graders_parsers_instructions": "unchanged (byte-identical copies of upstream)",
+      "agent_image": "dataforge-agent:<instance_id> = original ghcr image + preinstalled mini-swe-agent 2.4.6 + mcp"
+    }
+  },
+  "container_images": {
+    "registry": "ghcr.io/scaleapi/swe-bench_pro-v2",
+    "nodebb": {"tag": "instance_NodeBB__NodeBB-00c70ce7b0541cfc94afe567921d7668cdc8f4ac-vnan", "upstream_digest": "sha256:59acd02e331ac2cd1fb9f3d4d72e8922b01b4e7c1dc1e9130c3cd2cf44c9786d"},
+    "flipt": {"tag": "instance_flipt-io__flipt-6fe76d024ee0c50ddb09c86f4ae0bd4c208fd65f"},
+    "vuls": {"tag": "instance_future-architect__vuls-f0b3a8b1db98eb1bd32685f1c36c41a99c3452ed"},
+    "openlibrary": {"tag": "instance_internetarchive__openlibrary-03095f2680f7516fca35a58e665bf2a41f006273-v8717e18970bcdc4e0d2cea3b1527752b21e74866"},
+    "teleport": {"tag": "instance_gravitational__teleport-46aa81b1ce96ebb4ebed2ae53fd78cd44a05da6c-vee9b09fb20c43af7e520f57e9239bbcf46b7113d"},
+    "ansible": {"tag": "instance_ansible__ansible-d58e69c82d7edd0583dd8e78d76b075c33c3151e-v173091e2e36d38c978002990795f66cfc0af30ad"},
+    "elementweb": {"tag": "instance_element-hq__element-web-aec454dd6feeb93000380523cbb0b3681c0275fd-vnan"}
+  },
+  "counted_attempts_policy": {
+    "one_official_attempt_per_task": true,
+    "original_results_immutable": true,
+    "nodebb_original": "INVALID / INFRASTRUCTURE ERROR (agent never ran; patch contaminated) — preserved as-is",
+    "nodebb_recovery_rerun": "separately labeled, NOT counted as the original attempt"
+  }
+}

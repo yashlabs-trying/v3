@@ -1,0 +1,22 @@
+{
+    "job_name": "regrade-flipt",
+    "jobs_dir": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs",
+    "n_concurrent_trials": 1,
+    "agents": [
+        {
+            "name": "patch_replay:PatchReplayAgent",
+            "model_name": "replay",
+            "kwargs": {
+                "source_job": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs/final-flipt"
+            }
+        }
+    ],
+    "datasets": [
+        {
+            "path": "v2/tasks",
+            "task_names": [
+                "instance_flipt-io__flipt-6fe76d024ee0c50ddb09c86f4ae0bd4c208fd65f"
+            ]
+        }
+    ]
+}

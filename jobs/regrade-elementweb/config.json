@@ -1,0 +1,22 @@
+{
+    "job_name": "regrade-elementweb",
+    "jobs_dir": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs",
+    "n_concurrent_trials": 1,
+    "agents": [
+        {
+            "name": "patch_replay:PatchReplayAgent",
+            "model_name": "replay",
+            "kwargs": {
+                "source_job": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs/f3-elementweb-a1"
+            }
+        }
+    ],
+    "datasets": [
+        {
+            "path": "v2/tasks",
+            "task_names": [
+                "instance_element-hq__element-web-aec454dd6feeb93000380523cbb0b3681c0275fd-vnan"
+            ]
+        }
+    ]
+}

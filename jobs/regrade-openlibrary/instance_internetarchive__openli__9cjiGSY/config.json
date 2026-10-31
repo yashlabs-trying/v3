@@ -1,0 +1,16 @@
+{
+    "task": {
+        "path": "v2/tasks/instance_internetarchive__openlibrary-03095f2680f7516fca35a58e665bf2a41f006273-v8717e18970bcdc4e0d2cea3b1527752b21e74866",
+        "source": "tasks"
+    },
+    "trial_name": "instance_internetarchive__openli__9cjiGSY",
+    "trials_dir": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs/regrade-openlibrary",
+    "agent": {
+        "name": "patch_replay:PatchReplayAgent",
+        "model_name": "replay",
+        "kwargs": {
+            "source_job": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs/f3-openlibrary-a1"
+        }
+    },
+    "job_id": "f719271d-901d-4395-821e-8093432fa3da"
+}

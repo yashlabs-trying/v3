@@ -1,0 +1,6 @@
+Agent 'oracle' does not declare an options_model; leftover kwargs are ignored
+Agent 'oracle' exposes no native web search or fetch tools for Harbor to disable; continuing. Sandbox network policy still applies.
+Collecting main service artifacts
+Trial instance_NodeBB__NodeBB-00c70ce7__fKoZZ3D failed: No reward file found at /home/yashs/dataforge/experiments/v3_1_baseline/jobs/smoke-oracle/instance_NodeBB__NodeBB-00c70ce7__fKoZZ3D/verifier/reward.txt or /home/yashs/dataforge/experiments/v3_1_baseline/jobs/smoke-oracle/instance_NodeBB__NodeBB-00c70ce7__fKoZZ3D/verifier/reward.json
+Exception RewardFileNotFoundError is in exclude_exceptions, not retrying
+Not retrying trial because the exception is not in include_exceptions or the maximum number of retries has been reached

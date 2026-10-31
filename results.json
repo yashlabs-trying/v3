@@ -1,0 +1,223 @@
+[
+ {
+  "task": "nodebb",
+  "task_id": "instance_NodeBB__NodeBB-00c70ce7b0541cfc94afe567921d7668cdc8f4ac-vnan",
+  "repo": "NodeBB/NodeBB",
+  "language": "JavaScript/mocha",
+  "original_job": "final-nodebb",
+  "original_reward": 0.0,
+  "exception": "NonZeroAgentExitCodeError",
+  "patch_bytes": 166347,
+  "source_files_changed": 0,
+  "source_files": [],
+  "patch_contaminated_redis": true,
+  "traj_msgs": 0,
+  "agent_exec": {
+   "started_at": "2026-10-30T15:50:28.421814Z",
+   "finished_at": "2026-10-30T16:39:40.150934Z"
+  },
+  "verifier": {
+   "started_at": "2026-10-30T16:39:41.979974Z",
+   "finished_at": "2026-10-30T16:40:25.488536Z"
+  },
+  "regrade_reward": 0.0,
+  "regrade_apply_rc": 1
+ },
+ {
+  "task": "flipt",
+  "task_id": "instance_flipt-io__flipt-6fe76d024ee0c50ddb09c86f4ae0bd4c208fd65f",
+  "repo": "flipt-io/flipt",
+  "language": "Go",
+  "original_job": "final-flipt",
+  "original_reward": 1.0,
+  "exception": null,
+  "patch_bytes": 7772,
+  "source_files_changed": 1,
+  "source_files": [
+   "internal/server/auth/middleware.go"
+  ],
+  "patch_contaminated_redis": false,
+  "traj_msgs": 97,
+  "agent_exec": {
+   "started_at": "2026-10-30T16:41:01.458771Z",
+   "finished_at": "2026-10-30T16:50:28.446088Z"
+  },
+  "verifier": {
+   "started_at": "2026-10-30T16:50:30.086599Z",
+   "finished_at": "2026-10-30T16:50:35.871252Z"
+  },
+  "regrade_reward": 1.0,
+  "regrade_apply_rc": 0
+ },
+ {
+  "task": "vuls",
+  "task_id": "instance_future-architect__vuls-f0b3a8b1db98eb1bd32685f1c36c41a99c3452ed",
+  "repo": "future-architect/vuls",
+  "language": "Go",
+  "original_job": "f3-vuls-a1",
+  "original_reward": 0.0,
+  "exception": null,
+  "patch_bytes": 6733,
+  "source_files_changed": 4,
+  "source_files": [
+   "detector/detector.go",
+   "models/vulninfos.go",
+   "models/vulninfos_test.go",
+   "tui/tui.go"
+  ],
+  "patch_contaminated_redis": false,
+  "traj_msgs": 160,
+  "agent_exec": {
+   "started_at": "2026-10-31T03:49:41.568767Z",
+   "finished_at": "2026-10-31T04:07:09.099064Z"
+  },
+  "verifier": {
+   "started_at": "2026-10-31T04:07:11.026468Z",
+   "finished_at": "2026-10-31T04:07:21.663645Z"
+  },
+  "regrade_reward": 0.0,
+  "regrade_apply_rc": 0
+ },
+ {
+  "task": "openlibrary",
+  "task_id": "instance_internetarchive__openlibrary-03095f2680f7516fca35a58e665bf2a41f006273-v8717e18970bcdc4e0d2cea3b1527752b21e74866",
+  "repo": "internetarchive/openlibrary",
+  "language": "Python/pytest",
+  "original_job": "f3-openlibrary-a1",
+  "original_reward": 1.0,
+  "exception": null,
+  "patch_bytes": 2573,
+  "source_files_changed": 1,
+  "source_files": [
+   "scripts/new-solr-updater.py"
+  ],
+  "patch_contaminated_redis": false,
+  "traj_msgs": 89,
+  "agent_exec": {
+   "started_at": "2026-10-31T04:07:54.673859Z",
+   "finished_at": "2026-10-31T04:14:53.343011Z"
+  },
+  "verifier": {
+   "started_at": "2026-10-31T04:14:55.232240Z",
+   "finished_at": "2026-10-31T04:15:00.272334Z"
+  },
+  "regrade_reward": 1.0,
+  "regrade_apply_rc": 0
+ },
+ {
+  "task": "teleport",
+  "task_id": "instance_gravitational__teleport-46aa81b1ce96ebb4ebed2ae53fd78cd44a05da6c-vee9b09fb20c43af7e520f57e9239bbcf46b7113d",
+  "repo": "gravitational/teleport",
+  "language": "Go",
+  "original_job": "f3-teleport-a1",
+  "original_reward": 1.0,
+  "exception": null,
+  "patch_bytes": 5688,
+  "source_files_changed": 1,
+  "source_files": [
+   "lib/asciitable/table.go"
+  ],
+  "patch_contaminated_redis": false,
+  "traj_msgs": 53,
+  "agent_exec": {
+   "started_at": "2026-10-31T04:15:35.209624Z",
+   "finished_at": "2026-10-31T04:21:35.295011Z"
+  },
+  "verifier": {
+   "started_at": "2026-10-31T04:21:37.116498Z",
+   "finished_at": "2026-10-31T04:23:07.243395Z"
+  },
+  "regrade_reward": 1.0,
+  "regrade_apply_rc": 0
+ },
+ {
+  "task": "ansible",
+  "task_id": "instance_ansible__ansible-d58e69c82d7edd0583dd8e78d76b075c33c3151e-v173091e2e36d38c978002990795f66cfc0af30ad",
+  "repo": "ansible/ansible",
+  "language": "Python/pytest",
+  "original_job": "f3-ansible-a1",
+  "original_reward": 1.0,
+  "exception": null,
+  "patch_bytes": 16513,
+  "source_files_changed": 3,
+  "source_files": [
+   "lib/ansible/module_utils/urls.py",
+   "lib/ansible/modules/get_url.py",
+   "lib/ansible/modules/uri.py"
+  ],
+  "patch_contaminated_redis": false,
+  "traj_msgs": 158,
+  "agent_exec": {
+   "started_at": "2026-10-31T04:23:41.881412Z",
+   "finished_at": "2026-10-31T04:36:32.400957Z"
+  },
+  "verifier": {
+   "started_at": "2026-10-31T04:36:34.545709Z",
+   "finished_at": "2026-10-31T04:37:42.504476Z"
+  },
+  "regrade_reward": 1.0,
+  "regrade_apply_rc": 0
+ },
+ {
+  "task": "elementweb",
+  "task_id": "instance_element-hq__element-web-aec454dd6feeb93000380523cbb0b3681c0275fd-vnan",
+  "repo": "element-hq/element-web",
+  "language": "TypeScript/jest",
+  "original_job": "f3-elementweb-a1",
+  "original_reward": 1.0,
+  "exception": null,
+  "patch_bytes": 17194,
+  "source_files_changed": 5,
+  "source_files": [
+   "src/components/structures/MatrixChat.tsx",
+   "src/contexts/SDKContext.ts",
+   "src/hooks/usePermalinkMember.ts",
+   "src/stores/UserProfilesStore.ts",
+   "src/utils/LruCache.ts"
+  ],
+  "patch_contaminated_redis": false,
+  "traj_msgs": 206,
+  "agent_exec": {
+   "started_at": "2026-10-31T04:38:20.097364Z",
+   "finished_at": "2026-10-31T05:07:08.263943Z"
+  },
+  "verifier": {
+   "started_at": "2026-10-31T05:07:09.758557Z",
+   "finished_at": "2026-10-31T05:07:39.945202Z"
+  },
+  "regrade_reward": 1.0,
+  "regrade_apply_rc": 0
+ },
+ {
+  "task": "nodebb-recovery(rerun,NOT counted)",
+  "task_id": "instance_NodeBB__NodeBB-00c70ce7b0541cfc94afe567921d7668cdc8f4ac-vnan",
+  "repo": "NodeBB/NodeBB",
+  "language": "JavaScript/mocha",
+  "original_job": "nodebb-recovery",
+  "original_reward": 1.0,
+  "exception": null,
+  "patch_bytes": 172965,
+  "source_files_changed": 7,
+  "source_files": [
+   "src/controllers/admin/cache.js",
+   "src/meta/index.js",
+   "src/posts/cache.js",
+   "src/posts/parse.js",
+   "src/socket.io/admin/cache.js",
+   "src/user/index.js",
+   "src/webserver.js"
+  ],
+  "patch_contaminated_redis": true,
+  "traj_msgs": 190,
+  "agent_exec": {
+   "started_at": "2026-10-31T05:58:17.288549Z",
+   "finished_at": "2026-10-31T06:09:08.656672Z"
+  },
+  "verifier": {
+   "started_at": "2026-10-31T06:09:10.644486Z",
+   "finished_at": "2026-10-31T06:10:58.995315Z"
+  },
+  "regrade_reward": 1.0,
+  "regrade_apply_rc": 1
+ }
+]

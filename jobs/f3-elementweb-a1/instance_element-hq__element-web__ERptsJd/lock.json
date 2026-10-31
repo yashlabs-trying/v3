@@ -1,0 +1,52 @@
+{
+    "schema_version": 2,
+    "task": {
+        "name": "instance_element-hq__element-web-aec454dd6feeb93000380523cbb0b3681c0275fd-vnan",
+        "version": "1.0.0",
+        "type": "local",
+        "digest": "sha256:3096fb0a782949ab5ecec7cb8e04f2b961a36a4da6fef8fbe128df1712ee5b33",
+        "source": "audit_tasks",
+        "path": "/home/yashs/dataforge/experiments/v3_1_baseline/audit_tasks/instance_element-hq__element-web-aec454dd6feeb93000380523cbb0b3681c0275fd-vnan"
+    },
+    "install_only": false,
+    "timeout_multiplier": 1.0,
+    "agent_setup_timeout_multiplier": 6.0,
+    "agent": {
+        "name": "locked_mini_swe:LockedMiniSwe",
+        "model_name": "openai/deepseek-ai/DeepSeek-V4.1-Flash",
+        "skip_model_parsing": false,
+        "skills": [],
+        "resume_trajectory": false,
+        "extra_allowed_hosts": [
+            "api.deepinfra.com"
+        ],
+        "kwargs": {
+            "config_file": "/home/yashs/dataforge/experiments/v3_1_baseline/tooling_overlay/mini_toolcall_audit.yaml"
+        },
+        "env": {
+            "OPENAI_API_KEY": "sk-d****6Py",
+            "OPENAI_BASE_URL": "https://api.deepinfra.com/v1/openai",
+            "OPENAI_API_BASE": "https://api.deepinfra.com/v1/openai",
+            "UV_HTTP_TIMEOUT": "1800",
+            "PIP_DEFAULT_TIMEOUT": "1800"
+        },
+        "mcp_servers": []
+    },
+    "bridge_inputs": {},
+    "skills": [],
+    "environment": {
+        "type": "docker",
+        "force_build": false,
+        "delete": true,
+        "stream": false,
+        "cpu_enforcement_policy": "auto",
+        "memory_enforcement_policy": "auto",
+        "extra_docker_compose": [],
+        "kwargs": {},
+        "extra_allowed_hosts": []
+    },
+    "verifier": {
+        "disable": false,
+        "environment_mode": "shared"
+    }
+}

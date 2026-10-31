@@ -1,0 +1,22 @@
+{
+    "job_name": "regrade-vuls",
+    "jobs_dir": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs",
+    "n_concurrent_trials": 1,
+    "agents": [
+        {
+            "name": "patch_replay:PatchReplayAgent",
+            "model_name": "replay",
+            "kwargs": {
+                "source_job": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs/f3-vuls-a1"
+            }
+        }
+    ],
+    "datasets": [
+        {
+            "path": "v2/tasks",
+            "task_names": [
+                "instance_future-architect__vuls-f0b3a8b1db98eb1bd32685f1c36c41a99c3452ed"
+            ]
+        }
+    ]
+}

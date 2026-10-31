@@ -1,0 +1,83 @@
+{
+    "schema_version": 3,
+    "created_at": "2026-10-30T15:50:14.228310Z",
+    "harbor": {
+        "version": "0.25.0",
+        "is_editable": false
+    },
+    "n_concurrent_trials": 1,
+    "retry": {
+        "max_retries": 0,
+        "exclude_exceptions": [
+            "UnsupportedModelParametersError",
+            "ApiUsageLimitError",
+            "AgentSafetyRefusalError",
+            "RewardFileEmptyError",
+            "ModelNotFoundError",
+            "VerifierOutputParseError",
+            "VerifierTimeoutError",
+            "AgentAuthenticationError",
+            "AgentTimeoutError",
+            "RewardFileNotFoundError"
+        ],
+        "wait_multiplier": 1.0,
+        "min_wait_sec": 1.0,
+        "max_wait_sec": 60.0
+    },
+    "trials": [
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "instance_NodeBB__NodeBB-00c70ce7b0541cfc94afe567921d7668cdc8f4ac-vnan",
+                "version": "1.0.0",
+                "type": "local",
+                "digest": "sha256:66f588a88642b8fe70efb44d5d8e5339eefbc514e36b3b4010941b548eca7539",
+                "source": "audit_tasks",
+                "path": "/home/yashs/dataforge/experiments/v3_1_baseline/audit_tasks/instance_NodeBB__NodeBB-00c70ce7b0541cfc94afe567921d7668cdc8f4ac-vnan"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent_setup_timeout_multiplier": 6.0,
+            "agent": {
+                "name": "locked_mini_swe:LockedMiniSwe",
+                "model_name": "openai/deepseek-ai/DeepSeek-V4.1-Flash",
+                "skip_model_parsing": false,
+                "skills": [],
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [
+                    "api.deepinfra.com"
+                ],
+                "kwargs": {
+                    "config_file": "v2/tooling/configs/mini_toolcall.yaml"
+                },
+                "env": {
+                    "OPENAI_API_KEY": "sk-d****6Py",
+                    "OPENAI_BASE_URL": "https://api.deepinfra.com/v1/openai",
+                    "OPENAI_API_BASE": "https://api.deepinfra.com/v1/openai",
+                    "MSWEA_CONFIGURED": "true",
+                    "MSWEA_COST_TRACKING": "ignore_errors",
+                    "UV_HTTP_TIMEOUT": "1800",
+                    "PIP_DEFAULT_TIMEOUT": "1800"
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "stream": false,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        }
+    ]
+}

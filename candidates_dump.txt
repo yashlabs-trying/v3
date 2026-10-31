@@ -1,0 +1,216 @@
+############ instance_flipt-io__flipt-6fe76d024ee0c50ddb09c86f4ae0bd4c208fd65f ############
+--- run_script.sh ---
+#!/bin/bash
+### COMMON SETUP; DO NOT MODIFY ###
+set -e
+
+# --- CONFIGURE THIS SECTION ---
+# Replace this with your command to run all tests
+run_all_tests() {
+  echo "Running all tests..."
+  go test -v ./internal/server/auth || true
+}
+
+# Replace this with your command to run specific test names
+run_selected_tests() {
+  local test_names=("$@")
+  echo "Running selected tests: ${test_names[@]}"
+  
+  # Convert the input arguments into a single regex group (e.g., TestFoo|TestBar)
+  local regex_group=""
+  for test_name in "${test_names[@]}"; do
+    if [ -z "$regex_group" ]; then
+      regex_group="$test_name"
+    else
+      regex_group="$regex_group|$test_name"
+    fi
+  done
+
+  # Wrap it with ^()$ to match exact test names
+  regex_group="^($regex_group)$"
+
+  # Use go test with the -run flag to execute only those tests
+  go test -v -run "$regex_group" ./internal/server/auth || true
+}
+# --- END CONFIGURATION SECTION ---
+
+### COMMON EXECUTION; DO NOT MODIFY ###
+# No args is all tests
+if [ $# -eq 0 ]; then
+  run_all_tests
+  exit $?
+fi
+
+# Handle comma-separated input
+if [[ "$1" == *","* ]]; then
+  IFS=',' read -r -a TEST_FILES <<< "$1"
+else
+  TEST_FILES=("$@")
+fi
+
+# Run them all together
+run_selected_tests "${TEST_FILES[@]}"
+--- parser.py (below DO NOT MODIFY marker) ---
+### Implement the parsing logic below ###
+
+
+def parse_test_output(stdout_content: str, stderr_content: str) -> List[TestResult]:
+    """
+    Parse the test output content and extract test results.
+
+    Args:
+        stdout_content: Content of the stdout file
+        stderr_content: Content of the stderr file
+
+    Returns:
+        List of TestResult objects
+
+    Note to implementer:
+        - Implement the parsing logic here
+        - Use regular expressions or string parsing to extract test results
+        - Create TestResult objects for each test found
+    """
+    status_map = {
+        'PASS': TestStatus.PASSED,
+        'FAIL': TestStatus.FAILED,
+        'SKIP': TestStatus.SKIPPED,
+    }
+
+    results: List[TestResult] = []
+    # Go's `go test -v` indents sub-test result lines (t.Run) with leading
+    # whitespace, so allow it; capture PASS/FAIL/SKIP, not just PASS.
+    pattern = re.compile(r'^\s*--- (PASS|FAIL|SKIP):\s+(\S+)\s+\(.*\)$')
+
+    for line in stdout_content.splitlines():
+        m = pattern.match(line)
+        if not m:
+            continue
+        key, name = m.groups()
+        status = status_map.get(key)
+        if status:
+            results.append(TestResult(name=name, status=status))
+
+    return results
+
+### Implement the parsing logic above ###
+
+############ instance_future-architect__vuls-f0b3a8b1db98eb1bd32685f1c36c41a99c3452ed ############
+--- run_script.sh ---
+#!/bin/bash
+### COMMON SETUP; DO NOT MODIFY ###
+set -e
+
+# --- Test Commands ---
+
+run_all_tests() {
+    echo "Running all tests..."
+    
+    go test -short -v ./detector ./models ./tui 2>&1
+}
+
+run_selected_tests() {
+    local test_names=("$@")
+    local regex_pattern="^($(IFS='|'; echo "${test_names[*]}"))$"
+    echo "Running selected tests: ${test_names[*]}"
+    
+    go test -v -run "$regex_pattern" ./detector ./models ./tui 2>&1
+}
+
+if [ $# -eq 0 ]; then
+    run_all_tests
+    exit $?
+fi
+
+if [[ "$1" == *","* ]]; then
+    IFS=',' read -r -a TEST_FILES <<< "$1"
+else
+    TEST_FILES=("$@")
+fi
+
+run_selected_tests "${TEST_FILES[@]}"
+--- parser.py (below DO NOT MODIFY marker) ---
+### Implement the parsing logic below ###
+
+
+def parse_test_output(stdout_content: str, stderr_content: str) -> List[TestResult]:
+    """
+    Parse the test output content and extract test results.
+
+    Args:
+        stdout_content: Content of the stdout file
+        stderr_content: Content of the stderr file
+
+    Returns:
+        List of TestResult objects
+
+    Note to implementer:
+        - Implement the parsing logic here
+        - Use regular expressions or string parsing to extract test results
+        - Create TestResult objects for each test found
+    """
+    results = []
+    for line in stdout_content.splitlines():
+        # Clean up the line by removing non-printable characters and stripping whitespace
+        cleaned_line = ''.join(char for char in line if char.isprintable()).strip()
+        
+        if "--- PASS:" in cleaned_line:
+            test_route = cleaned_line.split()[2]  # Extract the full test route
+            results.append(TestResult(name=test_route, status=TestStatus.PASSED))
+        elif "--- FAIL:" in cleaned_line:
+            test_route = cleaned_line.split()[2]  # Extract the full test route
+            results.append(TestResult(name=test_route, status=TestStatus.FAILED))
+        elif "--- SKIP:" in cleaned_line:
+            test_route = cleaned_line.split()[2]  # Extract the full test route
+            results.append(TestResult(name=test_route, status=TestStatus.SKIPPED))
+        elif "--- ERROR:" in cleaned_line:
+            test_route = cleaned_line.split()[2]  # Extract the full test route
+            results.append(TestResult(name=test_route, status=TestStatus.ERROR))
+                
+    return results
+
+
+### Implement the parsing logic above ###
+
+############ instance_internetarchive__openlibrary-03095f2680f7516fca35a58e665bf2a41f006273-v8717e18970bcdc4e0d2cea3b1527752b21e74866 ############
+--- run_script.sh ---
+#!/bin/bash
+export PYTEST_XDIST_AUTO_NUM_WORKERS=4
+set -e
+
+run_all_tests() {
+  echo "Running all tests..."
+  
+  export PYTHONPATH=/app
+  export OL_CONFIG=/app/conf/openlibrary.yml
+  export MOCK_GCP_TESTS=true
+  export GOOGLE_APPLICATION_CREDENTIALS=/dev/null
+  
+  pytest . --ignore=tests/integration --ignore=infogami --ignore=vendor --ignore=node_modules -v --tb=short
+}
+
+run_selected_tests() {
+  local test_files=("$@")
+  echo "Running selected tests: ${test_files[@]}"
+  
+  export PYTHONPATH=/app
+  export OL_CONFIG=/app/conf/openlibrary.yml
+  export MOCK_GCP_TESTS=true
+  export GOOGLE_APPLICATION_CREDENTIALS=/dev/null
+  
+  pytest "${test_files[@]}" -v --tb=short
+}
+
+if [ $# -eq 0 ]; then
+  run_all_tests
+  exit $?
+fi
+
+if [[ "$1" == *","* ]]; then
+  IFS=',' read -r -a TEST_FILES <<< "$1"
+else
+  TEST_FILES=("$@")
+fi
+
+run_selected_tests "${TEST_FILES[@]}"
+--- parser.py (below DO NOT MODIFY marker) ---
+

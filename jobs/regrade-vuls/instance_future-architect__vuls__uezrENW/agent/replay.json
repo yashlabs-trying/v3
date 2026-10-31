@@ -1,0 +1,7 @@
+{
+ "task": "instance_future-architect__vuls-f0b3a8b1db98eb1bd32685f1c36c41a99c3452ed",
+ "patch": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs/f3-vuls-a1/instance_future-architect__vuls__sNqH5s4/agent/model.patch",
+ "apply_rc": 0,
+ "apply_out": "Checking patch detector/detector.go...\nChecking patch models/vulninfos.go...\nChecking patch models/vulninfos_test.go...\nChecking patch tui/tui.go...\nApplied patch detector/detector.go cleanly.\nApplied patch models/vulninfos.go cleanly.\nApplied patch models/vulninfos_test.go cleanly.\nApplied patch tui/tui.go cleanly.\n",
+ "post_apply_diffstat": " detector/detector.go     | 10 ++++++++--\n models/vulninfos.go      | 39 ++++++++++++++++++++++-----------------\n models/vulninfos_test.go | 38 +++++++++++++++++++++++++-------------\n tui/tui.go               |  2 +-\n 4 files changed, 56 insertions(+), 33 deletions(-)\n---\n4\n"
+}

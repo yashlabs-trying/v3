@@ -1,0 +1,9 @@
+task,repo,language,original_reward,exception,patch_bytes,source_files_changed,traj_msgs,regrade_reward,regrade_apply_rc
+nodebb,NodeBB/NodeBB,JavaScript/mocha,0.0,NonZeroAgentExitCodeError,166347,0,0,0.0,1
+flipt,flipt-io/flipt,Go,1.0,,7772,1,97,1.0,0
+vuls,future-architect/vuls,Go,0.0,,6733,4,160,0.0,0
+openlibrary,internetarchive/openlibrary,Python/pytest,1.0,,2573,1,89,1.0,0
+teleport,gravitational/teleport,Go,1.0,,5688,1,53,1.0,0
+ansible,ansible/ansible,Python/pytest,1.0,,16513,3,158,1.0,0
+elementweb,element-hq/element-web,TypeScript/jest,1.0,,17194,5,206,1.0,0
+"nodebb-recovery(rerun,NOT counted)",NodeBB/NodeBB,JavaScript/mocha,1.0,,172965,7,190,1.0,1

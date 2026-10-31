@@ -1,0 +1,83 @@
+{
+  "audit": "DataForge V3.1 — Phase 1A Baseline Reliability Audit",
+  "generated_utc": "2026-10-30T08:15:00Z",
+  "upstream": {
+    "repo": "https://github.com/scaleapi/SWE-bench_Pro-os",
+    "revision_preferred_by_spec": "66f92766bba642462d4bbe5479e83f91f9211862",
+    "revision_checked_out": "66f92766bba642462d4bbe5479e83f91f9211862",
+    "branch": "main",
+    "revision_verified": true,
+    "v2_present": true,
+    "v2_task_count": 642,
+    "working_tree_note": "The Windows-side clone at /home/yashs/SWE-bench_Pro-os has a CRLF-mutated working tree (git status shows ~11009 entries). The committed blobs are LF. All executions in this audit run from a separate LF-normalized mirror of the SAME commit, so upstream content is unmodified.",
+    "audit_mirror": "/home/yashs/dataforge/experiments/v3_1_baseline/upstream_lf",
+    "upstream_repo_mutated_by_audit": false
+  },
+  "harbor": {
+    "install": "uv tool install 'harbor'",
+    "version": "0.25.0",
+    "backend_used": "docker (default environment type)",
+    "note": "README documents Modal; local Docker backend is supported and used here because no Modal credentials exist on this machine.",
+    "executables": ["harbor", "hb", "hr"]
+  },
+  "container_images": {
+    "registry": "ghcr.io/scaleapi/swe-bench_pro-v2",
+    "tag_pattern": "ghcr.io/scaleapi/swe-bench_pro-v2:<instance_id>",
+    "pilot_image": "ghcr.io/scaleapi/swe-bench_pro-v2:instance_NodeBB__NodeBB-00c70ce7b0541cfc94afe567921d7668cdc8f4ac-vnan",
+    "pilot_image_digest": "sha256:59acd02e331ac2cd1fb9f3d4d72e8922b01b4e7c1dc1e9130c3cd2cf44c9786d",
+    "anonymous_pull": true,
+    "approx_size_gb": 3.59
+  },
+  "host": {
+    "platform": "Windows 11 Home / WSL2",
+    "wsl_distro": "Ubuntu 26.04 LTS",
+    "kernel": "Linux 6.18.33.2-microsoft-standard-WSL2 x86_64",
+    "cpu": "11th Gen Intel(R) Core(TM) i5-1155G7 @ 2.50GHz",
+    "cpu_logical": 8,
+    "memory_gb": 7.6,
+    "disk_free": "924G available on /",
+    "docker": "29.1.3 (overlayfs)"
+  },
+  "runtime": {
+    "harbor_python": "3.12.14",
+    "system_python": "3.14.4",
+    "node": "24.20.0 (host)",
+    "git": "2.53.0"
+  },
+  "coding_model": {
+    "family": "DeepSeek",
+    "model_id": "deepseek-ai/DeepSeek-V4.1-Flash",
+    "harbor_model_string": "openai/deepseek-ai/DeepSeek-V4.1-Flash",
+    "provider": "DeepInfra",
+    "api_format": "OpenAI chat-completions (compatible)",
+    "base_url": "https://api.deepinfra.com/v1/openai",
+    "credential_source": "existing credential already present on this machine (~/.local/share/opencode/auth.json -> deepinfra). Key value never written to any artifact.",
+    "model_version_reported": "deepseek-ai/DeepSeek-V4.1-Flash (as echoed by API)",
+    "single_model_used_across_tasks": true
+  },
+  "agent_harness": {
+    "implementation": "v2/tooling/locked_mini_swe.py (LockedMiniSwe, subclass of harbor mini-swe-agent)",
+    "config_file": "v2/tooling/configs/mini_toolcall.yaml",
+    "mode": "tool-calling",
+    "step_limit": 0,
+    "cost_limit_per_task_usd": 3.0,
+    "locked_protocol": "agent phase no-network; verifier never in agent sandbox; authoritative verdict via patch_replay on pristine image",
+    "setup_timeout_override": "--agent-setup-timeout-multiplier 6 (base 360s -> effective 2160s)"
+  },
+  "known_environment_deviations": [
+    "CRLF line endings from Windows checkout broke executable scripts; resolved via LF mirror (audit-side, not a benchmark defect).",
+    "Mini-swe-agent installs inside sandbox each run; default 360s agent-setup timeout insufficient (observed AgentSetupTimeoutError), raised via multiplier.",
+    "Harbor agent_result token/cost fields report 0 for DeepInfra even on successful runs; cost computed separately from API estimates."
+  ],
+  "credentials_present": {
+    "modal": false,
+    "deepinfra": true,
+    "openrouter": true,
+    "anthropic": false,
+    "openai": false,
+    "deepseek_official": false
+  },
+  "budget_policy": {
+    "note": "Per-task mini-swe-agent cost_limit is 3.0 USD. No Modal/cloud spend; local Docker only. API spend tracked from DeepInfra estimated_cost where exposed."
+  }
+}

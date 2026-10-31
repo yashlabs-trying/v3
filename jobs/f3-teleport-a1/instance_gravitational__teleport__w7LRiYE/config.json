@@ -1,0 +1,27 @@
+{
+    "task": {
+        "path": "/home/yashs/dataforge/experiments/v3_1_baseline/audit_tasks/instance_gravitational__teleport-46aa81b1ce96ebb4ebed2ae53fd78cd44a05da6c-vee9b09fb20c43af7e520f57e9239bbcf46b7113d",
+        "source": "audit_tasks"
+    },
+    "trial_name": "instance_gravitational__teleport__w7LRiYE",
+    "trials_dir": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs/f3-teleport-a1",
+    "agent_setup_timeout_multiplier": 6.0,
+    "agent": {
+        "name": "locked_mini_swe:LockedMiniSwe",
+        "model_name": "openai/deepseek-ai/DeepSeek-V4.1-Flash",
+        "extra_allowed_hosts": [
+            "api.deepinfra.com"
+        ],
+        "kwargs": {
+            "config_file": "/home/yashs/dataforge/experiments/v3_1_baseline/tooling_overlay/mini_toolcall_audit.yaml"
+        },
+        "env": {
+            "OPENAI_API_KEY": "sk-d****6Py",
+            "OPENAI_BASE_URL": "https://api.deepinfra.com/v1/openai",
+            "OPENAI_API_BASE": "https://api.deepinfra.com/v1/openai",
+            "UV_HTTP_TIMEOUT": "1800",
+            "PIP_DEFAULT_TIMEOUT": "1800"
+        }
+    },
+    "job_id": "bddd917a-8f3b-4370-ad3e-27c2cbd4f73a"
+}

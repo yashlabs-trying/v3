@@ -1,0 +1,185 @@
+diff --git a/lib/asciitable/table.go b/lib/asciitable/table.go
+index 94b5e9ced..ffdb128ea 100644
+--- a/lib/asciitable/table.go
++++ b/lib/asciitable/table.go
+@@ -25,45 +25,64 @@ import (
+ 	"text/tabwriter"
+ )
+ 
+-// column represents a column in the table. Contains the maximum width of the
+-// column as well as the title.
+-type column struct {
+-	width int
+-	title string
++// Column represents a column in the table. Contains the title of the column,
++// the maximum length of a cell, and an optional footnote label that is
++// appended to truncated cells.
++type Column struct {
++	// Title is the column title.
++	Title string
++	// MaxCellLength is the maximum length of a cell in this column. If a cell
++	// is longer than MaxCellLength it is truncated and an ellipsis is added.
++	// A value of 0 leaves the column unbounded.
++	MaxCellLength int
++	// FootnoteLabel is appended to truncated cells and references a footnote
++	// registered with AddFootnote.
++	FootnoteLabel string
+ }
+ 
+ // Table holds tabular values in a rows and columns format.
+ type Table struct {
+-	columns []column
+-	rows    [][]string
++	columns   []Column
++	rows      [][]string
++	footnotes map[string]string
+ }
+ 
+ // MakeTable creates a new instance of the table with given column names.
+ func MakeTable(headers []string) Table {
+ 	t := MakeHeadlessTable(len(headers))
+ 	for i := range t.columns {
+-		t.columns[i].title = headers[i]
+-		t.columns[i].width = len(headers[i])
++		t.columns[i].Title = headers[i]
+ 	}
+ 	return t
+ }
+ 
+-// MakeTable creates a new instance of the table without any column names.
++// MakeHeadlessTable creates a new instance of the table without any column names.
+ // The number of columns is required.
+ func MakeHeadlessTable(columnCount int) Table {
+ 	return Table{
+-		columns: make([]column, columnCount),
+-		rows:    make([][]string, 0),
++		columns:   make([]Column, columnCount),
++		rows:      make([][]string, 0),
++		footnotes: make(map[string]string),
+ 	}
+ }
+ 
++// AddColumn appends a configured column to the table.
++func (t *Table) AddColumn(c Column) {
++	t.columns = append(t.columns, c)
++}
++
++// AddFootnote associates explanatory text with a footnote label. The note is
++// displayed when a truncated cell references the label.
++func (t *Table) AddFootnote(label string, note string) {
++	if t.footnotes == nil {
++		t.footnotes = make(map[string]string)
++	}
++	t.footnotes[label] = note
++}
++
+ // AddRow adds a row of cells to the table.
+ func (t *Table) AddRow(row []string) {
+ 	limit := min(len(row), len(t.columns))
+-	for i := 0; i < limit; i++ {
+-		cellWidth := len(row[i])
+-		t.columns[i].width = max(cellWidth, t.columns[i].width)
+-	}
+ 	t.rows = append(t.rows, row[:limit])
+ }
+ 
+@@ -71,6 +90,34 @@ func (t *Table) AddRow(row []string) {
+ func (t *Table) AsBuffer() *bytes.Buffer {
+ 	var buffer bytes.Buffer
+ 
++	// Determine the width of each column. A column is as wide as the text
++	// finally shown in it, so widths are calculated from the rendered values
++	// (which may be truncated and carry an ellipsis and footnote label).
++	widths := make([]int, len(t.columns))
++	for i, col := range t.columns {
++		widths[i] = len(col.Title)
++	}
++
++	// Render the cells, truncating those that are too long and keeping track
++	// of the footnote labels that are referenced.
++	rows := make([][]string, len(t.rows))
++	referenced := make(map[string]struct{})
++	for r, row := range t.rows {
++		rows[r] = make([]string, len(row))
++		for c, cell := range row {
++			col := t.columns[c]
++			if col.MaxCellLength > 0 && len(cell) > col.MaxCellLength {
++				cell = cell[:col.MaxCellLength] + "..."
++				if col.FootnoteLabel != "" {
++					cell += " " + col.FootnoteLabel
++					referenced[col.FootnoteLabel] = struct{}{}
++				}
++			}
++			rows[r][c] = cell
++			widths[c] = max(widths[c], len(cell))
++		}
++	}
++
+ 	writer := tabwriter.NewWriter(&buffer, 5, 0, 1, ' ', 0)
+ 	template := strings.Repeat("%v\t", len(t.columns))
+ 
+@@ -79,16 +126,16 @@ func (t *Table) AsBuffer() *bytes.Buffer {
+ 		var colh []interface{}
+ 		var cols []interface{}
+ 
+-		for _, col := range t.columns {
+-			colh = append(colh, col.title)
+-			cols = append(cols, strings.Repeat("-", col.width))
++		for i, col := range t.columns {
++			colh = append(colh, col.Title)
++			cols = append(cols, strings.Repeat("-", widths[i]))
+ 		}
+ 		fmt.Fprintf(writer, template+"\n", colh...)
+ 		fmt.Fprintf(writer, template+"\n", cols...)
+ 	}
+ 
+ 	// Body.
+-	for _, row := range t.rows {
++	for _, row := range rows {
+ 		var rowi []interface{}
+ 		for _, cell := range row {
+ 			rowi = append(rowi, cell)
+@@ -97,6 +144,34 @@ func (t *Table) AsBuffer() *bytes.Buffer {
+ 	}
+ 
+ 	writer.Flush()
++
++	// Footnotes. Each referenced label is emitted once, in the order the
++	// columns were declared. Labels that are not referenced are not shown.
++	// The whole section is separated from the body by a single blank line.
++	var footnoteLines []string
++	emitted := make(map[string]struct{})
++	for _, col := range t.columns {
++		label := col.FootnoteLabel
++		if label == "" {
++			continue
++		}
++		if _, ok := referenced[label]; !ok {
++			continue
++		}
++		if _, ok := emitted[label]; ok {
++			continue
++		}
++		emitted[label] = struct{}{}
++		footnoteLines = append(footnoteLines, fmt.Sprintf("%v %v", label, t.footnotes[label]))
++	}
++	if len(footnoteLines) > 0 {
++		buffer.WriteString("\n")
++		for _, line := range footnoteLines {
++			buffer.WriteString(line)
++			buffer.WriteString("\n")
++		}
++	}
++
+ 	return &buffer
+ }
+ 
+@@ -104,7 +179,7 @@ func (t *Table) AsBuffer() *bytes.Buffer {
+ func (t *Table) IsHeadless() bool {
+ 	total := 0
+ 	for i := range t.columns {
+-		total += len(t.columns[i].title)
++		total += len(t.columns[i].Title)
+ 	}
+ 	return total == 0
+ }

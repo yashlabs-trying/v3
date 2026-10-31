@@ -1,0 +1,81 @@
+{
+    "schema_version": 3,
+    "created_at": "2026-10-31T04:23:25.631868Z",
+    "harbor": {
+        "version": "0.25.0",
+        "is_editable": false
+    },
+    "n_concurrent_trials": 1,
+    "retry": {
+        "max_retries": 0,
+        "exclude_exceptions": [
+            "AgentTimeoutError",
+            "VerifierOutputParseError",
+            "UnsupportedModelParametersError",
+            "ModelNotFoundError",
+            "VerifierTimeoutError",
+            "AgentAuthenticationError",
+            "ApiUsageLimitError",
+            "AgentSafetyRefusalError",
+            "RewardFileNotFoundError",
+            "RewardFileEmptyError"
+        ],
+        "wait_multiplier": 1.0,
+        "min_wait_sec": 1.0,
+        "max_wait_sec": 60.0
+    },
+    "trials": [
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "instance_ansible__ansible-d58e69c82d7edd0583dd8e78d76b075c33c3151e-v173091e2e36d38c978002990795f66cfc0af30ad",
+                "version": "1.0.0",
+                "type": "local",
+                "digest": "sha256:31c34e6f4054d011430a565676d104d18cc1dd2ba893a2356d630351da03d372",
+                "source": "audit_tasks",
+                "path": "/home/yashs/dataforge/experiments/v3_1_baseline/audit_tasks/instance_ansible__ansible-d58e69c82d7edd0583dd8e78d76b075c33c3151e-v173091e2e36d38c978002990795f66cfc0af30ad"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "agent_setup_timeout_multiplier": 6.0,
+            "agent": {
+                "name": "locked_mini_swe:LockedMiniSwe",
+                "model_name": "openai/deepseek-ai/DeepSeek-V4.1-Flash",
+                "skip_model_parsing": false,
+                "skills": [],
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [
+                    "api.deepinfra.com"
+                ],
+                "kwargs": {
+                    "config_file": "/home/yashs/dataforge/experiments/v3_1_baseline/tooling_overlay/mini_toolcall_audit.yaml"
+                },
+                "env": {
+                    "OPENAI_API_KEY": "sk-d****6Py",
+                    "OPENAI_BASE_URL": "https://api.deepinfra.com/v1/openai",
+                    "OPENAI_API_BASE": "https://api.deepinfra.com/v1/openai",
+                    "UV_HTTP_TIMEOUT": "1800",
+                    "PIP_DEFAULT_TIMEOUT": "1800"
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "stream": false,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "disable": false,
+                "environment_mode": "shared"
+            }
+        }
+    ]
+}

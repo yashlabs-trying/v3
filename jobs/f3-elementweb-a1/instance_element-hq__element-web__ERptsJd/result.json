@@ -1,0 +1,141 @@
+{
+    "id": "b43218bf-bfab-498c-8853-e185d855d98a",
+    "task_name": "swebench-pro/instance_element-hq__element-web-aec454dd6feeb93000380523cbb0b3681c0275fd-vnan",
+    "trial_name": "instance_element-hq__element-web__ERptsJd",
+    "trial_uri": "file:///home/yashs/dataforge/experiments/v3_1_baseline/jobs/f3-elementweb-a1/instance_element-hq__element-web__ERptsJd",
+    "task_id": {
+        "path": "/home/yashs/dataforge/experiments/v3_1_baseline/audit_tasks/instance_element-hq__element-web-aec454dd6feeb93000380523cbb0b3681c0275fd-vnan"
+    },
+    "source": "audit_tasks",
+    "task_checksum": "233d451bb945d80c0cf6706c16aa84082280af98546d2326afc87818884fd605",
+    "config": {
+        "task": {
+            "path": "/home/yashs/dataforge/experiments/v3_1_baseline/audit_tasks/instance_element-hq__element-web-aec454dd6feeb93000380523cbb0b3681c0275fd-vnan",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": "audit_tasks"
+        },
+        "trial_name": "instance_element-hq__element-web__ERptsJd",
+        "trials_dir": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs/f3-elementweb-a1",
+        "install_only": false,
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": 6.0,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": "locked_mini_swe:LockedMiniSwe",
+            "import_path": null,
+            "model_name": "openai/deepseek-ai/DeepSeek-V4.1-Flash",
+            "base_url": null,
+            "model_api_key_name": null,
+            "model_api_format": null,
+            "skip_model_parsing": false,
+            "n_concurrent": null,
+            "concurrency_group": null,
+            "skills": [],
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "resume_trajectory": false,
+            "load_trajectory": null,
+            "extra_allowed_hosts": [
+                "api.deepinfra.com"
+            ],
+            "kwargs": {
+                "config_file": "/home/yashs/dataforge/experiments/v3_1_baseline/tooling_overlay/mini_toolcall_audit.yaml"
+            },
+            "env": {
+                "OPENAI_API_KEY": "sk-d****6Py",
+                "OPENAI_BASE_URL": "https://api.deepinfra.com/v1/openai",
+                "OPENAI_API_BASE": "https://api.deepinfra.com/v1/openai",
+                "UV_HTTP_TIMEOUT": "1800",
+                "PIP_DEFAULT_TIMEOUT": "1800"
+            },
+            "mcp_servers": []
+        },
+        "user_agent": null,
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "stream": false,
+            "cpu_enforcement_policy": "auto",
+            "memory_enforcement_policy": "auto",
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "override_tpu": null,
+            "mounts": null,
+            "extra_docker_compose": [],
+            "kwargs": {},
+            "extra_allowed_hosts": []
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "artifacts": [],
+        "extra_instruction_paths": [],
+        "extra_instructions": [],
+        "job_id": "60d3740e-1b80-4629-95a7-edc5c759f666",
+        "source_trial": null
+    },
+    "agent_info": {
+        "name": "mini-swe-agent-locked",
+        "version": "2.4.6",
+        "model_info": {
+            "name": "deepseek-ai/DeepSeek-V4.1-Flash",
+            "provider": "openai"
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 10315066,
+        "n_cache_tokens": 10221440,
+        "n_output_tokens": 113641,
+        "cost_usd": 0.0,
+        "model_usage": {
+            "openai/deepseek-ai/DeepSeek-V4.1-Flash": {
+                "n_input_tokens": 10315066,
+                "n_cache_tokens": 10221440,
+                "n_output_tokens": 113641,
+                "cost_usd": null
+            }
+        },
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 1.0
+        }
+    },
+    "verifier_environment_mode": "shared",
+    "exception_info": null,
+    "started_at": "2026-10-31T04:38:02.942860Z",
+    "finished_at": "2026-10-31T05:07:51.707634Z",
+    "environment_setup": {
+        "started_at": "2026-10-31T04:38:02.982891Z",
+        "finished_at": "2026-10-31T04:38:08.956195Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-10-31T04:38:08.956257Z",
+        "finished_at": "2026-10-31T04:38:20.092366Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-10-31T04:38:20.097364Z",
+        "finished_at": "2026-10-31T05:07:08.263943Z"
+    },
+    "verifier": {
+        "started_at": "2026-10-31T05:07:09.758557Z",
+        "finished_at": "2026-10-31T05:07:39.945202Z"
+    },
+    "step_results": null
+}

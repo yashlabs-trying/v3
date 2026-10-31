@@ -1,0 +1,42 @@
+ctrl-nop-instance_NodeBB__NodeBB-00c70ce7b0541cfc
+   evals: {"nop__tasks": {"0.0": ["instance_NodeBB__NodeBB-00c70ce7__SNfKuav"]}}
+   trial_verifier_result: {"rewards": {"reward": 0.0}}  exception=None
+ctrl-nop-instance_ansible__ansible-d58e69c82d7edd
+   evals: {"nop__tasks": {"0.0": ["instance_ansible__ansible-d58e69__FUnf3Th"]}}
+   trial_verifier_result: {"rewards": {"reward": 0.0}}  exception=None
+ctrl-nop-instance_element-hq__element-web-aec454d
+   evals: {}
+   trial_verifier_result: null  exception=None
+ctrl-nop-instance_flipt-io__flipt-6fe76d024ee0c50
+   evals: {"nop__tasks": {"0.0": ["instance_flipt-io__flipt-6fe76d0__4Nd54Mk"]}}
+   trial_verifier_result: {"rewards": {"reward": 0.0}}  exception=None
+ctrl-nop-instance_future-architect__vuls-f0b3a8b1
+   evals: {"nop__tasks": {"0.0": ["instance_future-architect__vuls__uSQALWj"]}}
+   trial_verifier_result: {"rewards": {"reward": 0.0}}  exception=None
+ctrl-nop-instance_gravitational__teleport-46aa81b
+   evals: {"nop__tasks": {"0.0": ["instance_gravitational__teleport__EmhVxyA"]}}
+   trial_verifier_result: {"rewards": {"reward": 0.0}}  exception=None
+ctrl-nop-instance_internetarchive__openlibrary-03
+   evals: {"nop__tasks": {"0.0": ["instance_internetarchive__openli__hsZyeWz"]}}
+   trial_verifier_result: {"rewards": {"reward": 0.0}}  exception=None
+ctrl-oracle-instance_NodeBB__NodeBB-00c70ce7b0541cfc
+   evals: {"oracle__tasks": {"1.0": ["instance_NodeBB__NodeBB-00c70ce7__yGvHsEZ"]}}
+   trial_verifier_result: {"rewards": {"reward": 1.0}}  exception=None
+ctrl-oracle-instance_ansible__ansible-d58e69c82d7edd
+   evals: {"oracle__tasks": {"1.0": ["instance_ansible__ansible-d58e69__6jexr59"]}}
+   trial_verifier_result: {"rewards": {"reward": 1.0}}  exception=None
+ctrl-oracle-instance_element-hq__element-web-aec454d
+   evals: {"oracle__tasks": {"1.0": ["instance_element-hq__element-web__g5cEGZG"]}}
+   trial_verifier_result: {"rewards": {"reward": 1.0}}  exception=None
+ctrl-oracle-instance_flipt-io__flipt-6fe76d024ee0c50
+   evals: {"oracle__tasks": {"1.0": ["instance_flipt-io__flipt-6fe76d0__wjVM43x"]}}
+   trial_verifier_result: {"rewards": {"reward": 1.0}}  exception=None
+ctrl-oracle-instance_future-architect__vuls-f0b3a8b1
+   evals: {"oracle__tasks": {"1.0": ["instance_future-architect__vuls__45Kbc75"]}}
+   trial_verifier_result: {"rewards": {"reward": 1.0}}  exception=None
+ctrl-oracle-instance_gravitational__teleport-46aa81b
+   evals: {"oracle__tasks": {"1.0": ["instance_gravitational__teleport__cHokHv4"]}}
+   trial_verifier_result: {"rewards": {"reward": 1.0}}  exception=None
+ctrl-oracle-instance_internetarchive__openlibrary-03
+   evals: {"oracle__tasks": {"1.0": ["instance_internetarchive__openli__rwmHs57"]}}
+   trial_verifier_result: {"rewards": {"reward": 1.0}}  exception=None

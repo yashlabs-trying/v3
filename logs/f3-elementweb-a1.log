@@ -1,0 +1,26 @@
+Agent 'mini-swe-agent-locked' exposes no native web search or fetch tools for Harbor to disable; continuing. Sandbox network policy still applies.
+model.patch bytes: 17194
+  1/1 Mean: 1.000 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:29:49 0:00:00
+audit_tasks • mini-swe-agent-locked • deepseek-ai/DeepSeek-V4.1-Flash
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Trials ┃ Exceptions ┃  Mean ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│      1 │          0 │ 1.000 │
+└────────┴────────────┴───────┘
+
+┏━━━━━━━━┳━━━━━━━┓
+┃ Reward ┃ Count ┃
+┡━━━━━━━━╇━━━━━━━┩
+│ 1.0    │     1 │
+└────────┴───────┘
+
+Job Info
+Total runtime: 29m 49s
+Results written to 
+/home/yashs/dataforge/experiments/v3_1_baseline/jobs/f3-elementweb-a1/result.jso
+n
+Inspect results by running `harbor view 
+/home/yashs/dataforge/experiments/v3_1_baseline/jobs`
+Share results by running `harbor upload 
+/home/yashs/dataforge/experiments/v3_1_baseline/jobs/f3-elementweb-a1`
+

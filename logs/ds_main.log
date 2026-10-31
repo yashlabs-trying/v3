@@ -1,0 +1,6 @@
+=== DS nodebb START 14:02:59 ===
+   nodebb attempt 1 rc=0 patch=166347 msgs=0
+   retrying (agent did not start)
+/home/yashs/dataforge/experiments/v3_1_baseline/run_ds.sh: line 28: 470117 Killed                     timeout 5400 harbor run -p "$AUD" -i "$T" -e docker -n 1 -a "locked_mini_swe:LockedMiniSwe" --agent-setup-timeout-multiplier 6 -m "$MODEL" --ak config_file=v2/tooling/configs/mini_toolcall.yaml --ae OPENAI_API_KEY="$KEY" --ae OPENAI_BASE_URL="$BASE" --ae OPENAI_API_BASE="$BASE" --ae UV_HTTP_TIMEOUT=1800 --ae PIP_DEFAULT_TIMEOUT=1800 --allow-agent-host api.deepinfra.com -o "$OUT" --job-name "$JOB" > "$LOGDIR/$JOB.log" 2>&1
+   nodebb attempt 2 rc=137 patch=NA msgs=0
+   retrying (agent did not start)

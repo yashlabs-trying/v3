@@ -1,0 +1,22 @@
+{
+    "job_name": "regrade-openlibrary",
+    "jobs_dir": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs",
+    "n_concurrent_trials": 1,
+    "agents": [
+        {
+            "name": "patch_replay:PatchReplayAgent",
+            "model_name": "replay",
+            "kwargs": {
+                "source_job": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs/f3-openlibrary-a1"
+            }
+        }
+    ],
+    "datasets": [
+        {
+            "path": "v2/tasks",
+            "task_names": [
+                "instance_internetarchive__openlibrary-03095f2680f7516fca35a58e665bf2a41f006273-v8717e18970bcdc4e0d2cea3b1527752b21e74866"
+            ]
+        }
+    ]
+}

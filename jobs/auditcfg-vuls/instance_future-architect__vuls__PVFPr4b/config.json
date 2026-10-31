@@ -1,0 +1,27 @@
+{
+    "task": {
+        "path": "/home/yashs/dataforge/experiments/v3_1_baseline/audit_tasks/instance_future-architect__vuls-f0b3a8b1db98eb1bd32685f1c36c41a99c3452ed",
+        "source": "audit_tasks"
+    },
+    "trial_name": "instance_future-architect__vuls__PVFPr4b",
+    "trials_dir": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs/auditcfg-vuls",
+    "agent_timeout_multiplier": 0.3,
+    "agent_setup_timeout_multiplier": 6.0,
+    "agent": {
+        "name": "locked_mini_swe:LockedMiniSwe",
+        "model_name": "openai/deepseek-ai/DeepSeek-V4.1-Flash",
+        "extra_allowed_hosts": [
+            "api.deepinfra.com"
+        ],
+        "kwargs": {
+            "config_file": "/home/yashs/dataforge/experiments/v3_1_baseline/tooling_overlay/mini_toolcall_audit.yaml"
+        },
+        "env": {
+            "OPENAI_API_KEY": "sk-d****6Py",
+            "OPENAI_BASE_URL": "https://api.deepinfra.com/v1/openai",
+            "OPENAI_API_BASE": "https://api.deepinfra.com/v1/openai",
+            "UV_HTTP_TIMEOUT": "1800"
+        }
+    },
+    "job_id": "38d36bd8-b05f-439f-8036-6795e4155650"
+}

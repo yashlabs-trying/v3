@@ -1,0 +1,16 @@
+{
+    "task": {
+        "path": "v2/tasks/instance_future-architect__vuls-f0b3a8b1db98eb1bd32685f1c36c41a99c3452ed",
+        "source": "tasks"
+    },
+    "trial_name": "instance_future-architect__vuls__uezrENW",
+    "trials_dir": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs/regrade-vuls",
+    "agent": {
+        "name": "patch_replay:PatchReplayAgent",
+        "model_name": "replay",
+        "kwargs": {
+            "source_job": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs/f3-vuls-a1"
+        }
+    },
+    "job_id": "408d014f-bfb0-4990-b04a-14e6c4a007fb"
+}

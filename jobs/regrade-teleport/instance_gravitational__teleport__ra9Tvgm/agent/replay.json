@@ -1,0 +1,7 @@
+{
+ "task": "instance_gravitational__teleport-46aa81b1ce96ebb4ebed2ae53fd78cd44a05da6c-vee9b09fb20c43af7e520f57e9239bbcf46b7113d",
+ "patch": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs/f3-teleport-a1/instance_gravitational__teleport__w7LRiYE/agent/model.patch",
+ "apply_rc": 0,
+ "apply_out": "Checking patch lib/asciitable/table.go...\nApplied patch lib/asciitable/table.go cleanly.\n",
+ "post_apply_diffstat": " lib/asciitable/table.go | 117 +++++++++++++++++++++++++++++++++++++++---------\n 1 file changed, 96 insertions(+), 21 deletions(-)\n---\n1\n"
+}

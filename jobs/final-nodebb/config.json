@@ -1,0 +1,35 @@
+{
+    "job_name": "final-nodebb",
+    "jobs_dir": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs",
+    "agent_setup_timeout_multiplier": 6.0,
+    "n_concurrent_trials": 1,
+    "agents": [
+        {
+            "name": "locked_mini_swe:LockedMiniSwe",
+            "model_name": "openai/deepseek-ai/DeepSeek-V4.1-Flash",
+            "extra_allowed_hosts": [
+                "api.deepinfra.com"
+            ],
+            "kwargs": {
+                "config_file": "v2/tooling/configs/mini_toolcall.yaml"
+            },
+            "env": {
+                "OPENAI_API_KEY": "sk-d****6Py",
+                "OPENAI_BASE_URL": "https://api.deepinfra.com/v1/openai",
+                "OPENAI_API_BASE": "https://api.deepinfra.com/v1/openai",
+                "MSWEA_CONFIGURED": "true",
+                "MSWEA_COST_TRACKING": "ignore_errors",
+                "UV_HTTP_TIMEOUT": "1800",
+                "PIP_DEFAULT_TIMEOUT": "1800"
+            }
+        }
+    ],
+    "datasets": [
+        {
+            "path": "/home/yashs/dataforge/experiments/v3_1_baseline/audit_tasks",
+            "task_names": [
+                "instance_NodeBB__NodeBB-00c70ce7b0541cfc94afe567921d7668cdc8f4ac-vnan"
+            ]
+        }
+    ]
+}

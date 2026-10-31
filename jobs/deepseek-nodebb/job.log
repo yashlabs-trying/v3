@@ -1,0 +1,6 @@
+Inference credentials: 1 mappings across 1 trials
+mini-swe-agent-locked / openai (1 trials): OPENAI_API_KEY → OPENAI_API_KEY; base URL=unknown (configured/default); API format=Agent/SDK default (unknown)
+Running command: set -euo pipefail; if ! command -v uv >/dev/null 2>&1; then curl -LsSf https://astral.sh/uv/install.sh | sh; fi && if ! grep -q 'export PATH="$HOME/.local/bin:$PATH"' "$HOME/.bashrc" 2>/dev/null; then  echo 'export PATH="$HOME/.local/bin:$PATH"' >> "$HOME/.bashrc"; fi && if [ -f "$HOME/.local/bin/env" ]; then source "$HOME/.local/bin/env"; fi && export PATH="$HOME/.local/bin:$PATH" && uv tool install --python 3.12 mini-swe-agent --with litellm --with orjson --with fastapi && mini-swe-agent --help
+Trial instance_NodeBB__NodeBB-00c70ce7__caoMDdT failed: Agent setup timed out after 2160.0 seconds
+Collecting main service artifacts
+Not retrying trial because the maximum number of retries has been reached

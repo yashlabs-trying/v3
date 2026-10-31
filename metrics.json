@@ -1,0 +1,68 @@
+{
+ "selected_tasks": 7,
+ "tasks_successfully_executed": 6,
+ "tasks_with_infrastructure_failure": 1,
+ "note_infra": "nodebb original attempt: agent never ran (0 model responses); verdict invalid",
+ "valid_deepseek_patches_produced": 6,
+ "official_v2_passes": 5,
+ "official_v2_failures": 2,
+ "reference_solution_pass_rate": "7/7 (oracle=1.0 all selected tasks)",
+ "empty_patch_rejection_rate": "7/7 (no-op=0.0 all selected tasks)",
+ "regrade_verdict_disagreements": 0,
+ "regrade_note": "all 7 regrades agreed with original reward; nodebb regrade agreed via NULL replay (apply_rc=1, nothing applied)",
+ "confirmed_false_positive_verdicts": 0,
+ "confirmed_false_negative_verdicts": 0,
+ "suspected_false_negative_verdicts": 1,
+ "suspected_false_negative_detail": "nodebb: reward 0.0 presented as model failure but agent never started; recovery rerun scored 1.0",
+ "confirmed_defects": [
+  "NodeBB model.patch contaminated by pre-existing untracked appendonlydir/*.rdb baked into image",
+  "patch_replay silently applies nothing when patch contains only pre-existing files (null replay)",
+  "mini-swe-agent unpinned resolved to 2.4.6 incompatible with V2 harness (setup wizard / cost-map crash) - mitigated, not upstream",
+  "Harbor egress sidecar + streaming/multi-request interaction stalls first model call for some tasks"
+ ],
+ "suspected_defects": [
+  "agent edits to test files are reverted before grading (observed vuls edited models/vulninfos_test.go) - correct per V2 design, but changes measured scope",
+  "Harbor agent_result reports 0 tokens/cost for DeepInfra (cost not captured)"
+ ],
+ "infrastructure_errors": 1,
+ "agent_execution_seconds": {
+  "nodebb": 2951.72912,
+  "flipt": 566.987317,
+  "vuls": 1047.530297,
+  "openlibrary": 418.669152,
+  "teleport": 360.085387,
+  "ansible": 770.519545,
+  "elementweb": 1728.166579
+ },
+ "verifier_seconds": {
+  "nodebb": 43.508562,
+  "flipt": 5.784653,
+  "vuls": 10.637177,
+  "openlibrary": 5.040094,
+  "teleport": 90.126897,
+  "ansible": 67.958767,
+  "elementweb": 30.186645
+ },
+ "rewards": {
+  "nodebb": 0.0,
+  "flipt": 1.0,
+  "vuls": 0.0,
+  "openlibrary": 1.0,
+  "teleport": 1.0,
+  "ansible": 1.0,
+  "elementweb": 1.0
+ },
+ "repeat_control_stability": {
+  "flipt_oracle": [
+   1.0,
+   1.0,
+   1.0
+  ],
+  "verdict": "stable"
+ },
+ "nodebb_recovery_rerun": {
+  "counted": false,
+  "reward": 1.0,
+  "note": "separately labeled; not the original attempt"
+ }
+}

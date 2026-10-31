@@ -1,0 +1,16 @@
+#!/bin/bash
+D=/home/yashs/dataforge/experiments/v3_1_baseline/jobs/smoke-oracle/instance_NodeBB__NodeBB-00c70ce7__fKoZZ3D
+echo "=== exception.txt ==="
+cat "$D/exception.txt"
+echo ""
+echo "=== agent/oracle.txt ==="
+cat "$D/agent/oracle.txt"
+echo ""
+echo "=== agent/exit-code.txt ==="
+cat "$D/agent/exit-code.txt"
+echo ""
+echo "=== result.json ==="
+cat "$D/result.json"
+echo ""
+echo "=== verifier/test-stdout.txt (tail 40) ==="
+tail -40 "$D/verifier/test-stdout.txt"

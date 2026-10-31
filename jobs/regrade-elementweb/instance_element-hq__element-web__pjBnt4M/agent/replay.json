@@ -1,0 +1,7 @@
+{
+ "task": "instance_element-hq__element-web-aec454dd6feeb93000380523cbb0b3681c0275fd-vnan",
+ "patch": "/home/yashs/dataforge/experiments/v3_1_baseline/jobs/f3-elementweb-a1/instance_element-hq__element-web__ERptsJd/agent/model.patch",
+ "apply_rc": 0,
+ "apply_out": "Checking patch src/components/structures/MatrixChat.tsx...\nChecking patch src/contexts/SDKContext.ts...\nChecking patch src/hooks/usePermalinkMember.ts...\nChecking patch src/stores/UserProfilesStore.ts...\nChecking patch src/utils/LruCache.ts...\nApplied patch src/components/structures/MatrixChat.tsx cleanly.\nApplied patch src/contexts/SDKContext.ts cleanly.\nApplied patch src/hooks/usePermalinkMember.ts cleanly.\nApplied patch src/stores/UserProfilesStore.ts cleanly.\nApplied patch src/utils/LruCache.ts cleanly.\n",
+ "post_apply_diffstat": " src/components/structures/MatrixChat.tsx |   1 +\n src/contexts/SDKContext.ts               |  20 ++++++\n src/hooks/usePermalinkMember.ts          | 108 ++++++++++++++++++++++++++-----\n 3 files changed, 112 insertions(+), 17 deletions(-)\n---\n5\n"
+}
