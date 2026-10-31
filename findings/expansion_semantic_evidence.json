@@ -1,0 +1,47 @@
+{
+  "note": "Recorded DataForge V3.2 Phase 2 expansion runs. Reproduce with the per-task executors in dataforge_v3/semantic/executors.py and the fixtures in findings/.",
+  "teleport": {
+    "image": "dataforge-agent:instance_gravitational__teleport-46aa81b1ce96ebb4ebed2ae53fd78cd44a05da6c-vee9b09fb20c43af7e520f57e9239bbcf46b7113d",
+    "oracle": "TestDataForgeTeleportTruncation (5 property subtests)",
+    "deepseek": {"accepted": true, "failing": []},
+    "alt_footnote_check": {"accepted": true, "failing": []},
+    "base_prefeature": {"accepted": false, "reason": "build error: Column/AddColumn undefined (feature absent)"},
+    "mutants": {
+      "mutant_no_ellipsis": {"accepted": false, "failing": ["truncate.format", "width.from_rendered"]},
+      "mutant_no_space_label": {"accepted": false, "failing": ["truncate.format"]},
+      "mutant_offbyone": {"accepted": false, "failing": ["truncate.boundary"]},
+      "mutant_all_footnotes": {"accepted": false, "failing": ["footnote.section"]}
+    },
+    "false_alarm_found_and_fixed": "initial oracle asserted the no-label cell had no trailing space; tabwriter padding made that false. Replaced with a label-absence check."
+  },
+  "ansible": {
+    "image": "dataforge-agent:instance_ansible__ansible-d58e69c82d7edd0583dd8e78d76b075c33c3151e-v173091e2e36d38c978002990795f66cfc0af30ad",
+    "oracle": "zz_df_ansible_oracle_test.py + zz_df_ansible_hasgzip_test.py (9 tests)",
+    "deepseek": {"accepted": true, "failing": []},
+    "alt_del_content_length": {"accepted": true, "failing": []},
+    "base_prefeature": {"accepted": false, "reason": "all probes fail (feature absent)"},
+    "mutants": {
+      "mutant_keep_length": {"accepted": false, "failing": ["test_df_gzip_decode"]},
+      "mutant_ignore_flag": {"accepted": false, "failing": ["test_df_decompress_false", "test_df_instance_decompress_default"]},
+      "mutant_wrap_all": {"accepted": false, "failing": ["test_df_non_gzip_passthrough"]},
+      "mutant_no_module_attr": {"accepted": false, "failing": ["test_df_missing_module_error_module"]}
+    }
+  },
+  "element-web": {
+    "image": "dataforge-agent:instance_element-hq__element-web-aec454dd6feeb93000380523cbb0b3681c0275fd-vnan",
+    "oracle": "zz_df_LruCache-test.ts (6 jest tests, LruCache surface only)",
+    "deepseek": {"accepted": true, "failing": []},
+    "mutants": {
+      "mutant_no_capacity_check": {"accepted": false, "failing": ["df_capacity"]},
+      "mutant_evict_mru": {"accepted": false, "failing": ["df_recency_evict", "df_replace"]},
+      "mutant_update_reorders": {"accepted": false, "failing": ["df_values_order"]},
+      "mutant_no_clear_on_error": {"accepted": false, "failing": ["df_set_then_clear_on_error"]}
+    },
+    "scope": "LruCache only; UserProfilesStore/SDK-context portion audited but not oracle-tested (SDK mocking)"
+  },
+  "nodebb": {
+    "verdict": "INCONCLUSIVE",
+    "reason": "Task requires a running NodeBB server with Redis/Mongo databasemock; the observable behavior is integration-level, not a pure function. V3.1 already owns execution integrity here and classified the original run INVALID (0 responses, Redis-only patch). No independent executable oracle was established for the semantic layer, so no confirmed verdict is claimed.",
+    "v3_1_context": "original: INFRASTRUCTURE_TIMEOUT, 0 model responses, CONTAMINATED_ONLY patch; V3.1 verdict INVALID"
+  }
+}
