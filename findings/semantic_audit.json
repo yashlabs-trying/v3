@@ -1,0 +1,920 @@
+{
+  "flipt": {
+    "clauses": [
+      {
+        "id": "bearer.exact",
+        "kind": "POSTCONDITION",
+        "source": "instruction.md Requirements bullet 1",
+        "statement": "Authorization metadata must be exactly \"Bearer <token>\" with a capital B and a single space; any other format is unauthenticated.",
+        "tested_by_original": [
+          "TestUnaryInterceptor/client_token_missing_Bearer_prefix",
+          "TestUnaryInterceptor/malformed_authorization_header_with_valid_cookie",
+          "TestUnaryInterceptor/authorization_header_empty"
+        ]
+      },
+      {
+        "id": "cookie.fallback",
+        "kind": "POSTCONDITION",
+        "source": "instruction.md Requirements bullet 2",
+        "statement": "When no authorization header is present, extract the token from cookies in grpcgateway-cookie under key flipt_client_token, handling multiple cookies.",
+        "tested_by_original": [
+          "TestUnaryInterceptor/successful_authentication_(cookie_header)"
+        ]
+      },
+      {
+        "id": "header.precedence",
+        "kind": "INVARIANT",
+        "source": "instruction.md Requirements bullet 3",
+        "statement": "When both authorization header and cookie are present, prefer the header and do not fall back to the cookie.",
+        "tested_by_original": [
+          "TestUnaryInterceptor/authorization_header_preferred_over_cookie"
+        ]
+      },
+      {
+        "id": "header.malformed.no_fallback",
+        "kind": "ERROR_BEHAVIOR",
+        "source": "instruction.md Requirements bullet 4",
+        "statement": "A present-but-malformed authorization header must be rejected as unauthenticated without falling back to the cookie.",
+        "tested_by_original": [
+          "TestUnaryInterceptor/malformed_authorization_header_with_valid_cookie"
+        ]
+      },
+      {
+        "id": "cookie.multiple",
+        "kind": "EDGE_CASE",
+        "source": "instruction.md Requirements bullet 2",
+        "statement": "A grpcgateway-cookie header carrying multiple cookies must still yield the flipt_client_token value; unrelated cookies are ignored.",
+        "tested_by_original": []
+      },
+      {
+        "id": "bypass.membership",
+        "kind": "POSTCONDITION",
+        "source": "instruction.md Requirements bullet 8/9",
+        "statement": "Only servers registered via WithServerSkipsAuthentication bypass auth; a non-matching server does not bypass and is still validated.",
+        "tested_by_original": [
+          "TestUnaryInterceptor/successful_authentication_(skipped)"
+        ]
+      },
+      {
+        "id": "bypass.before_extraction",
+        "kind": "INVARIANT",
+        "source": "instruction.md Requirements bullet 9",
+        "statement": "The bypass check runs before any metadata extraction, so a skipped server succeeds even with no metadata at all.",
+        "tested_by_original": [
+          "TestUnaryInterceptor/successful_authentication_(skipped)"
+        ]
+      },
+      {
+        "id": "expiry",
+        "kind": "POSTCONDITION",
+        "source": "instruction.md Requirements bullet 6",
+        "statement": "An expired token must be rejected with errUnauthenticated.",
+        "tested_by_original": [
+          "TestUnaryInterceptor/token_has_expired"
+        ]
+      }
+    ],
+    "confidence": "high",
+    "counterexamples": [],
+    "evidence": [],
+    "notes": [
+      "accepted submission satisfies every supported clause"
+    ],
+    "probes": [
+      {
+        "clauses": [],
+        "counterexample": null,
+        "detail": "",
+        "expected": null,
+        "kind": "differential",
+        "name": "flipt:deepseek",
+        "observed": [],
+        "passed": true
+      }
+    ],
+    "submission": "deepseek",
+    "task": "flipt",
+    "task_id": "instance_flipt-io__flipt-6fe76d024ee0c50ddb09c86f4ae0bd4c208fd65f",
+    "unresolved": [],
+    "v2_reward": 1.0,
+    "v3_1_classification": "PASS",
+    "verdict": "CONFIRMED_CORRECT"
+  },
+  "openlibrary": {
+    "clauses": [
+      {
+        "id": "find_keys.depth",
+        "kind": "POSTCONDITION",
+        "source": "instruction.md Requirements bullet 1",
+        "statement": "find_keys(d) yields, in traversal order, every string value stored under a 'key' field at any nesting depth within a dict or list.",
+        "tested_by_original": [
+          "scripts/tests/test_new_solr_updater.py::TestParseLog::test_action_save",
+          "scripts/tests/test_new_solr_updater.py::TestParseLog::test_move_edition"
+        ]
+      },
+      {
+        "id": "find_keys.types",
+        "kind": "INVARIANT",
+        "source": "instruction.md Requirements bullet 1",
+        "statement": "find_keys must not recurse into or emit values for non-dict/list types.",
+        "tested_by_original": []
+      },
+      {
+        "id": "parse_log.one_key_per_doc",
+        "kind": "POSTCONDITION",
+        "source": "instruction.md Requirements bullet 2",
+        "statement": "For 'save' and 'save_many', parse_log yields exactly one key per doc in changeset['docs']: that doc's own top-level 'key'.",
+        "tested_by_original": [
+          "scripts/tests/test_new_solr_updater.py::TestParseLog::test_action_save",
+          "scripts/tests/test_new_solr_updater.py::TestParseLog::test_move_edition",
+          "scripts/tests/test_new_solr_updater.py::TestParseLog::test_new_account"
+        ]
+      },
+      {
+        "id": "parse_log.difference",
+        "kind": "POSTCONDITION",
+        "source": "instruction.md Requirements bullet 3",
+        "statement": "When old_docs[i] is not None, additionally yield every key in find_keys(old_docs[i]) not in find_keys(docs[i]).",
+        "tested_by_original": [
+          "scripts/tests/test_new_solr_updater.py::TestParseLog::test_action_save",
+          "scripts/tests/test_new_solr_updater.py::TestParseLog::test_move_edition"
+        ]
+      },
+      {
+        "id": "parse_log.none_old_doc",
+        "kind": "EDGE_CASE",
+        "source": "instruction.md Requirements bullet 4",
+        "statement": "If old_docs[i] is None, skip the set-difference for that pair and yield only the doc's top-level key.",
+        "tested_by_original": [
+          "scripts/tests/test_new_solr_updater.py::TestParseLog::test_new_account"
+        ]
+      },
+      {
+        "id": "parse_log.old_docs_length",
+        "kind": "EDGE_CASE",
+        "source": "AMBIGUOUS",
+        "statement": "documents and old_docs are paired by index; a doc with no matching old_docs entry must be treated as having no previous version (top-level key only), and must not error.",
+        "tested_by_original": []
+      }
+    ],
+    "confidence": "high",
+    "counterexamples": [],
+    "evidence": [
+      {
+        "clause_id": "find_keys.depth",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [
+          "/books/OL1M",
+          "/works/OL245227W",
+          "/works/OL660415W",
+          "/works/OL913787W",
+          "/books/OL1M",
+          "/books/OL1M",
+          "/works/OL335997W",
+          "/books/OL1M",
+          "/books/OL1M",
+          "/books/OL1M"
+        ],
+        "outcome": "PASS",
+        "probe": "deepseek:property[0]"
+      },
+      {
+        "clause_id": "find_keys.types",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [
+          "/books/OL1M",
+          "/works/OL245227W",
+          "/works/OL660415W",
+          "/works/OL913787W",
+          "/books/OL1M",
+          "/books/OL1M",
+          "/works/OL335997W",
+          "/books/OL1M",
+          "/books/OL1M",
+          "/books/OL1M"
+        ],
+        "outcome": "PASS",
+        "probe": "deepseek:property[0]"
+      },
+      {
+        "clause_id": "parse_log.one_key_per_doc",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [
+          "/books/OL1M",
+          "/works/OL245227W",
+          "/works/OL660415W",
+          "/works/OL913787W",
+          "/books/OL1M",
+          "/books/OL1M",
+          "/works/OL335997W",
+          "/books/OL1M",
+          "/books/OL1M",
+          "/books/OL1M"
+        ],
+        "outcome": "PASS",
+        "probe": "deepseek:property[0]"
+      },
+      {
+        "clause_id": "parse_log.difference",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [
+          "/books/OL1M",
+          "/works/OL245227W",
+          "/works/OL660415W",
+          "/works/OL913787W",
+          "/books/OL1M",
+          "/books/OL1M",
+          "/works/OL335997W",
+          "/books/OL1M",
+          "/books/OL1M",
+          "/books/OL1M"
+        ],
+        "outcome": "PASS",
+        "probe": "deepseek:property[0]"
+      },
+      {
+        "clause_id": "parse_log.none_old_doc",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [
+          "/books/OL1M",
+          "/works/OL245227W",
+          "/works/OL660415W",
+          "/works/OL913787W",
+          "/books/OL1M",
+          "/books/OL1M",
+          "/works/OL335997W",
+          "/books/OL1M",
+          "/books/OL1M",
+          "/books/OL1M"
+        ],
+        "outcome": "PASS",
+        "probe": "deepseek:property[0]"
+      },
+      {
+        "clause_id": "parse_log.old_docs_length",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [
+          "/books/OL1M",
+          "/works/OL245227W",
+          "/works/OL660415W",
+          "/works/OL913787W",
+          "/books/OL1M",
+          "/books/OL1M",
+          "/works/OL335997W",
+          "/books/OL1M",
+          "/books/OL1M",
+          "/books/OL1M"
+        ],
+        "outcome": "PASS",
+        "probe": "deepseek:property[0]"
+      },
+      {
+        "clause_id": "find_keys.depth",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [],
+        "outcome": "PASS",
+        "probe": "deepseek:boundary[0]"
+      },
+      {
+        "clause_id": "find_keys.types",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [],
+        "outcome": "PASS",
+        "probe": "deepseek:boundary[0]"
+      },
+      {
+        "clause_id": "parse_log.one_key_per_doc",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [],
+        "outcome": "PASS",
+        "probe": "deepseek:boundary[0]"
+      },
+      {
+        "clause_id": "parse_log.difference",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [],
+        "outcome": "PASS",
+        "probe": "deepseek:boundary[0]"
+      },
+      {
+        "clause_id": "parse_log.none_old_doc",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [],
+        "outcome": "PASS",
+        "probe": "deepseek:boundary[0]"
+      },
+      {
+        "clause_id": "parse_log.old_docs_length",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [],
+        "outcome": "PASS",
+        "probe": "deepseek:boundary[0]"
+      },
+      {
+        "clause_id": "find_keys.depth",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [],
+        "outcome": "PASS",
+        "probe": "deepseek:boundary[1]"
+      },
+      {
+        "clause_id": "find_keys.types",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [],
+        "outcome": "PASS",
+        "probe": "deepseek:boundary[1]"
+      },
+      {
+        "clause_id": "parse_log.one_key_per_doc",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [],
+        "outcome": "PASS",
+        "probe": "deepseek:boundary[1]"
+      },
+      {
+        "clause_id": "parse_log.difference",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [],
+        "outcome": "PASS",
+        "probe": "deepseek:boundary[1]"
+      },
+      {
+        "clause_id": "parse_log.none_old_doc",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [],
+        "outcome": "PASS",
+        "probe": "deepseek:boundary[1]"
+      },
+      {
+        "clause_id": "parse_log.old_docs_length",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [],
+        "outcome": "PASS",
+        "probe": "deepseek:boundary[1]"
+      },
+      {
+        "clause_id": "find_keys.depth",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [
+          "/books/OL2M"
+        ],
+        "outcome": "PASS",
+        "probe": "deepseek:boundary[2]"
+      },
+      {
+        "clause_id": "find_keys.types",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [
+          "/books/OL2M"
+        ],
+        "outcome": "PASS",
+        "probe": "deepseek:boundary[2]"
+      },
+      {
+        "clause_id": "parse_log.one_key_per_doc",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [
+          "/books/OL2M"
+        ],
+        "outcome": "PASS",
+        "probe": "deepseek:boundary[2]"
+      },
+      {
+        "clause_id": "parse_log.difference",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [
+          "/books/OL2M"
+        ],
+        "outcome": "PASS",
+        "probe": "deepseek:boundary[2]"
+      },
+      {
+        "clause_id": "parse_log.none_old_doc",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [
+          "/books/OL2M"
+        ],
+        "outcome": "PASS",
+        "probe": "deepseek:boundary[2]"
+      },
+      {
+        "clause_id": "parse_log.old_docs_length",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [
+          "/books/OL2M"
+        ],
+        "outcome": "PASS",
+        "probe": "deepseek:boundary[2]"
+      },
+      {
+        "clause_id": "find_keys.depth",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [
+          "/books/OL2M"
+        ],
+        "outcome": "PASS",
+        "probe": "deepseek:boundary[3]"
+      },
+      {
+        "clause_id": "find_keys.types",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [
+          "/books/OL2M"
+        ],
+        "outcome": "PASS",
+        "probe": "deepseek:boundary[3]"
+      },
+      {
+        "clause_id": "parse_log.one_key_per_doc",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [
+          "/books/OL2M"
+        ],
+        "outcome": "PASS",
+        "probe": "deepseek:boundary[3]"
+      },
+      {
+        "clause_id": "parse_log.difference",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [
+          "/books/OL2M"
+        ],
+        "outcome": "PASS",
+        "probe": "deepseek:boundary[3]"
+      },
+      {
+        "clause_id": "parse_log.none_old_doc",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [
+          "/books/OL2M"
+        ],
+        "outcome": "PASS",
+        "probe": "deepseek:boundary[3]"
+      },
+      {
+        "clause_id": "parse_log.old_docs_length",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [
+          "/books/OL2M"
+        ],
+        "outcome": "PASS",
+        "probe": "deepseek:boundary[3]"
+      },
+      {
+        "clause_id": "find_keys.depth",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [
+          "/books/OL3M",
+          "/books/OL4M"
+        ],
+        "outcome": "PASS",
+        "probe": "deepseek:boundary[4]"
+      },
+      {
+        "clause_id": "find_keys.types",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [
+          "/books/OL3M",
+          "/books/OL4M"
+        ],
+        "outcome": "PASS",
+        "probe": "deepseek:boundary[4]"
+      },
+      {
+        "clause_id": "parse_log.one_key_per_doc",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [
+          "/books/OL3M",
+          "/books/OL4M"
+        ],
+        "outcome": "PASS",
+        "probe": "deepseek:boundary[4]"
+      },
+      {
+        "clause_id": "parse_log.difference",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [
+          "/books/OL3M",
+          "/books/OL4M"
+        ],
+        "outcome": "PASS",
+        "probe": "deepseek:boundary[4]"
+      },
+      {
+        "clause_id": "parse_log.none_old_doc",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [
+          "/books/OL3M",
+          "/books/OL4M"
+        ],
+        "outcome": "PASS",
+        "probe": "deepseek:boundary[4]"
+      },
+      {
+        "clause_id": "parse_log.old_docs_length",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [
+          "/books/OL3M",
+          "/books/OL4M"
+        ],
+        "outcome": "PASS",
+        "probe": "deepseek:boundary[4]"
+      },
+      {
+        "clause_id": "find_keys.depth",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [
+          "/books/OL5M"
+        ],
+        "outcome": "PASS",
+        "probe": "deepseek:boundary[5]"
+      },
+      {
+        "clause_id": "find_keys.types",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [
+          "/books/OL5M"
+        ],
+        "outcome": "PASS",
+        "probe": "deepseek:boundary[5]"
+      },
+      {
+        "clause_id": "parse_log.one_key_per_doc",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [
+          "/books/OL5M"
+        ],
+        "outcome": "PASS",
+        "probe": "deepseek:boundary[5]"
+      },
+      {
+        "clause_id": "parse_log.difference",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [
+          "/books/OL5M"
+        ],
+        "outcome": "PASS",
+        "probe": "deepseek:boundary[5]"
+      },
+      {
+        "clause_id": "parse_log.none_old_doc",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [
+          "/books/OL5M"
+        ],
+        "outcome": "PASS",
+        "probe": "deepseek:boundary[5]"
+      },
+      {
+        "clause_id": "parse_log.old_docs_length",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [
+          "/books/OL5M"
+        ],
+        "outcome": "PASS",
+        "probe": "deepseek:boundary[5]"
+      },
+      {
+        "clause_id": "find_keys.depth",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [
+          "/a",
+          "/w1",
+          "/a",
+          "/w2"
+        ],
+        "outcome": "PASS",
+        "probe": "deepseek:stateful[0]"
+      },
+      {
+        "clause_id": "find_keys.types",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [
+          "/a",
+          "/w1",
+          "/a",
+          "/w2"
+        ],
+        "outcome": "PASS",
+        "probe": "deepseek:stateful[0]"
+      },
+      {
+        "clause_id": "parse_log.one_key_per_doc",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [
+          "/a",
+          "/w1",
+          "/a",
+          "/w2"
+        ],
+        "outcome": "PASS",
+        "probe": "deepseek:stateful[0]"
+      },
+      {
+        "clause_id": "parse_log.difference",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [
+          "/a",
+          "/w1",
+          "/a",
+          "/w2"
+        ],
+        "outcome": "PASS",
+        "probe": "deepseek:stateful[0]"
+      },
+      {
+        "clause_id": "parse_log.none_old_doc",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [
+          "/a",
+          "/w1",
+          "/a",
+          "/w2"
+        ],
+        "outcome": "PASS",
+        "probe": "deepseek:stateful[0]"
+      },
+      {
+        "clause_id": "parse_log.old_docs_length",
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "observed": [
+          "/a",
+          "/w1",
+          "/a",
+          "/w2"
+        ],
+        "outcome": "PASS",
+        "probe": "deepseek:stateful[0]"
+      }
+    ],
+    "notes": [
+      "accepted submission satisfies every supported clause"
+    ],
+    "probes": [
+      {
+        "clauses": [
+          "find_keys.depth",
+          "find_keys.types",
+          "parse_log.one_key_per_doc",
+          "parse_log.difference",
+          "parse_log.none_old_doc",
+          "parse_log.old_docs_length"
+        ],
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "kind": "property",
+        "name": "deepseek:property[0]",
+        "observed": [
+          "/books/OL1M",
+          "/works/OL245227W",
+          "/works/OL660415W",
+          "/works/OL913787W",
+          "/books/OL1M",
+          "/books/OL1M",
+          "/works/OL335997W",
+          "/books/OL1M",
+          "/books/OL1M",
+          "/books/OL1M"
+        ],
+        "passed": true
+      },
+      {
+        "clauses": [
+          "find_keys.depth",
+          "find_keys.types",
+          "parse_log.one_key_per_doc",
+          "parse_log.difference",
+          "parse_log.none_old_doc",
+          "parse_log.old_docs_length"
+        ],
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "kind": "boundary",
+        "name": "deepseek:boundary[0]",
+        "observed": [],
+        "passed": true
+      },
+      {
+        "clauses": [
+          "find_keys.depth",
+          "find_keys.types",
+          "parse_log.one_key_per_doc",
+          "parse_log.difference",
+          "parse_log.none_old_doc",
+          "parse_log.old_docs_length"
+        ],
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "kind": "boundary",
+        "name": "deepseek:boundary[1]",
+        "observed": [],
+        "passed": true
+      },
+      {
+        "clauses": [
+          "find_keys.depth",
+          "find_keys.types",
+          "parse_log.one_key_per_doc",
+          "parse_log.difference",
+          "parse_log.none_old_doc",
+          "parse_log.old_docs_length"
+        ],
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "kind": "boundary",
+        "name": "deepseek:boundary[2]",
+        "observed": [
+          "/books/OL2M"
+        ],
+        "passed": true
+      },
+      {
+        "clauses": [
+          "find_keys.depth",
+          "find_keys.types",
+          "parse_log.one_key_per_doc",
+          "parse_log.difference",
+          "parse_log.none_old_doc",
+          "parse_log.old_docs_length"
+        ],
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "kind": "boundary",
+        "name": "deepseek:boundary[3]",
+        "observed": [
+          "/books/OL2M"
+        ],
+        "passed": true
+      },
+      {
+        "clauses": [
+          "find_keys.depth",
+          "find_keys.types",
+          "parse_log.one_key_per_doc",
+          "parse_log.difference",
+          "parse_log.none_old_doc",
+          "parse_log.old_docs_length"
+        ],
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "kind": "boundary",
+        "name": "deepseek:boundary[4]",
+        "observed": [
+          "/books/OL3M",
+          "/books/OL4M"
+        ],
+        "passed": true
+      },
+      {
+        "clauses": [
+          "find_keys.depth",
+          "find_keys.types",
+          "parse_log.one_key_per_doc",
+          "parse_log.difference",
+          "parse_log.none_old_doc",
+          "parse_log.old_docs_length"
+        ],
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "kind": "boundary",
+        "name": "deepseek:boundary[5]",
+        "observed": [
+          "/books/OL5M"
+        ],
+        "passed": true
+      },
+      {
+        "clauses": [
+          "find_keys.depth",
+          "find_keys.types",
+          "parse_log.one_key_per_doc",
+          "parse_log.difference",
+          "parse_log.none_old_doc",
+          "parse_log.old_docs_length"
+        ],
+        "counterexample": null,
+        "detail": "matches contract structure",
+        "expected": null,
+        "kind": "stateful",
+        "name": "deepseek:stateful[0]",
+        "observed": [
+          "/a",
+          "/w1",
+          "/a",
+          "/w2"
+        ],
+        "passed": true
+      }
+    ],
+    "submission": "deepseek",
+    "task": "openlibrary",
+    "task_id": "instance_internetarchive__openlibrary-03095f2680f7516fca35a58e665bf2a41f006273-v8717e18970bcdc4e0d2cea3b1527752b21e74866",
+    "unresolved": [],
+    "v2_reward": 1.0,
+    "v3_1_classification": "PASS",
+    "verdict": "CONFIRMED_CORRECT"
+  }
+}
