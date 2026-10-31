@@ -1,0 +1,7 @@
+# Do not commit the upstream repo copy (public; referenced by URL + commit SHA instead)
+upstream_lf/
+
+# Never commit credentials
+.dataforge_creds/
+*.key
+auth.json

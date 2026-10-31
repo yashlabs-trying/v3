@@ -1,0 +1,656 @@
+{
+  "tests": [
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | <ExportDialog /> | renders export dialog",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | <ExportDialog /> | calls onFinished when cancel button is clicked",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | <ExportDialog /> | exports room on submit",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | <ExportDialog /> | exports room using values set from ForceRoomExportParameters",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | <ExportDialog /> | renders success screen when export is finished",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | export format | renders export format with html selected by default",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | export format | sets export format on radio button click",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | export format | hides export format input when format is valid in ForceRoomExportParameters",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | export format | does not render export format when set in ForceRoomExportParameters",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | export type | renders export type with timeline selected by default",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | export type | sets export type on change",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | export type | does not render export type when set in ForceRoomExportParameters",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | export type | does not render message count input",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | export type | renders message count input with default value 100 when export type is lastNMessages",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | export type | sets message count on change",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | export type | does not export when export type is lastNMessages and message count is falsy",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | export type | does not export when export type is lastNMessages and message count is more than max",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | export type | exports when export type is NOT lastNMessages and message count is falsy",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | size limit | renders size limit input with default value",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | size limit | updates size limit on change",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | size limit | does not export when size limit is falsy",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | size limit | does not export when size limit is larger than max",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | size limit | exports when size limit is max",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | size limit | does not render size limit input when set in ForceRoomExportParameters",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | size limit | exports when size limit set in ForceRoomExportParameters is larger than 2000",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | include attachments | renders input with default value of false",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | include attachments | updates include attachments on change",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | include attachments | does not render input when set in ForceRoomExportParameters",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/utils/LruCache-test.ts | LruCache | when creating a cache with negative capacity it should raise an error",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/utils/LruCache-test.ts | LruCache | when creating a cache with 0 capacity it should raise an error",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/utils/LruCache-test.ts | when there is a cache with a capacity of 3 | has() should return false",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/utils/LruCache-test.ts | when there is a cache with a capacity of 3 | get() should return undefined",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/utils/LruCache-test.ts | when there is a cache with a capacity of 3 | values() should return an empty iterator",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/utils/LruCache-test.ts | when there is a cache with a capacity of 3 | delete() should not raise an error",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/utils/LruCache-test.ts | when the cache contains 2 items | has() should return false for an item not in the cache",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/utils/LruCache-test.ts | when the cache contains 2 items | get() should return undefined for an item not in the cahce",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/utils/LruCache-test.ts | when the cache contains 2 items | values() should return the items in the cache",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/utils/LruCache-test.ts | when the cache contains 2 items | clear() should clear the cache",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/utils/LruCache-test.ts | when the cache contains 2 items | when an error occurs while setting an item the cache should be cleard",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/utils/LruCache-test.ts | and adding another item | deleting an unkonwn item should not raise an error",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/utils/LruCache-test.ts | and adding another item | deleting the first item should work",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/utils/LruCache-test.ts | and adding another item | deleting the item in the middle should work",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/utils/LruCache-test.ts | and adding another item | deleting the last item should work",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/utils/LruCache-test.ts | and adding another item | deleting all items should work",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/utils/LruCache-test.ts | and adding another item | deleting and adding some items should work",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/utils/LruCache-test.ts | and accesing the first added item and adding another item | should contain the last recently accessed items",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/utils/LruCache-test.ts | and accesing the first added item and adding another item | should not contain the least recently accessed items",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/utils/LruCache-test.ts | and adding 2 additional items | has() should return false for expired items",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/utils/LruCache-test.ts | and adding 2 additional items | has() should return true for items in the caceh",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/utils/LruCache-test.ts | and adding 2 additional items | get() should return undefined for expired items",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/utils/LruCache-test.ts | and adding 2 additional items | get() should return the items in the cache",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/utils/LruCache-test.ts | and adding 2 additional items | values() should return the items in the cache",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/utils/LruCache-test.ts | when the cache contains some items where one of them is a replacement | should contain the last recently set items",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/voice-broadcast/audio/VoiceBroadcastRecorder-test.ts | createVoiceBroadcastRecorder | should return a VoiceBroadcastRecorder instance with targetChunkLength from config",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/voice-broadcast/audio/VoiceBroadcastRecorder-test.ts | instance | start should forward the call to VoiceRecording.start",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/voice-broadcast/audio/VoiceBroadcastRecorder-test.ts | instance | contentType should return the value from VoiceRecording",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/voice-broadcast/audio/VoiceBroadcastRecorder-test.ts | stop | should forward the call to VoiceRecording.stop",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/voice-broadcast/audio/VoiceBroadcastRecorder-test.ts | stop | should not emit a ChunkRecorded event",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/voice-broadcast/audio/VoiceBroadcastRecorder-test.ts | when calling destroy | should call VoiceRecording.destroy",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/voice-broadcast/audio/VoiceBroadcastRecorder-test.ts | when calling destroy | should remove all listeners",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/voice-broadcast/audio/VoiceBroadcastRecorder-test.ts | when the first header from recorder has been received | should not emit a ChunkRecorded event",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/voice-broadcast/audio/VoiceBroadcastRecorder-test.ts | when the second header from recorder has been received | should not emit a ChunkRecorded event",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/voice-broadcast/audio/VoiceBroadcastRecorder-test.ts | when a third page from recorder has been received | should not emit a ChunkRecorded event",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/voice-broadcast/audio/VoiceBroadcastRecorder-test.ts | and calling stop | should return the remaining chunk",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/voice-broadcast/audio/VoiceBroadcastRecorder-test.ts | and calling start again and receiving some data | should emit the ChunkRecorded event for the first chunk",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/voice-broadcast/audio/VoiceBroadcastRecorder-test.ts | and calling stop() with recording.stop error) | should return the remaining chunk",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/voice-broadcast/audio/VoiceBroadcastRecorder-test.ts | when some chunks have been received | should emit ChunkRecorded events",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | when translations exist in language | translates a string to german",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | when translations exist in language | translates a basic string",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | when translations exist in language | handles plurals when count is 0",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | when translations exist in language | handles plurals when count is 1",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | when translations exist in language | handles plurals when count is not 1",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | when translations exist in language | handles simple variable substitution",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | when translations exist in language | handles simple tag substitution",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | when translations exist in language | handles text in tags",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | when translations exist in language | handles variable substitution with React function component",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | when translations exist in language | handles variable substitution with react node",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | when translations exist in language | handles tag substitution with React function component",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | when translations exist in language | replacements in the wrong order",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | when translations exist in language | multiple replacements of the same variable",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | when translations exist in language | multiple replacements of the same tag",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | _t | translated correctly when plural string exists for count",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | _t | falls back when plural string exists but not for for count",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | _t | falls back when plural string does not exists at all",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | _tDom() | translated correctly when plural string exists for count",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | _tDom() | falls back when plural string exists but not for for count and translates with fallback locale, attributes fallback locale",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | _tDom() | falls back when plural string does not exists at all and translates with fallback locale, attributes fallback locale",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | _t | translates a basic string and translates with fallback locale",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | _t | handles plurals when count is 0 and translates with fallback locale",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | _t | handles plurals when count is 1 and translates with fallback locale",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | _t | handles plurals when count is not 1 and translates with fallback locale",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | _t | handles simple variable substitution and translates with fallback locale",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | _t | handles simple tag substitution and translates with fallback locale",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | _t | handles text in tags and translates with fallback locale",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | _t | handles variable substitution with React function component and translates with fallback locale",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | _t | handles variable substitution with react node and translates with fallback locale",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | _t | handles tag substitution with React function component and translates with fallback locale",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | _tDom() | translates a basic string and translates with fallback locale, attributes fallback locale",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | _tDom() | handles plurals when count is 0 and translates with fallback locale, attributes fallback locale",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | _tDom() | handles plurals when count is 1 and translates with fallback locale, attributes fallback locale",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | _tDom() | handles plurals when count is not 1 and translates with fallback locale, attributes fallback locale",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | _tDom() | handles simple variable substitution and translates with fallback locale, attributes fallback locale",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | _tDom() | handles simple tag substitution and translates with fallback locale, attributes fallback locale",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | _tDom() | handles text in tags and translates with fallback locale, attributes fallback locale",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | _tDom() | handles variable substitution with React function component and translates with fallback locale, attributes fallback locale",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | _tDom() | handles variable substitution with react node and translates with fallback locale, attributes fallback locale",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | _tDom() | handles tag substitution with React function component and translates with fallback locale, attributes fallback locale",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | when languages dont load | _t",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/i18n-test/languageHandler-test.tsx | when languages dont load | _tDom",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/structures/AutocompleteInput-test.tsx | AutocompleteInput | should render suggestions when a query is set",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/structures/AutocompleteInput-test.tsx | AutocompleteInput | should render selected items passed in via props",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/structures/AutocompleteInput-test.tsx | AutocompleteInput | should call onSelectionChange() when an item is removed from selection",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/structures/AutocompleteInput-test.tsx | AutocompleteInput | should render custom selection element when renderSelection() is defined",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/structures/AutocompleteInput-test.tsx | AutocompleteInput | should render custom suggestion element when renderSuggestion() is defined",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/structures/AutocompleteInput-test.tsx | AutocompleteInput | should mark selected suggestions as selected",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/structures/AutocompleteInput-test.tsx | AutocompleteInput | should remove the last added selection when backspace is pressed in empty input",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/structures/AutocompleteInput-test.tsx | AutocompleteInput | should toggle a selected item when a suggestion is clicked",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/stores/UserProfilesStore-test.ts | UserProfilesStore | getProfile should return undefined if the profile was not fetched",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/stores/UserProfilesStore-test.ts | UserProfilesStore | getOnlyKnownProfile should return undefined if the profile was not fetched",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/stores/UserProfilesStore-test.ts | fetchProfile | should return the profile from the API and cache it",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/stores/UserProfilesStore-test.ts | fetchProfile | for an user that does not exist should return null and cache it",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/stores/UserProfilesStore-test.ts | fetchOnlyKnownProfile | should return undefined if no room shared with the user",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/stores/UserProfilesStore-test.ts | fetchOnlyKnownProfile | for a known user should return the profile from the API and cache it",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/stores/UserProfilesStore-test.ts | fetchOnlyKnownProfile | for a known user not found via API should return null and cache it",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/stores/UserProfilesStore-test.ts | and membership events with the same values appear | should not invalidate the cache",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/stores/UserProfilesStore-test.ts | and membership events with different values appear | should invalidate the cache",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/AccessibleButton-test.tsx | <AccessibleButton /> | renders div with role button by default",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/AccessibleButton-test.tsx | <AccessibleButton /> | renders a button element",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/AccessibleButton-test.tsx | <AccessibleButton /> | renders with correct classes when button has kind",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/AccessibleButton-test.tsx | <AccessibleButton /> | disables button correctly",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/AccessibleButton-test.tsx | <AccessibleButton /> | calls onClick handler on button click",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/AccessibleButton-test.tsx | <AccessibleButton /> | calls onClick handler on button mousedown when triggerOnMousedown is passed",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/AccessibleButton-test.tsx | handling keyboard events | calls onClick handler on enter keydown",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/AccessibleButton-test.tsx | handling keyboard events | calls onClick handler on space keyup",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/AccessibleButton-test.tsx | handling keyboard events | calls onKeydown/onKeyUp handlers for keys other than space and enter",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/AccessibleButton-test.tsx | handling keyboard events | does nothing on non space/enter key presses when no onKeydown/onKeyUp handlers provided",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/messages/MImageBody-test.tsx | <MImageBody/> | should show error when encrypted media cannot be downloaded",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/messages/MImageBody-test.tsx | <MImageBody/> | should show error when encrypted media cannot be decrypted",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/beacon/DialogSidebar-test.tsx | <DialogSidebar /> | renders sidebar correctly without beacons",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/beacon/DialogSidebar-test.tsx | <DialogSidebar /> | renders sidebar correctly with beacons",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/beacon/DialogSidebar-test.tsx | <DialogSidebar /> | calls on beacon click",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/beacon/DialogSidebar-test.tsx | <DialogSidebar /> | closes on close button click",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/Pill-test.tsx | <Pill> | should not render a non-permalink",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/Pill-test.tsx | <Pill> | should render the expected pill for a space",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/Pill-test.tsx | <Pill> | should render the expected pill for a room alias",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/Pill-test.tsx | <Pill> | should render the expected pill for @room",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/Pill-test.tsx | <Pill> | should render the expected pill for a known user not in the room",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/Pill-test.tsx | <Pill> | should render the expected pill for an uknown user not in the room",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/Pill-test.tsx | <Pill> | should not render anything if the type cannot be detected",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/Pill-test.tsx | <Pill> | should not render an avatar or link when called with inMessage = false and shouldShowPillAvatar = false",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/Pill-test.tsx | <Pill> | should render the expected pill for a message in the same room",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/Pill-test.tsx | <Pill> | should render the expected pill for a message in another room",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/Pill-test.tsx | <Pill> | should not render a pill with an unknown type",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/Pill-test.tsx | when rendering a pill for a room | should render the expected pill",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/Pill-test.tsx | when hovering the pill | should show a tooltip with the room Id",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/Pill-test.tsx | when not hovering the pill any more | should dimiss a tooltip with the room Id",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/Pill-test.tsx | when rendering a pill for a user in the room | should render as expected",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/Pill-test.tsx | when clicking the pill | should dipsatch a view user action and prevent event bubbling",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/contexts/SdkContext-test.ts | SdkContextClass | instance should always return the same instance",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/contexts/SdkContext-test.ts | SdkContextClass | voiceBroadcastPreRecordingStore should always return the same VoiceBroadcastPreRecordingStore",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/contexts/SdkContext-test.ts | SdkContextClass | userProfilesStore should raise an error without a client",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/contexts/SdkContext-test.ts | when SDKContext has a client | userProfilesStore should return a UserProfilesStore",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/contexts/SdkContext-test.ts | when SDKContext has a client | onLoggedOut should clear the UserProfilesStore",
+      "status": "PASSED"
+    }
+  ]
+}

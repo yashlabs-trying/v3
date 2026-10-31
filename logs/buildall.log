@@ -1,0 +1,14 @@
+already built: instance_NodeBB__NodeBB-00c70ce7b0541cfc94afe567921d7668cdc8f4ac-vnan
+=== building instance_flipt-io__flipt-6fe76d024ee0c50ddb09c86f4ae0bd4c208fd65f ===
+  ok instance_flipt-io__flipt-6fe76d024ee0c50ddb09c86f4ae0bd4c208fd65f
+=== building instance_future-architect__vuls-f0b3a8b1db98eb1bd32685f1c36c41a99c3452ed ===
+  ok instance_future-architect__vuls-f0b3a8b1db98eb1bd32685f1c36c41a99c3452ed
+=== building instance_internetarchive__openlibrary-03095f2680f7516fca35a58e665bf2a41f006273-v8717e18970bcdc4e0d2cea3b1527752b21e74866 ===
+  ok instance_internetarchive__openlibrary-03095f2680f7516fca35a58e665bf2a41f006273-v8717e18970bcdc4e0d2cea3b1527752b21e74866
+=== building instance_gravitational__teleport-46aa81b1ce96ebb4ebed2ae53fd78cd44a05da6c-vee9b09fb20c43af7e520f57e9239bbcf46b7113d ===
+  ok instance_gravitational__teleport-46aa81b1ce96ebb4ebed2ae53fd78cd44a05da6c-vee9b09fb20c43af7e520f57e9239bbcf46b7113d
+=== building instance_ansible__ansible-d58e69c82d7edd0583dd8e78d76b075c33c3151e-v173091e2e36d38c978002990795f66cfc0af30ad ===
+  BUILD_FAILED instance_ansible__ansible-d58e69c82d7edd0583dd8e78d76b075c33c3151e-v173091e2e36d38c978002990795f66cfc0af30ad
+=== building instance_element-hq__element-web-aec454dd6feeb93000380523cbb0b3681c0275fd-vnan ===
+  ok instance_element-hq__element-web-aec454dd6feeb93000380523cbb0b3681c0275fd-vnan
+ALL_AGENT_IMAGES_BUILT

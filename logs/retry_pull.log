@@ -1,0 +1,9 @@
+pull attempt 1: ghcr.io/scaleapi/swe-bench_pro-v2:instance_flipt-io__flipt-6fe76d024ee0c50ddb09c86f4ae0bd4c208fd65f
+  ok: ghcr.io/scaleapi/swe-bench_pro-v2:instance_flipt-io__flipt-6fe76d024ee0c50ddb09c86f4ae0bd4c208fd65f
+pull attempt 1: ghcr.io/scaleapi/swe-bench_pro-v2:instance_future-architect__vuls-f0b3a8b1db98eb1bd32685f1c36c41a99c3452ed
+  failed attempt 1
+pull attempt 2: ghcr.io/scaleapi/swe-bench_pro-v2:instance_future-architect__vuls-f0b3a8b1db98eb1bd32685f1c36c41a99c3452ed
+  ok: ghcr.io/scaleapi/swe-bench_pro-v2:instance_future-architect__vuls-f0b3a8b1db98eb1bd32685f1c36c41a99c3452ed
+present: ghcr.io/scaleapi/swe-bench_pro-v2:instance_ansible__ansible-d58e69c82d7edd0583dd8e78d76b075c33c3151e-v173091e2e36d38c978002990795f66cfc0af30ad
+present: ghcr.io/scaleapi/swe-bench_pro-v2:instance_element-hq__element-web-aec454dd6feeb93000380523cbb0b3681c0275fd-vnan
+RETRY_PULL_DONE

