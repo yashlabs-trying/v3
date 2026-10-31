@@ -1,0 +1,39 @@
+{
+    "id": "7b41750b-36f9-4023-84a4-301bc31791d4",
+    "started_at": "2026-10-31T09:00:52.877334",
+    "updated_at": "2026-10-31T09:05:58.312248",
+    "finished_at": "2026-10-31T09:05:58.312248",
+    "n_total_trials": 1,
+    "stats": {
+        "n_completed_trials": 1,
+        "n_errored_trials": 0,
+        "n_running_trials": 0,
+        "n_pending_trials": 0,
+        "n_cancelled_trials": 0,
+        "n_retries": 0,
+        "evals": {
+            "dataforge-replay-agent__adhoc": {
+                "n_trials": 1,
+                "n_errors": 0,
+                "metrics": [
+                    {
+                        "mean": 0.0
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {
+                    "reward": {
+                        "0.0": [
+                            "instance_future-architect__vuls__cm355eh"
+                        ]
+                    }
+                },
+                "exception_stats": {}
+            }
+        },
+        "n_input_tokens": null,
+        "n_cache_tokens": null,
+        "n_output_tokens": null,
+        "cost_usd": null
+    }
+}

@@ -5,3 +5,8 @@ upstream_lf/
 .dataforge_creds/
 *.key
 auth.json
+
+# Python bytecode / caches
+__pycache__/
+*.py[cod]
+.pytest_cache/

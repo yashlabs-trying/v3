@@ -1,0 +1,16 @@
+{
+  "tests": [
+    {
+      "name": "TestHeadlessTable",
+      "status": "PASSED"
+    },
+    {
+      "name": "TestTruncatedTable",
+      "status": "PASSED"
+    },
+    {
+      "name": "TestFullTable",
+      "status": "PASSED"
+    }
+  ]
+}
