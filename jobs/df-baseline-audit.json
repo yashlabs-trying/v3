@@ -1,0 +1,490 @@
+{
+  "buckets": {
+    "FAIL": 1,
+    "INVALID": 1,
+    "PASS": 5
+  },
+  "count": 7,
+  "results": [
+    {
+      "classification": "PASS",
+      "execution": {
+        "agent_process_started": true,
+        "cause": null,
+        "evidence": {
+          "agent_execution_finished_at": "2026-10-31T04:36:32.400957Z",
+          "agent_execution_started_at": "2026-10-31T04:23:41.881412Z",
+          "agent_process_started": true,
+          "exception_type": null,
+          "has_trajectory": true,
+          "model_responses": 67,
+          "transcript_bytes": 231902
+        },
+        "exception_type": null,
+        "model_responses": 67,
+        "status": "COMPLETED"
+      },
+      "lifecycle": [],
+      "original_reward": 1.0,
+      "patch": {
+        "entries": [],
+        "files_accepted": 3,
+        "files_excluded": [],
+        "files_total": 3,
+        "reasons": [
+          "structural validation only; no pristine baseline available in this artifact set"
+        ],
+        "sha256": "cd3172f69573355176701e538d80f9a51c9a527e54151cf1fe639d08695026c1",
+        "size_bytes": 16513,
+        "verdict": "VALID"
+      },
+      "provenance": {
+        "note": "no DataForge replay evidence; provenance baseline unavailable"
+      },
+      "replay": {},
+      "task": "ansible",
+      "task_id": "instance_ansible__ansible-d58e69c82d7edd0583dd8e78d76b075c33c3151e-v173091e2e36d38c978002990795f66cfc0af30ad",
+      "verification": {
+        "contradictory_tests": [],
+        "evidence": {
+          "evidence_validation": {
+            "absent_required": [],
+            "contradictory": [],
+            "not_passed_required": [],
+            "observed_count": 48,
+            "parser_dropped": [],
+            "passed_required": 48,
+            "reasons": [],
+            "required_count": 48,
+            "reward": 1.0,
+            "status": "VALID"
+          },
+          "replay": {}
+        },
+        "missing_required": [],
+        "passed_required": 48,
+        "reasons": [
+          "original harness verdict only; no independent DataForge replay in this legacy artifact set",
+          "classified from original harness verdict; not independently replay-verified"
+        ],
+        "required_tests": 48,
+        "reward": 1.0,
+        "status": "UNVERIFIED_ORIGINAL",
+        "test_file_touched": []
+      }
+    },
+    {
+      "classification": "PASS",
+      "execution": {
+        "agent_process_started": true,
+        "cause": null,
+        "evidence": {
+          "agent_execution_finished_at": "2026-10-31T05:07:08.263943Z",
+          "agent_execution_started_at": "2026-10-31T04:38:20.097364Z",
+          "agent_process_started": true,
+          "exception_type": null,
+          "has_trajectory": true,
+          "model_responses": 96,
+          "transcript_bytes": 371807
+        },
+        "exception_type": null,
+        "model_responses": 96,
+        "status": "COMPLETED"
+      },
+      "lifecycle": [],
+      "original_reward": 1.0,
+      "patch": {
+        "entries": [],
+        "files_accepted": 5,
+        "files_excluded": [],
+        "files_total": 5,
+        "reasons": [
+          "structural validation only; no pristine baseline available in this artifact set"
+        ],
+        "sha256": "5ae7b2ae0b41a7194d3b273e27abc390e3c9e1408ab1aa8343d5eec126574291",
+        "size_bytes": 17194,
+        "verdict": "VALID"
+      },
+      "provenance": {
+        "note": "no DataForge replay evidence; provenance baseline unavailable"
+      },
+      "replay": {},
+      "task": "element-hq",
+      "task_id": "instance_element-hq__element-web-aec454dd6feeb93000380523cbb0b3681c0275fd-vnan",
+      "verification": {
+        "contradictory_tests": [],
+        "evidence": {
+          "evidence_validation": {
+            "absent_required": [],
+            "contradictory": [],
+            "not_passed_required": [],
+            "observed_count": 163,
+            "parser_dropped": [],
+            "passed_required": 163,
+            "reasons": [],
+            "required_count": 163,
+            "reward": 1.0,
+            "status": "VALID"
+          },
+          "replay": {}
+        },
+        "missing_required": [],
+        "passed_required": 163,
+        "reasons": [
+          "original harness verdict only; no independent DataForge replay in this legacy artifact set",
+          "classified from original harness verdict; not independently replay-verified"
+        ],
+        "required_tests": 163,
+        "reward": 1.0,
+        "status": "UNVERIFIED_ORIGINAL",
+        "test_file_touched": []
+      }
+    },
+    {
+      "classification": "PASS",
+      "execution": {
+        "agent_process_started": true,
+        "cause": null,
+        "evidence": {
+          "agent_execution_finished_at": "2026-10-30T16:50:28.446088Z",
+          "agent_execution_started_at": "2026-10-30T16:41:01.458771Z",
+          "agent_process_started": true,
+          "exception_type": null,
+          "has_trajectory": true,
+          "model_responses": 47,
+          "transcript_bytes": 128342
+        },
+        "exception_type": null,
+        "model_responses": 47,
+        "status": "COMPLETED"
+      },
+      "lifecycle": [],
+      "original_reward": 1.0,
+      "patch": {
+        "entries": [],
+        "files_accepted": 1,
+        "files_excluded": [],
+        "files_total": 1,
+        "reasons": [
+          "structural validation only; no pristine baseline available in this artifact set"
+        ],
+        "sha256": "84d420e01cae3b638f55ccb24f856e769b67c0fd9eed993bb7a4e4c9cf785bee",
+        "size_bytes": 7772,
+        "verdict": "VALID"
+      },
+      "provenance": {
+        "note": "no DataForge replay evidence; provenance baseline unavailable"
+      },
+      "replay": {},
+      "task": "flipt-io",
+      "task_id": "instance_flipt-io__flipt-6fe76d024ee0c50ddb09c86f4ae0bd4c208fd65f",
+      "verification": {
+        "contradictory_tests": [],
+        "evidence": {
+          "evidence_validation": {
+            "absent_required": [],
+            "contradictory": [],
+            "not_passed_required": [],
+            "observed_count": 13,
+            "parser_dropped": [],
+            "passed_required": 13,
+            "reasons": [],
+            "required_count": 13,
+            "reward": 1.0,
+            "status": "VALID"
+          },
+          "replay": {}
+        },
+        "missing_required": [],
+        "passed_required": 13,
+        "reasons": [
+          "original harness verdict only; no independent DataForge replay in this legacy artifact set",
+          "classified from original harness verdict; not independently replay-verified"
+        ],
+        "required_tests": 13,
+        "reward": 1.0,
+        "status": "UNVERIFIED_ORIGINAL",
+        "test_file_touched": []
+      }
+    },
+    {
+      "classification": "INVALID",
+      "execution": {
+        "agent_process_started": true,
+        "cause": "connection",
+        "evidence": {
+          "agent_execution_finished_at": "2026-10-30T16:39:40.150934Z",
+          "agent_execution_started_at": "2026-10-30T15:50:28.421814Z",
+          "agent_process_started": true,
+          "exception_type": "NonZeroAgentExitCodeError",
+          "has_trajectory": false,
+          "model_responses": 0,
+          "transcript_bytes": 8681
+        },
+        "exception_type": "NonZeroAgentExitCodeError",
+        "model_responses": 0,
+        "status": "INFRASTRUCTURE_TIMEOUT"
+      },
+      "lifecycle": [],
+      "original_reward": 0.0,
+      "patch": {
+        "entries": [],
+        "files_accepted": 3,
+        "files_excluded": [],
+        "files_total": 3,
+        "reasons": [
+          "structural validation only; no pristine baseline available in this artifact set"
+        ],
+        "sha256": "c61a51a5db39ef4754cb2bc6b4f9e42ce3f31d40e4467ca1e784299c9db13bc8",
+        "size_bytes": 150661,
+        "verdict": "VALID"
+      },
+      "provenance": {
+        "note": "no DataForge replay evidence; provenance baseline unavailable"
+      },
+      "replay": {},
+      "task": "NodeBB",
+      "task_id": "instance_NodeBB__NodeBB-00c70ce7b0541cfc94afe567921d7668cdc8f4ac-vnan",
+      "verification": {
+        "contradictory_tests": [],
+        "evidence": {
+          "evidence_validation": {
+            "absent_required": [
+              "test/socket.io.js | socket.io | should toggle caches",
+              "test/user.js | User | socket methods | should return true/false if user/group exists or not"
+            ],
+            "contradictory": [],
+            "not_passed_required": [
+              "test/socket.io.js | socket.io | should toggle caches",
+              "test/user.js | User | socket methods | should return true/false if user/group exists or not"
+            ],
+            "observed_count": 1,
+            "parser_dropped": [],
+            "passed_required": 0,
+            "reasons": [],
+            "required_count": 2,
+            "reward": 0.0,
+            "status": "VALID"
+          },
+          "replay": {}
+        },
+        "missing_required": [
+          "test/socket.io.js | socket.io | should toggle caches",
+          "test/user.js | User | socket methods | should return true/false if user/group exists or not"
+        ],
+        "passed_required": 0,
+        "reasons": [
+          "original harness verdict only; no independent DataForge replay in this legacy artifact set",
+          "execution evidence insufficient: status=INFRASTRUCTURE_TIMEOUT, model_responses=0"
+        ],
+        "required_tests": 2,
+        "reward": 0.0,
+        "status": "UNVERIFIED_ORIGINAL",
+        "test_file_touched": []
+      }
+    },
+    {
+      "classification": "PASS",
+      "execution": {
+        "agent_process_started": true,
+        "cause": null,
+        "evidence": {
+          "agent_execution_finished_at": "2026-10-31T04:14:53.343011Z",
+          "agent_execution_started_at": "2026-10-31T04:07:54.673859Z",
+          "agent_process_started": true,
+          "exception_type": null,
+          "has_trajectory": true,
+          "model_responses": 43,
+          "transcript_bytes": 121954
+        },
+        "exception_type": null,
+        "model_responses": 43,
+        "status": "COMPLETED"
+      },
+      "lifecycle": [],
+      "original_reward": 1.0,
+      "patch": {
+        "entries": [],
+        "files_accepted": 1,
+        "files_excluded": [],
+        "files_total": 1,
+        "reasons": [
+          "structural validation only; no pristine baseline available in this artifact set"
+        ],
+        "sha256": "82daa6ddd59645452a79a6387636282266f7acb7e9df37c21ec679ae5e5bded3",
+        "size_bytes": 2573,
+        "verdict": "VALID"
+      },
+      "provenance": {
+        "note": "no DataForge replay evidence; provenance baseline unavailable"
+      },
+      "replay": {},
+      "task": "internetarchive",
+      "task_id": "instance_internetarchive__openlibrary-03095f2680f7516fca35a58e665bf2a41f006273-v8717e18970bcdc4e0d2cea3b1527752b21e74866",
+      "verification": {
+        "contradictory_tests": [],
+        "evidence": {
+          "evidence_validation": {
+            "absent_required": [],
+            "contradictory": [],
+            "not_passed_required": [],
+            "observed_count": 3,
+            "parser_dropped": [],
+            "passed_required": 3,
+            "reasons": [],
+            "required_count": 3,
+            "reward": 1.0,
+            "status": "VALID"
+          },
+          "replay": {}
+        },
+        "missing_required": [],
+        "passed_required": 3,
+        "reasons": [
+          "original harness verdict only; no independent DataForge replay in this legacy artifact set",
+          "classified from original harness verdict; not independently replay-verified"
+        ],
+        "required_tests": 3,
+        "reward": 1.0,
+        "status": "UNVERIFIED_ORIGINAL",
+        "test_file_touched": []
+      }
+    },
+    {
+      "classification": "PASS",
+      "execution": {
+        "agent_process_started": true,
+        "cause": null,
+        "evidence": {
+          "agent_execution_finished_at": "2026-10-31T04:21:35.295011Z",
+          "agent_execution_started_at": "2026-10-31T04:15:35.209624Z",
+          "agent_process_started": true,
+          "exception_type": null,
+          "has_trajectory": true,
+          "model_responses": 25,
+          "transcript_bytes": 81979
+        },
+        "exception_type": null,
+        "model_responses": 25,
+        "status": "COMPLETED"
+      },
+      "lifecycle": [],
+      "original_reward": 1.0,
+      "patch": {
+        "entries": [],
+        "files_accepted": 1,
+        "files_excluded": [],
+        "files_total": 1,
+        "reasons": [
+          "structural validation only; no pristine baseline available in this artifact set"
+        ],
+        "sha256": "bfc103568ef946bd2bddcaaad6b1c6129d8e64cdb681917846e8ffdd91669ca1",
+        "size_bytes": 5688,
+        "verdict": "VALID"
+      },
+      "provenance": {
+        "note": "no DataForge replay evidence; provenance baseline unavailable"
+      },
+      "replay": {},
+      "task": "gravitational",
+      "task_id": "instance_gravitational__teleport-46aa81b1ce96ebb4ebed2ae53fd78cd44a05da6c-vee9b09fb20c43af7e520f57e9239bbcf46b7113d",
+      "verification": {
+        "contradictory_tests": [],
+        "evidence": {
+          "evidence_validation": {
+            "absent_required": [],
+            "contradictory": [],
+            "not_passed_required": [],
+            "observed_count": 3,
+            "parser_dropped": [],
+            "passed_required": 3,
+            "reasons": [],
+            "required_count": 3,
+            "reward": 1.0,
+            "status": "VALID"
+          },
+          "replay": {}
+        },
+        "missing_required": [],
+        "passed_required": 3,
+        "reasons": [
+          "original harness verdict only; no independent DataForge replay in this legacy artifact set",
+          "classified from original harness verdict; not independently replay-verified"
+        ],
+        "required_tests": 3,
+        "reward": 1.0,
+        "status": "UNVERIFIED_ORIGINAL",
+        "test_file_touched": []
+      }
+    },
+    {
+      "classification": "FAIL",
+      "execution": {
+        "agent_process_started": true,
+        "cause": null,
+        "evidence": {
+          "agent_execution_finished_at": "2026-10-31T04:07:09.099064Z",
+          "agent_execution_started_at": "2026-10-31T03:49:41.568767Z",
+          "agent_process_started": true,
+          "exception_type": null,
+          "has_trajectory": true,
+          "model_responses": 65,
+          "transcript_bytes": 187601
+        },
+        "exception_type": null,
+        "model_responses": 65,
+        "status": "COMPLETED"
+      },
+      "lifecycle": [],
+      "original_reward": 0.0,
+      "patch": {
+        "entries": [],
+        "files_accepted": 4,
+        "files_excluded": [],
+        "files_total": 4,
+        "reasons": [
+          "structural validation only; no pristine baseline available in this artifact set"
+        ],
+        "sha256": "6ffc2645dbfdf88a90424e3b7ad56b956d4f45147e326cd2d7ac9f50425a704e",
+        "size_bytes": 6733,
+        "verdict": "VALID"
+      },
+      "provenance": {
+        "note": "no DataForge replay evidence; provenance baseline unavailable"
+      },
+      "replay": {},
+      "task": "future-architect",
+      "task_id": "instance_future-architect__vuls-f0b3a8b1db98eb1bd32685f1c36c41a99c3452ed",
+      "verification": {
+        "contradictory_tests": [],
+        "evidence": {
+          "evidence_validation": {
+            "absent_required": [],
+            "contradictory": [],
+            "not_passed_required": [
+              "TestSortByConfident"
+            ],
+            "observed_count": 67,
+            "parser_dropped": [],
+            "passed_required": 66,
+            "reasons": [],
+            "required_count": 67,
+            "reward": 0.0,
+            "status": "VALID"
+          },
+          "replay": {}
+        },
+        "missing_required": [],
+        "passed_required": 66,
+        "reasons": [
+          "original harness verdict only; no independent DataForge replay in this legacy artifact set",
+          "classified from original harness verdict; not independently replay-verified"
+        ],
+        "required_tests": 67,
+        "reward": 0.0,
+        "status": "UNVERIFIED_ORIGINAL",
+        "test_file_touched": []
+      }
+    }
+  ]
+}

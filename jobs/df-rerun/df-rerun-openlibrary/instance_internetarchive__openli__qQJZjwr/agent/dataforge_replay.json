@@ -1,0 +1,116 @@
+{
+  "apply_rc": 0,
+  "apply_stdout": "DATAFORGE_APPLY_RC=0\n",
+  "baseline": {
+    "head": "46bcf7c30178f53ef427a5840c4b24717ed79fb0",
+    "tracked_count": 0,
+    "untracked": []
+  },
+  "excluded_artifact_hashes_after": {},
+  "excluded_artifact_hashes_before": {},
+  "excluded_artifact_integrity_ok": true,
+  "filtered_patch_bytes": 2573,
+  "filtered_patch_sha256": "82daa6ddd59645452a79a6387636282266f7acb7e9df37c21ec679ae5e5bded3",
+  "finished_at": "2026-10-31T09:06:10.968562+00:00",
+  "lifecycle": [
+    {
+      "at": "2026-10-31T09:06:09.478158+00:00",
+      "evidence_keys": [
+        "agent_config",
+        "environment"
+      ],
+      "state": "SETUP_COMPLETE"
+    },
+    {
+      "at": "2026-10-31T09:06:09.497293+00:00",
+      "evidence_keys": [
+        "patch_sha256"
+      ],
+      "state": "PATCH_CAPTURED"
+    },
+    {
+      "at": "2026-10-31T09:06:10.359406+00:00",
+      "evidence_keys": [
+        "patch_sha256",
+        "patch_validation"
+      ],
+      "state": "PATCH_VALIDATED"
+    },
+    {
+      "at": "2026-10-31T09:06:10.968594+00:00",
+      "evidence_keys": [
+        "apply_rc",
+        "post_apply_state"
+      ],
+      "state": "PATCH_APPLIED"
+    },
+    {
+      "at": "2026-10-31T09:06:10.968604+00:00",
+      "evidence_keys": [
+        "classification"
+      ],
+      "state": "FINALIZED"
+    }
+  ],
+  "patch": {
+    "entries": [
+      {
+        "decision": "accepted",
+        "index": 0,
+        "is_binary": false,
+        "is_delete": false,
+        "is_new": false,
+        "is_rename": false,
+        "kind": "AGENT_CHANGE",
+        "new_path": "scripts/new-solr-updater.py",
+        "old_path": "scripts/new-solr-updater.py",
+        "path": "scripts/new-solr-updater.py",
+        "reason": null
+      }
+    ],
+    "files_accepted": 1,
+    "files_excluded": [],
+    "files_total": 1,
+    "reasons": [],
+    "sha256": "82daa6ddd59645452a79a6387636282266f7acb7e9df37c21ec679ae5e5bded3",
+    "size_bytes": 2639,
+    "verdict": "VALID"
+  },
+  "patch_bytes": 2639,
+  "patch_eol": "crlf",
+  "patch_sha256": "82daa6ddd59645452a79a6387636282266f7acb7e9df37c21ec679ae5e5bded3",
+  "patch_sha256_lf": "82daa6ddd59645452a79a6387636282266f7acb7e9df37c21ec679ae5e5bded3",
+  "patch_sha256_raw": "f88c66839cc141555a0baa687cec16a5147d2f7454f838601d174ccd4565ae71",
+  "post_state": {
+    "diffstat": " scripts/new-solr-updater.py | 45 +++++++++++++++++++++++++++++++++++++--------\n 1 file changed, 37 insertions(+), 8 deletions(-)\n",
+    "missing": [],
+    "ok": true,
+    "porcelain": " M scripts/new-solr-updater.py",
+    "touched": [
+      "scripts/new-solr-updater.py"
+    ],
+    "unexpected": []
+  },
+  "provenance": {
+    "accepted": [
+      "scripts/new-solr-updater.py"
+    ],
+    "baseline": {
+      "tracked_count": 0,
+      "untracked_count": 0,
+      "untracked_sample": []
+    },
+    "excluded": [],
+    "policy": "provenance-based: a path is an environment artifact only if it was already untracked in the pristine image; no extension allow-list is used",
+    "review_required": [],
+    "test_files_touched": []
+  },
+  "replay_reasons": [],
+  "replay_status": "VALID",
+  "source_job": "/mnt/c/Users/yashs/dataforge/v3/jobs/f3-openlibrary-a1",
+  "source_patch": "/mnt/c/Users/yashs/dataforge/v3/jobs/f3-openlibrary-a1/instance_internetarchive__openli__LpjZARH/agent/model.patch",
+  "source_trial": "/mnt/c/Users/yashs/dataforge/v3/jobs/f3-openlibrary-a1/instance_internetarchive__openli__LpjZARH",
+  "started_at": "2026-10-31T09:06:09.478040+00:00",
+  "task_id": "instance_internetarchive__openlibrary-03095f2680f7516fca35a58e665bf2a41f006273-v8717e18970bcdc4e0d2cea3b1527752b21e74866",
+  "version": "3.1.0"
+}

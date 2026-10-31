@@ -1,0 +1,15 @@
+{
+    "task": {
+        "path": "/home/yashs/dataforge/experiments/v3_1_baseline/audit_tasks/instance_internetarchive__openlibrary-03095f2680f7516fca35a58e665bf2a41f006273-v8717e18970bcdc4e0d2cea3b1527752b21e74866"
+    },
+    "trial_name": "instance_internetarchive__openli__qQJZjwr",
+    "trials_dir": "/home/yashs/dataforge/experiments/v3_1_baseline/rerun/df-rerun-openlibrary",
+    "agent_timeout_multiplier": 1.5,
+    "agent": {
+        "name": "dataforge_v3.integrations.df_replay_agent:DataForgeReplayAgent",
+        "kwargs": {
+            "source_job": "/mnt/c/Users/yashs/dataforge/v3/jobs/f3-openlibrary-a1"
+        }
+    },
+    "job_id": "3d9ec138-d90a-46e2-aaa9-19f3428b2adc"
+}

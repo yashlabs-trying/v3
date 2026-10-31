@@ -1,0 +1,116 @@
+{
+  "apply_rc": 0,
+  "apply_stdout": "DATAFORGE_APPLY_RC=0\n",
+  "baseline": {
+    "head": "f958e03439735473578485ff01d720c06324a716",
+    "tracked_count": 0,
+    "untracked": []
+  },
+  "excluded_artifact_hashes_after": {},
+  "excluded_artifact_hashes_before": {},
+  "excluded_artifact_integrity_ok": true,
+  "filtered_patch_bytes": 5688,
+  "filtered_patch_sha256": "bfc103568ef946bd2bddcaaad6b1c6129d8e64cdb681917846e8ffdd91669ca1",
+  "finished_at": "2026-10-31T09:06:43.907558+00:00",
+  "lifecycle": [
+    {
+      "at": "2026-10-31T09:06:39.813406+00:00",
+      "evidence_keys": [
+        "agent_config",
+        "environment"
+      ],
+      "state": "SETUP_COMPLETE"
+    },
+    {
+      "at": "2026-10-31T09:06:39.832486+00:00",
+      "evidence_keys": [
+        "patch_sha256"
+      ],
+      "state": "PATCH_CAPTURED"
+    },
+    {
+      "at": "2026-10-31T09:06:43.232441+00:00",
+      "evidence_keys": [
+        "patch_sha256",
+        "patch_validation"
+      ],
+      "state": "PATCH_VALIDATED"
+    },
+    {
+      "at": "2026-10-31T09:06:43.907582+00:00",
+      "evidence_keys": [
+        "apply_rc",
+        "post_apply_state"
+      ],
+      "state": "PATCH_APPLIED"
+    },
+    {
+      "at": "2026-10-31T09:06:43.907589+00:00",
+      "evidence_keys": [
+        "classification"
+      ],
+      "state": "FINALIZED"
+    }
+  ],
+  "patch": {
+    "entries": [
+      {
+        "decision": "accepted",
+        "index": 0,
+        "is_binary": false,
+        "is_delete": false,
+        "is_new": false,
+        "is_rename": false,
+        "kind": "AGENT_CHANGE",
+        "new_path": "lib/asciitable/table.go",
+        "old_path": "lib/asciitable/table.go",
+        "path": "lib/asciitable/table.go",
+        "reason": null
+      }
+    ],
+    "files_accepted": 1,
+    "files_excluded": [],
+    "files_total": 1,
+    "reasons": [],
+    "sha256": "bfc103568ef946bd2bddcaaad6b1c6129d8e64cdb681917846e8ffdd91669ca1",
+    "size_bytes": 5873,
+    "verdict": "VALID"
+  },
+  "patch_bytes": 5873,
+  "patch_eol": "crlf",
+  "patch_sha256": "bfc103568ef946bd2bddcaaad6b1c6129d8e64cdb681917846e8ffdd91669ca1",
+  "patch_sha256_lf": "bfc103568ef946bd2bddcaaad6b1c6129d8e64cdb681917846e8ffdd91669ca1",
+  "patch_sha256_raw": "04750ab79ea8e3862ca8feb003fb8ab65b87d5a14412eb6d14f517d871302f9b",
+  "post_state": {
+    "diffstat": " lib/asciitable/table.go | 117 +++++++++++++++++++++++++++++++++++++++---------\n 1 file changed, 96 insertions(+), 21 deletions(-)\n",
+    "missing": [],
+    "ok": true,
+    "porcelain": " M lib/asciitable/table.go",
+    "touched": [
+      "lib/asciitable/table.go"
+    ],
+    "unexpected": []
+  },
+  "provenance": {
+    "accepted": [
+      "lib/asciitable/table.go"
+    ],
+    "baseline": {
+      "tracked_count": 0,
+      "untracked_count": 0,
+      "untracked_sample": []
+    },
+    "excluded": [],
+    "policy": "provenance-based: a path is an environment artifact only if it was already untracked in the pristine image; no extension allow-list is used",
+    "review_required": [],
+    "test_files_touched": []
+  },
+  "replay_reasons": [],
+  "replay_status": "VALID",
+  "source_job": "/mnt/c/Users/yashs/dataforge/v3/jobs/f3-teleport-a1",
+  "source_patch": "/mnt/c/Users/yashs/dataforge/v3/jobs/f3-teleport-a1/instance_gravitational__teleport__w7LRiYE/agent/model.patch",
+  "source_trial": "/mnt/c/Users/yashs/dataforge/v3/jobs/f3-teleport-a1/instance_gravitational__teleport__w7LRiYE",
+  "started_at": "2026-10-31T09:06:39.813251+00:00",
+  "task_id": "instance_gravitational__teleport-46aa81b1ce96ebb4ebed2ae53fd78cd44a05da6c-vee9b09fb20c43af7e520f57e9239bbcf46b7113d",
+  "version": "3.1.0"
+}

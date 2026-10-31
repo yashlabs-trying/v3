@@ -1,0 +1,176 @@
+{
+  "apply_rc": 0,
+  "apply_stdout": "DATAFORGE_APPLY_RC=0\n",
+  "baseline": {
+    "head": "1c039fcd3880ef4fefa58812d375104d2d70fe6c",
+    "tracked_count": 0,
+    "untracked": []
+  },
+  "excluded_artifact_hashes_after": {},
+  "excluded_artifact_hashes_before": {},
+  "excluded_artifact_integrity_ok": true,
+  "filtered_patch_bytes": 17194,
+  "filtered_patch_sha256": "5ae7b2ae0b41a7194d3b273e27abc390e3c9e1408ab1aa8343d5eec126574291",
+  "finished_at": "2026-10-31T09:09:17.628931+00:00",
+  "lifecycle": [
+    {
+      "at": "2026-10-31T09:09:15.472960+00:00",
+      "evidence_keys": [
+        "agent_config",
+        "environment"
+      ],
+      "state": "SETUP_COMPLETE"
+    },
+    {
+      "at": "2026-10-31T09:09:15.490483+00:00",
+      "evidence_keys": [
+        "patch_sha256"
+      ],
+      "state": "PATCH_CAPTURED"
+    },
+    {
+      "at": "2026-10-31T09:09:16.738688+00:00",
+      "evidence_keys": [
+        "patch_sha256",
+        "patch_validation"
+      ],
+      "state": "PATCH_VALIDATED"
+    },
+    {
+      "at": "2026-10-31T09:09:17.628962+00:00",
+      "evidence_keys": [
+        "apply_rc",
+        "post_apply_state"
+      ],
+      "state": "PATCH_APPLIED"
+    },
+    {
+      "at": "2026-10-31T09:09:17.628972+00:00",
+      "evidence_keys": [
+        "classification"
+      ],
+      "state": "FINALIZED"
+    }
+  ],
+  "patch": {
+    "entries": [
+      {
+        "decision": "accepted",
+        "index": 0,
+        "is_binary": false,
+        "is_delete": false,
+        "is_new": false,
+        "is_rename": false,
+        "kind": "AGENT_CHANGE",
+        "new_path": "src/components/structures/MatrixChat.tsx",
+        "old_path": "src/components/structures/MatrixChat.tsx",
+        "path": "src/components/structures/MatrixChat.tsx",
+        "reason": null
+      },
+      {
+        "decision": "accepted",
+        "index": 1,
+        "is_binary": false,
+        "is_delete": false,
+        "is_new": false,
+        "is_rename": false,
+        "kind": "AGENT_CHANGE",
+        "new_path": "src/contexts/SDKContext.ts",
+        "old_path": "src/contexts/SDKContext.ts",
+        "path": "src/contexts/SDKContext.ts",
+        "reason": null
+      },
+      {
+        "decision": "accepted",
+        "index": 2,
+        "is_binary": false,
+        "is_delete": false,
+        "is_new": false,
+        "is_rename": false,
+        "kind": "AGENT_CHANGE",
+        "new_path": "src/hooks/usePermalinkMember.ts",
+        "old_path": "src/hooks/usePermalinkMember.ts",
+        "path": "src/hooks/usePermalinkMember.ts",
+        "reason": null
+      },
+      {
+        "decision": "accepted",
+        "index": 3,
+        "is_binary": false,
+        "is_delete": false,
+        "is_new": true,
+        "is_rename": false,
+        "kind": "AGENT_CHANGE",
+        "new_path": "src/stores/UserProfilesStore.ts",
+        "old_path": "src/stores/UserProfilesStore.ts",
+        "path": "src/stores/UserProfilesStore.ts",
+        "reason": null
+      },
+      {
+        "decision": "accepted",
+        "index": 4,
+        "is_binary": false,
+        "is_delete": false,
+        "is_new": true,
+        "is_rename": false,
+        "kind": "AGENT_CHANGE",
+        "new_path": "src/utils/LruCache.ts",
+        "old_path": "src/utils/LruCache.ts",
+        "path": "src/utils/LruCache.ts",
+        "reason": null
+      }
+    ],
+    "files_accepted": 5,
+    "files_excluded": [],
+    "files_total": 5,
+    "reasons": [],
+    "sha256": "5ae7b2ae0b41a7194d3b273e27abc390e3c9e1408ab1aa8343d5eec126574291",
+    "size_bytes": 17675,
+    "verdict": "VALID"
+  },
+  "patch_bytes": 17675,
+  "patch_eol": "crlf",
+  "patch_sha256": "5ae7b2ae0b41a7194d3b273e27abc390e3c9e1408ab1aa8343d5eec126574291",
+  "patch_sha256_lf": "5ae7b2ae0b41a7194d3b273e27abc390e3c9e1408ab1aa8343d5eec126574291",
+  "patch_sha256_raw": "62762294a6412ff9b201a42523a9224a82d76a2ef5453cae78c658ffe04023b1",
+  "post_state": {
+    "diffstat": " src/components/structures/MatrixChat.tsx |   1 +\n src/contexts/SDKContext.ts               |  20 ++++++\n src/hooks/usePermalinkMember.ts          | 108 ++++++++++++++++++++++++++-----\n 3 files changed, 112 insertions(+), 17 deletions(-)\n",
+    "missing": [],
+    "ok": true,
+    "porcelain": " M src/components/structures/MatrixChat.tsx\n M src/contexts/SDKContext.ts\n M src/hooks/usePermalinkMember.ts\n?? src/stores/UserProfilesStore.ts\n?? src/utils/LruCache.ts",
+    "touched": [
+      "src/components/structures/MatrixChat.tsx",
+      "src/contexts/SDKContext.ts",
+      "src/hooks/usePermalinkMember.ts",
+      "src/stores/UserProfilesStore.ts",
+      "src/utils/LruCache.ts"
+    ],
+    "unexpected": []
+  },
+  "provenance": {
+    "accepted": [
+      "src/components/structures/MatrixChat.tsx",
+      "src/contexts/SDKContext.ts",
+      "src/hooks/usePermalinkMember.ts",
+      "src/stores/UserProfilesStore.ts",
+      "src/utils/LruCache.ts"
+    ],
+    "baseline": {
+      "tracked_count": 0,
+      "untracked_count": 0,
+      "untracked_sample": []
+    },
+    "excluded": [],
+    "policy": "provenance-based: a path is an environment artifact only if it was already untracked in the pristine image; no extension allow-list is used",
+    "review_required": [],
+    "test_files_touched": []
+  },
+  "replay_reasons": [],
+  "replay_status": "VALID",
+  "source_job": "/mnt/c/Users/yashs/dataforge/v3/jobs/f3-elementweb-a1",
+  "source_patch": "/mnt/c/Users/yashs/dataforge/v3/jobs/f3-elementweb-a1/instance_element-hq__element-web__ERptsJd/agent/model.patch",
+  "source_trial": "/mnt/c/Users/yashs/dataforge/v3/jobs/f3-elementweb-a1/instance_element-hq__element-web__ERptsJd",
+  "started_at": "2026-10-31T09:09:15.472823+00:00",
+  "task_id": "instance_element-hq__element-web-aec454dd6feeb93000380523cbb0b3681c0275fd-vnan",
+  "version": "3.1.0"
+}

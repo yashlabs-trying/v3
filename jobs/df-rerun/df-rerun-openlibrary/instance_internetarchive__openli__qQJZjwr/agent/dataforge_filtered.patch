@@ -1,0 +1,66 @@
+diff --git a/scripts/new-solr-updater.py b/scripts/new-solr-updater.py
+index 6c6b5a41f..bc0d840e9 100755
+--- a/scripts/new-solr-updater.py
++++ b/scripts/new-solr-updater.py
+@@ -17,6 +17,7 @@ import web
+ import sys
+ import re
+ import socket
++from typing import Iterator, Union
+ 
+ from openlibrary.solr import update_work
+ from openlibrary.config import load_config
+@@ -106,17 +107,45 @@ class InfobaseLog:
+             self.offset = d['offset']
+ 
+ 
++def find_keys(d: Union[dict, list]) -> Iterator[str]:
++    """Recursively yield every string value stored under a ``key`` field in a
++    nested ``dict`` or ``list``.
++
++    Only ``dict`` and ``list`` values are traversed; other data types are not
++    recursed into and their values are not emitted.
++    """
++    if isinstance(d, dict):
++        for key, value in d.items():
++            if key == 'key' and isinstance(value, str):
++                yield value
++            elif isinstance(value, (dict, list)):
++                yield from find_keys(value)
++    elif isinstance(d, list):
++        for value in d:
++            if isinstance(value, (dict, list)):
++                yield from find_keys(value)
++
++
+ def parse_log(records, load_ia_scans: bool):
+     for rec in records:
+         action = rec.get('action')
+-        if action == 'save':
+-            key = rec['data'].get('key')
+-            if key:
+-                yield key
+-        elif action == 'save_many':
+-            changes = rec['data'].get('changeset', {}).get('changes', [])
+-            for c in changes:
+-                yield c['key']
++        if action in ('save', 'save_many'):
++            changeset = rec['data'].get('changeset', {})
++            docs = changeset.get('docs', [])
++            old_docs = changeset.get('old_docs', [])
++            for i, doc in enumerate(docs):
++                # Always reindex the document that was saved.
++                yield doc['key']
++
++                # When an old version of the document exists, also reindex any
++                # keys that were removed from it (e.g. a work an edition used
++                # to belong to). This ensures the old source work is reindexed
++                # so the moved edition no longer shows up under it.
++                before = old_docs[i] if i < len(old_docs) else None
++                if before is not None:
++                    old_keys = set(find_keys(before))
++                    new_keys = set(find_keys(doc))
++                    yield from old_keys - new_keys
+ 
+         elif action == 'store.put':
+             # A sample record looks like this:

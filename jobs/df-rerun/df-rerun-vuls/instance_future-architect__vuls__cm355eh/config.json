@@ -1,0 +1,15 @@
+{
+    "task": {
+        "path": "/home/yashs/dataforge/experiments/v3_1_baseline/audit_tasks/instance_future-architect__vuls-f0b3a8b1db98eb1bd32685f1c36c41a99c3452ed"
+    },
+    "trial_name": "instance_future-architect__vuls__cm355eh",
+    "trials_dir": "/home/yashs/dataforge/experiments/v3_1_baseline/rerun/df-rerun-vuls",
+    "agent_timeout_multiplier": 1.5,
+    "agent": {
+        "name": "dataforge_v3.integrations.df_replay_agent:DataForgeReplayAgent",
+        "kwargs": {
+            "source_job": "/mnt/c/Users/yashs/dataforge/v3/jobs/f3-vuls-a1"
+        }
+    },
+    "job_id": "7b41750b-36f9-4023-84a4-301bc31791d4"
+}

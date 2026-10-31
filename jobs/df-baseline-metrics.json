@@ -1,0 +1,9 @@
+{
+  "contamination_only_patches_flagged": 0,
+  "infrastructure_nonexecution_flagged_invalid": 1,
+  "legitimate_verdicts_incorrectly_invalidated": 0,
+  "replay_application_errors_flagged": 0,
+  "tasks": 7,
+  "valid_fail_preserved": 1,
+  "valid_pass_preserved": 5
+}

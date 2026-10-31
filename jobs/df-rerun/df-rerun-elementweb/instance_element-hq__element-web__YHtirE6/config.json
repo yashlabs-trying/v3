@@ -1,0 +1,15 @@
+{
+    "task": {
+        "path": "/home/yashs/dataforge/experiments/v3_1_baseline/audit_tasks/instance_element-hq__element-web-aec454dd6feeb93000380523cbb0b3681c0275fd-vnan"
+    },
+    "trial_name": "instance_element-hq__element-web__YHtirE6",
+    "trials_dir": "/home/yashs/dataforge/experiments/v3_1_baseline/rerun/df-rerun-elementweb",
+    "agent_timeout_multiplier": 1.5,
+    "agent": {
+        "name": "dataforge_v3.integrations.df_replay_agent:DataForgeReplayAgent",
+        "kwargs": {
+            "source_job": "/mnt/c/Users/yashs/dataforge/v3/jobs/f3-elementweb-a1"
+        }
+    },
+    "job_id": "081858b2-2ac0-4871-8b1f-8e8365353507"
+}

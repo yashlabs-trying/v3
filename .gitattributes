@@ -1,0 +1,3 @@
+# Preserve evidence byte-for-byte; no EOL translation on checkout
+evidence_preserved/** -text
+jobs/** -text

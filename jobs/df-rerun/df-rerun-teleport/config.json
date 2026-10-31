@@ -1,0 +1,20 @@
+{
+    "job_name": "df-rerun-teleport",
+    "jobs_dir": "/home/yashs/dataforge/experiments/v3_1_baseline/rerun",
+    "agent_timeout_multiplier": 1.5,
+    "n_concurrent_trials": 1,
+    "quiet": true,
+    "agents": [
+        {
+            "name": "dataforge_v3.integrations.df_replay_agent:DataForgeReplayAgent",
+            "kwargs": {
+                "source_job": "/mnt/c/Users/yashs/dataforge/v3/jobs/f3-teleport-a1"
+            }
+        }
+    ],
+    "tasks": [
+        {
+            "path": "/home/yashs/dataforge/experiments/v3_1_baseline/audit_tasks/instance_gravitational__teleport-46aa81b1ce96ebb4ebed2ae53fd78cd44a05da6c-vee9b09fb20c43af7e520f57e9239bbcf46b7113d"
+        }
+    ]
+}
