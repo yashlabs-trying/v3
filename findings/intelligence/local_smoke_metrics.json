@@ -1,0 +1,245 @@
+{
+  "accuracy": {
+    "NodeBB": {
+      "all_infra_only": true,
+      "execution_validity": "INVALID",
+      "forbidden_absent": true
+    },
+    "flipt": {
+      "execution_validity": "VALID",
+      "n_findings": 0,
+      "semantic_verdict": "CONFIRMED_CORRECT"
+    },
+    "others": {
+      "nodebb_recovery_separate": true,
+      "passing_tasks_with_findings": []
+    },
+    "vuls": {
+      "category": [
+        "existing_behavior_removed"
+      ],
+      "evidence_resolves": true,
+      "execution_validity": "VALID",
+      "has_clause_finding": true,
+      "original_score": 0.0
+    }
+  },
+  "cohort": {
+    "evidence_bytes": 7037112,
+    "evidence_files": [
+      "findings/expansion_semantic_evidence.json",
+      "findings/semantic_audit.json",
+      "findings/vuls_semantic_evidence.json",
+      "jobs/f3-ansible-a1/instance_ansible__ansible-d58e69__zUuV3yq/agent/mini-swe-agent.trajectory.json",
+      "jobs/f3-ansible-a1/instance_ansible__ansible-d58e69__zUuV3yq/agent/model.patch",
+      "jobs/f3-elementweb-a1/instance_element-hq__element-web__ERptsJd/agent/mini-swe-agent.trajectory.json",
+      "jobs/f3-elementweb-a1/instance_element-hq__element-web__ERptsJd/agent/model.patch",
+      "jobs/f3-openlibrary-a1/instance_internetarchive__openli__LpjZARH/agent/mini-swe-agent.trajectory.json",
+      "jobs/f3-openlibrary-a1/instance_internetarchive__openli__LpjZARH/agent/model.patch",
+      "jobs/f3-teleport-a1/instance_gravitational__teleport__w7LRiYE/agent/mini-swe-agent.trajectory.json",
+      "jobs/f3-teleport-a1/instance_gravitational__teleport__w7LRiYE/agent/model.patch",
+      "jobs/f3-vuls-a1/instance_future-architect__vuls__sNqH5s4/agent/mini-swe-agent.trajectory.json",
+      "jobs/f3-vuls-a1/instance_future-architect__vuls__sNqH5s4/agent/model.patch",
+      "jobs/final-flipt/instance_flipt-io__flipt-6fe76d0__LeNXhSg/agent/mini-swe-agent.trajectory.json",
+      "jobs/final-flipt/instance_flipt-io__flipt-6fe76d0__LeNXhSg/agent/model.patch",
+      "jobs/final-nodebb/instance_NodeBB__NodeBB-00c70ce7__u8MhLEv/agent/model.patch",
+      "jobs/nodebb-recovery/instance_NodeBB__NodeBB-00c70ce7__Wd7bn7i/agent/mini-swe-agent.trajectory.json",
+      "jobs/nodebb-recovery/instance_NodeBB__NodeBB-00c70ce7__Wd7bn7i/agent/model.patch"
+    ],
+    "evidence_files_count": 18,
+    "max_s": 0.26885310001671314,
+    "median_s": 0.24288649996742606,
+    "min_s": 0.21869039995362982,
+    "n_runs": 5,
+    "observed_p95_s": 0.26885310001671314,
+    "per_record_ms": [
+      {
+        "ms": 3.9106999756768346,
+        "task": "flipt"
+      },
+      {
+        "ms": 2.113599970471114,
+        "task": "openlibrary"
+      },
+      {
+        "ms": 1.2701000086963177,
+        "task": "teleport"
+      },
+      {
+        "ms": 0.7295999675989151,
+        "task": "ansible"
+      },
+      {
+        "ms": 0.6929000373929739,
+        "task": "element-web"
+      },
+      {
+        "ms": 2.6976000517606735,
+        "task": "vuls"
+      },
+      {
+        "ms": 4.3876999989151955,
+        "task": "NodeBB"
+      },
+      {
+        "ms": 0.597400008700788,
+        "task": "NodeBB-recovery"
+      }
+    ],
+    "records": 8,
+    "runs": [
+      {
+        "cpu_s": 0.21875,
+        "rss_mb": 30.73046875,
+        "seconds": 0.24288649996742606
+      },
+      {
+        "cpu_s": 0.1875,
+        "rss_mb": 30.89453125,
+        "seconds": 0.21869039995362982
+      },
+      {
+        "cpu_s": 0.265625,
+        "rss_mb": 30.73046875,
+        "seconds": 0.26885310001671314
+      },
+      {
+        "cpu_s": 0.265625,
+        "rss_mb": 31.0546875,
+        "seconds": 0.2544847000390291
+      },
+      {
+        "cpu_s": 0.21875,
+        "rss_mb": 31.2734375,
+        "seconds": 0.23350479995133355
+      }
+    ],
+    "throughput_records_per_s": 32.93719494938127
+  },
+  "cost_decomposition_vuls": {
+    "evidence_ingestion_median_ms": 31.47,
+    "note": "V3.3-added logic (attribution+render) ~5.9 ms; ingestion ~31 ms is shared evidence I/O.",
+    "v32_semantic_load_median_ms": 0.24,
+    "v33_attribution_median_ms": 2.06,
+    "v33_report_render_median_ms": 3.8
+  },
+  "environment": {
+    "branch": "v3.3-phase3",
+    "cores": 8,
+    "cpu": "Intel64 Family 6 Model 140 Stepping 2, GenuineIntel",
+    "git_revision": "6529401f362725acbb0be276ad9ec3e4d5b9ff05",
+    "memory_method": "psutil process RSS",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.13.15",
+    "total_ram_gb": 15.7
+  },
+  "measurement_notes": [
+    "Cold-run figures from a fresh interpreter per case (true cold file cache).",
+    "Warm figures from 5 repetitions after 1 warm-up in a single interpreter.",
+    "observed_p95 with n=5 is the sample maximum, labelled observed, not a population estimate.",
+    "RSS delta is incremental process memory from before the pipeline runs.",
+    "os.times-style CPU granularity is coarse on Windows; fresh-process CPU from psutil cpu_times.",
+    "Offline diagnostic latency only; excludes agent execution and any Docker replay."
+  ],
+  "per_case": {
+    "NodeBB": {
+      "artifacts": 1,
+      "clauses": [],
+      "cold_total_ms": 15.4441999620758,
+      "cpu_s": 0.0,
+      "events": 0,
+      "execution_validity": "INVALID",
+      "finding_categories": [
+        "agent_startup_failure"
+      ],
+      "findings": 1,
+      "max_ms": 24.81239999178797,
+      "median_ms": 18.35849997587502,
+      "min_ms": 12.79659994179383,
+      "observed_p95_ms": 24.81239999178797,
+      "refs_total": 1,
+      "rss_mb": 30.5390625,
+      "semantic_verdict": "INCONCLUSIVE",
+      "stages": {
+        "attrib_ms": 5.022199999075383,
+        "ingest_ms": 7.828500005416572,
+        "report_ms": 2.5934999575838447
+      },
+      "unresolved_refs": 0,
+      "unsupported": 0,
+      "warm_total_ms": [
+        24.81239999178797,
+        18.35849997587502,
+        18.747299967799336,
+        16.966099967248738,
+        12.79659994179383
+      ]
+    },
+    "flipt": {
+      "artifacts": 2,
+      "clauses": [],
+      "cold_total_ms": 48.668299976270646,
+      "cpu_s": 0.03125,
+      "events": 98,
+      "execution_validity": "VALID",
+      "finding_categories": [],
+      "findings": 0,
+      "max_ms": 34.70640000887215,
+      "median_ms": 18.144199973903596,
+      "min_ms": 15.985200006980449,
+      "observed_p95_ms": 34.70640000887215,
+      "refs_total": 0,
+      "rss_mb": 30.1953125,
+      "semantic_verdict": "CONFIRMED_CORRECT",
+      "stages": {
+        "attrib_ms": 1.4721000334247947,
+        "ingest_ms": 46.923099958803505,
+        "report_ms": 0.2730999840423465
+      },
+      "unresolved_refs": 0,
+      "unsupported": 0,
+      "warm_total_ms": [
+        34.70640000887215,
+        18.35540001047775,
+        17.210000019986182,
+        18.144199973903596,
+        15.985200006980449
+      ]
+    },
+    "vuls": {
+      "artifacts": 2,
+      "clauses": [
+        "sort.equal_score_order"
+      ],
+      "cold_total_ms": 104.97839999152347,
+      "cpu_s": 0.109375,
+      "events": 188,
+      "execution_validity": "VALID",
+      "finding_categories": [
+        "existing_behavior_removed"
+      ],
+      "findings": 1,
+      "max_ms": 59.25779999233782,
+      "median_ms": 49.81180001050234,
+      "min_ms": 39.120999979786575,
+      "observed_p95_ms": 59.25779999233782,
+      "refs_total": 2,
+      "rss_mb": 29.00390625,
+      "semantic_verdict": "GENUINE_AGENT_FAILURE",
+      "stages": {
+        "attrib_ms": 7.374599983450025,
+        "ingest_ms": 82.97290001064539,
+        "report_ms": 14.63089999742806
+      },
+      "unresolved_refs": 0,
+      "unsupported": 0,
+      "warm_total_ms": [
+        49.37179997796193,
+        49.81180001050234,
+        59.25779999233782,
+        39.120999979786575,
+        53.91059996327385
+      ]
+    }
+  }
+}

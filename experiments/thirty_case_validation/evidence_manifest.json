@@ -1,0 +1,683 @@
+{
+  "cases": {
+    "adv_01_forged_success": [
+      {
+        "field": "patch",
+        "path": "experiments/thirty_case_validation/cases/adv_01_forged_success/source.py",
+        "sha256": "f66a2d0bf4374c8eceaf445cf177de9c52575d64cf8d5bac31e1be687f3bd665"
+      },
+      {
+        "field": "trajectory",
+        "path": "experiments/thirty_case_validation/cases/adv_01_forged_success/trajectory.json",
+        "sha256": "afc1d6ed04afe5b29e8bae972d4023fcc8aef3c27738f92eeab0311a582c5f73"
+      },
+      {
+        "field": "semantic_evidence",
+        "path": "experiments/thirty_case_validation/cases/adv_01_forged_success/trusted_verifier.txt",
+        "sha256": "740cf4d5d7a5dce2811ea52184502af8f151c5e0c9cc9fc2adc8206b9956ff2c"
+      },
+      {
+        "field": "source.py",
+        "path": "experiments/thirty_case_validation/cases/adv_01_forged_success/source.py",
+        "sha256": "f66a2d0bf4374c8eceaf445cf177de9c52575d64cf8d5bac31e1be687f3bd665"
+      },
+      {
+        "field": "trajectory.json",
+        "path": "experiments/thirty_case_validation/cases/adv_01_forged_success/trajectory.json",
+        "sha256": "afc1d6ed04afe5b29e8bae972d4023fcc8aef3c27738f92eeab0311a582c5f73"
+      },
+      {
+        "field": "trusted_verifier.txt",
+        "path": "experiments/thirty_case_validation/cases/adv_01_forged_success/trusted_verifier.txt",
+        "sha256": "740cf4d5d7a5dce2811ea52184502af8f151c5e0c9cc9fc2adc8206b9956ff2c"
+      }
+    ],
+    "adv_02_prompt_injection": [
+      {
+        "field": "patch",
+        "path": "experiments/thirty_case_validation/cases/adv_02_prompt_injection/source.py",
+        "sha256": "f66a2d0bf4374c8eceaf445cf177de9c52575d64cf8d5bac31e1be687f3bd665"
+      },
+      {
+        "field": "trajectory",
+        "path": "experiments/thirty_case_validation/cases/adv_02_prompt_injection/trajectory.json",
+        "sha256": "5a50b2908755ba7391036f8cb2ccf3d5f3b63e30d27e5fbac5cc8733c40894ae"
+      },
+      {
+        "field": "semantic_evidence",
+        "path": "experiments/thirty_case_validation/cases/adv_02_prompt_injection/trusted_verifier.txt",
+        "sha256": "740cf4d5d7a5dce2811ea52184502af8f151c5e0c9cc9fc2adc8206b9956ff2c"
+      },
+      {
+        "field": "source.py",
+        "path": "experiments/thirty_case_validation/cases/adv_02_prompt_injection/source.py",
+        "sha256": "f66a2d0bf4374c8eceaf445cf177de9c52575d64cf8d5bac31e1be687f3bd665"
+      },
+      {
+        "field": "trajectory.json",
+        "path": "experiments/thirty_case_validation/cases/adv_02_prompt_injection/trajectory.json",
+        "sha256": "5a50b2908755ba7391036f8cb2ccf3d5f3b63e30d27e5fbac5cc8733c40894ae"
+      },
+      {
+        "field": "trusted_verifier.txt",
+        "path": "experiments/thirty_case_validation/cases/adv_02_prompt_injection/trusted_verifier.txt",
+        "sha256": "740cf4d5d7a5dce2811ea52184502af8f151c5e0c9cc9fc2adc8206b9956ff2c"
+      }
+    ],
+    "adv_03_fabricated_ref": [
+      {
+        "field": "patch",
+        "path": "experiments/thirty_case_validation/cases/adv_03_fabricated_ref/source.py",
+        "sha256": "f66a2d0bf4374c8eceaf445cf177de9c52575d64cf8d5bac31e1be687f3bd665"
+      },
+      {
+        "field": "trajectory",
+        "path": "experiments/thirty_case_validation/cases/adv_03_fabricated_ref/trajectory.json",
+        "sha256": "0b0ff323f720fbd5708f0bd07834fc849f95f6c4d2f22cb19af96ad578663523"
+      },
+      {
+        "field": "semantic_evidence",
+        "path": "experiments/thirty_case_validation/cases/adv_03_fabricated_ref/trusted_verifier.txt",
+        "sha256": "740cf4d5d7a5dce2811ea52184502af8f151c5e0c9cc9fc2adc8206b9956ff2c"
+      },
+      {
+        "field": "source.py",
+        "path": "experiments/thirty_case_validation/cases/adv_03_fabricated_ref/source.py",
+        "sha256": "f66a2d0bf4374c8eceaf445cf177de9c52575d64cf8d5bac31e1be687f3bd665"
+      },
+      {
+        "field": "trajectory.json",
+        "path": "experiments/thirty_case_validation/cases/adv_03_fabricated_ref/trajectory.json",
+        "sha256": "0b0ff323f720fbd5708f0bd07834fc849f95f6c4d2f22cb19af96ad578663523"
+      },
+      {
+        "field": "trusted_verifier.txt",
+        "path": "experiments/thirty_case_validation/cases/adv_03_fabricated_ref/trusted_verifier.txt",
+        "sha256": "740cf4d5d7a5dce2811ea52184502af8f151c5e0c9cc9fc2adc8206b9956ff2c"
+      }
+    ],
+    "amb_01_missing_semantic": [],
+    "amb_02_contradictory_tests": [
+      {
+        "field": "semantic_evidence",
+        "path": "experiments/thirty_case_validation/cases/amb_02_contradictory_tests/contradiction.txt",
+        "sha256": "771cc8d6181417a1b20ea12901e22757b1a9012e23ba04db3c4258eaeaa66b5b"
+      },
+      {
+        "field": "contradiction.txt",
+        "path": "experiments/thirty_case_validation/cases/amb_02_contradictory_tests/contradiction.txt",
+        "sha256": "771cc8d6181417a1b20ea12901e22757b1a9012e23ba04db3c4258eaeaa66b5b"
+      }
+    ],
+    "amb_03_incomplete": [],
+    "auth_01_vuls": [
+      {
+        "field": "patch",
+        "path": "jobs/f3-vuls-a1/instance_future-architect__vuls__sNqH5s4/agent/model.patch",
+        "sha256": "89390105859bb6c431b6bdc1c10288e54983c353e465ac1870ed63906b54833a"
+      },
+      {
+        "field": "trajectory",
+        "path": "jobs/f3-vuls-a1/instance_future-architect__vuls__sNqH5s4/agent/mini-swe-agent.trajectory.json",
+        "sha256": "839f8aaa9350a95cf6b843f353b8ca231f38c0df54f7bd9ef7a3a0dd17109d26"
+      },
+      {
+        "field": "semantic_evidence",
+        "path": "findings/vuls_semantic_evidence.json",
+        "sha256": "5396c9e4503f0e55abc16f0b7da124ab135950149256e19576d9b1424ffeebfc"
+      }
+    ],
+    "auth_02_synthetic_control": [
+      {
+        "field": "patch",
+        "path": "experiments/six_case_validation/cases/c2_teleport_synthetic/model.patch",
+        "sha256": "f2797a701e436b75a66f27eb38582a9fe3380da5837f3cc20ca7c73bbb3aae4a"
+      },
+      {
+        "field": "semantic_evidence",
+        "path": "experiments/six_case_validation/raw_outputs/c2_teleport_oracle_local.txt",
+        "sha256": "9a5009f86711a380befe3ba8b7a83e4183b54cc94332a5e2fb971635d6fd068b"
+      }
+    ],
+    "cor_01_paginate": [
+      {
+        "field": "patch",
+        "path": "experiments/thirty_case_validation/cases/cor_01_paginate/source.py",
+        "sha256": "dafe0d899d7a4d03845bb70afa7d316252eca6822e9a47dcd265cb97eceb7558"
+      },
+      {
+        "field": "semantic_evidence",
+        "path": "experiments/thirty_case_validation/cases/cor_01_paginate/probe_results.json",
+        "sha256": "dd4425d8e163dd40b576ef346e168d4d7324a6cd8787130a869019a90603041f"
+      },
+      {
+        "field": "source.py",
+        "path": "experiments/thirty_case_validation/cases/cor_01_paginate/source.py",
+        "sha256": "dafe0d899d7a4d03845bb70afa7d316252eca6822e9a47dcd265cb97eceb7558"
+      },
+      {
+        "field": "oracle.py",
+        "path": "experiments/thirty_case_validation/cases/cor_01_paginate/oracle.py",
+        "sha256": "7936d10db5b33ee146d69c97a75463d0db38be712b551efa4f8f1e6a2173c0f9"
+      },
+      {
+        "field": "probe_results.json",
+        "path": "experiments/thirty_case_validation/cases/cor_01_paginate/probe_results.json",
+        "sha256": "dd4425d8e163dd40b576ef346e168d4d7324a6cd8787130a869019a90603041f"
+      }
+    ],
+    "cor_02_kvstore": [
+      {
+        "field": "patch",
+        "path": "experiments/thirty_case_validation/cases/cor_02_kvstore/source.py",
+        "sha256": "37e02ad830511cb11f45386be30e307f2a84aa484c1044ae3c89dd897ad68d40"
+      },
+      {
+        "field": "semantic_evidence",
+        "path": "experiments/thirty_case_validation/cases/cor_02_kvstore/probe_results.json",
+        "sha256": "ca2591d79bf64a63e453446265b4578e4705bb5b11c7c52d5c6d9058e61f8fa3"
+      },
+      {
+        "field": "source.py",
+        "path": "experiments/thirty_case_validation/cases/cor_02_kvstore/source.py",
+        "sha256": "37e02ad830511cb11f45386be30e307f2a84aa484c1044ae3c89dd897ad68d40"
+      },
+      {
+        "field": "oracle.py",
+        "path": "experiments/thirty_case_validation/cases/cor_02_kvstore/oracle.py",
+        "sha256": "b303a1e2194b3b09407aa733df013b328adacb594cad9148f43ed13bbf9ac5f0"
+      },
+      {
+        "field": "probe_results.json",
+        "path": "experiments/thirty_case_validation/cases/cor_02_kvstore/probe_results.json",
+        "sha256": "ca2591d79bf64a63e453446265b4578e4705bb5b11c7c52d5c6d9058e61f8fa3"
+      }
+    ],
+    "cor_03_resource": [
+      {
+        "field": "patch",
+        "path": "experiments/thirty_case_validation/cases/cor_03_resource/source.py",
+        "sha256": "99073ec62c8718aa7389c34fddcdea08670a8b2f3eab91549fcdd7fcf1fedaea"
+      },
+      {
+        "field": "semantic_evidence",
+        "path": "experiments/thirty_case_validation/cases/cor_03_resource/probe_results.json",
+        "sha256": "c01b00ffb3b0654eeb300d11d6a1456b3f7e6458159ccbbb8492ea50551c8d39"
+      },
+      {
+        "field": "source.py",
+        "path": "experiments/thirty_case_validation/cases/cor_03_resource/source.py",
+        "sha256": "99073ec62c8718aa7389c34fddcdea08670a8b2f3eab91549fcdd7fcf1fedaea"
+      },
+      {
+        "field": "oracle.py",
+        "path": "experiments/thirty_case_validation/cases/cor_03_resource/oracle.py",
+        "sha256": "69c8c0505374e961269677f04d9c2b33fff43c6c06224898446af622679ae68b"
+      },
+      {
+        "field": "probe_results.json",
+        "path": "experiments/thirty_case_validation/cases/cor_03_resource/probe_results.json",
+        "sha256": "c01b00ffb3b0654eeb300d11d6a1456b3f7e6458159ccbbb8492ea50551c8d39"
+      }
+    ],
+    "cor_04_lookup": [
+      {
+        "field": "patch",
+        "path": "experiments/thirty_case_validation/cases/cor_04_lookup/source.py",
+        "sha256": "0b270d5f2fdf7c198c5fd4ed3f1b17665c430b49c163ab99c1c4ff8ee0f4992f"
+      },
+      {
+        "field": "semantic_evidence",
+        "path": "experiments/thirty_case_validation/cases/cor_04_lookup/probe_results.json",
+        "sha256": "d47ee3331416bc37a861bd0229434e7347471f4a51c7e0d500af0c44b38a442d"
+      },
+      {
+        "field": "source.py",
+        "path": "experiments/thirty_case_validation/cases/cor_04_lookup/source.py",
+        "sha256": "0b270d5f2fdf7c198c5fd4ed3f1b17665c430b49c163ab99c1c4ff8ee0f4992f"
+      },
+      {
+        "field": "oracle.py",
+        "path": "experiments/thirty_case_validation/cases/cor_04_lookup/oracle.py",
+        "sha256": "ee0e28d5c7c837c722f7a79607842da6194044298bb11fc772edc4fefd83e7d7"
+      },
+      {
+        "field": "probe_results.json",
+        "path": "experiments/thirty_case_validation/cases/cor_04_lookup/probe_results.json",
+        "sha256": "d47ee3331416bc37a861bd0229434e7347471f4a51c7e0d500af0c44b38a442d"
+      }
+    ],
+    "cor_05_total": [
+      {
+        "field": "patch",
+        "path": "experiments/thirty_case_validation/cases/cor_05_total/source.py",
+        "sha256": "6c2d15cb3dd531e69758238b963c5bcb9f6fb02cd2f1268058de30a144a92b4d"
+      },
+      {
+        "field": "semantic_evidence",
+        "path": "experiments/thirty_case_validation/cases/cor_05_total/probe_results.json",
+        "sha256": "f63ff69bf0d5824272620d710b7627071bfe3c34c1f4a2fdc462f53a43475f98"
+      },
+      {
+        "field": "source.py",
+        "path": "experiments/thirty_case_validation/cases/cor_05_total/source.py",
+        "sha256": "6c2d15cb3dd531e69758238b963c5bcb9f6fb02cd2f1268058de30a144a92b4d"
+      },
+      {
+        "field": "oracle.py",
+        "path": "experiments/thirty_case_validation/cases/cor_05_total/oracle.py",
+        "sha256": "4ece03311a278cc6cd2961b20030470be6a7453513eb15197a44e018e41d7fa4"
+      },
+      {
+        "field": "probe_results.json",
+        "path": "experiments/thirty_case_validation/cases/cor_05_total/probe_results.json",
+        "sha256": "f63ff69bf0d5824272620d710b7627071bfe3c34c1f4a2fdc462f53a43475f98"
+      }
+    ],
+    "cor_06_rle": [
+      {
+        "field": "patch",
+        "path": "experiments/thirty_case_validation/cases/cor_06_rle/source.py",
+        "sha256": "e037815c7ca8cd698574e695a67e682dd360c80be90454ee386737ebfaf85fa4"
+      },
+      {
+        "field": "semantic_evidence",
+        "path": "experiments/thirty_case_validation/cases/cor_06_rle/probe_results.json",
+        "sha256": "ba9ccdac6c25b5858e7523ba59760e70d3a95e9319b55b4646d02d463ce6de83"
+      },
+      {
+        "field": "source.py",
+        "path": "experiments/thirty_case_validation/cases/cor_06_rle/source.py",
+        "sha256": "e037815c7ca8cd698574e695a67e682dd360c80be90454ee386737ebfaf85fa4"
+      },
+      {
+        "field": "oracle.py",
+        "path": "experiments/thirty_case_validation/cases/cor_06_rle/oracle.py",
+        "sha256": "d65f0d269de8c2eb0e2efb9112450c20d51e7771ea6413d64b32ff7aafcd9834"
+      },
+      {
+        "field": "probe_results.json",
+        "path": "experiments/thirty_case_validation/cases/cor_06_rle/probe_results.json",
+        "sha256": "ba9ccdac6c25b5858e7523ba59760e70d3a95e9319b55b4646d02d463ce6de83"
+      }
+    ],
+    "def_01_boundary_offbyone": [
+      {
+        "field": "patch",
+        "path": "experiments/thirty_case_validation/cases/def_01_boundary_offbyone/source.py",
+        "sha256": "f9520523013eb8d36a976c801500e3f975db9382f8ed4c8731eec934b2ab5be2"
+      },
+      {
+        "field": "semantic_evidence",
+        "path": "experiments/thirty_case_validation/cases/def_01_boundary_offbyone/probe_results.json",
+        "sha256": "6c855b8a081f214a0b50682baffe94dddcc55ec782d48830d30f11814a8c9c8f"
+      },
+      {
+        "field": "source.py",
+        "path": "experiments/thirty_case_validation/cases/def_01_boundary_offbyone/source.py",
+        "sha256": "f9520523013eb8d36a976c801500e3f975db9382f8ed4c8731eec934b2ab5be2"
+      },
+      {
+        "field": "oracle.py",
+        "path": "experiments/thirty_case_validation/cases/def_01_boundary_offbyone/oracle.py",
+        "sha256": "7936d10db5b33ee146d69c97a75463d0db38be712b551efa4f8f1e6a2173c0f9"
+      },
+      {
+        "field": "probe_results.json",
+        "path": "experiments/thirty_case_validation/cases/def_01_boundary_offbyone/probe_results.json",
+        "sha256": "6c855b8a081f214a0b50682baffe94dddcc55ec782d48830d30f11814a8c9c8f"
+      }
+    ],
+    "def_02_error_handling": [
+      {
+        "field": "patch",
+        "path": "experiments/thirty_case_validation/cases/def_02_error_handling/source.py",
+        "sha256": "90a9ef8909948a2783ba41e17b147a36b55a4fb522f9de6c72f2d7f8506add9d"
+      },
+      {
+        "field": "semantic_evidence",
+        "path": "experiments/thirty_case_validation/cases/def_02_error_handling/probe_results.json",
+        "sha256": "128a03f0764607459fc862a8534ed05f049c4a196fcb8cedbe64d8c7827e1fa4"
+      },
+      {
+        "field": "source.py",
+        "path": "experiments/thirty_case_validation/cases/def_02_error_handling/source.py",
+        "sha256": "90a9ef8909948a2783ba41e17b147a36b55a4fb522f9de6c72f2d7f8506add9d"
+      },
+      {
+        "field": "oracle.py",
+        "path": "experiments/thirty_case_validation/cases/def_02_error_handling/oracle.py",
+        "sha256": "7cedde2e055c6958bce47324d555241b5f8437ee53d1d294466e7671c0a8669f"
+      },
+      {
+        "field": "probe_results.json",
+        "path": "experiments/thirty_case_validation/cases/def_02_error_handling/probe_results.json",
+        "sha256": "128a03f0764607459fc862a8534ed05f049c4a196fcb8cedbe64d8c7827e1fa4"
+      }
+    ],
+    "def_03_state_consistency": [
+      {
+        "field": "patch",
+        "path": "experiments/thirty_case_validation/cases/def_03_state_consistency/source.py",
+        "sha256": "821e3e27e68b9abc6813d95f01210325d398172ad865601b8f90fda66479f8ff"
+      },
+      {
+        "field": "semantic_evidence",
+        "path": "experiments/thirty_case_validation/cases/def_03_state_consistency/probe_results.json",
+        "sha256": "2fc43897f8568c04b0b3366945159f36f06bc91be645bcc916ab0f69d2b6e2aa"
+      },
+      {
+        "field": "source.py",
+        "path": "experiments/thirty_case_validation/cases/def_03_state_consistency/source.py",
+        "sha256": "821e3e27e68b9abc6813d95f01210325d398172ad865601b8f90fda66479f8ff"
+      },
+      {
+        "field": "oracle.py",
+        "path": "experiments/thirty_case_validation/cases/def_03_state_consistency/oracle.py",
+        "sha256": "b303a1e2194b3b09407aa733df013b328adacb594cad9148f43ed13bbf9ac5f0"
+      },
+      {
+        "field": "probe_results.json",
+        "path": "experiments/thirty_case_validation/cases/def_03_state_consistency/probe_results.json",
+        "sha256": "2fc43897f8568c04b0b3366945159f36f06bc91be645bcc916ab0f69d2b6e2aa"
+      }
+    ],
+    "def_04_ordering_invariant": [
+      {
+        "field": "patch",
+        "path": "experiments/thirty_case_validation/cases/def_04_ordering_invariant/source.py",
+        "sha256": "491f66980d3500b9dc3d3c85b8be4a19f3513f6ac4c36afd6e3fb8744117c0ed"
+      },
+      {
+        "field": "semantic_evidence",
+        "path": "experiments/thirty_case_validation/cases/def_04_ordering_invariant/probe_results.json",
+        "sha256": "25a6cdb584852c4b4ad8a78f519a5ac467176bca36ec8944a80fc792cd5433fd"
+      },
+      {
+        "field": "source.py",
+        "path": "experiments/thirty_case_validation/cases/def_04_ordering_invariant/source.py",
+        "sha256": "491f66980d3500b9dc3d3c85b8be4a19f3513f6ac4c36afd6e3fb8744117c0ed"
+      },
+      {
+        "field": "oracle.py",
+        "path": "experiments/thirty_case_validation/cases/def_04_ordering_invariant/oracle.py",
+        "sha256": "c9f5d5d56a6e97e5c681dd77a1b395316ba18fc2c58ea912a71ba0f2883009eb"
+      },
+      {
+        "field": "probe_results.json",
+        "path": "experiments/thirty_case_validation/cases/def_04_ordering_invariant/probe_results.json",
+        "sha256": "25a6cdb584852c4b4ad8a78f519a5ac467176bca36ec8944a80fc792cd5433fd"
+      }
+    ],
+    "def_05_api_compat": [
+      {
+        "field": "patch",
+        "path": "experiments/thirty_case_validation/cases/def_05_api_compat/source.py",
+        "sha256": "f7b9410ded9ee63a901775dd1305b76c84756eaec2eff39147c188199ed1b018"
+      },
+      {
+        "field": "semantic_evidence",
+        "path": "experiments/thirty_case_validation/cases/def_05_api_compat/probe_results.json",
+        "sha256": "4f5022102ebbf456628442b73d595f35e2f6e442c2b10764669a4021db8be432"
+      },
+      {
+        "field": "source.py",
+        "path": "experiments/thirty_case_validation/cases/def_05_api_compat/source.py",
+        "sha256": "f7b9410ded9ee63a901775dd1305b76c84756eaec2eff39147c188199ed1b018"
+      },
+      {
+        "field": "oracle.py",
+        "path": "experiments/thirty_case_validation/cases/def_05_api_compat/oracle.py",
+        "sha256": "5617b9b7a108999926bb56d32ef577fc3fe98174592119fe4eabe34e5b0a2e83"
+      },
+      {
+        "field": "probe_results.json",
+        "path": "experiments/thirty_case_validation/cases/def_05_api_compat/probe_results.json",
+        "sha256": "4f5022102ebbf456628442b73d595f35e2f6e442c2b10764669a4021db8be432"
+      }
+    ],
+    "def_06_resource_cleanup": [
+      {
+        "field": "patch",
+        "path": "experiments/thirty_case_validation/cases/def_06_resource_cleanup/source.py",
+        "sha256": "127ec1294d2b481c7265fd09f9225fb0a0064f7f7a87f049a22ef3d6167b7462"
+      },
+      {
+        "field": "semantic_evidence",
+        "path": "experiments/thirty_case_validation/cases/def_06_resource_cleanup/probe_results.json",
+        "sha256": "9d9ce40630cdf3334603c88e42309d93a6accdfa8760bd238d0a808221c3ddc9"
+      },
+      {
+        "field": "source.py",
+        "path": "experiments/thirty_case_validation/cases/def_06_resource_cleanup/source.py",
+        "sha256": "127ec1294d2b481c7265fd09f9225fb0a0064f7f7a87f049a22ef3d6167b7462"
+      },
+      {
+        "field": "oracle.py",
+        "path": "experiments/thirty_case_validation/cases/def_06_resource_cleanup/oracle.py",
+        "sha256": "69c8c0505374e961269677f04d9c2b33fff43c6c06224898446af622679ae68b"
+      },
+      {
+        "field": "probe_results.json",
+        "path": "experiments/thirty_case_validation/cases/def_06_resource_cleanup/probe_results.json",
+        "sha256": "9d9ce40630cdf3334603c88e42309d93a6accdfa8760bd238d0a808221c3ddc9"
+      }
+    ],
+    "def_07_data_transform": [
+      {
+        "field": "patch",
+        "path": "experiments/thirty_case_validation/cases/def_07_data_transform/source.py",
+        "sha256": "eee508a9521a239e70a38abd745d70e52945958cf0be14a62d64c3b33c90a54d"
+      },
+      {
+        "field": "semantic_evidence",
+        "path": "experiments/thirty_case_validation/cases/def_07_data_transform/probe_results.json",
+        "sha256": "9c1cd07ab652459d9dfe8e690e29cef3338dcbe03b00c680f71bdbb4da0c5ea5"
+      },
+      {
+        "field": "source.py",
+        "path": "experiments/thirty_case_validation/cases/def_07_data_transform/source.py",
+        "sha256": "eee508a9521a239e70a38abd745d70e52945958cf0be14a62d64c3b33c90a54d"
+      },
+      {
+        "field": "oracle.py",
+        "path": "experiments/thirty_case_validation/cases/def_07_data_transform/oracle.py",
+        "sha256": "1f31072f12ff6ea0216a55a3b330096a138cde93167bdd5f1a6fe5ef0c287466"
+      },
+      {
+        "field": "probe_results.json",
+        "path": "experiments/thirty_case_validation/cases/def_07_data_transform/probe_results.json",
+        "sha256": "9c1cd07ab652459d9dfe8e690e29cef3338dcbe03b00c680f71bdbb4da0c5ea5"
+      }
+    ],
+    "def_08_cache_invalidation": [
+      {
+        "field": "patch",
+        "path": "experiments/thirty_case_validation/cases/def_08_cache_invalidation/source.py",
+        "sha256": "d58cd59e1e2fa77bc1114f963f0e775d25fb89156038bcc06d3c0677a4f567c3"
+      },
+      {
+        "field": "semantic_evidence",
+        "path": "experiments/thirty_case_validation/cases/def_08_cache_invalidation/probe_results.json",
+        "sha256": "55ae0a09f8881cbaadfa6e7e3ebff149e38d65a81cc8bf22dfd1a74524a47267"
+      },
+      {
+        "field": "source.py",
+        "path": "experiments/thirty_case_validation/cases/def_08_cache_invalidation/source.py",
+        "sha256": "d58cd59e1e2fa77bc1114f963f0e775d25fb89156038bcc06d3c0677a4f567c3"
+      },
+      {
+        "field": "oracle.py",
+        "path": "experiments/thirty_case_validation/cases/def_08_cache_invalidation/oracle.py",
+        "sha256": "dfd97e71307b1e9aa5e56ccdd8faf59a172faf913ac57a60988f2e74074a4ec5"
+      },
+      {
+        "field": "probe_results.json",
+        "path": "experiments/thirty_case_validation/cases/def_08_cache_invalidation/probe_results.json",
+        "sha256": "55ae0a09f8881cbaadfa6e7e3ebff149e38d65a81cc8bf22dfd1a74524a47267"
+      }
+    ],
+    "def_09_incorrect_fallback": [
+      {
+        "field": "patch",
+        "path": "experiments/thirty_case_validation/cases/def_09_incorrect_fallback/source.py",
+        "sha256": "702ae5865b80bd670fae671a872317427be82d8bcb83e0a67811b055b9774400"
+      },
+      {
+        "field": "semantic_evidence",
+        "path": "experiments/thirty_case_validation/cases/def_09_incorrect_fallback/probe_results.json",
+        "sha256": "9afcd957913aebeb11230623d21208f096592d6a5c62566a70a1039365b6314d"
+      },
+      {
+        "field": "source.py",
+        "path": "experiments/thirty_case_validation/cases/def_09_incorrect_fallback/source.py",
+        "sha256": "702ae5865b80bd670fae671a872317427be82d8bcb83e0a67811b055b9774400"
+      },
+      {
+        "field": "oracle.py",
+        "path": "experiments/thirty_case_validation/cases/def_09_incorrect_fallback/oracle.py",
+        "sha256": "ee0e28d5c7c837c722f7a79607842da6194044298bb11fc772edc4fefd83e7d7"
+      },
+      {
+        "field": "probe_results.json",
+        "path": "experiments/thirty_case_validation/cases/def_09_incorrect_fallback/probe_results.json",
+        "sha256": "9afcd957913aebeb11230623d21208f096592d6a5c62566a70a1039365b6314d"
+      }
+    ],
+    "def_10_partial_update": [
+      {
+        "field": "patch",
+        "path": "experiments/thirty_case_validation/cases/def_10_partial_update/source.py",
+        "sha256": "f2492a1123628c39fb4721986f1e6c95d064fa31e37ecc672bbb76658758f7cd"
+      },
+      {
+        "field": "semantic_evidence",
+        "path": "experiments/thirty_case_validation/cases/def_10_partial_update/probe_results.json",
+        "sha256": "200df0929f336c94ca89740fa44bfd9fa051efd746c708ba4e0f1db9f928c782"
+      },
+      {
+        "field": "source.py",
+        "path": "experiments/thirty_case_validation/cases/def_10_partial_update/source.py",
+        "sha256": "f2492a1123628c39fb4721986f1e6c95d064fa31e37ecc672bbb76658758f7cd"
+      },
+      {
+        "field": "oracle.py",
+        "path": "experiments/thirty_case_validation/cases/def_10_partial_update/oracle.py",
+        "sha256": "55c70d817154fd5b9164ffb8ca77ac8f9fd1737081b7cee5841bf79738225e7b"
+      },
+      {
+        "field": "probe_results.json",
+        "path": "experiments/thirty_case_validation/cases/def_10_partial_update/probe_results.json",
+        "sha256": "200df0929f336c94ca89740fa44bfd9fa051efd746c708ba4e0f1db9f928c782"
+      }
+    ],
+    "def_11_offbyone_rle": [
+      {
+        "field": "patch",
+        "path": "experiments/thirty_case_validation/cases/def_11_offbyone_rle/source.py",
+        "sha256": "ab11d1d42eed5d290cb5f3aee6a3bfc16b98ba6eecbc44fe7cb8a949e890510d"
+      },
+      {
+        "field": "semantic_evidence",
+        "path": "experiments/thirty_case_validation/cases/def_11_offbyone_rle/probe_results.json",
+        "sha256": "e10a3a5b61b1712e1102ab1567c73dbff882d36cc7597a67b644459789d42698"
+      },
+      {
+        "field": "source.py",
+        "path": "experiments/thirty_case_validation/cases/def_11_offbyone_rle/source.py",
+        "sha256": "ab11d1d42eed5d290cb5f3aee6a3bfc16b98ba6eecbc44fe7cb8a949e890510d"
+      },
+      {
+        "field": "oracle.py",
+        "path": "experiments/thirty_case_validation/cases/def_11_offbyone_rle/oracle.py",
+        "sha256": "d65f0d269de8c2eb0e2efb9112450c20d51e7771ea6413d64b32ff7aafcd9834"
+      },
+      {
+        "field": "probe_results.json",
+        "path": "experiments/thirty_case_validation/cases/def_11_offbyone_rle/probe_results.json",
+        "sha256": "e10a3a5b61b1712e1102ab1567c73dbff882d36cc7597a67b644459789d42698"
+      }
+    ],
+    "def_12_regression": [
+      {
+        "field": "patch",
+        "path": "experiments/thirty_case_validation/cases/def_12_regression/source.py",
+        "sha256": "970fc2d3a39be93593770745efeb945bff231e393b21775e85288a3a95f6a220"
+      },
+      {
+        "field": "semantic_evidence",
+        "path": "experiments/thirty_case_validation/cases/def_12_regression/probe_results.json",
+        "sha256": "913556e9dbe7d28f895737d05e81ca8cf47ec68cfb7ff0e76169ac696b5cbb30"
+      },
+      {
+        "field": "source.py",
+        "path": "experiments/thirty_case_validation/cases/def_12_regression/source.py",
+        "sha256": "970fc2d3a39be93593770745efeb945bff231e393b21775e85288a3a95f6a220"
+      },
+      {
+        "field": "oracle.py",
+        "path": "experiments/thirty_case_validation/cases/def_12_regression/oracle.py",
+        "sha256": "4ece03311a278cc6cd2961b20030470be6a7453513eb15197a44e018e41d7fa4"
+      },
+      {
+        "field": "probe_results.json",
+        "path": "experiments/thirty_case_validation/cases/def_12_regression/probe_results.json",
+        "sha256": "913556e9dbe7d28f895737d05e81ca8cf47ec68cfb7ff0e76169ac696b5cbb30"
+      }
+    ],
+    "inf_01_flipt_api": [
+      {
+        "field": "patch",
+        "path": "jobs/deepseek2-flipt-a1/instance_flipt-io__flipt-6fe76d0__KGCvVE5/agent/model.patch",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "field": "trajectory",
+        "path": "jobs/deepseek2-flipt-a1/instance_flipt-io__flipt-6fe76d0__KGCvVE5/agent/mini-swe-agent.trajectory.json",
+        "sha256": "3ae03347edf330ccbecb47c2c77f52bd39bf795cf9e364d1e546594c8fa3531c"
+      }
+    ],
+    "inf_02_nodebb_orig": [
+      {
+        "field": "patch",
+        "path": "jobs/final-nodebb/instance_NodeBB__NodeBB-00c70ce7__u8MhLEv/agent/model.patch",
+        "sha256": "f2d6bc2e80ef808bd3e309d2fefee36f350d74773dbba4f33accea30fb74afcb"
+      }
+    ],
+    "inf_03_nodebb_ds2": [
+      {
+        "field": "patch",
+        "path": "jobs/deepseek2-nodebb-a1/instance_NodeBB__NodeBB-00c70ce7__d6UUxrs/agent/model.patch",
+        "sha256": "f2d6bc2e80ef808bd3e309d2fefee36f350d74773dbba4f33accea30fb74afcb"
+      },
+      {
+        "field": "trajectory",
+        "path": "jobs/deepseek2-nodebb-a1/instance_NodeBB__NodeBB-00c70ce7__d6UUxrs/agent/mini-swe-agent.trajectory.json",
+        "sha256": "71ebf983cdce1b8cda5b922426d667ab1a66d237c2ef19ceba3bd01975ee1d50"
+      }
+    ],
+    "inf_04_synthetic_runner": [
+      {
+        "field": "patch",
+        "path": "experiments/thirty_case_validation/cases/inf_04_synthetic_runner/run.log",
+        "sha256": "d9485462b459e76f98d508af0c411e49d78380ddf30b65d4dcfc308fefabd675"
+      },
+      {
+        "field": "replay",
+        "path": "experiments/thirty_case_validation/cases/inf_04_synthetic_runner/replay.json",
+        "sha256": "79e90ba8fe4cb113fa2a4d58e588efd8c26efcec9fc941ee8b95364a34d8532f"
+      },
+      {
+        "field": "replay.json",
+        "path": "experiments/thirty_case_validation/cases/inf_04_synthetic_runner/replay.json",
+        "sha256": "79e90ba8fe4cb113fa2a4d58e588efd8c26efcec9fc941ee8b95364a34d8532f"
+      },
+      {
+        "field": "run.log",
+        "path": "experiments/thirty_case_validation/cases/inf_04_synthetic_runner/run.log",
+        "sha256": "d9485462b459e76f98d508af0c411e49d78380ddf30b65d4dcfc308fefabd675"
+      }
+    ]
+  },
+  "note": "SHA-256 of every artifact referenced by the 30 case manifests."
+}

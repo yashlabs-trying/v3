@@ -1,0 +1,53 @@
+{
+  "case_id": "cor_03_resource",
+  "short_name": "syn-resource-correct",
+  "attempt": "synthetic-correct",
+  "execution_validity": "VALID",
+  "semantic_verdict": "CONFIRMED_CORRECT",
+  "original_score": null,
+  "patch": "experiments/thirty_case_validation/cases/cor_03_resource/source.py",
+  "trajectory": null,
+  "semantic": {
+    "verdict": "CONFIRMED_CORRECT",
+    "confidence": "high",
+    "evidence_artifact": "experiments/thirty_case_validation/cases/cor_03_resource/probe_results.json",
+    "clauses": [
+      {
+        "id": "resource.cleanup_success",
+        "kind": "POSTCONDITION",
+        "statement": "resource.resource.cleanup_success contract clause"
+      },
+      {
+        "id": "resource.cleanup_on_error",
+        "kind": "ERROR_BEHAVIOR",
+        "statement": "resource.resource.cleanup_on_error contract clause"
+      }
+    ],
+    "probes": [
+      {
+        "name": "resource:test_df_closes_on_success",
+        "passed": true,
+        "clauses": [
+          "resource.cleanup_success"
+        ],
+        "detail": "",
+        "counterexample": null
+      },
+      {
+        "name": "resource:test_df_closes_on_error",
+        "passed": true,
+        "clauses": [
+          "resource.cleanup_on_error"
+        ],
+        "detail": "",
+        "counterexample": null
+      }
+    ]
+  },
+  "notes": [
+    "SYNTHETIC correct solution (real mechanism, real oracle)."
+  ],
+  "evidence_roots": [
+    "experiments/thirty_case_validation"
+  ]
+}

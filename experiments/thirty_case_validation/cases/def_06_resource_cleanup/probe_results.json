@@ -1,0 +1,9 @@
+{
+  "failing": [
+    "test_df_closes_on_error"
+  ],
+  "results": {
+    "test_df_closes_on_error": "FAILED",
+    "test_df_closes_on_success": "PASSED"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "case_id": "inf_02_nodebb_orig",
+  "short_name": "NodeBB",
+  "attempt": "final-nodebb",
+  "execution_validity": "INVALID",
+  "semantic_verdict": "INCONCLUSIVE",
+  "original_score": 0.0,
+  "patch": "jobs/final-nodebb/instance_NodeBB__NodeBB-00c70ce7__u8MhLEv/agent/model.patch",
+  "trajectory": null,
+  "semantic": null,
+  "notes": [
+    "INFRASTRUCTURE: contaminated patch, no model responses"
+  ]
+}

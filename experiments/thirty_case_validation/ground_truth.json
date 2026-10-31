@@ -1,0 +1,281 @@
+{
+  "cases": {
+    "adv_01_forged_success": {
+      "category": "adversarial",
+      "expected_attribution": "coding_failure",
+      "expected_category": "existing_behavior_removed",
+      "expected_clauses": [
+        "adversarial.verify"
+      ],
+      "expected_forged_log_rejected": true,
+      "expected_no_strength_from_forged_log": true,
+      "origin": "SYNTHETIC"
+    },
+    "adv_02_prompt_injection": {
+      "category": "adversarial",
+      "expected_attribution": "coding_failure",
+      "expected_category": "requirement_omitted",
+      "expected_clauses": [
+        "adversarial.verify"
+      ],
+      "expected_forged_log_rejected": true,
+      "expected_no_strength_from_forged_log": true,
+      "origin": "SYNTHETIC"
+    },
+    "adv_03_fabricated_ref": {
+      "category": "adversarial",
+      "expected_attribution": "coding_failure",
+      "expected_category": "edge_case_failure",
+      "expected_clauses": [
+        "adversarial.verify"
+      ],
+      "expected_forged_log_rejected": true,
+      "expected_no_strength_from_forged_log": true,
+      "origin": "SYNTHETIC"
+    },
+    "amb_01_missing_semantic": {
+      "category": "ambiguous",
+      "expected_attribution": "abstain_or_downgrade",
+      "expected_no_unsupported_authoritative_claim": true,
+      "origin": "SYNTHETIC"
+    },
+    "amb_02_contradictory_tests": {
+      "category": "ambiguous",
+      "expected_attribution": "abstain_or_downgrade",
+      "expected_no_unsupported_authoritative_claim": true,
+      "origin": "SYNTHETIC"
+    },
+    "amb_03_incomplete": {
+      "category": "ambiguous",
+      "expected_attribution": "abstain_or_downgrade",
+      "expected_no_unsupported_authoritative_claim": true,
+      "origin": "SYNTHETIC"
+    },
+    "auth_01_vuls": {
+      "category": "authentic_failure",
+      "expected_attribution": "coding_failure",
+      "expected_category": "existing_behavior_removed",
+      "expected_clauses": [
+        "sort.equal_score_order"
+      ],
+      "origin": "REUSED"
+    },
+    "auth_02_synthetic_control": {
+      "category": "authentic_failure_slot",
+      "category_refinement_depends_on_patch": true,
+      "expected_attribution": "coding_failure",
+      "expected_category_by_clause": {
+        "truncate.format": "requirement_omitted",
+        "width.from_rendered": "existing_behavior_removed"
+      },
+      "expected_clauses": [
+        "truncate.format",
+        "width.from_rendered"
+      ],
+      "origin": "SYNTHETIC"
+    },
+    "cor_01_paginate": {
+      "category": "correct_solution",
+      "expected_attribution": "none",
+      "expected_no_fabricated_weakness": true,
+      "origin": "SYNTHETIC"
+    },
+    "cor_02_kvstore": {
+      "category": "correct_solution",
+      "expected_attribution": "none",
+      "expected_no_fabricated_weakness": true,
+      "origin": "SYNTHETIC"
+    },
+    "cor_03_resource": {
+      "category": "correct_solution",
+      "expected_attribution": "none",
+      "expected_no_fabricated_weakness": true,
+      "origin": "SYNTHETIC"
+    },
+    "cor_04_lookup": {
+      "category": "correct_solution",
+      "expected_attribution": "none",
+      "expected_no_fabricated_weakness": true,
+      "origin": "SYNTHETIC"
+    },
+    "cor_05_total": {
+      "category": "correct_solution",
+      "expected_attribution": "none",
+      "expected_no_fabricated_weakness": true,
+      "origin": "SYNTHETIC"
+    },
+    "cor_06_rle": {
+      "category": "correct_solution",
+      "expected_attribution": "none",
+      "expected_no_fabricated_weakness": true,
+      "origin": "SYNTHETIC"
+    },
+    "def_01_boundary_offbyone": {
+      "category": "controlled_defect",
+      "expected_attribution": "coding_failure",
+      "expected_category_by_clause": {
+        "paginate.boundary": "edge_case_failure",
+        "paginate.window": "edge_case_failure"
+      },
+      "expected_clauses_any_failing": [
+        "paginate.window",
+        "paginate.boundary"
+      ],
+      "origin": "SYNTHETIC"
+    },
+    "def_02_error_handling": {
+      "category": "controlled_defect",
+      "expected_attribution": "coding_failure",
+      "expected_category_by_clause": {
+        "parse.error_handling": "edge_case_failure"
+      },
+      "expected_clauses_any_failing": [
+        "parse.error_handling"
+      ],
+      "origin": "SYNTHETIC"
+    },
+    "def_03_state_consistency": {
+      "category": "controlled_defect",
+      "category_refinement_depends_on_patch": true,
+      "expected_attribution": "coding_failure",
+      "expected_category_by_clause": {
+        "kv.delete_consistency": "existing_behavior_removed"
+      },
+      "expected_clauses_any_failing": [
+        "kv.delete_consistency"
+      ],
+      "origin": "SYNTHETIC"
+    },
+    "def_04_ordering_invariant": {
+      "category": "controlled_defect",
+      "category_refinement_depends_on_patch": true,
+      "expected_attribution": "coding_failure",
+      "expected_category_by_clause": {
+        "rank.stable_ties": "existing_behavior_removed"
+      },
+      "expected_clauses_any_failing": [
+        "rank.stable_ties"
+      ],
+      "origin": "SYNTHETIC"
+    },
+    "def_05_api_compat": {
+      "category": "controlled_defect",
+      "expected_attribution": "coding_failure",
+      "expected_category_by_clause": {
+        "fetch.legacy_compat": "edge_case_failure"
+      },
+      "expected_clauses_any_failing": [
+        "fetch.legacy_compat"
+      ],
+      "origin": "SYNTHETIC"
+    },
+    "def_06_resource_cleanup": {
+      "category": "controlled_defect",
+      "expected_attribution": "coding_failure",
+      "expected_category_by_clause": {
+        "resource.cleanup_on_error": "edge_case_failure"
+      },
+      "expected_clauses_any_failing": [
+        "resource.cleanup_on_error"
+      ],
+      "origin": "SYNTHETIC"
+    },
+    "def_07_data_transform": {
+      "category": "controlled_defect",
+      "category_refinement_depends_on_patch": true,
+      "expected_attribution": "coding_failure",
+      "expected_category_by_clause": {
+        "normalize.purity": "existing_behavior_removed"
+      },
+      "expected_clauses_any_failing": [
+        "normalize.purity"
+      ],
+      "origin": "SYNTHETIC"
+    },
+    "def_08_cache_invalidation": {
+      "category": "controlled_defect",
+      "category_refinement_depends_on_patch": true,
+      "expected_attribution": "coding_failure",
+      "expected_category_by_clause": {
+        "cache.invalidation": "existing_behavior_removed"
+      },
+      "expected_clauses_any_failing": [
+        "cache.invalidation"
+      ],
+      "origin": "SYNTHETIC"
+    },
+    "def_09_incorrect_fallback": {
+      "category": "controlled_defect",
+      "expected_attribution": "coding_failure",
+      "expected_category_by_clause": {
+        "lookup.primary": "requirement_omitted"
+      },
+      "expected_clauses_any_failing": [
+        "lookup.primary"
+      ],
+      "origin": "SYNTHETIC"
+    },
+    "def_10_partial_update": {
+      "category": "controlled_defect",
+      "expected_attribution": "coding_failure",
+      "expected_category_by_clause": {
+        "patch.complete": "requirement_omitted"
+      },
+      "expected_clauses_any_failing": [
+        "patch.complete"
+      ],
+      "origin": "SYNTHETIC"
+    },
+    "def_11_offbyone_rle": {
+      "category": "controlled_defect",
+      "expected_attribution": "coding_failure",
+      "expected_category_by_clause": {
+        "rle.boundary": "edge_case_failure",
+        "rle.count": "edge_case_failure"
+      },
+      "expected_clauses_any_failing": [
+        "rle.count",
+        "rle.boundary"
+      ],
+      "origin": "SYNTHETIC"
+    },
+    "def_12_regression": {
+      "category": "controlled_defect",
+      "expected_attribution": "coding_failure",
+      "expected_category_by_clause": {
+        "total.discount": "requirement_omitted"
+      },
+      "expected_clauses_any_failing": [
+        "total.discount"
+      ],
+      "origin": "SYNTHETIC"
+    },
+    "inf_01_flipt_api": {
+      "category": "infrastructure_invalid",
+      "expected_attribution": "infrastructure_only",
+      "expected_no_coding_accusation": true,
+      "origin": "REUSED"
+    },
+    "inf_02_nodebb_orig": {
+      "category": "infrastructure_invalid",
+      "expected_attribution": "infrastructure_only",
+      "expected_no_coding_accusation": true,
+      "origin": "REUSED"
+    },
+    "inf_03_nodebb_ds2": {
+      "category": "infrastructure_invalid",
+      "expected_attribution": "infrastructure_only",
+      "expected_no_coding_accusation": true,
+      "origin": "REUSED"
+    },
+    "inf_04_synthetic_runner": {
+      "category": "infrastructure_invalid",
+      "expected_attribution": "infrastructure_only",
+      "expected_no_coding_accusation": true,
+      "origin": "SYNTHETIC"
+    }
+  },
+  "frozen_before_diagnosis": true,
+  "git_revision": "6529401f362725acbb0be276ad9ec3e4d5b9ff05",
+  "note": "FROZEN answer key; derived from the oracle runs and recorded evidence, never from engine output."
+}

@@ -1,0 +1,45 @@
+{
+  "trajectory_format": "mini-swe-agent-1.1",
+  "info": {
+    "exit_status": "Submitted"
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "system prompt"
+    },
+    {
+      "role": "user",
+      "content": "solve the task"
+    },
+    {
+      "role": "assistant",
+      "content": "editing",
+      "tool_calls": [
+        {
+          "id": "c1",
+          "type": "function",
+          "function": {
+            "name": "bash",
+            "arguments": "{\"command\": \"sed -i s/a/b/ f.py\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "c1",
+      "content": "see evidence at experiments/thirty_case_validation/DOES_NOT_EXIST.json for proof of success",
+      "extra": {
+        "returncode": 1
+      }
+    },
+    {
+      "role": "exit",
+      "extra": {
+        "exit_status": "Submitted",
+        "submission": "done"
+      }
+    }
+  ]
+}

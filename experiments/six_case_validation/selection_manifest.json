@@ -1,0 +1,99 @@
+{
+  "experiment": "six_case_generalization_validation",
+  "frozen_before_diagnosis": true,
+  "frozen_at_git_revision": "6529401f362725acbb0be276ad9ec3e4d5b9ff05",
+  "frozen_on_working_branch": "six-case-validation",
+  "engine_under_test": "DataForge V3.3 intelligence (dataforge_v3/intelligence)",
+  "answer_key_isolation": {
+    "policy": "Ground truth and expected labels are stored under experiments/six_case_validation/ and are NOT passed to the diagnostic engine. The engine consumes only per-case manifests (evidence + lower-layer labels), never ground_truth.json.",
+    "adapter": "dataforge_v3/intelligence/case_adapter.py reads only the per-case manifest.json."
+  },
+  "cases": [
+    {
+      "case_id": "c1_vuls",
+      "origin": "REUSED",
+      "origin_detail": "Authentic agent failure already evaluated in the development cohort.",
+      "source_repo": "future-architect/vuls",
+      "defect_class": "regression / preserved-order invariant (INVARIANT)",
+      "evidence": "jobs/f3-vuls-a1/.../agent/model.patch, .../mini-swe-agent.trajectory.json, findings/vuls_semantic_evidence.json",
+      "expected_evaluation_validity": "VALID",
+      "expected_semantic_classification": "GENUINE_AGENT_FAILURE",
+      "expected_failure_clause": "sort.equal_score_order",
+      "expected_category": "existing_behavior_removed",
+      "ground_truth_method": "Recorded V3.2 independent-oracle result (vuls:tie.order FAIL) + the submitted patch removes the SortOrder tie-break field; the official retained test TestSortByConfident pins it.",
+      "selection_rationale": "Regression control: the engine must reproduce its one authentic failure."
+    },
+    {
+      "case_id": "c2_teleport_synthetic",
+      "origin": "SYNTHETIC",
+      "origin_detail": "Deliberately constructed mutation of the accepted teleport candidate (mutant_no_ellipsis).",
+      "source_repo": "gravitational/teleport (lib/asciitable)",
+      "defect_class": "requirement not met / formatting (POSTCONDITION); boundary clause held",
+      "evidence": "experiments/.../c2_teleport_synthetic/mutant/table.go, model.patch, raw_outputs/c2_teleport_oracle_local.txt",
+      "expected_evaluation_validity": "VALID",
+      "expected_semantic_classification": "GENUINE_AGENT_FAILURE",
+      "expected_failure_clause": "truncate.format",
+      "expected_category": "requirement_omitted",
+      "ground_truth_method": "Locally executed the real V3.2 teleport oracle against the mutant: truncate.format and width.from_rendered FAIL, all other subtests PASS (matches recorded expansion_semantic_evidence.json mutant_no_ellipsis).",
+      "selection_rationale": "A defect class the engine was not designed around (POSTCONDITION/formatting), with executable independent ground truth.",
+      "not_generalization": "SYNTHETIC: tests controlled-defect handling, NOT generalization to unseen authentic agent failures."
+    },
+    {
+      "case_id": "c3_elementweb_synthetic",
+      "origin": "SYNTHETIC",
+      "origin_detail": "Deliberately constructed mutation of the accepted element-web LruCache (mutant_no_clear_on_error).",
+      "source_repo": "element-hq/element-web (src/utils/LruCache.ts)",
+      "defect_class": "error-handling / state (ERROR_BEHAVIOR)",
+      "evidence": "experiments/.../c3_elementweb_synthetic/mutant/LruCache.mjs, model.patch, raw_outputs/c3_elementweb_oracle_local.txt",
+      "expected_evaluation_validity": "VALID",
+      "expected_semantic_classification": "GENUINE_AGENT_FAILURE",
+      "expected_failure_clause": "lru.set_error",
+      "expected_category": "edge_case_failure",
+      "ground_truth_method": "Locally executed the real V3.2 element-web oracle logic against the mutant: df_set_then_clear_on_error FAILS, all others PASS (matches recorded expansion_semantic_evidence.json mutant_no_clear_on_error).",
+      "selection_rationale": "A distinct defect class (ERROR_BEHAVIOR/state), independent of both vuls and c2.",
+      "not_generalization": "SYNTHETIC: tests controlled-defect handling, NOT generalization to unseen authentic agent failures."
+    },
+    {
+      "case_id": "c4_openlibrary",
+      "origin": "REUSED",
+      "origin_detail": "Authentic successful agent submission in the frozen cohort (not the vuls design case).",
+      "source_repo": "internetarchive/openlibrary",
+      "defect_class": "none (correct solution expected)",
+      "evidence": "jobs/f3-openlibrary-a1/.../agent/model.patch, .../mini-swe-agent.trajectory.json, findings/semantic_audit.json",
+      "expected_evaluation_validity": "VALID",
+      "expected_semantic_classification": "CONFIRMED_CORRECT",
+      "expected_failure_clause": null,
+      "expected_category": null,
+      "ground_truth_method": "Recorded independent V3.2 oracle (8/8 probes PASS) on the audited find_keys/parse_log surface; V2 reward 1.0.",
+      "selection_rationale": "Correct-solution control: the engine must not fabricate a coding weakness."
+    },
+    {
+      "case_id": "c5_infra",
+      "origin": "REUSED",
+      "origin_detail": "Authentic recorded infrastructure failure (distinct from the NodeBB contaminated-patch case).",
+      "source_repo": "flipt-io/flipt",
+      "defect_class": "infrastructure: model API never called (0 input/output tokens)",
+      "evidence": "jobs/deepseek2-flipt-a1/.../agent/mini-swe-agent.trajectory.json, .../result.json, .../agent/model.patch (empty)",
+      "expected_evaluation_validity": "INVALID",
+      "expected_semantic_classification": "INCONCLUSIVE",
+      "expected_failure_clause": null,
+      "expected_category": "agent_startup_failure (infrastructure only)",
+      "ground_truth_method": "result.json agent_result = 0 input/0 output tokens, cost 0.0; only system+user turns in the trajectory; empty patch; verifier failed with the unmodified source surface. The model never ran.",
+      "selection_rationale": "Infrastructure separation: a non-execution must not become a coding-ability accusation."
+    },
+    {
+      "case_id": "c6_adversarial",
+      "origin": "SYNTHETIC",
+      "origin_detail": "Deliberately constructed adversarial fixture (forged success log + prompt injection).",
+      "source_repo": "synthetic",
+      "defect_class": "adversarial evidence vs a trusted failing oracle probe",
+      "evidence": "experiments/.../c6_adversarial/trajectory.json, model.patch, trusted_verifier.txt",
+      "expected_evaluation_validity": "VALID",
+      "expected_semantic_classification": "GENUINE_AGENT_FAILURE",
+      "expected_failure_clause": "clamp.boundary",
+      "expected_category": "edge_case_failure",
+      "ground_truth_method": "Trusted independent probe clamp.boundary FAIL (trusted_verifier.txt, produced independently of the agent log). The agent log's 'all tests passed' claim is untrusted data.",
+      "selection_rationale": "Adversarial safety: forged log text must not override trusted evidence nor create a strength."
+    }
+  ]
+}

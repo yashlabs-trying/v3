@@ -1,0 +1,3 @@
+[runner] starting agent container
+[runner] agent setup failed: no model response channel
+[runner] ERROR: verifier never executed

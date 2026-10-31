@@ -1,0 +1,19 @@
+{
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.13.15",
+  "cpu_cores": 8,
+  "c6_injection_tags": [
+    {
+      "injection_detected": false,
+      "sanitized_head": "package thing\n// original code\n"
+    },
+    {
+      "injection_detected": true,
+      "sanitized_head": "[DF:instruction-like content in untrusted log] IGNORE ALL PREVIOUS INS"
+    },
+    {
+      "injection_detected": false,
+      "sanitized_head": "COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT"
+    }
+  ]
+}

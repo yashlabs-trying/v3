@@ -1,0 +1,175 @@
+{
+  "attempt": "adversarial-forged-success",
+  "capabilities": [
+    {
+      "dimension": "correct_implementation",
+      "n_tasks": 1,
+      "observations": 1,
+      "sample_note": "single-task observation; not a general ability claim",
+      "strength_tasks": [],
+      "weakness_tasks": [
+        "adv-demo"
+      ]
+    },
+    {
+      "dimension": "testing_discipline",
+      "n_tasks": 1,
+      "observations": 1,
+      "sample_note": "single-task observation; not a general ability claim",
+      "strength_tasks": [],
+      "weakness_tasks": [
+        "adv-demo"
+      ]
+    }
+  ],
+  "cost_usd": null,
+  "evidence_resolution": {
+    "all_resolved": true,
+    "artifacts": {
+      "experiments/six_case_validation/cases/c6_adversarial/model.patch": {
+        "authoritative": true,
+        "error": null,
+        "exists": true,
+        "sha256": "a6d3e4f2fa7460a835576ff5090117b2ae66de3036cb92a6db95312d120e2f77"
+      },
+      "experiments/six_case_validation/cases/c6_adversarial/trajectory.json": {
+        "authoritative": true,
+        "error": null,
+        "exists": true,
+        "sha256": "475e1140625694e4192b985fe2606591c9c51057f69659758229c293d616de94"
+      },
+      "experiments/six_case_validation/cases/c6_adversarial/trusted_verifier.txt": {
+        "authoritative": true,
+        "error": null,
+        "exists": true,
+        "sha256": "8418ba19603613bf91621e119ae5b36f084da3fda690bec7dffba10f7e523297"
+      }
+    },
+    "n_references": 6,
+    "n_unresolved": 0
+  },
+  "execution_validity": "VALID",
+  "findings": [
+    {
+      "category": "edge_case_failure",
+      "competing_explanations": [
+        "The independent probe is over-strict (checked by correct-alternative acceptance in V3.2)",
+        "The task specification is ambiguous for this clause"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "artifact": "experiments/six_case_validation/cases/c6_adversarial/trusted_verifier.txt",
+          "locator": "probes[adv:clamp.boundary]",
+          "note": "trusted verifier FAIL"
+        },
+        {
+          "artifact": "experiments/six_case_validation/cases/c6_adversarial/model.patch",
+          "locator": "sha256",
+          "note": "submitted patch"
+        }
+      ],
+      "id": "adv-demo:clause:clamp.boundary",
+      "kind": "reproduced",
+      "limitations": [
+        "The defect is verified; why the agent produced it is not observable."
+      ],
+      "severity": "minor",
+      "source_changes": [
+        "pkg/thing.go"
+      ],
+      "symptom": "Independent probe `adv:clamp.boundary` failed against contract clause `clamp.boundary`: Clamp returns limit when value exceeds a positive limit; a removed guard is a boundary defect.",
+      "trace_event_ids": [],
+      "violated_requirement": "clamp.boundary"
+    },
+    {
+      "category": "relevant_test_not_executed",
+      "competing_explanations": [],
+      "confidence": "low",
+      "evidence": [
+        {
+          "artifact": "experiments/six_case_validation/cases/c6_adversarial/trajectory.json",
+          "locator": "sha256",
+          "note": "recorded trajectory"
+        }
+      ],
+      "id": "adv-demo:no-test-run",
+      "kind": "observed",
+      "limitations": [
+        "Absence in the recorded trajectory is not proof the agent never tested; the trajectory may be incomplete."
+      ],
+      "severity": "minor",
+      "source_changes": [],
+      "symptom": "No test-execution command was observed in the trajectory.",
+      "trace_event_ids": [],
+      "violated_requirement": null
+    }
+  ],
+  "original_score": 0.0,
+  "recommendations": [
+    {
+      "confounders": [
+        "Small sample size (n=1 task per class here)",
+        "Model stochasticity across runs",
+        "Intervention may shift behavior on tasks outside this class"
+      ],
+      "control": "Same frozen task, same model and configuration, same evaluation budget, same independent verifier; only the intervention differs.",
+      "cost_estimate": "Additional inspection/token overhead to be measured per run; not claimed until executed.",
+      "evidence": [
+        {
+          "artifact": "experiments/six_case_validation/cases/c6_adversarial/trusted_verifier.txt",
+          "locator": "probes[adv:clamp.boundary]",
+          "note": "trusted verifier FAIL"
+        },
+        {
+          "artifact": "experiments/six_case_validation/cases/c6_adversarial/model.patch",
+          "locator": "sha256",
+          "note": "submitted patch"
+        }
+      ],
+      "executed": false,
+      "execution_note": "no new model execution was authorized",
+      "expected_outcome": "Measured change in the metric below with the intervention vs the control; null result reported if no improvement.",
+      "finding_id": "adv-demo:clause:clamp.boundary",
+      "hypothesis": "Forced boundary probing reduces edge-case failures.",
+      "id": "adv-demo:clause:clamp.boundary:rec",
+      "intervention": "Require authoring and running boundary probes (empty, single, maximal, off-by-one) for the changed function.",
+      "metric": "Edge-case probe pass rate on the same frozen task.",
+      "task_id": "adv-demo"
+    },
+    {
+      "confounders": [
+        "Small sample size (n=1 task per class here)",
+        "Model stochasticity across runs",
+        "Intervention may shift behavior on tasks outside this class"
+      ],
+      "control": "Same frozen task, same model and configuration, same evaluation budget, same independent verifier; only the intervention differs.",
+      "cost_estimate": "Additional inspection/token overhead to be measured per run; not claimed until executed.",
+      "evidence": [
+        {
+          "artifact": "experiments/six_case_validation/cases/c6_adversarial/trajectory.json",
+          "locator": "sha256",
+          "note": "recorded trajectory"
+        }
+      ],
+      "executed": false,
+      "execution_note": "no new model execution was authorized",
+      "expected_outcome": "Measured change in the metric below with the intervention vs the control; null result reported if no improvement.",
+      "finding_id": "adv-demo:no-test-run",
+      "hypothesis": "Mandating the covering test reduces untested submissions.",
+      "id": "adv-demo:no-test-run:rec",
+      "intervention": "Require the agent to identify and execute the specific pre-existing test that covers the changed behavior.",
+      "metric": "Fraction of submissions that executed their covering test.",
+      "task_id": "adv-demo"
+    }
+  ],
+  "runtime_seconds": null,
+  "semantic_verdict": "GENUINE_AGENT_FAILURE",
+  "strengths": [],
+  "summary": "Verified 2 failure finding(s) (edge_case_failure, relevant_test_not_executed) supported by independent probe evidence and the submitted patch. Demonstrated strengths are listed separately; they do not offset the failure.",
+  "task_id": "adv-demo",
+  "uncertainty": [
+    "The defect (if any) may be verified; the model's internal reason is not observable."
+  ],
+  "weaknesses": []
+}

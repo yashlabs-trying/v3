@@ -1,0 +1,122 @@
+{
+  "attempt": "synthetic-mutant-no-clear-on-error",
+  "capabilities": [
+    {
+      "dimension": "correct_implementation",
+      "n_tasks": 1,
+      "observations": 2,
+      "sample_note": "single-task observation; not a general ability claim",
+      "strength_tasks": [
+        "element-web"
+      ],
+      "weakness_tasks": [
+        "element-web"
+      ]
+    }
+  ],
+  "cost_usd": null,
+  "evidence_resolution": {
+    "all_resolved": true,
+    "artifacts": {
+      "experiments/six_case_validation/cases/c3_elementweb_synthetic/model.patch": {
+        "authoritative": true,
+        "error": null,
+        "exists": true,
+        "sha256": "1f4fd429bc303662bb972429a281bc32a7bc080897a63cbf3232e0d5c4bd0f0d"
+      },
+      "experiments/six_case_validation/raw_outputs/c3_elementweb_oracle_local.txt": {
+        "authoritative": true,
+        "error": null,
+        "exists": true,
+        "sha256": "cf0f057f4bcb9476275a1efa7492e149120a929cb8f492818ee46892bb7c93c5"
+      }
+    },
+    "n_references": 4,
+    "n_unresolved": 0
+  },
+  "execution_validity": "VALID",
+  "findings": [
+    {
+      "category": "edge_case_failure",
+      "competing_explanations": [
+        "The independent probe is over-strict (checked by correct-alternative acceptance in V3.2)",
+        "The task specification is ambiguous for this clause"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "artifact": "experiments/six_case_validation/raw_outputs/c3_elementweb_oracle_local.txt",
+          "locator": "probes[element-web:df_set_then_clear_on_error]",
+          "note": "jest failed"
+        },
+        {
+          "artifact": "experiments/six_case_validation/cases/c3_elementweb_synthetic/model.patch",
+          "locator": "sha256",
+          "note": "submitted patch"
+        }
+      ],
+      "id": "element-web:clause:lru.set_error",
+      "kind": "reproduced",
+      "limitations": [
+        "The defect is verified; why the agent produced it is not observable."
+      ],
+      "severity": "minor",
+      "source_changes": [
+        "src/utils/LruCache.ts"
+      ],
+      "symptom": "Independent probe `element-web:df_set_then_clear_on_error` failed against contract clause `lru.set_error`: If storing throws, LruCache logs 'LruCache error' with the error, clears the cache, and does not propagate.",
+      "trace_event_ids": [],
+      "violated_requirement": "lru.set_error"
+    }
+  ],
+  "original_score": null,
+  "recommendations": [
+    {
+      "confounders": [
+        "Small sample size (n=1 task per class here)",
+        "Model stochasticity across runs",
+        "Intervention may shift behavior on tasks outside this class"
+      ],
+      "control": "Same frozen task, same model and configuration, same evaluation budget, same independent verifier; only the intervention differs.",
+      "cost_estimate": "Additional inspection/token overhead to be measured per run; not claimed until executed.",
+      "evidence": [
+        {
+          "artifact": "experiments/six_case_validation/raw_outputs/c3_elementweb_oracle_local.txt",
+          "locator": "probes[element-web:df_set_then_clear_on_error]",
+          "note": "jest failed"
+        },
+        {
+          "artifact": "experiments/six_case_validation/cases/c3_elementweb_synthetic/model.patch",
+          "locator": "sha256",
+          "note": "submitted patch"
+        }
+      ],
+      "executed": false,
+      "execution_note": "no new model execution was authorized",
+      "expected_outcome": "Measured change in the metric below with the intervention vs the control; null result reported if no improvement.",
+      "finding_id": "element-web:clause:lru.set_error",
+      "hypothesis": "Forced boundary probing reduces edge-case failures.",
+      "id": "element-web:clause:lru.set_error:rec",
+      "intervention": "Require authoring and running boundary probes (empty, single, maximal, off-by-one) for the changed function.",
+      "metric": "Edge-case probe pass rate on the same frozen task.",
+      "task_id": "element-web"
+    }
+  ],
+  "runtime_seconds": null,
+  "semantic_verdict": "GENUINE_AGENT_FAILURE",
+  "strengths": [
+    {
+      "confidence": "high",
+      "evidence": [],
+      "kind": "reproduced",
+      "text": "Satisfied 1 independently-probed contract clause(s): lru.values_insertion_order."
+    }
+  ],
+  "summary": "Verified 1 failure finding(s) (edge_case_failure) supported by independent probe evidence and the submitted patch. Demonstrated strengths are listed separately; they do not offset the failure.",
+  "task_id": "element-web",
+  "uncertainty": [
+    "No trajectory artifact; observable process actions are unavailable.",
+    "The defect (if any) may be verified; the model's internal reason is not observable."
+  ],
+  "weaknesses": []
+}

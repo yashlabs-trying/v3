@@ -263,6 +263,95 @@ def test_evidence_resolver_rejects_path_escape(tmp_path):
     assert "unsafe" in (bad.error or "") or "escapes" in (bad.error or "")
 
 
+# ---------- evidence-path containment hardening ----------
+
+
+def _resolver_with_roots(tmp_path: Path, allowed):
+    (tmp_path / "jobs").mkdir(exist_ok=True)
+    (tmp_path / "findings").mkdir(exist_ok=True)
+    (tmp_path / "jobs" / "a.patch").write_text("x", encoding="utf-8")
+    return EvidenceResolver(tmp_path, allowed_roots=allowed)
+
+
+def test_default_approved_roots_allow_jobs_and_findings(tmp_path):
+    r = _resolver_with_roots(tmp_path, None)
+    assert r.resolve(EvidenceRef("jobs/a.patch", "L1")).exists is True
+
+
+def test_repo_file_outside_approved_roots_is_rejected(tmp_path):
+    r = _resolver_with_roots(tmp_path, None)
+    (tmp_path / ".git").mkdir(exist_ok=True)
+    (tmp_path / ".git" / "config").write_text("secret", encoding="utf-8")
+    res = r.resolve(EvidenceRef(".git/config", "L1"))
+    assert res.exists is False
+    assert "approved" in (res.error or "")
+
+
+def test_answer_key_outside_roots_is_rejected(tmp_path):
+    r = _resolver_with_roots(tmp_path, None)
+    (tmp_path / "experiments").mkdir(exist_ok=True)
+    (tmp_path / "experiments" / "ground_truth.json").write_text("{}", encoding="utf-8")
+    res = r.resolve(EvidenceRef("experiments/ground_truth.json", "L1"))
+    assert res.exists is False
+    assert "approved" in (res.error or "")
+
+
+def test_explicit_allowed_roots_widen_trust_only_inside_repo(tmp_path):
+    (tmp_path / "experiments").mkdir(exist_ok=True)
+    (tmp_path / "experiments" / "case.patch").write_text("x", encoding="utf-8")
+    r = EvidenceResolver(tmp_path, allowed_roots=("jobs", "findings", "experiments"))
+    assert r.resolve(EvidenceRef("experiments/case.patch", "L1")).exists is True
+
+
+def test_absolute_windows_path_is_rejected(tmp_path):
+    r = _resolver_with_roots(tmp_path, None)
+    res = r.resolve(EvidenceRef("C:/Windows/System32/drivers/etc/hosts", "L1"))
+    assert res.exists is False
+    assert "unsafe" in (res.error or "")
+
+
+def test_unc_path_is_rejected(tmp_path):
+    r = _resolver_with_roots(tmp_path, None)
+    res = r.resolve(EvidenceRef("//server/share/secret", "L1"))
+    assert res.exists is False
+
+
+def test_misconfigured_outside_allowed_root_is_dropped(tmp_path):
+    # An approved root that escapes the repository must not widen trust.
+    r = EvidenceResolver(tmp_path, allowed_roots=("..",))
+    res = r.resolve(EvidenceRef("jobs/a.patch", "L1"))
+    assert res.exists is False
+
+
+def test_trajectory_ref_is_normalised_to_relative():
+    # A trajectory recorded with an absolute source path must be emitted as a
+    # repository-relative ref, so it is not rejected as an absolute path.
+    from dataforge_v3.intelligence.attribution import _rel
+
+    ref = _rel(r"C:\Users\someone\dataforge\v3\jobs\x\traj.json", "x", "recorded trajectory")
+    assert ref.artifact == "jobs/x/traj.json"
+    ref2 = _rel("/home/someone/dataforge/v3/jobs/x/traj.json", "x", "recorded trajectory")
+    assert ref2.artifact == "jobs/x/traj.json"
+
+
+def test_absolute_trajectory_source_resolves_when_normalised(tmp_path):
+    # Simulate a checkout whose path contains the `<repo>/v3/` marker, which is
+    # what `_rel` trims. The absolute trajectory source must become a
+    # repository-relative ref that resolves under the approved root.
+    from dataforge_v3.intelligence.attribution import _trajectory_refs
+
+    (tmp_path / "v3" / "jobs" / "t").mkdir(parents=True)
+    traj = tmp_path / "v3" / "jobs" / "t" / "traj.json"
+    traj.write_text("{}", encoding="utf-8")
+    tr = make_trajectory([make_event("e1")], task_id="t")
+    tr.source_artifact = str(traj)  # absolute, contains /v3/
+    ev = make_evidence(task_id="t", validity="VALID", patch_text=make_patch(), trajectory=tr)
+    refs = _trajectory_refs(ev)
+    assert refs and refs[0].artifact == "jobs/t/traj.json"
+    r = EvidenceResolver(tmp_path / "v3", allowed_roots=("jobs",))
+    assert all(r.resolve(ref).exists for ref in refs)
+
+
 def test_unresolved_evidence_downgrades_finding_to_hypothesis(tmp_path):
     f = Finding(
         id="x",
@@ -276,6 +365,41 @@ def test_unresolved_evidence_downgrades_finding_to_hypothesis(tmp_path):
     from dataforge_v3.intelligence.driver import _downgrade_unresolved
     _downgrade_unresolved([f], EvidenceResolver(tmp_path))
     assert f.kind is ClaimKind.HYPOTHESIS
+
+
+# ---------- contradictory probe evidence must not be authoritative ----------
+
+
+def test_contradictory_probes_on_same_clause_downgrade_to_hypothesis():
+    clause = Clause(id="c.x", kind="POSTCONDITION", statement="behaviour X holds")
+    sem = SemanticInput(
+        verdict="INCONCLUSIVE",
+        clauses=[clause],
+        probes=[
+            ProbeFinding(name="x.a", passed=True, clauses=["c.x"]),
+            ProbeFinding(name="x.b", passed=False, clauses=["c.x"]),
+        ],
+    )
+    ev = make_evidence(validity="VALID", patch_text=make_patch())
+    res = attribute(ev, sem)
+    clause_findings = [f for f in res.findings if f.violated_requirement == "c.x"]
+    assert clause_findings, "a finding should still be recorded"
+    assert all(f.kind is ClaimKind.HYPOTHESIS for f in clause_findings)
+    assert any("contradictory" in lim for f in clause_findings for lim in f.limitations)
+
+
+def test_unanimous_failing_probes_stay_authoritative():
+    clause = Clause(id="c.y", kind="POSTCONDITION", statement="behaviour Y holds")
+    sem = SemanticInput(
+        clauses=[clause],
+        probes=[
+            ProbeFinding(name="y.a", passed=False, clauses=["c.y"]),
+            ProbeFinding(name="y.b", passed=False, clauses=["c.y"]),
+        ],
+    )
+    ev = make_evidence(validity="VALID", patch_text=make_patch())
+    res = attribute(ev, sem)
+    assert res.findings and all(f.kind is ClaimKind.REPRODUCED for f in res.findings)
 
 
 # ---------- 15. multiple plausible causal explanations are carried ----------

@@ -1,0 +1,3 @@
+probe x.a: PASS
+probe x.b: FAIL
+(records disagree on clause c.x)

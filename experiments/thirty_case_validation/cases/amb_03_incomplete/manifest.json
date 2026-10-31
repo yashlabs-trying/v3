@@ -1,0 +1,17 @@
+{
+  "case_id": "amb_03_incomplete",
+  "short_name": "amb-incomplete",
+  "attempt": "ambiguous",
+  "execution_validity": "VALID",
+  "semantic_verdict": "INCONCLUSIVE",
+  "original_score": null,
+  "patch": null,
+  "trajectory": null,
+  "semantic": null,
+  "notes": [
+    "AMBIGUOUS: trajectory truncated; multiple plausible explanations"
+  ],
+  "evidence_roots": [
+    "experiments/thirty_case_validation"
+  ]
+}

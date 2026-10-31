@@ -1,0 +1,34 @@
+{
+  "note": "Offline diagnostic processing only. No model execution, no Docker, no GPU. Synthetic-defect ground truth (pytest oracle runs) is separate and reported below.",
+  "engine": "DataForge V3.3 (post-fix)",
+  "cohort_size": 30,
+  "diagnostic_only": {
+    "method": "1 cold run + 5 warm runs per case; time.perf_counter(); tracemalloc peak during cold run",
+    "warm_median_ms": {"min": 2.239, "median": 10.726, "max": 50.795},
+    "cold_ms": {"min": 2.284, "median": 10.835, "max": 60.212},
+    "sum_warm_median_ms": 315.7,
+    "throughput_records_per_second": 95.0,
+    "max_cold_peak_bytes": 2197000,
+    "max_cold_peak_MB": 2.095,
+    "evidence_bytes_processed": 1179960,
+    "evidence_MB_processed": 1.125
+  },
+  "separated_costs": {
+    "evidence_ingestion": "dominant share of each case (trajectory + patch file reads); measured jointly with attribution here",
+    "attribution_and_reporting": "the V3.3-added logic; previously measured at ~6 ms/record on the frozen cohort",
+    "independent_oracle_execution": "pytest/Go/Node ground-truth runs (see below); NOT part of diagnostic latency",
+    "docker_container_startup": 0,
+    "external_model_cost_usd": 0
+  },
+  "ground_truth_oracle_cost": {
+    "note": "building ground truth is separate from running the engine",
+    "pytest_oracle_runs": "13 domains x (1 correct + 1-2 mutants), each a sub-second local pytest invocation",
+    "go_oracle_run_ms_approx": 2400,
+    "node_oracle_run_ms_approx": 100
+  },
+  "caveats": [
+    "30 warm samples total; per-case n=5. Quantiles are observed sample values, not population estimates.",
+    "Windows timing granularity is coarse; small cases round to a few ms.",
+    "These figures do not cover model execution or V3.2 oracle execution, which are not part of offline diagnosis."
+  ]
+}

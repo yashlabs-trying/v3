@@ -1,0 +1,129 @@
+{
+  "attempt": "synthetic-defect",
+  "capabilities": [
+    {
+      "dimension": "correct_implementation",
+      "n_tasks": 1,
+      "observations": 1,
+      "sample_note": "single-task observation; not a general ability claim",
+      "strength_tasks": [
+        "syn-kvstore-mut_stale_index"
+      ],
+      "weakness_tasks": []
+    },
+    {
+      "dimension": "requirements_preservation",
+      "n_tasks": 1,
+      "observations": 1,
+      "sample_note": "single-task observation; not a general ability claim",
+      "strength_tasks": [],
+      "weakness_tasks": [
+        "syn-kvstore-mut_stale_index"
+      ]
+    }
+  ],
+  "cost_usd": null,
+  "evidence_resolution": {
+    "all_resolved": true,
+    "artifacts": {
+      "experiments/thirty_case_validation/cases/def_03_state_consistency/probe_results.json": {
+        "authoritative": true,
+        "error": null,
+        "exists": true,
+        "sha256": "2fc43897f8568c04b0b3366945159f36f06bc91be645bcc916ab0f69d2b6e2aa"
+      },
+      "experiments/thirty_case_validation/cases/def_03_state_consistency/source.py": {
+        "authoritative": true,
+        "error": null,
+        "exists": true,
+        "sha256": "821e3e27e68b9abc6813d95f01210325d398172ad865601b8f90fda66479f8ff"
+      }
+    },
+    "n_references": 4,
+    "n_unresolved": 0
+  },
+  "execution_validity": "VALID",
+  "findings": [
+    {
+      "category": "requirement_omitted",
+      "competing_explanations": [
+        "The independent probe is over-strict (checked by correct-alternative acceptance in V3.2)",
+        "The task specification is ambiguous for this clause"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "artifact": "experiments/thirty_case_validation/cases/def_03_state_consistency/probe_results.json",
+          "locator": "probes[kvstore:test_df_delete_keeps_index_consistent]",
+          "note": "pytest FAILED"
+        },
+        {
+          "artifact": "experiments/thirty_case_validation/cases/def_03_state_consistency/source.py",
+          "locator": "sha256",
+          "note": "submitted patch"
+        }
+      ],
+      "id": "syn-kvstore-mut_stale_index:clause:kv.delete_consistency",
+      "kind": "reproduced",
+      "limitations": [
+        "The patch did not show a directly matching deleted identifier; the clause violation is established by the executable probe, not the diff.",
+        "The defect is verified; why the agent produced it is not observable."
+      ],
+      "severity": "major",
+      "source_changes": [],
+      "symptom": "Independent probe `kvstore:test_df_delete_keeps_index_consistent` failed against contract clause `kv.delete_consistency`: kvstore.kv.delete_consistency contract clause",
+      "trace_event_ids": [],
+      "violated_requirement": "kv.delete_consistency"
+    }
+  ],
+  "original_score": null,
+  "recommendations": [
+    {
+      "confounders": [
+        "Small sample size (n=1 task per class here)",
+        "Model stochasticity across runs",
+        "Intervention may shift behavior on tasks outside this class"
+      ],
+      "control": "Same frozen task, same model and configuration, same evaluation budget, same independent verifier; only the intervention differs.",
+      "cost_estimate": "Additional inspection/token overhead to be measured per run; not claimed until executed.",
+      "evidence": [
+        {
+          "artifact": "experiments/thirty_case_validation/cases/def_03_state_consistency/probe_results.json",
+          "locator": "probes[kvstore:test_df_delete_keeps_index_consistent]",
+          "note": "pytest FAILED"
+        },
+        {
+          "artifact": "experiments/thirty_case_validation/cases/def_03_state_consistency/source.py",
+          "locator": "sha256",
+          "note": "submitted patch"
+        }
+      ],
+      "executed": false,
+      "execution_note": "no new model execution was authorized",
+      "expected_outcome": "Measured change in the metric below with the intervention vs the control; null result reported if no improvement.",
+      "finding_id": "syn-kvstore-mut_stale_index:clause:kv.delete_consistency",
+      "hypothesis": "An explicit coverage checklist raises requirement coverage.",
+      "id": "syn-kvstore-mut_stale_index:clause:kv.delete_consistency:rec",
+      "intervention": "Require an explicit requirement-to-change checklist, mapped to the instruction bullets, before submission.",
+      "metric": "Fraction of instruction bullets with a demonstrably satisfying change.",
+      "task_id": "syn-kvstore-mut_stale_index"
+    }
+  ],
+  "runtime_seconds": null,
+  "semantic_verdict": "GENUINE_AGENT_FAILURE",
+  "strengths": [
+    {
+      "confidence": "high",
+      "evidence": [],
+      "kind": "reproduced",
+      "text": "Satisfied 2 independently-probed contract clause(s): kv.delete_missing, kv.index_consistency."
+    }
+  ],
+  "summary": "Verified 1 failure finding(s) (requirement_omitted) supported by independent probe evidence and the submitted patch. Demonstrated strengths are listed separately; they do not offset the failure.",
+  "task_id": "syn-kvstore-mut_stale_index",
+  "uncertainty": [
+    "No trajectory artifact; observable process actions are unavailable.",
+    "The defect (if any) may be verified; the model's internal reason is not observable."
+  ],
+  "weaknesses": []
+}

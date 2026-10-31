@@ -1,0 +1,18 @@
+{
+  "case_id": "inf_04_synthetic_runner",
+  "short_name": "syn-runner",
+  "attempt": "synthetic-runner-failure",
+  "execution_validity": "INVALID",
+  "semantic_verdict": "INCONCLUSIVE",
+  "original_score": 0.0,
+  "patch": "experiments/thirty_case_validation/cases/inf_04_synthetic_runner/run.log",
+  "trajectory": null,
+  "semantic": null,
+  "notes": [
+    "INFRASTRUCTURE: synthetic: runner failed before the verifier produced output"
+  ],
+  "evidence_roots": [
+    "experiments/thirty_case_validation"
+  ],
+  "replay": "experiments/thirty_case_validation/cases/inf_04_synthetic_runner/replay.json"
+}

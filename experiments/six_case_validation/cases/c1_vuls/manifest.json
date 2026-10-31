@@ -1,0 +1,24 @@
+{
+  "case_id": "c1_vuls",
+  "short_name": "vuls",
+  "attempt": "original",
+  "execution_validity": "VALID",
+  "semantic_verdict": "GENUINE_AGENT_FAILURE",
+  "original_score": 0.0,
+  "patch": "jobs/f3-vuls-a1/instance_future-architect__vuls__sNqH5s4/agent/model.patch",
+  "trajectory": "jobs/f3-vuls-a1/instance_future-architect__vuls__sNqH5s4/agent/mini-swe-agent.trajectory.json",
+  "semantic": {
+    "verdict": "GENUINE_AGENT_FAILURE",
+    "confidence": "high",
+    "evidence_artifact": "findings/vuls_semantic_evidence.json",
+    "clauses": [
+      {"id": "sort.by_score", "kind": "POSTCONDITION", "statement": "SortByConfident orders results by confidence strength (numeric score).", "source": "instruction.md Requirements bullet 5", "tested_by_original": ["TestSortByConfident"]},
+      {"id": "sort.equal_score_order", "kind": "INVARIANT", "statement": "For equal scores, SortByConfident preserves the ordering that the pre-existing implementation produced via its tie-break field (OvalMatch before CpeVersionMatch).", "source": "pre-existing test TestSortByConfident (retained by the official test patch)", "tested_by_original": ["TestSortByConfident"]}
+    ],
+    "probes": [
+      {"name": "vuls:score.order", "passed": true, "clauses": ["sort.by_score"], "detail": "", "counterexample": null},
+      {"name": "vuls:tie.order", "passed": false, "clauses": ["sort.equal_score_order"], "detail": "go subtest FAIL", "counterexample": {"go_subtest": "tie.order", "status": "FAIL"}}
+    ]
+  },
+  "notes": ["REUSED REAL: vuls is the one authentic, independently adjudicated coding failure in the archive."]
+}

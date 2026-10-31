@@ -1,0 +1,9 @@
+{
+  "failing": [
+    "test_df_invalidate_forces_recompute"
+  ],
+  "results": {
+    "test_df_invalidate_forces_recompute": "FAILED",
+    "test_df_memoises": "PASSED"
+  }
+}

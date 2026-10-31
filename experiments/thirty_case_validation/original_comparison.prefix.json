@@ -1,0 +1,659 @@
+{
+  "label": "original",
+  "rows": [
+    {
+      "case_id": "adv_01_forged_success",
+      "category": "adversarial",
+      "cold_latency_ms": 24.564,
+      "cold_peak_bytes": 1187128,
+      "correct": true,
+      "engine_authored": [
+        {
+          "category": "requirement_omitted",
+          "clause": "adversarial.verify"
+        },
+        {
+          "category": "relevant_test_not_executed",
+          "clause": null
+        }
+      ],
+      "engine_hypothesis": [],
+      "engine_validity": "VALID",
+      "evidence_valid": true,
+      "expected": "coding_failure",
+      "median_latency_ms": 13.085,
+      "n_recommendations": 2,
+      "origin": "SYNTHETIC",
+      "unresolved": []
+    },
+    {
+      "case_id": "adv_02_prompt_injection",
+      "category": "adversarial",
+      "cold_latency_ms": 11.216,
+      "cold_peak_bytes": 1071063,
+      "correct": true,
+      "engine_authored": [
+        {
+          "category": "requirement_omitted",
+          "clause": "adversarial.verify"
+        },
+        {
+          "category": "relevant_test_not_executed",
+          "clause": null
+        }
+      ],
+      "engine_hypothesis": [],
+      "engine_validity": "VALID",
+      "evidence_valid": true,
+      "expected": "coding_failure",
+      "median_latency_ms": 13.706,
+      "n_recommendations": 2,
+      "origin": "SYNTHETIC",
+      "unresolved": []
+    },
+    {
+      "case_id": "adv_03_fabricated_ref",
+      "category": "adversarial",
+      "cold_latency_ms": 20.322,
+      "cold_peak_bytes": 1070385,
+      "correct": true,
+      "engine_authored": [
+        {
+          "category": "edge_case_failure",
+          "clause": "adversarial.verify"
+        },
+        {
+          "category": "relevant_test_not_executed",
+          "clause": null
+        }
+      ],
+      "engine_hypothesis": [],
+      "engine_validity": "VALID",
+      "evidence_valid": true,
+      "expected": "coding_failure",
+      "median_latency_ms": 13.914,
+      "n_recommendations": 2,
+      "origin": "SYNTHETIC",
+      "unresolved": []
+    },
+    {
+      "case_id": "amb_01_missing_semantic",
+      "category": "ambiguous",
+      "cold_latency_ms": 1.779,
+      "cold_peak_bytes": 10427,
+      "correct": true,
+      "engine_authored": [],
+      "engine_hypothesis": [],
+      "engine_validity": "VALID",
+      "evidence_valid": true,
+      "expected": "abstain_or_downgrade",
+      "median_latency_ms": 1.904,
+      "n_recommendations": 0,
+      "origin": "SYNTHETIC",
+      "unresolved": []
+    },
+    {
+      "case_id": "amb_02_contradictory_tests",
+      "category": "ambiguous",
+      "cold_latency_ms": 4.584,
+      "cold_peak_bytes": 1064156,
+      "correct": false,
+      "engine_authored": [
+        {
+          "category": "requirement_omitted",
+          "clause": "c.x"
+        }
+      ],
+      "engine_hypothesis": [],
+      "engine_validity": "VALID",
+      "evidence_valid": true,
+      "expected": "abstain_or_downgrade",
+      "median_latency_ms": 4.973,
+      "n_recommendations": 1,
+      "origin": "SYNTHETIC",
+      "unresolved": []
+    },
+    {
+      "case_id": "amb_03_incomplete",
+      "category": "ambiguous",
+      "cold_latency_ms": 1.934,
+      "cold_peak_bytes": 10430,
+      "correct": true,
+      "engine_authored": [],
+      "engine_hypothesis": [],
+      "engine_validity": "VALID",
+      "evidence_valid": true,
+      "expected": "abstain_or_downgrade",
+      "median_latency_ms": 2.424,
+      "n_recommendations": 0,
+      "origin": "SYNTHETIC",
+      "unresolved": []
+    },
+    {
+      "case_id": "auth_01_vuls",
+      "category": "authentic_failure",
+      "cold_latency_ms": 48.756,
+      "cold_peak_bytes": 2303614,
+      "correct": true,
+      "engine_authored": [
+        {
+          "category": "existing_behavior_removed",
+          "clause": "sort.equal_score_order"
+        }
+      ],
+      "engine_hypothesis": [],
+      "engine_validity": "VALID",
+      "evidence_valid": true,
+      "expected": "coding_failure",
+      "median_latency_ms": 43.349,
+      "n_recommendations": 1,
+      "origin": "REUSED",
+      "unresolved": []
+    },
+    {
+      "case_id": "auth_02_synthetic_control",
+      "category": "authentic_failure_slot",
+      "cold_latency_ms": 15.209,
+      "cold_peak_bytes": 1069110,
+      "correct": false,
+      "engine_authored": [
+        {
+          "category": "requirement_omitted",
+          "clause": "truncate.format"
+        },
+        {
+          "category": "requirement_omitted",
+          "clause": "width.from_rendered"
+        }
+      ],
+      "engine_hypothesis": [],
+      "engine_validity": "VALID",
+      "evidence_valid": true,
+      "expected": "coding_failure",
+      "median_latency_ms": 12.883,
+      "n_recommendations": 2,
+      "origin": "SYNTHETIC",
+      "unresolved": []
+    },
+    {
+      "case_id": "cor_01_paginate",
+      "category": "correct_solution",
+      "cold_latency_ms": 4.141,
+      "cold_peak_bytes": 14663,
+      "correct": true,
+      "engine_authored": [],
+      "engine_hypothesis": [],
+      "engine_validity": "VALID",
+      "evidence_valid": true,
+      "expected": "none",
+      "median_latency_ms": 2.651,
+      "n_recommendations": 0,
+      "origin": "SYNTHETIC",
+      "unresolved": []
+    },
+    {
+      "case_id": "cor_02_kvstore",
+      "category": "correct_solution",
+      "cold_latency_ms": 4.516,
+      "cold_peak_bytes": 14705,
+      "correct": true,
+      "engine_authored": [],
+      "engine_hypothesis": [],
+      "engine_validity": "VALID",
+      "evidence_valid": true,
+      "expected": "none",
+      "median_latency_ms": 2.426,
+      "n_recommendations": 0,
+      "origin": "SYNTHETIC",
+      "unresolved": []
+    },
+    {
+      "case_id": "cor_03_resource",
+      "category": "correct_solution",
+      "cold_latency_ms": 2.144,
+      "cold_peak_bytes": 13691,
+      "correct": true,
+      "engine_authored": [],
+      "engine_hypothesis": [],
+      "engine_validity": "VALID",
+      "evidence_valid": true,
+      "expected": "none",
+      "median_latency_ms": 2.71,
+      "n_recommendations": 0,
+      "origin": "SYNTHETIC",
+      "unresolved": []
+    },
+    {
+      "case_id": "cor_04_lookup",
+      "category": "correct_solution",
+      "cold_latency_ms": 2.453,
+      "cold_peak_bytes": 14525,
+      "correct": true,
+      "engine_authored": [],
+      "engine_hypothesis": [],
+      "engine_validity": "VALID",
+      "evidence_valid": true,
+      "expected": "none",
+      "median_latency_ms": 2.256,
+      "n_recommendations": 0,
+      "origin": "SYNTHETIC",
+      "unresolved": []
+    },
+    {
+      "case_id": "cor_05_total",
+      "category": "correct_solution",
+      "cold_latency_ms": 2.188,
+      "cold_peak_bytes": 14477,
+      "correct": true,
+      "engine_authored": [],
+      "engine_hypothesis": [],
+      "engine_validity": "VALID",
+      "evidence_valid": true,
+      "expected": "none",
+      "median_latency_ms": 2.217,
+      "n_recommendations": 0,
+      "origin": "SYNTHETIC",
+      "unresolved": []
+    },
+    {
+      "case_id": "cor_06_rle",
+      "category": "correct_solution",
+      "cold_latency_ms": 2.195,
+      "cold_peak_bytes": 13338,
+      "correct": true,
+      "engine_authored": [],
+      "engine_hypothesis": [],
+      "engine_validity": "VALID",
+      "evidence_valid": true,
+      "expected": "none",
+      "median_latency_ms": 2.345,
+      "n_recommendations": 0,
+      "origin": "SYNTHETIC",
+      "unresolved": []
+    },
+    {
+      "case_id": "def_01_boundary_offbyone",
+      "category": "controlled_defect",
+      "cold_latency_ms": 12.857,
+      "cold_peak_bytes": 1069001,
+      "correct": true,
+      "engine_authored": [
+        {
+          "category": "edge_case_failure",
+          "clause": "paginate.boundary"
+        },
+        {
+          "category": "edge_case_failure",
+          "clause": "paginate.window"
+        }
+      ],
+      "engine_hypothesis": [],
+      "engine_validity": "VALID",
+      "evidence_valid": true,
+      "expected": "coding_failure",
+      "median_latency_ms": 14.518,
+      "n_recommendations": 2,
+      "origin": "SYNTHETIC",
+      "unresolved": []
+    },
+    {
+      "case_id": "def_02_error_handling",
+      "category": "controlled_defect",
+      "cold_latency_ms": 7.113,
+      "cold_peak_bytes": 1067867,
+      "correct": true,
+      "engine_authored": [
+        {
+          "category": "edge_case_failure",
+          "clause": "parse.error_handling"
+        }
+      ],
+      "engine_hypothesis": [],
+      "engine_validity": "VALID",
+      "evidence_valid": true,
+      "expected": "coding_failure",
+      "median_latency_ms": 9.377,
+      "n_recommendations": 1,
+      "origin": "SYNTHETIC",
+      "unresolved": []
+    },
+    {
+      "case_id": "def_03_state_consistency",
+      "category": "controlled_defect",
+      "cold_latency_ms": 15.481,
+      "cold_peak_bytes": 1067941,
+      "correct": false,
+      "engine_authored": [
+        {
+          "category": "requirement_omitted",
+          "clause": "kv.delete_consistency"
+        }
+      ],
+      "engine_hypothesis": [],
+      "engine_validity": "VALID",
+      "evidence_valid": true,
+      "expected": "coding_failure",
+      "median_latency_ms": 10.621,
+      "n_recommendations": 1,
+      "origin": "SYNTHETIC",
+      "unresolved": []
+    },
+    {
+      "case_id": "def_04_ordering_invariant",
+      "category": "controlled_defect",
+      "cold_latency_ms": 7.778,
+      "cold_peak_bytes": 1066128,
+      "correct": false,
+      "engine_authored": [
+        {
+          "category": "requirement_omitted",
+          "clause": "rank.stable_ties"
+        }
+      ],
+      "engine_hypothesis": [],
+      "engine_validity": "VALID",
+      "evidence_valid": true,
+      "expected": "coding_failure",
+      "median_latency_ms": 9.563,
+      "n_recommendations": 1,
+      "origin": "SYNTHETIC",
+      "unresolved": []
+    },
+    {
+      "case_id": "def_05_api_compat",
+      "category": "controlled_defect",
+      "cold_latency_ms": 11.934,
+      "cold_peak_bytes": 1066908,
+      "correct": true,
+      "engine_authored": [
+        {
+          "category": "edge_case_failure",
+          "clause": "fetch.legacy_compat"
+        }
+      ],
+      "engine_hypothesis": [],
+      "engine_validity": "VALID",
+      "evidence_valid": true,
+      "expected": "coding_failure",
+      "median_latency_ms": 9.251,
+      "n_recommendations": 1,
+      "origin": "SYNTHETIC",
+      "unresolved": []
+    },
+    {
+      "case_id": "def_06_resource_cleanup",
+      "category": "controlled_defect",
+      "cold_latency_ms": 14.771,
+      "cold_peak_bytes": 1066729,
+      "correct": true,
+      "engine_authored": [
+        {
+          "category": "edge_case_failure",
+          "clause": "resource.cleanup_on_error"
+        }
+      ],
+      "engine_hypothesis": [],
+      "engine_validity": "VALID",
+      "evidence_valid": true,
+      "expected": "coding_failure",
+      "median_latency_ms": 18.636,
+      "n_recommendations": 1,
+      "origin": "SYNTHETIC",
+      "unresolved": []
+    },
+    {
+      "case_id": "def_07_data_transform",
+      "category": "controlled_defect",
+      "cold_latency_ms": 12.925,
+      "cold_peak_bytes": 1067382,
+      "correct": false,
+      "engine_authored": [
+        {
+          "category": "requirement_omitted",
+          "clause": "normalize.purity"
+        }
+      ],
+      "engine_hypothesis": [],
+      "engine_validity": "VALID",
+      "evidence_valid": true,
+      "expected": "coding_failure",
+      "median_latency_ms": 11.121,
+      "n_recommendations": 1,
+      "origin": "SYNTHETIC",
+      "unresolved": []
+    },
+    {
+      "case_id": "def_08_cache_invalidation",
+      "category": "controlled_defect",
+      "cold_latency_ms": 13.26,
+      "cold_peak_bytes": 1066898,
+      "correct": false,
+      "engine_authored": [
+        {
+          "category": "requirement_omitted",
+          "clause": "cache.invalidation"
+        }
+      ],
+      "engine_hypothesis": [],
+      "engine_validity": "VALID",
+      "evidence_valid": true,
+      "expected": "coding_failure",
+      "median_latency_ms": 10.729,
+      "n_recommendations": 1,
+      "origin": "SYNTHETIC",
+      "unresolved": []
+    },
+    {
+      "case_id": "def_09_incorrect_fallback",
+      "category": "controlled_defect",
+      "cold_latency_ms": 15.726,
+      "cold_peak_bytes": 1067584,
+      "correct": true,
+      "engine_authored": [
+        {
+          "category": "requirement_omitted",
+          "clause": "lookup.primary"
+        }
+      ],
+      "engine_hypothesis": [],
+      "engine_validity": "VALID",
+      "evidence_valid": true,
+      "expected": "coding_failure",
+      "median_latency_ms": 12.91,
+      "n_recommendations": 1,
+      "origin": "SYNTHETIC",
+      "unresolved": []
+    },
+    {
+      "case_id": "def_10_partial_update",
+      "category": "controlled_defect",
+      "cold_latency_ms": 9.271,
+      "cold_peak_bytes": 1066417,
+      "correct": true,
+      "engine_authored": [
+        {
+          "category": "requirement_omitted",
+          "clause": "patch.complete"
+        }
+      ],
+      "engine_hypothesis": [],
+      "engine_validity": "VALID",
+      "evidence_valid": true,
+      "expected": "coding_failure",
+      "median_latency_ms": 11.921,
+      "n_recommendations": 1,
+      "origin": "SYNTHETIC",
+      "unresolved": []
+    },
+    {
+      "case_id": "def_11_offbyone_rle",
+      "category": "controlled_defect",
+      "cold_latency_ms": 14.195,
+      "cold_peak_bytes": 1067801,
+      "correct": true,
+      "engine_authored": [
+        {
+          "category": "edge_case_failure",
+          "clause": "rle.count"
+        },
+        {
+          "category": "edge_case_failure",
+          "clause": "rle.boundary"
+        }
+      ],
+      "engine_hypothesis": [],
+      "engine_validity": "VALID",
+      "evidence_valid": true,
+      "expected": "coding_failure",
+      "median_latency_ms": 13.686,
+      "n_recommendations": 2,
+      "origin": "SYNTHETIC",
+      "unresolved": []
+    },
+    {
+      "case_id": "def_12_regression",
+      "category": "controlled_defect",
+      "cold_latency_ms": 10.807,
+      "cold_peak_bytes": 1067339,
+      "correct": true,
+      "engine_authored": [
+        {
+          "category": "requirement_omitted",
+          "clause": "total.discount"
+        }
+      ],
+      "engine_hypothesis": [],
+      "engine_validity": "VALID",
+      "evidence_valid": true,
+      "expected": "coding_failure",
+      "median_latency_ms": 10.076,
+      "n_recommendations": 1,
+      "origin": "SYNTHETIC",
+      "unresolved": []
+    },
+    {
+      "case_id": "inf_01_flipt_api",
+      "category": "infrastructure_invalid",
+      "cold_latency_ms": 3.856,
+      "cold_peak_bytes": 1064077,
+      "correct": true,
+      "engine_authored": [
+        {
+          "category": "agent_startup_failure",
+          "clause": null
+        }
+      ],
+      "engine_hypothesis": [],
+      "engine_validity": "INVALID",
+      "evidence_valid": true,
+      "expected": "infrastructure_only",
+      "median_latency_ms": 3.984,
+      "n_recommendations": 0,
+      "origin": "REUSED",
+      "unresolved": []
+    },
+    {
+      "case_id": "inf_02_nodebb_orig",
+      "category": "infrastructure_invalid",
+      "cold_latency_ms": 5.958,
+      "cold_peak_bytes": 1379322,
+      "correct": true,
+      "engine_authored": [
+        {
+          "category": "agent_startup_failure",
+          "clause": null
+        }
+      ],
+      "engine_hypothesis": [],
+      "engine_validity": "INVALID",
+      "evidence_valid": true,
+      "expected": "infrastructure_only",
+      "median_latency_ms": 5.993,
+      "n_recommendations": 0,
+      "origin": "REUSED",
+      "unresolved": []
+    },
+    {
+      "case_id": "inf_03_nodebb_ds2",
+      "category": "infrastructure_invalid",
+      "cold_latency_ms": 13.749,
+      "cold_peak_bytes": 1381177,
+      "correct": true,
+      "engine_authored": [
+        {
+          "category": "agent_startup_failure",
+          "clause": null
+        }
+      ],
+      "engine_hypothesis": [],
+      "engine_validity": "INVALID",
+      "evidence_valid": true,
+      "expected": "infrastructure_only",
+      "median_latency_ms": 7.941,
+      "n_recommendations": 0,
+      "origin": "REUSED",
+      "unresolved": []
+    },
+    {
+      "case_id": "inf_04_synthetic_runner",
+      "category": "infrastructure_invalid",
+      "cold_latency_ms": 1.564,
+      "cold_peak_bytes": 10262,
+      "correct": true,
+      "engine_authored": [
+        {
+          "category": "agent_startup_failure",
+          "clause": null
+        }
+      ],
+      "engine_hypothesis": [],
+      "engine_validity": "INVALID",
+      "evidence_valid": false,
+      "expected": "infrastructure_only",
+      "median_latency_ms": 1.324,
+      "n_recommendations": 0,
+      "origin": "REUSED",
+      "unresolved": [
+        "syn-runner:infra"
+      ]
+    }
+  ],
+  "summary": {
+    "by_category": {
+      "adversarial": {
+        "correct": 3,
+        "total": 3
+      },
+      "ambiguous": {
+        "correct": 2,
+        "total": 3
+      },
+      "authentic_failure": {
+        "correct": 1,
+        "total": 1
+      },
+      "authentic_failure_slot": {
+        "correct": 0,
+        "total": 1
+      },
+      "controlled_defect": {
+        "correct": 8,
+        "total": 12
+      },
+      "correct_solution": {
+        "correct": 6,
+        "total": 6
+      },
+      "infrastructure_invalid": {
+        "correct": 4,
+        "total": 4
+      }
+    },
+    "correct": 24,
+    "evidence_valid": 29,
+    "false_accusations_on_correct": 0,
+    "infra_to_model_confusions": 0,
+    "total": 30,
+    "unresolved_refs_total": 1
+  }
+}

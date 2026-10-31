@@ -1,0 +1,180 @@
+{
+  "attempt": "synthetic-defect",
+  "capabilities": [
+    {
+      "dimension": "correct_implementation",
+      "n_tasks": 1,
+      "observations": 3,
+      "sample_note": "single-task observation; not a general ability claim",
+      "strength_tasks": [
+        "syn-paginate-mut_offbyone_window"
+      ],
+      "weakness_tasks": [
+        "syn-paginate-mut_offbyone_window"
+      ]
+    }
+  ],
+  "cost_usd": null,
+  "evidence_resolution": {
+    "all_resolved": true,
+    "artifacts": {
+      "experiments/thirty_case_validation/cases/def_01_boundary_offbyone/probe_results.json": {
+        "authoritative": true,
+        "error": null,
+        "exists": true,
+        "sha256": "6c855b8a081f214a0b50682baffe94dddcc55ec782d48830d30f11814a8c9c8f"
+      },
+      "experiments/thirty_case_validation/cases/def_01_boundary_offbyone/source.py": {
+        "authoritative": true,
+        "error": null,
+        "exists": true,
+        "sha256": "f9520523013eb8d36a976c801500e3f975db9382f8ed4c8731eec934b2ab5be2"
+      }
+    },
+    "n_references": 8,
+    "n_unresolved": 0
+  },
+  "execution_validity": "VALID",
+  "findings": [
+    {
+      "category": "edge_case_failure",
+      "competing_explanations": [
+        "The independent probe is over-strict (checked by correct-alternative acceptance in V3.2)",
+        "The task specification is ambiguous for this clause"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "artifact": "experiments/thirty_case_validation/cases/def_01_boundary_offbyone/probe_results.json",
+          "locator": "probes[paginate:test_df_page_boundaries]",
+          "note": "pytest FAILED"
+        },
+        {
+          "artifact": "experiments/thirty_case_validation/cases/def_01_boundary_offbyone/source.py",
+          "locator": "sha256",
+          "note": "submitted patch"
+        }
+      ],
+      "id": "syn-paginate-mut_offbyone_window:clause:paginate.boundary",
+      "kind": "reproduced",
+      "limitations": [
+        "The defect is verified; why the agent produced it is not observable."
+      ],
+      "severity": "minor",
+      "source_changes": [],
+      "symptom": "Independent probe `paginate:test_df_page_boundaries` failed against contract clause `paginate.boundary`: paginate.paginate.boundary contract clause",
+      "trace_event_ids": [],
+      "violated_requirement": "paginate.boundary"
+    },
+    {
+      "category": "edge_case_failure",
+      "competing_explanations": [
+        "The independent probe is over-strict (checked by correct-alternative acceptance in V3.2)",
+        "The task specification is ambiguous for this clause"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "artifact": "experiments/thirty_case_validation/cases/def_01_boundary_offbyone/probe_results.json",
+          "locator": "probes[paginate:test_df_first_page_offbyone]",
+          "note": "pytest FAILED"
+        },
+        {
+          "artifact": "experiments/thirty_case_validation/cases/def_01_boundary_offbyone/source.py",
+          "locator": "sha256",
+          "note": "submitted patch"
+        }
+      ],
+      "id": "syn-paginate-mut_offbyone_window:clause:paginate.window",
+      "kind": "reproduced",
+      "limitations": [
+        "The defect is verified; why the agent produced it is not observable."
+      ],
+      "severity": "minor",
+      "source_changes": [],
+      "symptom": "Independent probe `paginate:test_df_first_page_offbyone` failed against contract clause `paginate.window`: paginate.paginate.window contract clause",
+      "trace_event_ids": [],
+      "violated_requirement": "paginate.window"
+    }
+  ],
+  "original_score": null,
+  "recommendations": [
+    {
+      "confounders": [
+        "Small sample size (n=1 task per class here)",
+        "Model stochasticity across runs",
+        "Intervention may shift behavior on tasks outside this class"
+      ],
+      "control": "Same frozen task, same model and configuration, same evaluation budget, same independent verifier; only the intervention differs.",
+      "cost_estimate": "Additional inspection/token overhead to be measured per run; not claimed until executed.",
+      "evidence": [
+        {
+          "artifact": "experiments/thirty_case_validation/cases/def_01_boundary_offbyone/probe_results.json",
+          "locator": "probes[paginate:test_df_page_boundaries]",
+          "note": "pytest FAILED"
+        },
+        {
+          "artifact": "experiments/thirty_case_validation/cases/def_01_boundary_offbyone/source.py",
+          "locator": "sha256",
+          "note": "submitted patch"
+        }
+      ],
+      "executed": false,
+      "execution_note": "no new model execution was authorized",
+      "expected_outcome": "Measured change in the metric below with the intervention vs the control; null result reported if no improvement.",
+      "finding_id": "syn-paginate-mut_offbyone_window:clause:paginate.boundary",
+      "hypothesis": "Forced boundary probing reduces edge-case failures.",
+      "id": "syn-paginate-mut_offbyone_window:clause:paginate.boundary:rec",
+      "intervention": "Require authoring and running boundary probes (empty, single, maximal, off-by-one) for the changed function.",
+      "metric": "Edge-case probe pass rate on the same frozen task.",
+      "task_id": "syn-paginate-mut_offbyone_window"
+    },
+    {
+      "confounders": [
+        "Small sample size (n=1 task per class here)",
+        "Model stochasticity across runs",
+        "Intervention may shift behavior on tasks outside this class"
+      ],
+      "control": "Same frozen task, same model and configuration, same evaluation budget, same independent verifier; only the intervention differs.",
+      "cost_estimate": "Additional inspection/token overhead to be measured per run; not claimed until executed.",
+      "evidence": [
+        {
+          "artifact": "experiments/thirty_case_validation/cases/def_01_boundary_offbyone/probe_results.json",
+          "locator": "probes[paginate:test_df_first_page_offbyone]",
+          "note": "pytest FAILED"
+        },
+        {
+          "artifact": "experiments/thirty_case_validation/cases/def_01_boundary_offbyone/source.py",
+          "locator": "sha256",
+          "note": "submitted patch"
+        }
+      ],
+      "executed": false,
+      "execution_note": "no new model execution was authorized",
+      "expected_outcome": "Measured change in the metric below with the intervention vs the control; null result reported if no improvement.",
+      "finding_id": "syn-paginate-mut_offbyone_window:clause:paginate.window",
+      "hypothesis": "Forced boundary probing reduces edge-case failures.",
+      "id": "syn-paginate-mut_offbyone_window:clause:paginate.window:rec",
+      "intervention": "Require authoring and running boundary probes (empty, single, maximal, off-by-one) for the changed function.",
+      "metric": "Edge-case probe pass rate on the same frozen task.",
+      "task_id": "syn-paginate-mut_offbyone_window"
+    }
+  ],
+  "runtime_seconds": null,
+  "semantic_verdict": "GENUINE_AGENT_FAILURE",
+  "strengths": [
+    {
+      "confidence": "high",
+      "evidence": [],
+      "kind": "reproduced",
+      "text": "Satisfied 1 independently-probed contract clause(s): paginate.precondition."
+    }
+  ],
+  "summary": "Verified 2 failure finding(s) (edge_case_failure) supported by independent probe evidence and the submitted patch. Demonstrated strengths are listed separately; they do not offset the failure.",
+  "task_id": "syn-paginate-mut_offbyone_window",
+  "uncertainty": [
+    "No trajectory artifact; observable process actions are unavailable.",
+    "The defect (if any) may be verified; the model's internal reason is not observable."
+  ],
+  "weaknesses": []
+}

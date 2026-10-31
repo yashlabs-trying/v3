@@ -1,0 +1,34 @@
+{
+  "note": "Evidence inventory for the six-case cohort. Hashes are SHA-256 of the exact files consumed by the diagnostic engine, captured at freeze time (git 6529401, branch six-case-validation). Synthetic case inputs are reproducible from the sources listed here.",
+  "git_revision": "6529401f362725acbb0be276ad9ec3e4d5b9ff05",
+  "cases": {
+    "c1_vuls": [
+      {"path": "jobs/f3-vuls-a1/instance_future-architect__vuls__sNqH5s4/agent/model.patch", "sha256": "89390105859bb6c431b6bdc1c10288e54983c353e465ac1870ed63906b54833a", "role": "submitted patch", "origin": "REAL"},
+      {"path": "jobs/f3-vuls-a1/instance_future-architect__vuls__sNqH5s4/agent/mini-swe-agent.trajectory.json", "sha256": "839f8aaa9350a95cf6b843f353b8ca231f38c0df54f7bd9ef7a3a0dd17109d26", "role": "trajectory", "origin": "REAL"},
+      {"path": "findings/vuls_semantic_evidence.json", "sha256": "5396c9e4503f0e55abc16f0b7da124ab135950149256e19576d9b1424ffeebfc", "role": "V3.2 semantic evidence (independent oracle)", "origin": "REAL"}
+    ],
+    "c2_teleport_synthetic": [
+      {"path": "experiments/six_case_validation/cases/c2_teleport_synthetic/mutant/table.go", "role": "synthetic mutant source", "origin": "SYNTHETIC"},
+      {"path": "experiments/six_case_validation/cases/c2_teleport_synthetic/model.patch", "role": "submitted patch (mutant vs accepted)", "origin": "SYNTHETIC"},
+      {"path": "experiments/six_case_validation/raw_outputs/c2_teleport_oracle_local.txt", "role": "locally re-executed real V3.2 teleport oracle output", "origin": "SYNTHETIC"}
+    ],
+    "c3_elementweb_synthetic": [
+      {"path": "experiments/six_case_validation/cases/c3_elementweb_synthetic/mutant/LruCache.mjs", "role": "synthetic mutant source", "origin": "SYNTHETIC"},
+      {"path": "experiments/six_case_validation/cases/c3_elementweb_synthetic/model.patch", "role": "submitted patch (mutant vs accepted)", "origin": "SYNTHETIC"},
+      {"path": "experiments/six_case_validation/raw_outputs/c3_elementweb_oracle_local.txt", "role": "locally re-executed real V3.2 element-web oracle logic output", "origin": "SYNTHETIC"}
+    ],
+    "c4_openlibrary": [
+      {"path": "jobs/f3-openlibrary-a1/instance_internetarchive__openli__LpjZARH/agent/model.patch", "sha256": "f88c66839cc141555a0baa687cec16a5147d2f7454f838601d174ccd4565ae71", "role": "submitted patch", "origin": "REAL"},
+      {"path": "findings/semantic_audit.json", "sha256": "a71fa3b4aa574eae39a7d2bfbcecb979f1e0ed7d67ec813fcf89173abe6fd14d", "role": "V3.2 semantic evidence (independent oracle)", "origin": "REAL"}
+    ],
+    "c5_infra": [
+      {"path": "jobs/deepseek2-flipt-a1/instance_flipt-io__flipt-6fe76d0__KGCvVE5/agent/mini-swe-agent.trajectory.json", "sha256": "3ae03347edf330ccbecb47c2c77f52bd39bf795cf9e364d1e546594c8fa3531c", "role": "trajectory (2 turns, 0 tokens)", "origin": "REAL"},
+      {"path": "jobs/deepseek2-flipt-a1/instance_flipt-io__flipt-6fe76d0__KGCvVE5/result.json", "sha256": "9f284fb3310eb83bb350e91586a6ea0b3db69305de5a1de2f120576822669fa2", "role": "result (0 input/output tokens)", "origin": "REAL"}
+    ],
+    "c6_adversarial": [
+      {"path": "experiments/six_case_validation/cases/c6_adversarial/trajectory.json", "role": "adversarial trajectory (forged success + injection)", "origin": "SYNTHETIC"},
+      {"path": "experiments/six_case_validation/cases/c6_adversarial/model.patch", "role": "submitted patch (removed boundary guard)", "origin": "SYNTHETIC"},
+      {"path": "experiments/six_case_validation/cases/c6_adversarial/trusted_verifier.txt", "role": "independent trusted failing probe", "origin": "SYNTHETIC"}
+    ]
+  }
+}

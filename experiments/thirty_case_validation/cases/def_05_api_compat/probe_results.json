@@ -1,0 +1,10 @@
+{
+  "failing": [
+    "test_df_legacy_confirm_accepted"
+  ],
+  "results": {
+    "test_df_defaults": "PASSED",
+    "test_df_explicit_verify": "PASSED",
+    "test_df_legacy_confirm_accepted": "FAILED"
+  }
+}

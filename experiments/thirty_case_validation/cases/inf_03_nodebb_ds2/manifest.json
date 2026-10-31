@@ -1,0 +1,14 @@
+{
+  "case_id": "inf_03_nodebb_ds2",
+  "short_name": "NodeBB",
+  "attempt": "deepseek2-nodebb-a1",
+  "execution_validity": "INVALID",
+  "semantic_verdict": "INCONCLUSIVE",
+  "original_score": 0.0,
+  "patch": "jobs/deepseek2-nodebb-a1/instance_NodeBB__NodeBB-00c70ce7__d6UUxrs/agent/model.patch",
+  "trajectory": "jobs/deepseek2-nodebb-a1/instance_NodeBB__NodeBB-00c70ce7__d6UUxrs/agent/mini-swe-agent.trajectory.json",
+  "semantic": null,
+  "notes": [
+    "INFRASTRUCTURE: 0 tokens, contaminated runtime-only patch"
+  ]
+}

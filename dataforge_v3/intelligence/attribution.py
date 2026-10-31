@@ -171,12 +171,25 @@ def attribute(evidence: TaskEvidence, semantic: SemanticInput | None) -> Attribu
     if semantic is not None:
         removed_lines = _signal_removed_behavior(evidence.patch_text)
         removed_toks = _removed_tokens(removed_lines)
+        contradictory = _contradictory_clauses(semantic)
         for probe in semantic.failing_probes():
             for cid in probe.clauses:
                 clause = semantic.clause(cid)
-                findings.append(
-                    _clause_finding(evidence, semantic, probe, cid, clause, removed_toks)
-                )
+                finding = _clause_finding(evidence, semantic, probe, cid, clause, removed_toks)
+                if cid in contradictory:
+                    # A clause with both a passing and a failing probe has
+                    # contradictory evidence. It must not be emitted as an
+                    # authoritative failure; downgrade it to a hypothesis.
+                    finding.kind = ClaimKind.HYPOTHESIS
+                    finding.limitations.append(
+                        "contradictory probe evidence on this clause (at least one "
+                        "independent probe passed and one failed); not authoritative"
+                    )
+                    notes.append(
+                        f"clause {cid} has contradictory probe evidence; "
+                        "finding downgraded to hypothesis"
+                    )
+                findings.append(finding)
         if not semantic.failing_probes():
             notes.append(
                 "all independent V3.2 probes passed for the audited surface; "
@@ -188,6 +201,20 @@ def attribute(evidence: TaskEvidence, semantic: SemanticInput | None) -> Attribu
     findings.extend(process)
 
     return AttributionResult(findings=findings, notes=notes)
+
+
+def _contradictory_clauses(semantic: SemanticInput) -> set[str]:
+    """Clause ids with both a passing and a failing independent probe.
+
+    Such a clause has internally inconsistent evidence: the engine cannot pick a
+    side, so any finding on it is downgraded rather than asserted.
+    """
+    passed: set[str] = set()
+    failed: set[str] = set()
+    for probe in semantic.probes:
+        bucket = passed if probe.passed else failed
+        bucket.update(probe.clauses)
+    return passed & failed
 
 
 def _infrastructure_finding(evidence: TaskEvidence) -> Finding:
@@ -356,16 +383,24 @@ def _task_evidence_refs(evidence: TaskEvidence, include_patch: bool = False) -> 
 
 def _trajectory_refs(evidence: TaskEvidence) -> list[EvidenceRef]:
     if evidence.trajectory and evidence.trajectory.source_artifact:
-        return [EvidenceRef(evidence.trajectory.source_artifact, "messages", "recorded trajectory")]
+        # Normalise to a repository-relative path. An absolute path (e.g. a
+        # Windows drive path or a POSIX path under the checkout) must never be
+        # emitted, because the evidence resolver rejects absolute refs; the
+        # finding would otherwise be silently downgraded to a hypothesis.
+        return [_rel(evidence.trajectory.source_artifact, evidence.short_name, "recorded trajectory")]
     return []
 
 
 def _rel(path, task_id: str, note: str) -> EvidenceRef:
-    """Store artifact paths relative to the repository root when possible."""
+    """Store artifact paths relative to the repository root when possible.
+
+    Absolute paths are reduced to a repository-relative path by trimming the
+    checkout prefix (the `.../<repo>/` segment). Anything that cannot be reduced
+    is passed through unchanged, and the resolver will reject it as absolute —
+    which is the correct outcome for an out-of-tree reference.
+    """
     text = str(path).replace("\\", "/")
-    marker = "/v3/"
-    if marker in text:
-        rel = text.split(marker, 1)[1]
-    else:
-        rel = text
-    return EvidenceRef(rel, "sha256", note)
+    for marker in ("/v3/", "/dataforge/v3/"):
+        if marker in text:
+            return EvidenceRef(text.split(marker, 1)[1], "sha256", note)
+    return EvidenceRef(text, "sha256", note)

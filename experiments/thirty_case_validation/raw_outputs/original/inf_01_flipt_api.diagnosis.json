@@ -1,0 +1,60 @@
+{
+  "attempt": "deepseek2-flipt-a1",
+  "capabilities": [],
+  "cost_usd": null,
+  "evidence_resolution": {
+    "all_resolved": true,
+    "artifacts": {
+      "jobs/deepseek2-flipt-a1/instance_flipt-io__flipt-6fe76d0__KGCvVE5/agent/model.patch": {
+        "authoritative": true,
+        "error": null,
+        "exists": true,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "n_references": 1,
+    "n_unresolved": 0
+  },
+  "execution_validity": "INVALID",
+  "findings": [
+    {
+      "category": "agent_startup_failure",
+      "competing_explanations": [
+        "Model API unavailable",
+        "agent harness startup error",
+        "environment/network failure"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "artifact": "jobs/deepseek2-flipt-a1/instance_flipt-io__flipt-6fe76d0__KGCvVE5/agent/model.patch",
+          "locator": "sha256",
+          "note": "submitted patch"
+        }
+      ],
+      "id": "flipt:infra",
+      "kind": "observed",
+      "limitations": [
+        "The absence of model responses/valid execution is the failure; it does not evidence any model coding weakness."
+      ],
+      "severity": "blocker",
+      "source_changes": [],
+      "symptom": "Agent execution did not validly complete; no authoritative evaluation of coding ability is possible.",
+      "trace_event_ids": [],
+      "violated_requirement": null
+    }
+  ],
+  "original_score": 0.0,
+  "recommendations": [],
+  "runtime_seconds": null,
+  "semantic_verdict": "INCONCLUSIVE",
+  "strengths": [],
+  "summary": "Execution was classified INVALID by V3.1. This is an infrastructure outcome: no authoritative statement about coding ability is possible, and none is made.",
+  "task_id": "flipt",
+  "uncertainty": [
+    "Cannot attribute any coding outcome: the attempt did not validly execute.",
+    "No independent V3.2 semantic oracle for this task; correctness unverified.",
+    "The defect (if any) may be verified; the model's internal reason is not observable."
+  ],
+  "weaknesses": []
+}

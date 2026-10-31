@@ -1,0 +1,84 @@
+{
+  "case_id": "c2_teleport_synthetic",
+  "short_name": "teleport",
+  "attempt": "synthetic-mutant-no-ellipsis",
+  "execution_validity": "VALID",
+  "semantic_verdict": "GENUINE_AGENT_FAILURE",
+  "original_score": null,
+  "patch": "experiments/six_case_validation/cases/c2_teleport_synthetic/model.patch",
+  "semantic": {
+    "verdict": "GENUINE_AGENT_FAILURE",
+    "confidence": "high",
+    "evidence_artifact": "experiments/six_case_validation/raw_outputs/c2_teleport_oracle_local.txt",
+    "clauses": [
+      {
+        "id": "truncate.format",
+        "kind": "POSTCONDITION",
+        "statement": "A cell longer than positive MaxCellLength renders as the first MaxCellLength characters, then '...', then ' <label>' iff the column's FootnoteLabel is non-empty.",
+        "source": "instruction bullets 3 and 12",
+        "tested_by_original": [
+          "TestTruncatedTable"
+        ]
+      },
+      {
+        "id": "width.from_rendered",
+        "kind": "INVARIANT",
+        "statement": "Column width equals the width of the rendered text (incl. ellipsis/label).",
+        "source": "instruction bullet 5",
+        "tested_by_original": [
+          "TestTruncatedTable"
+        ]
+      },
+      {
+        "id": "truncate.boundary",
+        "kind": "INVARIANT",
+        "statement": "Cells with length <= MaxCellLength, and all cells of a column with MaxCellLength 0, render unchanged.",
+        "source": "instruction bullet 4",
+        "tested_by_original": [
+          "TestFullTable"
+        ]
+      }
+    ],
+    "probes": [
+      {
+        "name": "teleport:truncate.format",
+        "passed": false,
+        "clauses": [
+          "truncate.format"
+        ],
+        "detail": "go subtest FAIL",
+        "counterexample": {
+          "go_subtest": "truncate.format",
+          "status": "FAIL"
+        }
+      },
+      {
+        "name": "teleport:width.from_rendered",
+        "passed": false,
+        "clauses": [
+          "width.from_rendered"
+        ],
+        "detail": "go subtest FAIL",
+        "counterexample": {
+          "go_subtest": "width.from_rendered",
+          "status": "FAIL"
+        }
+      },
+      {
+        "name": "teleport:truncate.boundary",
+        "passed": true,
+        "clauses": [
+          "truncate.boundary"
+        ],
+        "detail": "",
+        "counterexample": null
+      }
+    ]
+  },
+  "notes": [
+    "SYNTHETIC: mutant_no_ellipsis, reproduced locally with go test against the real V3.2 oracle."
+  ],
+  "evidence_roots": [
+    "experiments/six_case_validation"
+  ]
+}

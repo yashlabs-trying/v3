@@ -1,0 +1,289 @@
+{
+  "cache": {
+    "correct": {
+      "failing": [],
+      "results": {
+        "test_df_invalidate_forces_recompute": "PASSED",
+        "test_df_memoises": "PASSED"
+      }
+    },
+    "mutants": {
+      "mut_no_invalidate": {
+        "failing": [
+          "test_df_invalidate_forces_recompute"
+        ],
+        "results": {
+          "test_df_invalidate_forces_recompute": "FAILED",
+          "test_df_memoises": "PASSED"
+        }
+      }
+    }
+  },
+  "fetch": {
+    "correct": {
+      "failing": [],
+      "results": {
+        "test_df_defaults": "PASSED",
+        "test_df_explicit_verify": "PASSED",
+        "test_df_legacy_confirm_accepted": "PASSED"
+      }
+    },
+    "mutants": {
+      "mut_drop_legacy_kwarg": {
+        "failing": [
+          "test_df_legacy_confirm_accepted"
+        ],
+        "results": {
+          "test_df_defaults": "PASSED",
+          "test_df_explicit_verify": "PASSED",
+          "test_df_legacy_confirm_accepted": "FAILED"
+        }
+      }
+    }
+  },
+  "kvstore": {
+    "correct": {
+      "failing": [],
+      "results": {
+        "test_df_delete_keeps_index_consistent": "PASSED",
+        "test_df_delete_missing": "PASSED",
+        "test_df_set_and_keys": "PASSED"
+      }
+    },
+    "mutants": {
+      "mut_missing_index": {
+        "failing": [
+          "test_df_delete_keeps_index_consistent",
+          "test_df_set_and_keys"
+        ],
+        "results": {
+          "test_df_delete_keeps_index_consistent": "FAILED",
+          "test_df_delete_missing": "PASSED",
+          "test_df_set_and_keys": "FAILED"
+        }
+      },
+      "mut_stale_index": {
+        "failing": [
+          "test_df_delete_keeps_index_consistent"
+        ],
+        "results": {
+          "test_df_delete_keeps_index_consistent": "FAILED",
+          "test_df_delete_missing": "PASSED",
+          "test_df_set_and_keys": "PASSED"
+        }
+      }
+    }
+  },
+  "lookup": {
+    "correct": {
+      "failing": [],
+      "results": {
+        "test_df_fallback_used": "PASSED",
+        "test_df_missing_both": "PASSED",
+        "test_df_primary_preferred": "PASSED"
+      }
+    },
+    "mutants": {
+      "mut_fallback_wins": {
+        "failing": [
+          "test_df_primary_preferred"
+        ],
+        "results": {
+          "test_df_fallback_used": "PASSED",
+          "test_df_missing_both": "PASSED",
+          "test_df_primary_preferred": "FAILED"
+        }
+      }
+    }
+  },
+  "normalize": {
+    "correct": {
+      "failing": [],
+      "results": {
+        "test_df_drops_missing_id": "PASSED",
+        "test_df_key_normalisation": "PASSED",
+        "test_df_no_mutation": "PASSED"
+      }
+    },
+    "mutants": {
+      "mut_inplace_mutation": {
+        "failing": [
+          "test_df_no_mutation"
+        ],
+        "results": {
+          "test_df_drops_missing_id": "PASSED",
+          "test_df_key_normalisation": "PASSED",
+          "test_df_no_mutation": "FAILED"
+        }
+      }
+    }
+  },
+  "paginate": {
+    "correct": {
+      "failing": [],
+      "results": {
+        "test_df_first_page_offbyone": "PASSED",
+        "test_df_invalid_page": "PASSED",
+        "test_df_page_boundaries": "PASSED"
+      }
+    },
+    "mutants": {
+      "mut_offbyone_window": {
+        "failing": [
+          "test_df_first_page_offbyone",
+          "test_df_page_boundaries"
+        ],
+        "results": {
+          "test_df_first_page_offbyone": "FAILED",
+          "test_df_invalid_page": "PASSED",
+          "test_df_page_boundaries": "FAILED"
+        }
+      },
+      "mut_raise_past_end": {
+        "failing": [
+          "test_df_page_boundaries"
+        ],
+        "results": {
+          "test_df_first_page_offbyone": "PASSED",
+          "test_df_invalid_page": "PASSED",
+          "test_df_page_boundaries": "FAILED"
+        }
+      }
+    }
+  },
+  "parse_int": {
+    "correct": {
+      "failing": [],
+      "results": {
+        "test_df_parse_malformed_returns_default": "PASSED",
+        "test_df_parse_non_string": "PASSED",
+        "test_df_parse_valid": "PASSED"
+      }
+    },
+    "mutants": {
+      "mut_raises_on_malformed": {
+        "failing": [
+          "test_df_parse_malformed_returns_default"
+        ],
+        "results": {
+          "test_df_parse_malformed_returns_default": "FAILED",
+          "test_df_parse_non_string": "PASSED",
+          "test_df_parse_valid": "PASSED"
+        }
+      },
+      "mut_rejects_negatives": {
+        "failing": [
+          "test_df_parse_valid"
+        ],
+        "results": {
+          "test_df_parse_malformed_returns_default": "PASSED",
+          "test_df_parse_non_string": "PASSED",
+          "test_df_parse_valid": "FAILED"
+        }
+      }
+    }
+  },
+  "patch": {
+    "correct": {
+      "failing": [],
+      "results": {
+        "test_df_all_changes_applied": "PASSED",
+        "test_df_none_removes": "PASSED"
+      }
+    },
+    "mutants": {
+      "mut_partial_update": {
+        "failing": [
+          "test_df_all_changes_applied"
+        ],
+        "results": {
+          "test_df_all_changes_applied": "FAILED",
+          "test_df_none_removes": "PASSED"
+        }
+      }
+    }
+  },
+  "rank": {
+    "correct": {
+      "failing": [],
+      "results": {
+        "test_df_descending": "PASSED",
+        "test_df_stable_ties": "PASSED"
+      }
+    },
+    "mutants": {
+      "mut_unstable_tie": {
+        "failing": [
+          "test_df_stable_ties"
+        ],
+        "results": {
+          "test_df_descending": "PASSED",
+          "test_df_stable_ties": "FAILED"
+        }
+      }
+    }
+  },
+  "resource": {
+    "correct": {
+      "failing": [],
+      "results": {
+        "test_df_closes_on_error": "PASSED",
+        "test_df_closes_on_success": "PASSED"
+      }
+    },
+    "mutants": {
+      "mut_leak_on_error": {
+        "failing": [
+          "test_df_closes_on_error"
+        ],
+        "results": {
+          "test_df_closes_on_error": "FAILED",
+          "test_df_closes_on_success": "PASSED"
+        }
+      }
+    }
+  },
+  "rle": {
+    "correct": {
+      "failing": [],
+      "results": {
+        "test_df_rle_basic": "PASSED",
+        "test_df_rle_singletons": "PASSED"
+      }
+    },
+    "mutants": {
+      "mut_offbyone_count": {
+        "failing": [
+          "test_df_rle_basic",
+          "test_df_rle_singletons"
+        ],
+        "results": {
+          "test_df_rle_basic": "FAILED",
+          "test_df_rle_singletons": "FAILED"
+        }
+      }
+    }
+  },
+  "total": {
+    "correct": {
+      "failing": [],
+      "results": {
+        "test_df_discount_applied": "PASSED",
+        "test_df_empty": "PASSED",
+        "test_df_no_discount_preserved": "PASSED"
+      }
+    },
+    "mutants": {
+      "mut_breaks_base": {
+        "failing": [
+          "test_df_discount_applied"
+        ],
+        "results": {
+          "test_df_discount_applied": "FAILED",
+          "test_df_empty": "PASSED",
+          "test_df_no_discount_preserved": "PASSED"
+        }
+      }
+    }
+  }
+}

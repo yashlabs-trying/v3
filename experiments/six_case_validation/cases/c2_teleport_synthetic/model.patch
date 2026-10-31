@@ -1,0 +1,13 @@
+﻿diff --git a/lib/asciitable/table.go b/lib/asciitable/table.go
+index ffdb128..7ad772a 100644
+--- a/lib/asciitable/table.go
++++ b/lib/asciitable/table.go
+@@ -107,7 +107,7 @@ func (t *Table) AsBuffer() *bytes.Buffer {
+ 		for c, cell := range row {
+ 			col := t.columns[c]
+ 			if col.MaxCellLength > 0 && len(cell) > col.MaxCellLength {
+-				cell = cell[:col.MaxCellLength] + "..."
++				cell = cell[:col.MaxCellLength]
+ 				if col.FootnoteLabel != "" {
+ 					cell += " " + col.FootnoteLabel
+ 					referenced[col.FootnoteLabel] = struct{}{}

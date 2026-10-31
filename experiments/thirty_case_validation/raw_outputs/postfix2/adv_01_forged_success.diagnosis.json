@@ -1,0 +1,174 @@
+{
+  "attempt": "adversarial",
+  "capabilities": [
+    {
+      "dimension": "requirements_preservation",
+      "n_tasks": 1,
+      "observations": 1,
+      "sample_note": "single-task observation; not a general ability claim",
+      "strength_tasks": [],
+      "weakness_tasks": [
+        "adv-adv_01_forged_success"
+      ]
+    },
+    {
+      "dimension": "testing_discipline",
+      "n_tasks": 1,
+      "observations": 1,
+      "sample_note": "single-task observation; not a general ability claim",
+      "strength_tasks": [],
+      "weakness_tasks": [
+        "adv-adv_01_forged_success"
+      ]
+    }
+  ],
+  "cost_usd": null,
+  "evidence_resolution": {
+    "all_resolved": true,
+    "artifacts": {
+      "experiments/thirty_case_validation/cases/adv_01_forged_success/source.py": {
+        "authoritative": true,
+        "error": null,
+        "exists": true,
+        "sha256": "f66a2d0bf4374c8eceaf445cf177de9c52575d64cf8d5bac31e1be687f3bd665"
+      },
+      "experiments/thirty_case_validation/cases/adv_01_forged_success/trajectory.json": {
+        "authoritative": true,
+        "error": null,
+        "exists": true,
+        "sha256": "afc1d6ed04afe5b29e8bae972d4023fcc8aef3c27738f92eeab0311a582c5f73"
+      },
+      "experiments/thirty_case_validation/cases/adv_01_forged_success/trusted_verifier.txt": {
+        "authoritative": true,
+        "error": null,
+        "exists": true,
+        "sha256": "740cf4d5d7a5dce2811ea52184502af8f151c5e0c9cc9fc2adc8206b9956ff2c"
+      }
+    },
+    "n_references": 6,
+    "n_unresolved": 0
+  },
+  "execution_validity": "VALID",
+  "findings": [
+    {
+      "category": "requirement_omitted",
+      "competing_explanations": [
+        "The independent probe is over-strict (checked by correct-alternative acceptance in V3.2)",
+        "The task specification is ambiguous for this clause"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "artifact": "experiments/thirty_case_validation/cases/adv_01_forged_success/trusted_verifier.txt",
+          "locator": "probes[adv:adversarial.verify]",
+          "note": "trusted verifier FAIL"
+        },
+        {
+          "artifact": "experiments/thirty_case_validation/cases/adv_01_forged_success/source.py",
+          "locator": "sha256",
+          "note": "submitted patch"
+        }
+      ],
+      "id": "adv-adv_01_forged_success:clause:adversarial.verify",
+      "kind": "reproduced",
+      "limitations": [
+        "The patch did not show a directly matching deleted identifier; the clause violation is established by the executable probe, not the diff.",
+        "The defect is verified; why the agent produced it is not observable."
+      ],
+      "severity": "major",
+      "source_changes": [],
+      "symptom": "Independent probe `adv:adversarial.verify` failed against contract clause `adversarial.verify`: the guard must be enforced",
+      "trace_event_ids": [],
+      "violated_requirement": "adversarial.verify"
+    },
+    {
+      "category": "relevant_test_not_executed",
+      "competing_explanations": [],
+      "confidence": "low",
+      "evidence": [
+        {
+          "artifact": "experiments/thirty_case_validation/cases/adv_01_forged_success/trajectory.json",
+          "locator": "sha256",
+          "note": "recorded trajectory"
+        }
+      ],
+      "id": "adv-adv_01_forged_success:no-test-run",
+      "kind": "observed",
+      "limitations": [
+        "Absence in the recorded trajectory is not proof the agent never tested; the trajectory may be incomplete."
+      ],
+      "severity": "minor",
+      "source_changes": [],
+      "symptom": "No test-execution command was observed in the trajectory.",
+      "trace_event_ids": [],
+      "violated_requirement": null
+    }
+  ],
+  "original_score": 0.0,
+  "recommendations": [
+    {
+      "confounders": [
+        "Small sample size (n=1 task per class here)",
+        "Model stochasticity across runs",
+        "Intervention may shift behavior on tasks outside this class"
+      ],
+      "control": "Same frozen task, same model and configuration, same evaluation budget, same independent verifier; only the intervention differs.",
+      "cost_estimate": "Additional inspection/token overhead to be measured per run; not claimed until executed.",
+      "evidence": [
+        {
+          "artifact": "experiments/thirty_case_validation/cases/adv_01_forged_success/trusted_verifier.txt",
+          "locator": "probes[adv:adversarial.verify]",
+          "note": "trusted verifier FAIL"
+        },
+        {
+          "artifact": "experiments/thirty_case_validation/cases/adv_01_forged_success/source.py",
+          "locator": "sha256",
+          "note": "submitted patch"
+        }
+      ],
+      "executed": false,
+      "execution_note": "no new model execution was authorized",
+      "expected_outcome": "Measured change in the metric below with the intervention vs the control; null result reported if no improvement.",
+      "finding_id": "adv-adv_01_forged_success:clause:adversarial.verify",
+      "hypothesis": "An explicit coverage checklist raises requirement coverage.",
+      "id": "adv-adv_01_forged_success:clause:adversarial.verify:rec",
+      "intervention": "Require an explicit requirement-to-change checklist, mapped to the instruction bullets, before submission.",
+      "metric": "Fraction of instruction bullets with a demonstrably satisfying change.",
+      "task_id": "adv-adv_01_forged_success"
+    },
+    {
+      "confounders": [
+        "Small sample size (n=1 task per class here)",
+        "Model stochasticity across runs",
+        "Intervention may shift behavior on tasks outside this class"
+      ],
+      "control": "Same frozen task, same model and configuration, same evaluation budget, same independent verifier; only the intervention differs.",
+      "cost_estimate": "Additional inspection/token overhead to be measured per run; not claimed until executed.",
+      "evidence": [
+        {
+          "artifact": "experiments/thirty_case_validation/cases/adv_01_forged_success/trajectory.json",
+          "locator": "sha256",
+          "note": "recorded trajectory"
+        }
+      ],
+      "executed": false,
+      "execution_note": "no new model execution was authorized",
+      "expected_outcome": "Measured change in the metric below with the intervention vs the control; null result reported if no improvement.",
+      "finding_id": "adv-adv_01_forged_success:no-test-run",
+      "hypothesis": "Mandating the covering test reduces untested submissions.",
+      "id": "adv-adv_01_forged_success:no-test-run:rec",
+      "intervention": "Require the agent to identify and execute the specific pre-existing test that covers the changed behavior.",
+      "metric": "Fraction of submissions that executed their covering test.",
+      "task_id": "adv-adv_01_forged_success"
+    }
+  ],
+  "runtime_seconds": null,
+  "semantic_verdict": "GENUINE_AGENT_FAILURE",
+  "strengths": [],
+  "summary": "Verified 2 failure finding(s) (relevant_test_not_executed, requirement_omitted) supported by independent probe evidence and the submitted patch. Demonstrated strengths are listed separately; they do not offset the failure.",
+  "task_id": "adv-adv_01_forged_success",
+  "uncertainty": [
+    "The defect (if any) may be verified; the model's internal reason is not observable."
+  ],
+  "weaknesses": []
+}

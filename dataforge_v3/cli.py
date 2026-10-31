@@ -92,6 +92,29 @@ def _cmd_intelligence(args: argparse.Namespace) -> int:
     return 0
 
 
+def _cmd_diagnose_case(args: argparse.Namespace) -> int:
+    from dataforge_v3.intelligence.case_adapter import diagnose_manifest
+    from dataforge_v3.intelligence.evidence import EvidenceResolver
+    from dataforge_v3.intelligence.reporting import (
+        render_diagnosis_json,
+        render_diagnosis_markdown,
+    )
+
+    root = Path(args.root)
+    manifest = Path(args.manifest)
+    diagnosis, _semantic, _obs = diagnose_manifest(root, manifest)
+    resolver = EvidenceResolver(root)
+    out = Path(args.out) if args.out else None
+    payload_json = render_diagnosis_json(diagnosis, resolver)
+    if out is not None:
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(payload_json, encoding="utf-8")
+        md = out.with_suffix(".md")
+        md.write_text(render_diagnosis_markdown(diagnosis, resolver), encoding="utf-8")
+    print(payload_json)
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="dataforge_v3")
     sub = parser.add_subparsers(dest="cmd", required=True)
@@ -125,6 +148,12 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--root", default=".", help="repository root")
     p.add_argument("--out-dir", default="findings/intelligence", help="output directory")
     p.set_defaults(func=_cmd_intelligence)
+
+    p = sub.add_parser("diagnose-case", help="run the V3.3 engine on one controlled case manifest")
+    p.add_argument("--manifest", required=True, help="path to a case manifest JSON")
+    p.add_argument("--root", default=".", help="repository root")
+    p.add_argument("--out", help="optional path to write the diagnostic JSON (and .md)")
+    p.set_defaults(func=_cmd_diagnose_case)
 
     args = parser.parse_args(argv)
     return args.func(args)

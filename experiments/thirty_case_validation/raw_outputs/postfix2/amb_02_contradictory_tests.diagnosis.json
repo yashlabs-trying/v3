@@ -1,0 +1,114 @@
+{
+  "attempt": "ambiguous",
+  "capabilities": [
+    {
+      "dimension": "correct_implementation",
+      "n_tasks": 1,
+      "observations": 1,
+      "sample_note": "single-task observation; not a general ability claim",
+      "strength_tasks": [
+        "amb-contradictory"
+      ],
+      "weakness_tasks": []
+    },
+    {
+      "dimension": "requirements_preservation",
+      "n_tasks": 1,
+      "observations": 1,
+      "sample_note": "single-task observation; not a general ability claim",
+      "strength_tasks": [],
+      "weakness_tasks": [
+        "amb-contradictory"
+      ]
+    }
+  ],
+  "cost_usd": null,
+  "evidence_resolution": {
+    "all_resolved": true,
+    "artifacts": {
+      "experiments/thirty_case_validation/cases/amb_02_contradictory_tests/contradiction.txt": {
+        "authoritative": true,
+        "error": null,
+        "exists": true,
+        "sha256": "771cc8d6181417a1b20ea12901e22757b1a9012e23ba04db3c4258eaeaa66b5b"
+      }
+    },
+    "n_references": 2,
+    "n_unresolved": 0
+  },
+  "execution_validity": "VALID",
+  "findings": [
+    {
+      "category": "requirement_omitted",
+      "competing_explanations": [
+        "The independent probe is over-strict (checked by correct-alternative acceptance in V3.2)",
+        "The task specification is ambiguous for this clause"
+      ],
+      "confidence": "medium",
+      "evidence": [
+        {
+          "artifact": "experiments/thirty_case_validation/cases/amb_02_contradictory_tests/contradiction.txt",
+          "locator": "probes[x.b]",
+          "note": ""
+        }
+      ],
+      "id": "amb-contradictory:clause:c.x",
+      "kind": "hypothesis",
+      "limitations": [
+        "The defect is verified; why the agent produced it is not observable.",
+        "contradictory probe evidence on this clause (at least one independent probe passed and one failed); not authoritative"
+      ],
+      "severity": "major",
+      "source_changes": [],
+      "symptom": "Independent probe `x.b` failed against contract clause `c.x`: behaviour X holds",
+      "trace_event_ids": [],
+      "violated_requirement": "c.x"
+    }
+  ],
+  "original_score": null,
+  "recommendations": [
+    {
+      "confounders": [
+        "Small sample size (n=1 task per class here)",
+        "Model stochasticity across runs",
+        "Intervention may shift behavior on tasks outside this class"
+      ],
+      "control": "Same frozen task, same model and configuration, same evaluation budget, same independent verifier; only the intervention differs.",
+      "cost_estimate": "Additional inspection/token overhead to be measured per run; not claimed until executed.",
+      "evidence": [
+        {
+          "artifact": "experiments/thirty_case_validation/cases/amb_02_contradictory_tests/contradiction.txt",
+          "locator": "probes[x.b]",
+          "note": ""
+        }
+      ],
+      "executed": false,
+      "execution_note": "no new model execution was authorized",
+      "expected_outcome": "Measured change in the metric below with the intervention vs the control; null result reported if no improvement.",
+      "finding_id": "amb-contradictory:clause:c.x",
+      "hypothesis": "An explicit coverage checklist raises requirement coverage.",
+      "id": "amb-contradictory:clause:c.x:rec",
+      "intervention": "Require an explicit requirement-to-change checklist, mapped to the instruction bullets, before submission.",
+      "metric": "Fraction of instruction bullets with a demonstrably satisfying change.",
+      "task_id": "amb-contradictory"
+    }
+  ],
+  "runtime_seconds": null,
+  "semantic_verdict": "INCONCLUSIVE",
+  "strengths": [
+    {
+      "confidence": "high",
+      "evidence": [],
+      "kind": "reproduced",
+      "text": "Satisfied 1 independently-probed contract clause(s): c.x."
+    }
+  ],
+  "summary": "No authoritative diagnostic finding was derivable from the available evidence.",
+  "task_id": "amb-contradictory",
+  "uncertainty": [
+    "No trajectory artifact; observable process actions are unavailable.",
+    "Finding amb-contradictory:clause:c.x downgraded to hypothesis (evidence unresolved).",
+    "The defect (if any) may be verified; the model's internal reason is not observable."
+  ],
+  "weaknesses": []
+}

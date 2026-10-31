@@ -1,0 +1,9 @@
+{
+  "failing": [
+    "test_df_stable_ties"
+  ],
+  "results": {
+    "test_df_descending": "PASSED",
+    "test_df_stable_ties": "FAILED"
+  }
+}

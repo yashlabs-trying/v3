@@ -1,0 +1,3 @@
+# independent trusted probe (produced separately from the agent log)
+probe adversarial.verify: FAIL
+result: GENUINE_AGENT_FAILURE

@@ -1,0 +1,120 @@
+{
+  "attempt": "synthetic-defect",
+  "capabilities": [
+    {
+      "dimension": "correct_implementation",
+      "n_tasks": 1,
+      "observations": 2,
+      "sample_note": "single-task observation; not a general ability claim",
+      "strength_tasks": [
+        "syn-parse_int-mut_raises_on_malformed"
+      ],
+      "weakness_tasks": [
+        "syn-parse_int-mut_raises_on_malformed"
+      ]
+    }
+  ],
+  "cost_usd": null,
+  "evidence_resolution": {
+    "all_resolved": true,
+    "artifacts": {
+      "experiments/thirty_case_validation/cases/def_02_error_handling/probe_results.json": {
+        "authoritative": true,
+        "error": null,
+        "exists": true,
+        "sha256": "128a03f0764607459fc862a8534ed05f049c4a196fcb8cedbe64d8c7827e1fa4"
+      },
+      "experiments/thirty_case_validation/cases/def_02_error_handling/source.py": {
+        "authoritative": true,
+        "error": null,
+        "exists": true,
+        "sha256": "90a9ef8909948a2783ba41e17b147a36b55a4fb522f9de6c72f2d7f8506add9d"
+      }
+    },
+    "n_references": 4,
+    "n_unresolved": 0
+  },
+  "execution_validity": "VALID",
+  "findings": [
+    {
+      "category": "edge_case_failure",
+      "competing_explanations": [
+        "The independent probe is over-strict (checked by correct-alternative acceptance in V3.2)",
+        "The task specification is ambiguous for this clause"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "artifact": "experiments/thirty_case_validation/cases/def_02_error_handling/probe_results.json",
+          "locator": "probes[parse_int:test_df_parse_malformed_returns_default]",
+          "note": "pytest FAILED"
+        },
+        {
+          "artifact": "experiments/thirty_case_validation/cases/def_02_error_handling/source.py",
+          "locator": "sha256",
+          "note": "submitted patch"
+        }
+      ],
+      "id": "syn-parse_int-mut_raises_on_malformed:clause:parse.error_handling",
+      "kind": "reproduced",
+      "limitations": [
+        "The defect is verified; why the agent produced it is not observable."
+      ],
+      "severity": "minor",
+      "source_changes": [],
+      "symptom": "Independent probe `parse_int:test_df_parse_malformed_returns_default` failed against contract clause `parse.error_handling`: parse_int.parse.error_handling contract clause",
+      "trace_event_ids": [],
+      "violated_requirement": "parse.error_handling"
+    }
+  ],
+  "original_score": null,
+  "recommendations": [
+    {
+      "confounders": [
+        "Small sample size (n=1 task per class here)",
+        "Model stochasticity across runs",
+        "Intervention may shift behavior on tasks outside this class"
+      ],
+      "control": "Same frozen task, same model and configuration, same evaluation budget, same independent verifier; only the intervention differs.",
+      "cost_estimate": "Additional inspection/token overhead to be measured per run; not claimed until executed.",
+      "evidence": [
+        {
+          "artifact": "experiments/thirty_case_validation/cases/def_02_error_handling/probe_results.json",
+          "locator": "probes[parse_int:test_df_parse_malformed_returns_default]",
+          "note": "pytest FAILED"
+        },
+        {
+          "artifact": "experiments/thirty_case_validation/cases/def_02_error_handling/source.py",
+          "locator": "sha256",
+          "note": "submitted patch"
+        }
+      ],
+      "executed": false,
+      "execution_note": "no new model execution was authorized",
+      "expected_outcome": "Measured change in the metric below with the intervention vs the control; null result reported if no improvement.",
+      "finding_id": "syn-parse_int-mut_raises_on_malformed:clause:parse.error_handling",
+      "hypothesis": "Forced boundary probing reduces edge-case failures.",
+      "id": "syn-parse_int-mut_raises_on_malformed:clause:parse.error_handling:rec",
+      "intervention": "Require authoring and running boundary probes (empty, single, maximal, off-by-one) for the changed function.",
+      "metric": "Edge-case probe pass rate on the same frozen task.",
+      "task_id": "syn-parse_int-mut_raises_on_malformed"
+    }
+  ],
+  "runtime_seconds": null,
+  "semantic_verdict": "GENUINE_AGENT_FAILURE",
+  "strengths": [
+    {
+      "confidence": "high",
+      "evidence": [],
+      "kind": "reproduced",
+      "text": "Satisfied 2 independently-probed contract clause(s): parse.type_guard, parse.valid."
+    }
+  ],
+  "summary": "Verified 1 failure finding(s) (edge_case_failure) supported by independent probe evidence and the submitted patch. Demonstrated strengths are listed separately; they do not offset the failure.",
+  "task_id": "syn-parse_int-mut_raises_on_malformed",
+  "uncertainty": [
+    "No trajectory artifact; observable process actions are unavailable.",
+    "The defect (if any) may be verified; the model's internal reason is not observable."
+  ],
+  "weaknesses": []
+}

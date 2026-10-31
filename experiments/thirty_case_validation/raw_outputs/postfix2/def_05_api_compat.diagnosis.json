@@ -1,0 +1,120 @@
+{
+  "attempt": "synthetic-defect",
+  "capabilities": [
+    {
+      "dimension": "correct_implementation",
+      "n_tasks": 1,
+      "observations": 2,
+      "sample_note": "single-task observation; not a general ability claim",
+      "strength_tasks": [
+        "syn-fetch-mut_drop_legacy_kwarg"
+      ],
+      "weakness_tasks": [
+        "syn-fetch-mut_drop_legacy_kwarg"
+      ]
+    }
+  ],
+  "cost_usd": null,
+  "evidence_resolution": {
+    "all_resolved": true,
+    "artifacts": {
+      "experiments/thirty_case_validation/cases/def_05_api_compat/probe_results.json": {
+        "authoritative": true,
+        "error": null,
+        "exists": true,
+        "sha256": "4f5022102ebbf456628442b73d595f35e2f6e442c2b10764669a4021db8be432"
+      },
+      "experiments/thirty_case_validation/cases/def_05_api_compat/source.py": {
+        "authoritative": true,
+        "error": null,
+        "exists": true,
+        "sha256": "f7b9410ded9ee63a901775dd1305b76c84756eaec2eff39147c188199ed1b018"
+      }
+    },
+    "n_references": 4,
+    "n_unresolved": 0
+  },
+  "execution_validity": "VALID",
+  "findings": [
+    {
+      "category": "edge_case_failure",
+      "competing_explanations": [
+        "The independent probe is over-strict (checked by correct-alternative acceptance in V3.2)",
+        "The task specification is ambiguous for this clause"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "artifact": "experiments/thirty_case_validation/cases/def_05_api_compat/probe_results.json",
+          "locator": "probes[fetch:test_df_legacy_confirm_accepted]",
+          "note": "pytest FAILED"
+        },
+        {
+          "artifact": "experiments/thirty_case_validation/cases/def_05_api_compat/source.py",
+          "locator": "sha256",
+          "note": "submitted patch"
+        }
+      ],
+      "id": "syn-fetch-mut_drop_legacy_kwarg:clause:fetch.legacy_compat",
+      "kind": "reproduced",
+      "limitations": [
+        "The defect is verified; why the agent produced it is not observable."
+      ],
+      "severity": "minor",
+      "source_changes": [],
+      "symptom": "Independent probe `fetch:test_df_legacy_confirm_accepted` failed against contract clause `fetch.legacy_compat`: fetch.fetch.legacy_compat contract clause",
+      "trace_event_ids": [],
+      "violated_requirement": "fetch.legacy_compat"
+    }
+  ],
+  "original_score": null,
+  "recommendations": [
+    {
+      "confounders": [
+        "Small sample size (n=1 task per class here)",
+        "Model stochasticity across runs",
+        "Intervention may shift behavior on tasks outside this class"
+      ],
+      "control": "Same frozen task, same model and configuration, same evaluation budget, same independent verifier; only the intervention differs.",
+      "cost_estimate": "Additional inspection/token overhead to be measured per run; not claimed until executed.",
+      "evidence": [
+        {
+          "artifact": "experiments/thirty_case_validation/cases/def_05_api_compat/probe_results.json",
+          "locator": "probes[fetch:test_df_legacy_confirm_accepted]",
+          "note": "pytest FAILED"
+        },
+        {
+          "artifact": "experiments/thirty_case_validation/cases/def_05_api_compat/source.py",
+          "locator": "sha256",
+          "note": "submitted patch"
+        }
+      ],
+      "executed": false,
+      "execution_note": "no new model execution was authorized",
+      "expected_outcome": "Measured change in the metric below with the intervention vs the control; null result reported if no improvement.",
+      "finding_id": "syn-fetch-mut_drop_legacy_kwarg:clause:fetch.legacy_compat",
+      "hypothesis": "Forced boundary probing reduces edge-case failures.",
+      "id": "syn-fetch-mut_drop_legacy_kwarg:clause:fetch.legacy_compat:rec",
+      "intervention": "Require authoring and running boundary probes (empty, single, maximal, off-by-one) for the changed function.",
+      "metric": "Edge-case probe pass rate on the same frozen task.",
+      "task_id": "syn-fetch-mut_drop_legacy_kwarg"
+    }
+  ],
+  "runtime_seconds": null,
+  "semantic_verdict": "GENUINE_AGENT_FAILURE",
+  "strengths": [
+    {
+      "confidence": "high",
+      "evidence": [],
+      "kind": "reproduced",
+      "text": "Satisfied 2 independently-probed contract clause(s): fetch.defaults, fetch.verify."
+    }
+  ],
+  "summary": "Verified 1 failure finding(s) (edge_case_failure) supported by independent probe evidence and the submitted patch. Demonstrated strengths are listed separately; they do not offset the failure.",
+  "task_id": "syn-fetch-mut_drop_legacy_kwarg",
+  "uncertainty": [
+    "No trajectory artifact; observable process actions are unavailable.",
+    "The defect (if any) may be verified; the model's internal reason is not observable."
+  ],
+  "weaknesses": []
+}

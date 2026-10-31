@@ -1,0 +1,67 @@
+{
+  "case_id": "cor_04_lookup",
+  "short_name": "syn-lookup-correct",
+  "attempt": "synthetic-correct",
+  "execution_validity": "VALID",
+  "semantic_verdict": "CONFIRMED_CORRECT",
+  "original_score": null,
+  "patch": "experiments/thirty_case_validation/cases/cor_04_lookup/source.py",
+  "trajectory": null,
+  "semantic": {
+    "verdict": "CONFIRMED_CORRECT",
+    "confidence": "high",
+    "evidence_artifact": "experiments/thirty_case_validation/cases/cor_04_lookup/probe_results.json",
+    "clauses": [
+      {
+        "id": "lookup.primary",
+        "kind": "POSTCONDITION",
+        "statement": "lookup.lookup.primary contract clause"
+      },
+      {
+        "id": "lookup.fallback",
+        "kind": "POSTCONDITION",
+        "statement": "lookup.lookup.fallback contract clause"
+      },
+      {
+        "id": "lookup.missing",
+        "kind": "POSTCONDITION",
+        "statement": "lookup.lookup.missing contract clause"
+      }
+    ],
+    "probes": [
+      {
+        "name": "lookup:test_df_primary_preferred",
+        "passed": true,
+        "clauses": [
+          "lookup.primary"
+        ],
+        "detail": "",
+        "counterexample": null
+      },
+      {
+        "name": "lookup:test_df_fallback_used",
+        "passed": true,
+        "clauses": [
+          "lookup.fallback"
+        ],
+        "detail": "",
+        "counterexample": null
+      },
+      {
+        "name": "lookup:test_df_missing_both",
+        "passed": true,
+        "clauses": [
+          "lookup.missing"
+        ],
+        "detail": "",
+        "counterexample": null
+      }
+    ]
+  },
+  "notes": [
+    "SYNTHETIC correct solution (real mechanism, real oracle)."
+  ],
+  "evidence_roots": [
+    "experiments/thirty_case_validation"
+  ]
+}
