@@ -1,0 +1,200 @@
+{
+  "alt_prepatch_tiebreak": {
+    "accepted": true,
+    "category": "correct_alternative",
+    "probes": [
+      {
+        "clauses": [
+          "sort.by_score"
+        ],
+        "counterexample": null,
+        "detail": "",
+        "expected": null,
+        "kind": "differential",
+        "name": "vuls:score.order",
+        "observed": null,
+        "passed": true
+      },
+      {
+        "clauses": [
+          "sort.equal_score_order"
+        ],
+        "counterexample": null,
+        "detail": "",
+        "expected": null,
+        "kind": "differential",
+        "name": "vuls:tie.order",
+        "observed": null,
+        "passed": true
+      }
+    ]
+  },
+  "alt_score_tiebreak": {
+    "accepted": true,
+    "category": "correct_alternative",
+    "probes": [
+      {
+        "clauses": [
+          "sort.by_score"
+        ],
+        "counterexample": null,
+        "detail": "",
+        "expected": null,
+        "kind": "differential",
+        "name": "vuls:score.order",
+        "observed": null,
+        "passed": true
+      },
+      {
+        "clauses": [
+          "sort.equal_score_order"
+        ],
+        "counterexample": null,
+        "detail": "",
+        "expected": null,
+        "kind": "differential",
+        "name": "vuls:tie.order",
+        "observed": null,
+        "passed": true
+      }
+    ]
+  },
+  "alt_stable_score": {
+    "accepted": false,
+    "category": "correct_alternative_attempt",
+    "probes": [
+      {
+        "clauses": [
+          "sort.by_score"
+        ],
+        "counterexample": null,
+        "detail": "",
+        "expected": null,
+        "kind": "differential",
+        "name": "vuls:score.order",
+        "observed": null,
+        "passed": true
+      },
+      {
+        "clauses": [
+          "sort.equal_score_order"
+        ],
+        "counterexample": {
+          "go_subtest": "tie.order",
+          "status": "FAIL"
+        },
+        "detail": "go subtest FAIL",
+        "expected": null,
+        "kind": "differential",
+        "name": "vuls:tie.order",
+        "observed": null,
+        "passed": false
+      }
+    ]
+  },
+  "deepseek_score_only": {
+    "accepted": false,
+    "category": "submission",
+    "probes": [
+      {
+        "clauses": [
+          "sort.by_score"
+        ],
+        "counterexample": null,
+        "detail": "",
+        "expected": null,
+        "kind": "differential",
+        "name": "vuls:score.order",
+        "observed": null,
+        "passed": true
+      },
+      {
+        "clauses": [
+          "sort.equal_score_order"
+        ],
+        "counterexample": {
+          "go_subtest": "tie.order",
+          "status": "FAIL"
+        },
+        "detail": "go subtest FAIL",
+        "expected": null,
+        "kind": "differential",
+        "name": "vuls:tie.order",
+        "observed": null,
+        "passed": false
+      }
+    ]
+  },
+  "mutant_ascending": {
+    "accepted": false,
+    "category": "mutant",
+    "probes": [
+      {
+        "clauses": [
+          "sort.by_score"
+        ],
+        "counterexample": {
+          "go_subtest": "score.order",
+          "status": "FAIL"
+        },
+        "detail": "go subtest FAIL",
+        "expected": null,
+        "kind": "differential",
+        "name": "vuls:score.order",
+        "observed": null,
+        "passed": false
+      },
+      {
+        "clauses": [
+          "sort.equal_score_order"
+        ],
+        "counterexample": {
+          "go_subtest": "tie.order",
+          "status": "FAIL"
+        },
+        "detail": "go subtest FAIL",
+        "expected": null,
+        "kind": "differential",
+        "name": "vuls:tie.order",
+        "observed": null,
+        "passed": false
+      }
+    ]
+  },
+  "mutant_nosort": {
+    "accepted": false,
+    "category": "mutant",
+    "probes": [
+      {
+        "clauses": [
+          "sort.by_score"
+        ],
+        "counterexample": {
+          "go_subtest": "score.order",
+          "status": "FAIL"
+        },
+        "detail": "go subtest FAIL",
+        "expected": null,
+        "kind": "differential",
+        "name": "vuls:score.order",
+        "observed": null,
+        "passed": false
+      },
+      {
+        "clauses": [
+          "sort.equal_score_order"
+        ],
+        "counterexample": {
+          "go_subtest": "tie.order",
+          "status": "FAIL"
+        },
+        "detail": "go subtest FAIL",
+        "expected": null,
+        "kind": "differential",
+        "name": "vuls:tie.order",
+        "observed": null,
+        "passed": false
+      }
+    ]
+  }
+}
