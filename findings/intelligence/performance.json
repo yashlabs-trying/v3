@@ -1,0 +1,77 @@
+{
+  "evidence_validation": {
+    "iterations": 1000,
+    "per_validation_ms": 4.049625899991952,
+    "provenance": "recorded",
+    "seconds": 4.049625899991952
+  },
+  "parse_one": {
+    "artifact": "jobs/f3-vuls-a1/instance_future-architect__vuls__sNqH5s4/agent/mini-swe-agent.trajectory.json",
+    "events": 188,
+    "provenance": "recorded",
+    "seconds": 0.026827799971215427
+  },
+  "real_cohort": {
+    "peak_bytes": 6356033,
+    "per_task_seconds": [
+      {
+        "seconds": 0.001820000004954636,
+        "task": "flipt"
+      },
+      {
+        "seconds": 0.0012005000025965273,
+        "task": "openlibrary"
+      },
+      {
+        "seconds": 0.0015892000519670546,
+        "task": "teleport"
+      },
+      {
+        "seconds": 0.0017855000332929194,
+        "task": "ansible"
+      },
+      {
+        "seconds": 0.001818799995817244,
+        "task": "element-web"
+      },
+      {
+        "seconds": 0.009438199980650097,
+        "task": "vuls"
+      },
+      {
+        "seconds": 0.0065055000013671815,
+        "task": "NodeBB"
+      },
+      {
+        "seconds": 0.0036168000078760087,
+        "task": "NodeBB-recovery"
+      }
+    ],
+    "provenance": "recorded",
+    "tasks": 8,
+    "total_seconds": 0.5363273999537341
+  },
+  "scaling": [
+    {
+      "events": 1000,
+      "events_per_second": 353994.827721171,
+      "processed": 1000,
+      "provenance": "synthetic",
+      "seconds": 0.002824900031555444
+    },
+    {
+      "events": 10000,
+      "events_per_second": 276818.9075314702,
+      "processed": 10000,
+      "provenance": "synthetic",
+      "seconds": 0.03612470004009083
+    },
+    {
+      "events": 100000,
+      "events_per_second": 421851.39609899855,
+      "processed": 100000,
+      "provenance": "synthetic",
+      "seconds": 0.2370502999983728
+    }
+  ]
+}

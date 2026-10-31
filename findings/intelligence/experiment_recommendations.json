@@ -1,0 +1,18 @@
+[
+  {
+    "control_metric": null,
+    "delta": null,
+    "executed": false,
+    "executed_at": null,
+    "limitations": [
+      "No improvement is claimed because no run occurred.",
+      "Would require the same frozen task, model and verifier as the control."
+    ],
+    "note": "NOT_EXECUTED: no new model execution authorized",
+    "recommendation_id": "vuls:clause:sort.equal_score_order:rec",
+    "task_id": "vuls",
+    "time_added_seconds": null,
+    "tokens_added": null,
+    "treatment_metric": null
+  }
+]

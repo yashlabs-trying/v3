@@ -1,0 +1,410 @@
+{
+  "capability_profile": [
+    {
+      "dimension": "correct_implementation",
+      "n_tasks": 2,
+      "observations": 2,
+      "sample_note": "observed across 2 tasks",
+      "strength_tasks": [
+        "openlibrary",
+        "vuls"
+      ],
+      "weakness_tasks": []
+    },
+    {
+      "dimension": "regression_avoidance",
+      "n_tasks": 1,
+      "observations": 1,
+      "sample_note": "single-task observation; not a general ability claim",
+      "strength_tasks": [],
+      "weakness_tasks": [
+        "vuls"
+      ]
+    },
+    {
+      "dimension": "testing_discipline",
+      "n_tasks": 7,
+      "observations": 7,
+      "sample_note": "observed across 7 tasks",
+      "strength_tasks": [
+        "NodeBB-recovery",
+        "ansible",
+        "element-web",
+        "flipt",
+        "openlibrary",
+        "teleport",
+        "vuls"
+      ],
+      "weakness_tasks": []
+    }
+  ],
+  "n_tasks": 8,
+  "runtime_seconds": 0.32649240002501756,
+  "tasks": [
+    {
+      "attempt": "original",
+      "capabilities": [
+        {
+          "dimension": "testing_discipline",
+          "n_tasks": 1,
+          "observations": 1,
+          "sample_note": "single-task observation; not a general ability claim",
+          "strength_tasks": [
+            "flipt"
+          ],
+          "weakness_tasks": []
+        }
+      ],
+      "cost_usd": null,
+      "execution_validity": "VALID",
+      "findings": [],
+      "original_score": 1.0,
+      "recommendations": [],
+      "runtime_seconds": 0.005968599987681955,
+      "semantic_verdict": "CONFIRMED_CORRECT",
+      "strengths": [],
+      "summary": "No verified failure finding: every independent probe on the audited surface passed. This states what was demonstrated on the audited surface only; it is not proof of whole-application correctness.",
+      "task_id": "flipt",
+      "uncertainty": [
+        "The defect (if any) may be verified; the model's internal reason is not observable."
+      ],
+      "weaknesses": []
+    },
+    {
+      "attempt": "original",
+      "capabilities": [
+        {
+          "dimension": "correct_implementation",
+          "n_tasks": 1,
+          "observations": 1,
+          "sample_note": "single-task observation; not a general ability claim",
+          "strength_tasks": [
+            "openlibrary"
+          ],
+          "weakness_tasks": []
+        },
+        {
+          "dimension": "testing_discipline",
+          "n_tasks": 1,
+          "observations": 1,
+          "sample_note": "single-task observation; not a general ability claim",
+          "strength_tasks": [
+            "openlibrary"
+          ],
+          "weakness_tasks": []
+        }
+      ],
+      "cost_usd": null,
+      "execution_validity": "VALID",
+      "findings": [],
+      "original_score": 1.0,
+      "recommendations": [],
+      "runtime_seconds": 0.023128400032874197,
+      "semantic_verdict": "CONFIRMED_CORRECT",
+      "strengths": [
+        {
+          "confidence": "high",
+          "evidence": [],
+          "kind": "reproduced",
+          "text": "Satisfied 6 independently-probed contract clause(s): find_keys.depth, find_keys.types, parse_log.difference, parse_log.none_old_doc, parse_log.old_docs_length, parse_log.one_key_per_doc."
+        }
+      ],
+      "summary": "No verified failure finding: every independent probe on the audited surface passed. This states what was demonstrated on the audited surface only; it is not proof of whole-application correctness.",
+      "task_id": "openlibrary",
+      "uncertainty": [
+        "The defect (if any) may be verified; the model's internal reason is not observable."
+      ],
+      "weaknesses": []
+    },
+    {
+      "attempt": "original",
+      "capabilities": [
+        {
+          "dimension": "testing_discipline",
+          "n_tasks": 1,
+          "observations": 1,
+          "sample_note": "single-task observation; not a general ability claim",
+          "strength_tasks": [
+            "teleport"
+          ],
+          "weakness_tasks": []
+        }
+      ],
+      "cost_usd": null,
+      "execution_validity": "VALID",
+      "findings": [],
+      "original_score": 1.0,
+      "recommendations": [],
+      "runtime_seconds": 0.0016918000183068216,
+      "semantic_verdict": "CONFIRMED_CORRECT",
+      "strengths": [],
+      "summary": "No verified failure finding: every independent probe on the audited surface passed. This states what was demonstrated on the audited surface only; it is not proof of whole-application correctness.",
+      "task_id": "teleport",
+      "uncertainty": [
+        "The defect (if any) may be verified; the model's internal reason is not observable."
+      ],
+      "weaknesses": []
+    },
+    {
+      "attempt": "original",
+      "capabilities": [
+        {
+          "dimension": "testing_discipline",
+          "n_tasks": 1,
+          "observations": 1,
+          "sample_note": "single-task observation; not a general ability claim",
+          "strength_tasks": [
+            "ansible"
+          ],
+          "weakness_tasks": []
+        }
+      ],
+      "cost_usd": null,
+      "execution_validity": "VALID",
+      "findings": [],
+      "original_score": 1.0,
+      "recommendations": [],
+      "runtime_seconds": 0.0014666999923065305,
+      "semantic_verdict": "CONFIRMED_CORRECT",
+      "strengths": [],
+      "summary": "No verified failure finding: every independent probe on the audited surface passed. This states what was demonstrated on the audited surface only; it is not proof of whole-application correctness.",
+      "task_id": "ansible",
+      "uncertainty": [
+        "The defect (if any) may be verified; the model's internal reason is not observable."
+      ],
+      "weaknesses": []
+    },
+    {
+      "attempt": "original",
+      "capabilities": [
+        {
+          "dimension": "testing_discipline",
+          "n_tasks": 1,
+          "observations": 1,
+          "sample_note": "single-task observation; not a general ability claim",
+          "strength_tasks": [
+            "element-web"
+          ],
+          "weakness_tasks": []
+        }
+      ],
+      "cost_usd": null,
+      "execution_validity": "VALID",
+      "findings": [],
+      "original_score": 1.0,
+      "recommendations": [],
+      "runtime_seconds": 0.0014893999905325472,
+      "semantic_verdict": "CONFIRMED_CORRECT",
+      "strengths": [],
+      "summary": "No verified failure finding: every independent probe on the audited surface passed. This states what was demonstrated on the audited surface only; it is not proof of whole-application correctness.",
+      "task_id": "element-web",
+      "uncertainty": [
+        "The defect (if any) may be verified; the model's internal reason is not observable."
+      ],
+      "weaknesses": []
+    },
+    {
+      "attempt": "original",
+      "capabilities": [
+        {
+          "dimension": "correct_implementation",
+          "n_tasks": 1,
+          "observations": 1,
+          "sample_note": "single-task observation; not a general ability claim",
+          "strength_tasks": [
+            "vuls"
+          ],
+          "weakness_tasks": []
+        },
+        {
+          "dimension": "regression_avoidance",
+          "n_tasks": 1,
+          "observations": 1,
+          "sample_note": "single-task observation; not a general ability claim",
+          "strength_tasks": [],
+          "weakness_tasks": [
+            "vuls"
+          ]
+        },
+        {
+          "dimension": "testing_discipline",
+          "n_tasks": 1,
+          "observations": 1,
+          "sample_note": "single-task observation; not a general ability claim",
+          "strength_tasks": [
+            "vuls"
+          ],
+          "weakness_tasks": []
+        }
+      ],
+      "cost_usd": null,
+      "execution_validity": "VALID",
+      "findings": [
+        {
+          "category": "existing_behavior_removed",
+          "competing_explanations": [
+            "The independent probe is over-strict (checked by correct-alternative acceptance in V3.2)",
+            "The task specification is ambiguous for this clause"
+          ],
+          "confidence": "high",
+          "evidence": [
+            {
+              "artifact": "findings/vuls_semantic_evidence.json",
+              "locator": "probes[vuls:tie.order]",
+              "note": "go subtest FAIL"
+            },
+            {
+              "artifact": "jobs/f3-vuls-a1/instance_future-architect__vuls__sNqH5s4/agent/model.patch",
+              "locator": "sha256",
+              "note": "submitted patch"
+            }
+          ],
+          "id": "vuls:clause:sort.equal_score_order",
+          "kind": "reproduced",
+          "limitations": [
+            "The defect is verified; why the agent produced it is not observable."
+          ],
+          "severity": "major",
+          "source_changes": [
+            "detector/detector.go",
+            "models/vulninfos.go",
+            "models/vulninfos_test.go",
+            "tui/tui.go"
+          ],
+          "symptom": "Independent probe `vuls:tie.order` failed against contract clause `sort.equal_score_order`: For equal scores, SortByConfident preserves the ordering that the pre-existing implementation produced via its tie-break field (OvalMatch before CpeVersionMatch).",
+          "trace_event_ids": [],
+          "violated_requirement": "sort.equal_score_order"
+        }
+      ],
+      "original_score": 0.0,
+      "recommendations": [
+        {
+          "confounders": [
+            "Small sample size (n=1 task per class here)",
+            "Model stochasticity across runs",
+            "Intervention may shift behavior on tasks outside this class"
+          ],
+          "control": "Same frozen task, same model and configuration, same evaluation budget, same independent verifier; only the intervention differs.",
+          "cost_estimate": "Additional inspection/token overhead to be measured per run; not claimed until executed.",
+          "evidence": [
+            {
+              "artifact": "findings/vuls_semantic_evidence.json",
+              "locator": "probes[vuls:tie.order]",
+              "note": "go subtest FAIL"
+            },
+            {
+              "artifact": "jobs/f3-vuls-a1/instance_future-architect__vuls__sNqH5s4/agent/model.patch",
+              "locator": "sha256",
+              "note": "submitted patch"
+            }
+          ],
+          "executed": false,
+          "execution_note": "no new model execution was authorized",
+          "expected_outcome": "Measured change in the metric below with the intervention vs the control; null result reported if no improvement.",
+          "finding_id": "vuls:clause:sort.equal_score_order",
+          "hypothesis": "Requiring pre-edit inspection of pre-existing tests reduces removal of established, test-covered behavior.",
+          "id": "vuls:clause:sort.equal_score_order:rec",
+          "intervention": "Add a mandatory pre-edit step: before changing behavior covered by an existing test, inspect that test and the code path it exercises, and record the invariant being preserved.",
+          "metric": "Rate of satisfying BOTH the newly requested behavior AND the pre-existing invariant, on the same frozen task set, scored by an independent semantic oracle.",
+          "task_id": "vuls"
+        }
+      ],
+      "runtime_seconds": 0.0038108000298961997,
+      "semantic_verdict": "GENUINE_AGENT_FAILURE",
+      "strengths": [
+        {
+          "confidence": "high",
+          "evidence": [],
+          "kind": "reproduced",
+          "text": "Satisfied 1 independently-probed contract clause(s): sort.by_score."
+        }
+      ],
+      "summary": "Verified 1 failure finding(s) (existing_behavior_removed) supported by independent probe evidence and the submitted patch. Demonstrated strengths are listed separately; they do not offset the failure.",
+      "task_id": "vuls",
+      "uncertainty": [
+        "The defect (if any) may be verified; the model's internal reason is not observable."
+      ],
+      "weaknesses": []
+    },
+    {
+      "attempt": "original",
+      "capabilities": [],
+      "cost_usd": null,
+      "execution_validity": "INVALID",
+      "findings": [
+        {
+          "category": "agent_startup_failure",
+          "competing_explanations": [
+            "Model API unavailable",
+            "agent harness startup error",
+            "environment/network failure"
+          ],
+          "confidence": "high",
+          "evidence": [
+            {
+              "artifact": "jobs/final-nodebb/instance_NodeBB__NodeBB-00c70ce7__u8MhLEv/agent/model.patch",
+              "locator": "sha256",
+              "note": "submitted patch"
+            }
+          ],
+          "id": "NodeBB:infra",
+          "kind": "observed",
+          "limitations": [
+            "The absence of model responses/valid execution is the failure; it does not evidence any model coding weakness.",
+            "No trajectory artifact was produced by this attempt.",
+            "Submitted patch contains runtime/database artifacts rather than source edits."
+          ],
+          "severity": "blocker",
+          "source_changes": [],
+          "symptom": "Agent execution did not validly complete; no authoritative evaluation of coding ability is possible.",
+          "trace_event_ids": [],
+          "violated_requirement": null
+        }
+      ],
+      "original_score": 0.0,
+      "recommendations": [],
+      "runtime_seconds": 0.00801550003234297,
+      "semantic_verdict": "INCONCLUSIVE",
+      "strengths": [],
+      "summary": "Execution was classified INVALID by V3.1. This is an infrastructure outcome: no authoritative statement about coding ability is possible, and none is made.",
+      "task_id": "NodeBB",
+      "uncertainty": [
+        "Cannot attribute any coding outcome: the attempt did not validly execute.",
+        "No trajectory artifact; observable process actions are unavailable.",
+        "No independent V3.2 semantic oracle for this task; correctness unverified.",
+        "The defect (if any) may be verified; the model's internal reason is not observable."
+      ],
+      "weaknesses": []
+    },
+    {
+      "attempt": "recovery",
+      "capabilities": [
+        {
+          "dimension": "testing_discipline",
+          "n_tasks": 1,
+          "observations": 1,
+          "sample_note": "single-task observation; not a general ability claim",
+          "strength_tasks": [
+            "NodeBB-recovery"
+          ],
+          "weakness_tasks": []
+        }
+      ],
+      "cost_usd": null,
+      "execution_validity": "VALID",
+      "findings": [],
+      "original_score": 1.0,
+      "recommendations": [],
+      "runtime_seconds": 0.0014654999831691384,
+      "semantic_verdict": "CONFIRMED_CORRECT",
+      "strengths": [],
+      "summary": "No authoritative diagnostic finding was derivable from the available evidence.",
+      "task_id": "NodeBB-recovery",
+      "uncertainty": [
+        "No independent V3.2 semantic oracle for this task; correctness unverified.",
+        "The defect (if any) may be verified; the model's internal reason is not observable."
+      ],
+      "weaknesses": []
+    }
+  ]
+}

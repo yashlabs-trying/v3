@@ -1,0 +1,16 @@
+{
+  "authoritative_findings": 2,
+  "clause_attribution": {
+    "identified": 1,
+    "total": 1
+  },
+  "cohort_tasks": 8,
+  "hypothesis_findings": 0,
+  "infrastructure_tasks_classified_as_infra_only": 1,
+  "invented_weaknesses_on_passing_tasks": 0,
+  "recommendations_executed": 0,
+  "recommendations_total": 1,
+  "recommendations_with_metric": 1,
+  "unresolved_evidence_refs": 0,
+  "unsupported_accusations": 0
+}
