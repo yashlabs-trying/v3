@@ -1,0 +1,142 @@
+{
+  "attempt": "original",
+  "capabilities": [
+    {
+      "dimension": "correct_implementation",
+      "n_tasks": 1,
+      "observations": 1,
+      "sample_note": "single-task observation; not a general ability claim",
+      "strength_tasks": [
+        "vuls"
+      ],
+      "weakness_tasks": []
+    },
+    {
+      "dimension": "regression_avoidance",
+      "n_tasks": 1,
+      "observations": 1,
+      "sample_note": "single-task observation; not a general ability claim",
+      "strength_tasks": [],
+      "weakness_tasks": [
+        "vuls"
+      ]
+    },
+    {
+      "dimension": "testing_discipline",
+      "n_tasks": 1,
+      "observations": 1,
+      "sample_note": "single-task observation; not a general ability claim",
+      "strength_tasks": [
+        "vuls"
+      ],
+      "weakness_tasks": []
+    }
+  ],
+  "cost_usd": null,
+  "evidence_resolution": {
+    "all_resolved": true,
+    "artifacts": {
+      "findings/vuls_semantic_evidence.json": {
+        "authoritative": true,
+        "error": null,
+        "exists": true,
+        "sha256": "5396c9e4503f0e55abc16f0b7da124ab135950149256e19576d9b1424ffeebfc"
+      },
+      "jobs/f3-vuls-a1/instance_future-architect__vuls__sNqH5s4/agent/model.patch": {
+        "authoritative": true,
+        "error": null,
+        "exists": true,
+        "sha256": "89390105859bb6c431b6bdc1c10288e54983c353e465ac1870ed63906b54833a"
+      }
+    },
+    "n_references": 4,
+    "n_unresolved": 0
+  },
+  "execution_validity": "VALID",
+  "findings": [
+    {
+      "category": "existing_behavior_removed",
+      "competing_explanations": [
+        "The independent probe is over-strict (checked by correct-alternative acceptance in V3.2)",
+        "The task specification is ambiguous for this clause"
+      ],
+      "confidence": "high",
+      "evidence": [
+        {
+          "artifact": "findings/vuls_semantic_evidence.json",
+          "locator": "probes[vuls:tie.order]",
+          "note": "go subtest FAIL"
+        },
+        {
+          "artifact": "jobs/f3-vuls-a1/instance_future-architect__vuls__sNqH5s4/agent/model.patch",
+          "locator": "sha256",
+          "note": "submitted patch"
+        }
+      ],
+      "id": "vuls:clause:sort.equal_score_order",
+      "kind": "reproduced",
+      "limitations": [
+        "The defect is verified; why the agent produced it is not observable."
+      ],
+      "severity": "major",
+      "source_changes": [
+        "detector/detector.go",
+        "models/vulninfos.go",
+        "models/vulninfos_test.go",
+        "tui/tui.go"
+      ],
+      "symptom": "Independent probe `vuls:tie.order` failed against contract clause `sort.equal_score_order`: For equal scores, SortByConfident preserves the ordering that the pre-existing implementation produced via its tie-break field (OvalMatch before CpeVersionMatch).",
+      "trace_event_ids": [],
+      "violated_requirement": "sort.equal_score_order"
+    }
+  ],
+  "original_score": 0.0,
+  "recommendations": [
+    {
+      "confounders": [
+        "Small sample size (n=1 task per class here)",
+        "Model stochasticity across runs",
+        "Intervention may shift behavior on tasks outside this class"
+      ],
+      "control": "Same frozen task, same model and configuration, same evaluation budget, same independent verifier; only the intervention differs.",
+      "cost_estimate": "Additional inspection/token overhead to be measured per run; not claimed until executed.",
+      "evidence": [
+        {
+          "artifact": "findings/vuls_semantic_evidence.json",
+          "locator": "probes[vuls:tie.order]",
+          "note": "go subtest FAIL"
+        },
+        {
+          "artifact": "jobs/f3-vuls-a1/instance_future-architect__vuls__sNqH5s4/agent/model.patch",
+          "locator": "sha256",
+          "note": "submitted patch"
+        }
+      ],
+      "executed": false,
+      "execution_note": "no new model execution was authorized",
+      "expected_outcome": "Measured change in the metric below with the intervention vs the control; null result reported if no improvement.",
+      "finding_id": "vuls:clause:sort.equal_score_order",
+      "hypothesis": "Requiring pre-edit inspection of pre-existing tests reduces removal of established, test-covered behavior.",
+      "id": "vuls:clause:sort.equal_score_order:rec",
+      "intervention": "Add a mandatory pre-edit step: before changing behavior covered by an existing test, inspect that test and the code path it exercises, and record the invariant being preserved.",
+      "metric": "Rate of satisfying BOTH the newly requested behavior AND the pre-existing invariant, on the same frozen task set, scored by an independent semantic oracle.",
+      "task_id": "vuls"
+    }
+  ],
+  "runtime_seconds": 0.0038108000298961997,
+  "semantic_verdict": "GENUINE_AGENT_FAILURE",
+  "strengths": [
+    {
+      "confidence": "high",
+      "evidence": [],
+      "kind": "reproduced",
+      "text": "Satisfied 1 independently-probed contract clause(s): sort.by_score."
+    }
+  ],
+  "summary": "Verified 1 failure finding(s) (existing_behavior_removed) supported by independent probe evidence and the submitted patch. Demonstrated strengths are listed separately; they do not offset the failure.",
+  "task_id": "vuls",
+  "uncertainty": [
+    "The defect (if any) may be verified; the model's internal reason is not observable."
+  ],
+  "weaknesses": []
+}

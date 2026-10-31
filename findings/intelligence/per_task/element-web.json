@@ -1,0 +1,35 @@
+{
+  "attempt": "original",
+  "capabilities": [
+    {
+      "dimension": "testing_discipline",
+      "n_tasks": 1,
+      "observations": 1,
+      "sample_note": "single-task observation; not a general ability claim",
+      "strength_tasks": [
+        "element-web"
+      ],
+      "weakness_tasks": []
+    }
+  ],
+  "cost_usd": null,
+  "evidence_resolution": {
+    "all_resolved": true,
+    "artifacts": {},
+    "n_references": 0,
+    "n_unresolved": 0
+  },
+  "execution_validity": "VALID",
+  "findings": [],
+  "original_score": 1.0,
+  "recommendations": [],
+  "runtime_seconds": 0.0014893999905325472,
+  "semantic_verdict": "CONFIRMED_CORRECT",
+  "strengths": [],
+  "summary": "No verified failure finding: every independent probe on the audited surface passed. This states what was demonstrated on the audited surface only; it is not proof of whole-application correctness.",
+  "task_id": "element-web",
+  "uncertainty": [
+    "The defect (if any) may be verified; the model's internal reason is not observable."
+  ],
+  "weaknesses": []
+}

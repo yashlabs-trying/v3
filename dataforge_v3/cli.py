@@ -63,6 +63,35 @@ def _cmd_preflight(args: argparse.Namespace) -> int:
     return 0 if report.ok else 1
 
 
+def _cmd_intelligence(args: argparse.Namespace) -> int:
+    from pathlib import Path
+
+    from dataforge_v3.intelligence.driver import run_cohort
+    from dataforge_v3.intelligence.evidence import EvidenceResolver
+    from dataforge_v3.intelligence.reporting import write_diagnosis
+
+    root = Path(args.root)
+    out_dir = Path(args.out_dir)
+    resolver = EvidenceResolver(root)
+    fleet = run_cohort(root)
+    for d in fleet.diagnoses:
+        write_diagnosis(d, resolver, out_dir / "per_task", d.task_id.replace("/", "_"))
+    (out_dir / "capability_profile.json").write_text(
+        json.dumps(fleet.to_dict()["capability_profile"], indent=2, sort_keys=True),
+        encoding="utf-8",
+    )
+    (out_dir / "fleet_diagnosis.json").write_text(
+        json.dumps(fleet.to_dict(), indent=2, sort_keys=True), encoding="utf-8"
+    )
+    for d in fleet.diagnoses:
+        print(
+            f"{d.task_id:16s} valid={d.execution_validity:8s} sem={d.semantic_verdict} "
+            f"findings={len(d.findings)} recommendations={len(d.recommendations)}"
+        )
+    print(f"fleet runtime: {fleet.runtime_seconds:.3f}s")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="dataforge_v3")
     sub = parser.add_subparsers(dest="cmd", required=True)
@@ -91,6 +120,11 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--versions", help="JSON object of observed versions")
     p.add_argument("--env", help="JSON object of agent env")
     p.set_defaults(func=_cmd_preflight)
+
+    p = sub.add_parser("intelligence", help="run the V3.3 diagnostic engine over the frozen cohort")
+    p.add_argument("--root", default=".", help="repository root")
+    p.add_argument("--out-dir", default="findings/intelligence", help="output directory")
+    p.set_defaults(func=_cmd_intelligence)
 
     args = parser.parse_args(argv)
     return args.func(args)

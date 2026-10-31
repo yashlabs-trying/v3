@@ -1,0 +1,135 @@
+{
+  "answer_key": {
+    "NodeBB": {
+      "expected_defect": null,
+      "forbids": [
+        "weak javascript",
+        "cannot fix",
+        "failed to understand",
+        "weak redis",
+        "coding weakness",
+        "failed to implement"
+      ],
+      "validity": "INVALID",
+      "verdict": "INCONCLUSIVE"
+    },
+    "NodeBB-recovery": {
+      "expected_defect": null,
+      "forbids": [
+        "weak at",
+        "failed to understand",
+        "is incorrect",
+        "has a bug"
+      ],
+      "validity": "VALID",
+      "verdict": "CONFIRMED_CORRECT"
+    },
+    "ansible": {
+      "expected_defect": null,
+      "forbids": [
+        "weak at",
+        "failed to understand",
+        "is incorrect",
+        "has a bug"
+      ],
+      "validity": "VALID",
+      "verdict": "CONFIRMED_CORRECT"
+    },
+    "element-web": {
+      "expected_defect": null,
+      "forbids": [
+        "weak at",
+        "failed to understand",
+        "is incorrect",
+        "has a bug"
+      ],
+      "validity": "VALID",
+      "verdict": "CONFIRMED_CORRECT"
+    },
+    "flipt": {
+      "expected_defect": null,
+      "forbids": [
+        "weak at",
+        "failed to understand",
+        "is incorrect",
+        "has a bug"
+      ],
+      "validity": "VALID",
+      "verdict": "CONFIRMED_CORRECT"
+    },
+    "openlibrary": {
+      "expected_defect": null,
+      "forbids": [
+        "weak at",
+        "failed to understand",
+        "is incorrect",
+        "has a bug"
+      ],
+      "validity": "VALID",
+      "verdict": "CONFIRMED_CORRECT"
+    },
+    "teleport": {
+      "expected_defect": null,
+      "forbids": [
+        "weak at",
+        "failed to understand",
+        "is incorrect",
+        "has a bug"
+      ],
+      "validity": "VALID",
+      "verdict": "CONFIRMED_CORRECT"
+    },
+    "vuls": {
+      "expected_defect": "sort.equal_score_order",
+      "forbids": [
+        "false fail",
+        "benchmark is wrong",
+        "grader bug"
+      ],
+      "validity": "VALID",
+      "verdict": "GENUINE_AGENT_FAILURE"
+    }
+  },
+  "approaches": {
+    "dataforge_v3_3": {
+      "actionability": 1,
+      "defect_identified": 1,
+      "defect_total": 1,
+      "hallucinations": 0,
+      "name": "dataforge_v3_3",
+      "tasks_evaluated": 8,
+      "unresolved_evidence_refs": 0
+    },
+    "generic_llm": {
+      "actionability": 0,
+      "defect_identified": 0,
+      "defect_total": 0,
+      "hallucinations": 0,
+      "name": "generic_llm",
+      "reason": "No external model execution authorized; inputs/outputs were not captured. Reported incomplete rather than fabricated.",
+      "status": "INCOMPLETE",
+      "tasks_evaluated": 0,
+      "unresolved_evidence_refs": 0
+    },
+    "raw_benchmark": {
+      "actionability": 0,
+      "defect_identified": 0,
+      "defect_total": 1,
+      "hallucinations": 0,
+      "name": "raw_benchmark",
+      "tasks_evaluated": 8,
+      "unresolved_evidence_refs": 0
+    },
+    "raw_plus_semantic": {
+      "actionability": 0,
+      "defect_identified": 1,
+      "defect_total": 1,
+      "hallucinations": 0,
+      "name": "raw_plus_semantic",
+      "tasks_evaluated": 8,
+      "unresolved_evidence_refs": 0
+    }
+  },
+  "frozen_llm_prompt": "You are given a benchmark result for one coding task: the PASS/FAIL verdict, the failing test output if any, and basic execution metadata. Produce a short diagnosis of why the result occurred. Do not speculate beyond the evidence given.",
+  "isolation_note": "raw_plus_semantic isolates the contribution of additional semantic evidence; dataforge_v3_3 additionally applies generic clause attribution, capability evidence and measurable recommendations. generic_llm is the unrun control that would isolate the value of structured diagnosis over free-text explanation."
+}

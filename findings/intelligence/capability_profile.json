@@ -1,0 +1,39 @@
+[
+  {
+    "dimension": "correct_implementation",
+    "n_tasks": 2,
+    "observations": 2,
+    "sample_note": "observed across 2 tasks",
+    "strength_tasks": [
+      "openlibrary",
+      "vuls"
+    ],
+    "weakness_tasks": []
+  },
+  {
+    "dimension": "regression_avoidance",
+    "n_tasks": 1,
+    "observations": 1,
+    "sample_note": "single-task observation; not a general ability claim",
+    "strength_tasks": [],
+    "weakness_tasks": [
+      "vuls"
+    ]
+  },
+  {
+    "dimension": "testing_discipline",
+    "n_tasks": 7,
+    "observations": 7,
+    "sample_note": "observed across 7 tasks",
+    "strength_tasks": [
+      "NodeBB-recovery",
+      "ansible",
+      "element-web",
+      "flipt",
+      "openlibrary",
+      "teleport",
+      "vuls"
+    ],
+    "weakness_tasks": []
+  }
+]
