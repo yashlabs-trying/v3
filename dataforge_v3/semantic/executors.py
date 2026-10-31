@@ -129,3 +129,97 @@ def _build_script(tmp: Path, image: str, go_package: str, test_name: str, probe_
         "#!/bin/bash\n"
         f'docker run --rm -v "{_wsl_path(tmp)}:/overlay" {image} bash -c "{inner}"\n'
     )
+
+
+# --- vuls (models package) -------------------------------------------------
+
+VULS_IMAGE = (
+    "dataforge-agent:instance_future-architect__vuls-f0b3a8b1db98eb1bd32685f1c36c41a99c3452ed"
+)
+
+_VULS_TEST_LINE = re.compile(r"^\s*--- (PASS|FAIL|SKIP):\s+(TestDataForgeVulsOrdering\S*)")
+
+
+def parse_vuls_probe_output(stdout: str) -> list[ProbeResult]:
+    results: list[ProbeResult] = []
+    for line in stdout.splitlines():
+        m = _VULS_TEST_LINE.match(line)
+        if not m:
+            continue
+        status, name = m.groups()
+        if "TestDataForgeVulsOrdering/" not in name:
+            continue  # parent test line, not a property subtest
+        short = name.split("TestDataForgeVulsOrdering/", 1)[1]
+        passed = status == "PASS"
+        clauses = []
+        if short.startswith("score.order"):
+            clauses = ["sort.by_score"]
+        elif short.startswith("tie.order"):
+            clauses = ["sort.equal_score_order"]
+        detail = "" if passed else f"go subtest {status}"
+        results.append(
+            ProbeResult(
+                name=f"vuls:{short}",
+                kind="differential",
+                passed=passed,
+                clauses=clauses,
+                detail=detail,
+                counterexample=None if passed else {"go_subtest": short, "status": status},
+            )
+        )
+    return results
+
+
+def run_vuls_probes(
+    candidate_vulninfos: str,
+    oracle_source: str,
+    image: str = VULS_IMAGE,
+    go_package: str = "./models",
+    test_name: str = "TestDataForgeVulsOrdering",
+    probe_filename: str = "zz_df_vuls_oracle_test.go",
+    timeout_s: int = 900,
+) -> list[ProbeResult]:
+    """Swap candidate models/vulninfos.go into /app/models, run the oracle, parse."""
+    with tempfile.TemporaryDirectory(prefix="df32_vuls_") as td:
+        tmp = Path(td)
+        (tmp / "vulninfos.go").write_text(candidate_vulninfos, encoding="utf-8")
+        (tmp / probe_filename).write_text(oracle_source, encoding="utf-8")
+
+        inner = (
+            "set -e; "
+            "cp /overlay/vulninfos.go /app/models/vulninfos.go; "
+            f"cp /overlay/{probe_filename} /app/models/{probe_filename}; "
+            "cd /app; "
+            # Move the image's own models tests aside so a stale test file that
+            # references removed identifiers cannot break compilation. The oracle
+            # is self-contained.
+            "mv models/vulninfos_test.go /tmp/_hidden_vulninfos_test.go 2>/dev/null || true; "
+            "export PATH=/usr/local/go/bin:/usr/bin:/bin:/usr/sbin:/sbin; "
+            f"go test -count=1 -v -run '^{test_name}$' {go_package} 2>&1; "
+            "true"
+        )
+        script = (
+            "#!/bin/bash\n"
+            f'docker run --rm -v "{_wsl_path(tmp)}:/overlay" {image} bash -c "{inner}"\n'
+        )
+        (tmp / "run.sh").write_text(script, encoding="ascii", newline="\n")
+
+        proc = subprocess.run(
+            ["wsl", "-d", "Ubuntu", "--", "bash", f"{_wsl_path(tmp)}/run.sh"],
+            capture_output=True,
+            text=True,
+            timeout=timeout_s,
+        )
+        combined = proc.stdout + "\n" + proc.stderr
+        results = parse_vuls_probe_output(combined)
+        if not results:
+            results = [
+                ProbeResult(
+                    name="vuls:harness-error",
+                    kind="differential",
+                    passed=False,
+                    detail=f"no probe results parsed (exit {proc.returncode})",
+                    counterexample={"tail": combined[-2000:]},
+                )
+            ]
+        return results

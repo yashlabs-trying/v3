@@ -1,0 +1,10 @@
+PERM set=0 perm=0 in=OvalMatch|RedHatAPIMatch|TrivyMatch| out=OvalMatch|RedHatAPIMatch|TrivyMatch| run_to_run_stable=true
+PERM set=0 perm=1 in=OvalMatch|TrivyMatch|RedHatAPIMatch| out=OvalMatch|TrivyMatch|RedHatAPIMatch| run_to_run_stable=true
+PERM set=0 perm=2 in=RedHatAPIMatch|OvalMatch|TrivyMatch| out=RedHatAPIMatch|OvalMatch|TrivyMatch| run_to_run_stable=true
+PERM set=0 perm=3 in=RedHatAPIMatch|TrivyMatch|OvalMatch| out=RedHatAPIMatch|TrivyMatch|OvalMatch| run_to_run_stable=true
+PERM set=0 perm=4 in=TrivyMatch|RedHatAPIMatch|OvalMatch| out=TrivyMatch|RedHatAPIMatch|OvalMatch| run_to_run_stable=true
+PERM set=0 perm=5 in=TrivyMatch|OvalMatch|RedHatAPIMatch| out=TrivyMatch|OvalMatch|RedHatAPIMatch| run_to_run_stable=true
+SUMMARY set=0 permutations=6 distinct_output_orders=6
+PERM set=1 perm=0 in=CpeVersionMatch|OvalMatch| out=CpeVersionMatch|OvalMatch| run_to_run_stable=true
+PERM set=1 perm=1 in=OvalMatch|CpeVersionMatch| out=OvalMatch|CpeVersionMatch| run_to_run_stable=true
+SUMMARY set=1 permutations=2 distinct_output_orders=2
