@@ -1,7 +1,28 @@
-# DataForge V3.1 — Phase 1A Baseline
+# SWE-bench Pro harness reliability audit
 
-Investigation-only audit of SWE-bench Pro V2 (scaleapi/SWE-bench_Pro-os @
-`66f92766bba642462d4bbe5479e83f91f9211862`) using DeepSeek `deepseek-ai/DeepSeek-V4.1-Flash`.
+Can you trust an agentic coding benchmark's score? This audit ran
+[SWE-bench Pro](https://github.com/scaleapi/SWE-bench_Pro-os) (public set, commit
+`66f92766`) with DeepSeek-V4.1-Flash as the agent and checked the *harness*
+before trusting the *model score*: oracle and no-op controls on every task,
+independent regrading, frozen task selection, and checksummed evidence.
+
+**What it found:** four confirmed harness defects that can silently change a
+benchmark result:
+
+1. **Patch contamination through Redis state** — state left by one run leaked
+   into a later run's grading.
+2. **Null replay** — a regrade "agreed" with the original only because both
+   graded nothing.
+3. **Unpinned agent incompatibility** — an unpinned agent dependency broke runs.
+4. **Egress-sidecar stall** — a network sidecar hung runs, which then looked
+   like model failures.
+
+One more defect is suspected: lost cost telemetry. Details and reproduction steps are in
+[`findings/`](findings/).
+
+Later phases (execution-reliability layer, semantic verification, agent
+diagnostic engine, six- and thirty-case validation) are on the branches
+`v3.1-phase1b`, `v3.2-phase2`, `v3.3-phase3` and `six-case-validation`.
 
 ## Read in this order
 1. `reports/PHASE_1A_FINAL_REPORT.md` — the final audit.
@@ -22,7 +43,7 @@ Investigation-only audit of SWE-bench Pro V2 (scaleapi/SWE-bench_Pro-os @
 
 ## Layout
 ```
-v3_1_baseline/
+./
   environment_manifest.json  harness_revision.json  selection_manifest.json
   results.json  results.csv  metrics.json  evidence_checksums.txt
   interim_first3.md
@@ -30,6 +51,8 @@ v3_1_baseline/
   audit_tasks/        # task overlays pointing at pre-baked agent images (tests unchanged)
   tooling_overlay/    # locked_mini_swe.py (+mcp) and mini_toolcall_audit.yaml (stream=false)
   upstream_lf/        # LF mirror of the upstream commit (unmodified content)
+  *.sh, *.py          # pipeline scripts: build images, run controls/agent, regrade, metrics
+  scratch/            # one-off inspection and debugging probes used during the audit
 ```
 
 ## Rules honoured
