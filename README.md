@@ -61,5 +61,7 @@ diagnostic engine, six- and thirty-case validation) are on the branches
 ## Rules honoured
 Upstream repo unmodified; grading code (test.sh/parser.py/config.json/test_patch.patch) byte-identical
 to upstream in every executed task; tasks frozen before outcomes; original results preserved and
-checksummed; recovery rerun separately labelled and not counted as the original attempt; no V3.1 fixes
+checksummed (local home-directory paths were redacted for publication, so
+`evidence_checksums.txt` was regenerated over the redacted files and now verifies with
+`sha256sum -c evidence_checksums.txt`); recovery rerun separately labelled and not counted as the original attempt; no V3.1 fixes
 implemented.
