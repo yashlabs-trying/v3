@@ -9,13 +9,16 @@ independent regrading, frozen task selection, and checksummed evidence.
 **What it found:** four confirmed harness defects that can silently change a
 benchmark result:
 
-1. **Patch contamination through Redis state** — state left by one run leaked
-   into a later run's grading.
-2. **Null replay** — a regrade "agreed" with the original only because both
-   graded nothing.
-3. **Unpinned agent incompatibility** — an unpinned agent dependency broke runs.
-4. **Egress-sidecar stall** — a network sidecar hung runs, which then looked
-   like model failures.
+1. **Patch contamination.** The NodeBB "model patch" was 166 KB of Redis
+   AOF/RDB files that were baked into the image, untracked and not gitignored,
+   and swept up by `git add -A`. It contained zero source changes.
+2. **Null replay.** Replaying that patch on a clean image fails at every
+   `git apply`/`patch` fallback, but a trailing `||` returns success, so the
+   harness rewarded an unchanged tree.
+3. **Unpinned agent.** mini-swe-agent 2.4.6, which was not pinned, aborts its
+   setup wizard without a TTY, and its cost calculator crashes for DeepSeek.
+4. **Egress-sidecar stall.** The network sidecar held the model API connection
+   open for ~892 s, while a direct `curl` took 1.7 s.
 
 One more defect is suspected: lost cost telemetry. Details and reproduction steps are in
 [`findings/`](findings/).
